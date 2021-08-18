@@ -1,51 +1,42 @@
 # Progressions - Terminale NSI
 
-- [Période 1 (7 semaines, 02/09..23/10)](#période-1-7-semaines-02092310)
-  
-  1. [Récursivité](#récursivité)
-  2. [Modularité](#modularité)
-  3. [Programmation objet](#programmation-objet)
-  4. [Mise au point de programmes](#mise-au-point-de-programmes)
-  5. [Listes chaînées](#listes-chaînées)
-  6. [Piles et files](#piles-et-files)
+- [Progressions - Terminale NSI](#progressions---terminale-nsi)
+  - [Période 1 (7 semaines, 02/09..23/10) (16.2)](#période-1-7-semaines-02092310-162)
+    - [Récursivité (13)](#récursivité-13)
+    - [Modularité (21)](#modularité-21)
+    - [Programmation objet (17)](#programmation-objet-17)
+    - [Mise au point de programmes (15)](#mise-au-point-de-programmes-15)
+    - [Listes chaînées (17)](#listes-chaînées-17)
+    - [Piles et files (14)](#piles-et-files-14)
+  - [Période 2 (6 semaines, 08/11..18/12) (10.2)](#période-2-6-semaines-08111812-102)
+    - [Arbres binaires (8)](#arbres-binaires-8)
+    - [Arbres binaires de recherche (13)](#arbres-binaires-de-recherche-13)
+    - [Autres structures arborescentes (12)](#autres-structures-arborescentes-12)
+    - [Diviser pour régner (8)](#diviser-pour-régner-8)
+    - [Modèle relationnel (10)](#modèle-relationnel-10)
+  - [Période 3 (5 semaines, 03/01..05/02) (13.2)](#période-3-5-semaines-03010502-132)
+    - [Bases de données relationnelles (9)](#bases-de-données-relationnelles-9)
+    - [Requêtes SQL et mise à jour (16)](#requêtes-sql-et-mise-à-jour-16)
+    - [Circuits intégrés (9)](#circuits-intégrés-9)
+    - [Gestion des processus et des ressources (19)](#gestion-des-processus-et-des-ressources-19)
+  - [Période 4.1 (2 semaines, 21/02..05/03) (9.5)](#période-41-2-semaines-21020503-95)
+    - [Protocoles de routage  (19)](#protocoles-de-routage--19)
+  - [Période 4.2 (5 semaines, 07/03..09/04) (12.8)](#période-42-5-semaines-07030904-128)
+    - [Graphes (15)](#graphes-15)
+    - [Parcours en profondeur et en largeur (11)](#parcours-en-profondeur-et-en-largeur-11)
+    - [Programmation dynamique (13)](#programmation-dynamique-13)
+    - [Recherche textuelle (12)](#recherche-textuelle-12)
+  - [Période 5 (10 semaines, 25/04..fin) (15)](#période-5-10-semaines-2504fin-15)
+    - [Calculabilité (17)](#calculabilité-17)
+    - [Programmation fonctionnelle (11)](#programmation-fonctionnelle-11)
+    - [Système de Gestion de Base de Donnée (13)](#système-de-gestion-de-base-de-donnée-13)
+    - [Sécurisation des communications (19)](#sécurisation-des-communications-19)
 
-- [Période 2 (6 semaines, 08/11..18/12)](#période-2-6-semaines-08111812)
-  
-  7. [Arbres binaires](#arbres-binaires)
-  2. [Arbres binaires de recherche](#arbres-binaires-de-recherche)
-  3. [Autres structures arborescentes](#autres-structures-arborescentes)
-  4. [Diviser pour régner](#diviser-pour-régner)
-  5. [Modèle relationnel](#modèle-relationnel)
-
-- [Période 3 (5 semaines, 03/01..05/02)](#période-3-5-semaines-03010502)
-
-  12.  [Bases de données relationnelles](#bases-de-données-relationnelles)
-  2. [Requêtes SQL et mise à jour](#requêtes-sql-et-mise-à-jour)
-  3. [Circuits intégrés](#circuits-intégrés)
-  4. [Gestion des processus et des ressources](#gestion-des-processus-et-des-ressources)
-
-- [Période 4.1 (2 semaines, 21/02..05/03)](#période-41-2-semaines-21020503)
-
-  16. [Protocoles de routage](#protocoles-de-routage)
-
-- [Période 4.2 (5 semaines, 07/03..09/04)](#période-42-5-semaines-07030904)
-
-  17. [Graphes](#graphes)
-  1. [Parcours en profondeur et en largeur](#parcours-en-profondeur-et-en-largeur)
-  1. [Programmation dynamique](#programmation-dynamique)
-  1. [Recherche textuelle](#recherche-textuelle)
-- [Période 5 (10 semaines, 25/04..fin)](#période-5-10-semaines-2504fin)
-
-  21. [Calculabilité](#calculabilité)
-  1. [Programmation fonctionnelle](#programmation-fonctionnelle)
-  1. [Système de Gestion de Base de Donnée](#système-de-gestion-de-base-de-donnée)
-  1. [Sécurisation des communications](#sécurisation-des-communications)
-
-## Période 1 (7 semaines, 02/09..23/10)
+## Période 1 (7 semaines, 02/09..23/10) (16.2)
 
 ---
 
-### Récursivité
+### Récursivité (13)
 
 **Langages**
 </br> Récursivité.
@@ -68,7 +59,7 @@ domaines variés sont à privilégier.
 
 ---
 
-### Modularité
+### Modularité (21)
 
 **Langages**
 </br> Modularité.
@@ -91,7 +82,7 @@ les documenter.
 
 ---
 
-### Programmation objet
+### Programmation objet (17)
 
 **Structures de données**
 </br> Vocabulaire de la
@@ -119,7 +110,7 @@ l’héritage.
 
 ---
 
-### Mise au point de programmes
+### Mise au point de programmes (15)
 
 **Langages**
 </br> Mise au point des
@@ -160,7 +151,7 @@ erreurs.
 
 ---
 
-### Listes chaînées
+### Listes chaînées (17)
 
 **Structures de données**
 </br> Listes :
@@ -213,7 +204,7 @@ piles).
 
 ---
 
-### Piles et files
+### Piles et files (14)
 
 **Structures de données**
 </br> Piles, files :
@@ -264,11 +255,11 @@ piles).
 > Ces repères viennent compléterceux qui ont été introduits en première.
 </br> Ces repères historiques sontconstruits au fur et à mesure de la présentation des concepts et techniques.
 
-## Période 2 (6 semaines, 08/11..18/12)
+## Période 2 (6 semaines, 08/11..18/12) (10.2)
 
 ---
 
-### Arbres binaires
+### Arbres binaires (8)
 
 **Structures de données**
 </br> Arbres binaires :
@@ -333,7 +324,7 @@ classe.
 
 ---
 
-### Arbres binaires de recherche
+### Arbres binaires de recherche (13)
 
 **Structures de données**
 </br> Arbres binaires :
@@ -394,7 +385,7 @@ logarithmique.
 
 ---
 
-### Autres structures arborescentes
+### Autres structures arborescentes (12)
 
 **Structures de données**
 </br> Arbres : structures
@@ -418,7 +409,7 @@ données arborescente.
 
 ---
 
-### Diviser pour régner
+### Diviser pour régner (8)
 
 **Algorithmique**
 </br>Méthode « diviser pour
@@ -448,7 +439,7 @@ dans les pires des cas.
 
 ---
 
-### Modèle relationnel
+### Modèle relationnel (10)
 
 **Bases de données**
 </br>Modèle relationnel :
@@ -474,11 +465,11 @@ référence).
 > Ces repères viennent compléterceux qui ont été introduits en première.
 </br> Ces repères historiques sontconstruits au fur et à mesure de la présentation des concepts et techniques.
 
-## Période 3 (5 semaines, 03/01..05/02)
+## Période 3 (5 semaines, 03/01..05/02) (13.2)
 
 ---
 
-### Bases de données relationnelles
+### Bases de données relationnelles (9)
 
 **Bases de données**
 </br>Base de données
@@ -513,7 +504,7 @@ réalistes.
 
 ---
 
-### Requêtes SQL et mise à jour
+### Requêtes SQL et mise à jour (16)
 
 **Bases de données**
 </br>Langage SQL :
@@ -548,7 +539,7 @@ clauses GROUP BY et HAVING.
 
 ---
 
-### Circuits intégrés
+### Circuits intégrés (9)
 
 **Machines** </br>
 Composants intégrés
@@ -579,7 +570,7 @@ réseaux sur puce, etc.
 
 ---
 
-### Gestion des processus et des ressources
+### Gestion des processus et des ressources (19)
 
 **Machines**
 </br>Gestion des processus
@@ -609,11 +600,11 @@ l’interblocage peut être proposée.
 > Ces repères viennent compléterceux qui ont été introduits en première.
 </br> Ces repères historiques sontconstruits au fur et à mesure de la présentation des concepts et techniques.
 
-## Période 4.1 (2 semaines, 21/02..05/03)
+## Période 4.1 (2 semaines, 21/02..05/03) (9.5)
 
 ---
 
-### Protocoles de routage
+### Protocoles de routage  (19)
 
 **Machines**
 </br> Protocoles de routage.
@@ -640,11 +631,11 @@ graphe est mis en évidence.
 > Ces repères viennent compléterceux qui ont été introduits en première.
 </br> Ces repères historiques sontconstruits au fur et à mesure de la présentation des concepts et techniques.
 
-## Période 4.2 (5 semaines, 07/03..09/04)
+## Période 4.2 (5 semaines, 07/03..09/04) (12.8)
 
 ---
 
-### Graphes
+### Graphes (15)
 
 **Structures de données**
 </br> Graphes : structures relationnelles.
@@ -679,7 +670,7 @@ avec la rubrique « *algorithmique* ».
 
 ---
 
-### Parcours en profondeur et en largeur
+### Parcours en profondeur et en largeur (11)
 
 **Algorithmique**
 </br> Algorithmes sur les graphes.
@@ -711,7 +702,7 @@ en programmation.
 
 ---
 
-### Programmation dynamique
+### Programmation dynamique (13)
 
 **Algorithmique**
 </br>Programmation dynamique.
@@ -737,7 +728,7 @@ mémoire peut être développée.
 
 ---
 
-### Recherche textuelle
+### Recherche textuelle (12)
 
 **Algorithmique**
 </br>Recherche textuelle
@@ -759,11 +750,11 @@ L’étude du coût, difficile, ne peut
 > Ces repères viennent compléterceux qui ont été introduits en première.
 </br> Ces repères historiques sontconstruits au fur et à mesure de la présentation des concepts et techniques.
 
-## Période 5 (10 semaines, 25/04..fin)
+## Période 5 (10 semaines, 25/04..fin) (15)
 
 ---
 
-### Calculabilité
+### Calculabilité (17)
 
 **Langages**
 </br> Notions de programme en tant que donnée.
@@ -799,7 +790,7 @@ programme.
 
 ---
 
-### Programmation fonctionnelle
+### Programmation fonctionnelle (11)
 
 **Langages**
 </br> Paradigmes de programmation
@@ -828,7 +819,7 @@ utiliser des paradigmes différents.
 
 ---
 
-### Système de Gestion de Base de Donnée
+### Système de Gestion de Base de Donnée (13)
 
 **Bases de données**
 </br> Système de gestion de bases de données relationnelles
@@ -856,7 +847,7 @@ fonctionnement.
 
 ---
 
-### Sécurisation des communications
+### Sécurisation des communications (19)
 
 **Machines**
 </br>Sécurisation des communications
