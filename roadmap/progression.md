@@ -16,54 +16,54 @@ Calendrier prévisionnel
 
 [Période 2 (6 semaines, 08/11..18/12)](#période-2-6-semaines-08111812-102)
 
-| N° semaine | Activité                                                                       |
-| :--------: | :----------------------------------------------------------------------------- |
-|     45     | Chap 7. [Arbres binaires](#arbres-binaires-8)</br>**Projet.1 - rendu**         |
-|     46     | Chap 8. [Arbres binaires de recherche](#arbres-binaires-de-recherche-13)       |
-|     47     | Chap 9. [Autres structures arborescentes](#autres-structures-arborescentes-12) |
-|     48     | DS </br> **Projet.2 - début**                                                  |
-|     49     | Chap 10. [Diviser pour régner](#diviser-pour-régner-8)                         |
-|     50     | Chap 11. [Modèle relationnel](#modèle-relationnel-10)</br>**Projet.2 - étape** |
+| N° semaine | Activité                                                                                               |
+| :--------: | :----------------------------------------------------------------------------------------------------- |
+|     50     | Chap 7. [Modèle relationnel](#modèle-relationnel-10)</br>**Projet.2 - étape**                          |
+|     1      | Chap 8. [Bases de données relationnelles](#bases-de-données-relationnelles-9)</br>**Projet.2 - rendu** |
+|     2      | Chap 9. [Requêtes SQL et mise à jour](#requêtes-sql-et-mise-à-jour-16)                                 |
+|     48     | DS </br> **Projet.2 - début**                                                                          |
+|     45     | Chap 10. [Arbres binaires](#arbres-binaires-8)</br>**Projet.1 - rendu**                                |
+|     46     | Chap 11. [Arbres binaires de recherche](#arbres-binaires-de-recherche-13)                              |
 
 [Période 3 (5 semaines, 03/01..05/02)](#période-3-5-semaines-03010502-132)
 
-| N° semaine | Activité                                                                                                                        |
-| :--------: | :------------------------------------------------------------------------------------------------------------------------------ |
-|     1      | Chap 12. [Bases de données relationnelles](#bases-de-données-relationnelles-9)</br>**Projet.2 - rendu**                     |
-|     2      | Chap 13. [Requêtes SQL et mise à jour](#requêtes-sql-et-mise-à-jour-16)                                                    |
-|     3      | DS </br> **Projet.3 - début**                                                                                                   |
-|     4      | Chap 14. [Circuits intégrés](#circuits-intégrés-9)                                                                          |
+| N° semaine | Activité                                                                                                                   |
+| :--------: | :------------------------------------------------------------------------------------------------------------------------- |
+|     47     | Chap 12. [Autres structures arborescentes](#autres-structures-arborescentes-12)                                            |
+|     49     | Chap 13. [Diviser pour régner](#diviser-pour-régner-8)                                                                     |
+|     3      | DS </br> **Projet.3 - début**                                                                                              |
+|     4      | Chap 14. [Circuits intégrés](#circuits-intégrés-9)                                                                         |
 |     5      | Chap 15. [Gestion des processus et des ressources](#gestion-des-processus-et-des-ressources-19) </br> **Projet.3 - étape** |
 
 [Période 4.1 (3 semaines, 21/02..05/03)](#période-41-2-semaines-21020503-95)
 
-| N° semaine | Activité                                                           |
-| :--------: | :----------------------------------------------------------------- |
+| N° semaine | Activité                                                     |
+| :--------: | :----------------------------------------------------------- |
 |     8      | Chap 16. [Protocoles de routage](#protocoles-de-routage--19) |
-|    ???     | **Épreuves terminales**                                            |
-|    ???     | **Épreuves terminales**                                            |
+|    ???     | **Épreuves terminales**                                      |
+|    ???     | **Épreuves terminales**                                      |
 
 [Période 4.2 (4 semaines, 07/03..09/04)](#période-42-5-semaines-07030904-128)
 
-| N° semaine | Activité                                                                                       |
-| :--------: | :--------------------------------------------------------------------------------------------- |
-|     11     | Chap 16. [Graphes](#graphes-15)</br>**Projet.3 - rendu**                                  |
-|     12     | Chap 14. [Parcours en profondeur et en largeur](#parcours-en-profondeur-et-en-largeur-11) |
-|     13     | **Projet.4 - début**                                                                           |
-|     14     | Chap 14. [Programmation dynamique](#programmation-dynamique-13)                           |
+| N° semaine | Activité                                                                                  |
+| :--------: | :---------------------------------------------------------------------------------------- |
+|     11     | Chap 17. [Graphes](#graphes-15)</br>**Projet.3 - rendu**                                  |
+|     12     | Chap 18. [Parcours en profondeur et en largeur](#parcours-en-profondeur-et-en-largeur-11) |
+|     13     | **Projet.4 - début**                                                                      |
+|     14     | Chap 19. [Programmation dynamique](#programmation-dynamique-13)                           |
 
 [Période 5 (10 semaines, 25/04..fin)](#période-5-10-semaines-2504fin-15)
 
-| N° semaine | Activité                                                                                       |
-| :--------: | :--------------------------------------------------------------------------------------------- |
-|     17     | Chap 14. [Recherche textuelle](#recherche-textuelle-12)                                   |
-|     18     | Chap 16. [Calculabilité](#calculabilité-17)                                               |
-|     19     | **Projet.4 - étape**                                                                           |
-|     20     | Chap 14. [Programmation fonctionnelle (11)](#programmation-fonctionnelle-11)                   |
-|     21     | Chap 14. [Système de Gestion de Base de Donnée](#système-de-gestion-de-base-de-donnée-13) |
-|     22     | Chap 14. [Sécurisation des communications](#sécurisation-des-communications-19)           |
-|     23     | **Projet.4**                                                                                   |
-|     24     | **Projet.4 - rendu**                                                                           |
+| N° semaine | Activité                                                                                  |
+| :--------: | :---------------------------------------------------------------------------------------- |
+|     17     | Chap 20. [Recherche textuelle](#recherche-textuelle-12)                                   |
+|     18     | Chap 21. [Calculabilité](#calculabilité-17)                                               |
+|     19     | **Projet.4 - étape**                                                                      |
+|     20     | Chap 22. [Programmation fonctionnelle (11)](#programmation-fonctionnelle-11)              |
+|     21     | Chap 23. [Système de Gestion de Base de Donnée](#système-de-gestion-de-base-de-donnée-13) |
+|     22     | Chap 24. [Sécurisation des communications](#sécurisation-des-communications-19)           |
+|     23     | **Projet.4**                                                                              |
+|     24     | **Projet.4 - rendu**                                                                      |
 
 - [Progressions - Terminale NSI](#progressions---terminale-nsi)
   - [Période 1 (7 semaines, 02/09..23/10) (16.2)](#période-1-7-semaines-02092310-162)
@@ -74,14 +74,14 @@ Calendrier prévisionnel
     - [Listes chaînées (17)](#listes-chaînées-17)
     - [Piles et files (14)](#piles-et-files-14)
   - [Période 2 (6 semaines, 08/11..18/12) (10.2)](#période-2-6-semaines-08111812-102)
-    - [Arbres binaires (8)](#arbres-binaires-8)
-    - [Arbres binaires de recherche (13)](#arbres-binaires-de-recherche-13)
-    - [Autres structures arborescentes (12)](#autres-structures-arborescentes-12)
-    - [Diviser pour régner (8)](#diviser-pour-régner-8)
     - [Modèle relationnel (10)](#modèle-relationnel-10)
-  - [Période 3 (5 semaines, 03/01..05/02) (13.2)](#période-3-5-semaines-03010502-132)
     - [Bases de données relationnelles (9)](#bases-de-données-relationnelles-9)
     - [Requêtes SQL et mise à jour (16)](#requêtes-sql-et-mise-à-jour-16)
+    - [Arbres binaires (8)](#arbres-binaires-8)
+    - [Arbres binaires de recherche (13)](#arbres-binaires-de-recherche-13)
+  - [Période 3 (5 semaines, 03/01..05/02) (13.2)](#période-3-5-semaines-03010502-132)
+    - [Autres structures arborescentes (12)](#autres-structures-arborescentes-12)
+    - [Diviser pour régner (8)](#diviser-pour-régner-8)
     - [Circuits intégrés (9)](#circuits-intégrés-9)
     - [Gestion des processus et des ressources (19)](#gestion-des-processus-et-des-ressources-19)
   - [Période 4.1 (2 semaines, 21/02..05/03) (9.5)](#période-41-2-semaines-21020503-95)
@@ -324,6 +324,102 @@ piles).
 
 ---
 
+### Modèle relationnel (10)
+
+**Bases de données**
+</br>Modèle relationnel :
+relation, attribut,
+domaine, clef primaire,
+clef étrangère, schéma
+relationnel.
+
+- Identifier les concepts définissant
+le modèle relationnel.
+
+> Ces concepts permettent
+d’exprimer les contraintes
+d’intégrité (domaine, relation et
+référence).
+
+**Histoire**
+</br> Événements clés de l’histoire de l’informatique
+
+- Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
+- Identifier l’évolution des rôles relatifs des logiciels et des matériels.
+
+> Ces repères viennent compléterceux qui ont été introduits en première.
+</br> Ces repères historiques sontconstruits au fur et à mesure de la présentation des concepts et techniques.
+
+### Bases de données relationnelles (9)
+
+**Bases de données**
+</br>Base de données
+relationnelle.
+
+- Savoir distinguer la structure
+d’une base de données de son
+contenu.
+- Repérer des anomalies dans le
+schéma d’une base de données.
+
+> La structure est un ensemble de
+schémas relationnels qui
+respecte les contraintes du
+modèle relationnel.
+</br> Les anomalies peuvent être des
+redondances de données ou des
+anomalies d’insertion, de
+suppression, de mise à jour.
+</br> On privilégie la manipulation de
+données nombreuses et
+réalistes.
+
+**Histoire**
+</br> Événements clés de l’histoire de l’informatique
+
+- Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
+- Identifier l’évolution des rôles relatifs des logiciels et des matériels.
+
+> Ces repères viennent compléterceux qui ont été introduits en première.
+</br> Ces repères historiques sontconstruits au fur et à mesure de la présentation des concepts et techniques.
+
+---
+
+### Requêtes SQL et mise à jour (16)
+
+**Bases de données**
+</br>Langage SQL :
+requêtes d’interrogation
+et de mise à jour d’une
+base de données.
+
+- Identifier les composants d’une
+requête.
+- Construire des requêtes
+d’interrogation à l’aide des
+clauses du langage SQL :
+SELECT, FROM, WHERE, JOIN.
+- Construire des requêtes
+d’insertion et de mise à jour à
+l’aide de : UPDATE, INSERT,
+DELETE.
+
+> On peut utiliser DISTINCT,
+ORDER BY ou les fonctions
+d’agrégation sans utiliser les
+clauses GROUP BY et HAVING.
+
+**Histoire**
+</br> Événements clés de l’histoire de l’informatique
+
+- Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
+- Identifier l’évolution des rôles relatifs des logiciels et des matériels.
+
+> Ces repères viennent compléterceux qui ont été introduits en première.
+</br> Ces repères historiques sontconstruits au fur et à mesure de la présentation des concepts et techniques.
+
+---
+
 ### Arbres binaires (8)
 
 **Structures de données**
@@ -450,6 +546,10 @@ logarithmique.
 
 ---
 
+## Période 3 (5 semaines, 03/01..05/02) (13.2)
+
+---
+
 ### Autres structures arborescentes (12)
 
 **Structures de données**
@@ -492,106 +592,6 @@ exemple.
 récursivité et d’exhiber un
 algorithme de coût en $n \log_2 n$
 dans les pires des cas.
-
-**Histoire**
-</br> Événements clés de l’histoire de l’informatique
-
-- Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
-- Identifier l’évolution des rôles relatifs des logiciels et des matériels.
-
-> Ces repères viennent compléterceux qui ont été introduits en première.
-</br> Ces repères historiques sontconstruits au fur et à mesure de la présentation des concepts et techniques.
-
----
-
-### Modèle relationnel (10)
-
-**Bases de données**
-</br>Modèle relationnel :
-relation, attribut,
-domaine, clef primaire,
-clef étrangère, schéma
-relationnel.
-
-- Identifier les concepts définissant
-le modèle relationnel.
-
-> Ces concepts permettent
-d’exprimer les contraintes
-d’intégrité (domaine, relation et
-référence).
-
-**Histoire**
-</br> Événements clés de l’histoire de l’informatique
-
-- Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
-- Identifier l’évolution des rôles relatifs des logiciels et des matériels.
-
-> Ces repères viennent compléterceux qui ont été introduits en première.
-</br> Ces repères historiques sontconstruits au fur et à mesure de la présentation des concepts et techniques.
-
-## Période 3 (5 semaines, 03/01..05/02) (13.2)
-
----
-
-### Bases de données relationnelles (9)
-
-**Bases de données**
-</br>Base de données
-relationnelle.
-
-- Savoir distinguer la structure
-d’une base de données de son
-contenu.
-- Repérer des anomalies dans le
-schéma d’une base de données.
-
-> La structure est un ensemble de
-schémas relationnels qui
-respecte les contraintes du
-modèle relationnel.
-</br> Les anomalies peuvent être des
-redondances de données ou des
-anomalies d’insertion, de
-suppression, de mise à jour.
-</br> On privilégie la manipulation de
-données nombreuses et
-réalistes.
-
-**Histoire**
-</br> Événements clés de l’histoire de l’informatique
-
-- Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
-- Identifier l’évolution des rôles relatifs des logiciels et des matériels.
-
-> Ces repères viennent compléterceux qui ont été introduits en première.
-</br> Ces repères historiques sontconstruits au fur et à mesure de la présentation des concepts et techniques.
-
----
-
-### Requêtes SQL et mise à jour (16)
-
-**Bases de données**
-</br>Langage SQL :
-requêtes d’interrogation
-et de mise à jour d’une
-base de données.
-
-- Identifier les composants d’une
-requête.
-- Construire des requêtes
-d’interrogation à l’aide des
-clauses du langage SQL :
-SELECT, FROM, WHERE, JOIN.
-- Construire des requêtes
-d’insertion et de mise à jour à
-l’aide de : UPDATE, INSERT,
-DELETE.
-
-> On peut utiliser DISTINCT,
-ORDER BY ou les fonctions
-d’agrégation sans utiliser les
-clauses GROUP BY et HAVING.
 
 **Histoire**
 </br> Événements clés de l’histoire de l’informatique
