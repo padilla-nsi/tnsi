@@ -1,5 +1,70 @@
 # Progressions - Terminale NSI
 
+Calendrier prévisionnel
+
+[Période 1 (7 semaines, 02/09..23/10)](#période-1-7-semaines-02092310-162)
+
+| N° semaine | Activité                                                               |
+| :--------: | :--------------------------------------------------------------------- |
+|     36     | Chap 1. [Récursivité](#récursivité-13)                                 |
+|     37     | Chap 2. [Modularité](#modularité-21)                                   |
+|     38     | Chap 3. [Programmation objet](#programmation-objet-17)                 |
+|     39     | DS </br> **Projet.1 - début**                                          |
+|     40     | Chap 4. [Mise au point de programmes](#mise-au-point-de-programmes-15) |
+|     41     | Chap 5. [Listes chaînées](#listes-chaînées-17)                         |
+|     42     | Chap 6. [Piles et files](#piles-et-files-14)</br>**Projet.1 - étape**  |
+
+[Période 2 (6 semaines, 08/11..18/12)](#période-2-6-semaines-08111812-102)
+
+| N° semaine | Activité                                                                       |
+| :--------: | :----------------------------------------------------------------------------- |
+|     45     | Chap 7. [Arbres binaires](#arbres-binaires-8)</br>**Projet.1 - rendu**         |
+|     46     | Chap 8. [Arbres binaires de recherche](#arbres-binaires-de-recherche-13)       |
+|     47     | Chap 9. [Autres structures arborescentes](#autres-structures-arborescentes-12) |
+|     48     | DS </br> **Projet.2 - début**                                                  |
+|     49     | Chap 10. [Diviser pour régner](#diviser-pour-régner-8)                         |
+|     50     | Chap 11. [Modèle relationnel](#modèle-relationnel-10)</br>**Projet.2 - étape** |
+
+[Période 3 (5 semaines, 03/01..05/02)](#période-3-5-semaines-03010502-132)
+
+| N° semaine | Activité                                                                                                                        |
+| :--------: | :------------------------------------------------------------------------------------------------------------------------------ |
+|     1      | Chap 12. [Bases de données relationnelles](#bases-de-données-relationnelles-9)</br>**Projet.2 - rendu**                     |
+|     2      | Chap 13. [Requêtes SQL et mise à jour](#requêtes-sql-et-mise-à-jour-16)                                                    |
+|     3      | DS </br> **Projet.3 - début**                                                                                                   |
+|     4      | Chap 14. [Circuits intégrés](#circuits-intégrés-9)                                                                          |
+|     5      | Chap 15. [Gestion des processus et des ressources](#gestion-des-processus-et-des-ressources-19) </br> **Projet.3 - étape** |
+
+[Période 4.1 (3 semaines, 21/02..05/03)](#période-41-2-semaines-21020503-95)
+
+| N° semaine | Activité                                                           |
+| :--------: | :----------------------------------------------------------------- |
+|     8      | Chap 16. [Protocoles de routage](#protocoles-de-routage--19) |
+|    ???     | **Épreuves terminales**                                            |
+|    ???     | **Épreuves terminales**                                            |
+
+[Période 4.2 (4 semaines, 07/03..09/04)](#période-42-5-semaines-07030904-128)
+
+| N° semaine | Activité                                                                                       |
+| :--------: | :--------------------------------------------------------------------------------------------- |
+|     11     | Chap 16. [Graphes](#graphes-15)</br>**Projet.3 - rendu**                                  |
+|     12     | Chap 14. [Parcours en profondeur et en largeur](#parcours-en-profondeur-et-en-largeur-11) |
+|     13     | **Projet.4 - début**                                                                           |
+|     14     | Chap 14. [Programmation dynamique](#programmation-dynamique-13)                           |
+
+[Période 5 (10 semaines, 25/04..fin)](#période-5-10-semaines-2504fin-15)
+
+| N° semaine | Activité                                                                                       |
+| :--------: | :--------------------------------------------------------------------------------------------- |
+|     17     | Chap 14. [Recherche textuelle](#recherche-textuelle-12)                                   |
+|     18     | Chap 16. [Calculabilité](#calculabilité-17)                                               |
+|     19     | **Projet.4 - étape**                                                                           |
+|     20     | Chap 14. [Programmation fonctionnelle (11)](#programmation-fonctionnelle-11)                   |
+|     21     | Chap 14. [Système de Gestion de Base de Donnée](#système-de-gestion-de-base-de-donnée-13) |
+|     22     | Chap 14. [Sécurisation des communications](#sécurisation-des-communications-19)           |
+|     23     | **Projet.4**                                                                                   |
+|     24     | **Projet.4 - rendu**                                                                           |
+
 - [Progressions - Terminale NSI](#progressions---terminale-nsi)
   - [Période 1 (7 semaines, 02/09..23/10) (16.2)](#période-1-7-semaines-02092310-162)
     - [Récursivité (13)](#récursivité-13)

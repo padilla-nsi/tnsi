@@ -6,5 +6,3 @@ Ce dépot contient les cours de NSI (Numérique et Sciences Informatiques) de te
 
 * [Prévision de progression](./roadmap/progression.md)
 * [Calendrier prévisionnel](./roadmap/calendrier.md)
-
-
