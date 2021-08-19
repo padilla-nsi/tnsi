@@ -53,24 +53,24 @@ Durant chaque période, il y aura de nombreux petits chapitres, un **projet** et
 
 [Période 4.2 (4 semaines, 07/03..09/04)](#période-42-5-semaines-07030904-128)
 
-| N° semaine | Activité                                                                                  |
-| :--------: | :---------------------------------------------------------------------------------------- |
-|     11     | Chap 17. [Graphes](#graphes-15) </br> **Projet.4 - début**                                |
-|     12     | Chap 18. [Parcours en profondeur et en largeur](#parcours-en-profondeur-et-en-largeur-11) |
-|     13     | Chap 19. [Programmation dynamique](#programmation-dynamique-13)                           |
-|     14     | **Projet.4 - étape**                                                                      |
+| N° semaine | Activité                                                                                   |
+| :--------: | :----------------------------------------------------------------------------------------- |
+|     11     | **Projet.4 - début**                                                                       |
+|     12     | Chap 17. [Graphes](#graphes-15)                                                            |
+|     13     | Chap 18. [Parcours en profondeur et en largeur](#parcours-en-profondeur-et-en-largeur-11)  |
+|     14     | Chap 19. [Programmation dynamique](#programmation-dynamique-13) </br> **Projet.4 - étape** |
 
-[Période 5 (10 semaines, 25/04..fin)](#période-5-10-semaines-2504fin-15)
+[Période 5 (7 semaines, 25/04..fin)](#période-5-10-semaines-2504fin-15)
 
-| N° semaine | Activité                                                                                              |
-| :--------: | :---------------------------------------------------------------------------------------------------- |
-|     17     | Chap 20. [Recherche textuelle](#recherche-textuelle-12)</br>**Projet.4 - rendu**                      |
-|     18     | Chap 21. [Calculabilité](#calculabilité-17)                                                           |
-|     19     | Chap 22. [Programmation fonctionnelle (11)](#programmation-fonctionnelle-11)</br>**Projet.5 - début** |
-|     20     | Chap 23. [Système de Gestion de Base de Donnée](#système-de-gestion-de-base-de-donnée-13)             |
-|     21     | Chap 24. [Sécurisation des communications](#sécurisation-des-communications-19)                       |
-|     22     | **Projet.5 - étape**                                                                                  |
-|     23     | **Projet.5 - rendu**                                                                                  |
+| N° semaine | Activité                                                                                                 |
+| :--------: | :------------------------------------------------------------------------------------------------------- |
+|     17     | Chap 20. [Recherche textuelle](#recherche-textuelle-12)</br>**Projet.4 - rendu**                         |
+|     18     | Chap 21. [Calculabilité](#calculabilité-17)                                                              |
+|     19     | Chap 22. [Programmation fonctionnelle (11)](#programmation-fonctionnelle-11)                             |
+|     20     | **Projet.5 - début**                                                                                     |
+|     21     | Chap 23. [Système de Gestion de Base de Donnée](#système-de-gestion-de-base-de-donnée-13)                |
+|     22     | Chap 24. [Sécurisation des communications](#sécurisation-des-communications-19)</br>**Projet.5 - étape** |
+|     23     | **Projet.5 - rendu**                                                                                     |
 
 ## Période 1 (7 semaines, 02/09..23/10) (16.2)
 
