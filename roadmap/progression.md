@@ -8,7 +8,7 @@ L'année scolaire est composée de 34 semaines partagées en 5 périodes :
 * Période 4 : Hiver .. Printemps (avril)
 * Période 5 : Printemps .. Été
 
-Durant chaque période, il y aura de nombreux petits chapitres, un projet et une grosse évaluation.
+Durant chaque période, il y aura de nombreux petits chapitres, un **projet** et un **DS**.
 
 [Période 1 (7 semaines, 02/09..23/10)](#période-1-7-semaines-02092310-162)
 
@@ -24,20 +24,20 @@ Durant chaque période, il y aura de nombreux petits chapitres, un projet et une
 
 [Période 2 (6 semaines, 08/11..18/12)](#période-2-6-semaines-08111812-102)
 
-| N° semaine | Activité                                                                                               |
-| :--------: | :----------------------------------------------------------------------------------------------------- |
-|     45     | Chap 7. [Modèle relationnel](#modèle-relationnel-10)</br>**Projet.2 - étape**                          |
-|     46     | Chap 8. [Bases de données relationnelles](#bases-de-données-relationnelles-9)</br>**Projet.2 - rendu** |
-|     47     | Chap 9. [Requêtes SQL et mise à jour](#requêtes-sql-et-mise-à-jour-16)                                 |
-|     48     | DS </br> **Projet.2 - début**                                                                          |
-|     49     | Chap 10. [Arbres binaires](#arbres-binaires-8)</br>**Projet.1 - rendu**                                |
-|     50     | Chap 11. [Arbres binaires de recherche](#arbres-binaires-de-recherche-13)                              |
+| N° semaine | Activité                                                                                          |
+| :--------: | :------------------------------------------------------------------------------------------------ |
+|     45     | Chap 7. [Modèle relationnel](#modèle-relationnel-10)</br>**Projet.1 - rendu**                     |
+|     46     | Chap 8. [Bases de données relationnelles](#bases-de-données-relationnelles-9)                     |
+|     47     | Chap 9. [Requêtes SQL et mise à jour](#requêtes-sql-et-mise-à-jour-16)                            |
+|     48     | DS </br> **Projet.2 - début**                                                                     |
+|     49     | Chap 10. [Arbres binaires](#arbres-binaires-8)                                                    |
+|     50     | Chap 11. [Arbres binaires de recherche](#arbres-binaires-de-recherche-13)</br>**Projet.2- étape** |
 
 [Période 3 (5 semaines, 03/01..05/02)](#période-3-5-semaines-03010502-132)
 
 | N° semaine | Activité                                                                                                                   |
 | :--------: | :------------------------------------------------------------------------------------------------------------------------- |
-|     1      | Chap 12. [Autres structures arborescentes](#autres-structures-arborescentes-12)                                            |
+|     1      | Chap 12. [Autres structures arborescentes](#autres-structures-arborescentes-12)</br>**Projet.2 - rendu**                   |
 |     2      | Chap 13. [Diviser pour régner](#diviser-pour-régner-8)                                                                     |
 |     3      | DS </br> **Projet.3 - début**                                                                                              |
 |     4      | Chap 14. [Circuits intégrés](#circuits-intégrés-9)                                                                         |
@@ -45,33 +45,32 @@ Durant chaque période, il y aura de nombreux petits chapitres, un projet et une
 
 [Période 4.1 (3 semaines, 21/02..05/03)](#période-41-2-semaines-21020503-95)
 
-| N° semaine | Activité                                                     |
-| :--------: | :----------------------------------------------------------- |
-|     8      | Chap 16. [Protocoles de routage](#protocoles-de-routage--19) |
-|    ???     | **Épreuves terminales**                                      |
-|    ???     | **Épreuves terminales**                                      |
+| N° semaine | Activité                                                                              |
+| :--------: | :------------------------------------------------------------------------------------ |
+|     8      | Chap 16. [Protocoles de routage](#protocoles-de-routage--19)</br>**Projet.3 - rendu** |
+|    ???     | **Épreuves terminales**                                                               |
+|    ???     | **Épreuves terminales**                                                               |
 
 [Période 4.2 (4 semaines, 07/03..09/04)](#période-42-5-semaines-07030904-128)
 
 | N° semaine | Activité                                                                                  |
 | :--------: | :---------------------------------------------------------------------------------------- |
-|     11     | Chap 17. [Graphes](#graphes-15)</br>**Projet.3 - rendu**                                  |
+|     11     | Chap 17. [Graphes](#graphes-15) </br> **Projet.4 - début**                                |
 |     12     | Chap 18. [Parcours en profondeur et en largeur](#parcours-en-profondeur-et-en-largeur-11) |
-|     13     | **Projet.4 - début**                                                                      |
-|     14     | Chap 19. [Programmation dynamique](#programmation-dynamique-13)                           |
+|     13     | Chap 19. [Programmation dynamique](#programmation-dynamique-13)                           |
+|     14     | **Projet.4 - étape**                                                                      |
 
 [Période 5 (10 semaines, 25/04..fin)](#période-5-10-semaines-2504fin-15)
 
-| N° semaine | Activité                                                                                  |
-| :--------: | :---------------------------------------------------------------------------------------- |
-|     17     | Chap 20. [Recherche textuelle](#recherche-textuelle-12)                                   |
-|     18     | Chap 21. [Calculabilité](#calculabilité-17)                                               |
-|     19     | **Projet.4 - étape**                                                                      |
-|     20     | Chap 22. [Programmation fonctionnelle (11)](#programmation-fonctionnelle-11)              |
-|     21     | Chap 23. [Système de Gestion de Base de Donnée](#système-de-gestion-de-base-de-donnée-13) |
-|     22     | Chap 24. [Sécurisation des communications](#sécurisation-des-communications-19)           |
-|     23     | **Projet.4**                                                                              |
-|     24     | **Projet.4 - rendu**                                                                      |
+| N° semaine | Activité                                                                                              |
+| :--------: | :---------------------------------------------------------------------------------------------------- |
+|     17     | Chap 20. [Recherche textuelle](#recherche-textuelle-12)</br>**Projet.4 - rendu**                      |
+|     18     | Chap 21. [Calculabilité](#calculabilité-17)                                                           |
+|     19     | Chap 22. [Programmation fonctionnelle (11)](#programmation-fonctionnelle-11)</br>**Projet.5 - début** |
+|     20     | Chap 23. [Système de Gestion de Base de Donnée](#système-de-gestion-de-base-de-donnée-13)             |
+|     21     | Chap 24. [Sécurisation des communications](#sécurisation-des-communications-19)                       |
+|     22     | **Projet.5 - étape**                                                                                  |
+|     23     | **Projet.5 - rendu**                                                                                  |
 
 ## Période 1 (7 semaines, 02/09..23/10) (16.2)
 
