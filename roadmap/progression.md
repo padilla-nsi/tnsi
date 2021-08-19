@@ -1,6 +1,14 @@
-# Progressions - Terminale NSI
+# Prévision de progression - Terminale NSI
 
-Calendrier prévisionnel
+L'année scolaire est composée de 34 semaines partagées en 5 périodes :
+
+* Période 1 : Rentrée .. Toussaint
+* Période 2 : Toussaint .. Noël
+* Période 3 : Noël .. Hiver (février)
+* Période 4 : Hiver .. Printemps (avril)
+* Période 5 : Printemps .. Été
+
+Durant chaque période, il y aura de nombreux petits chapitres, un projet et une grosse évaluation.
 
 [Période 1 (7 semaines, 02/09..23/10)](#période-1-7-semaines-02092310-162)
 
@@ -65,38 +73,6 @@ Calendrier prévisionnel
 |     23     | **Projet.4**                                                                              |
 |     24     | **Projet.4 - rendu**                                                                      |
 
-- [Progressions - Terminale NSI](#progressions---terminale-nsi)
-  - [Période 1 (7 semaines, 02/09..23/10) (16.2)](#période-1-7-semaines-02092310-162)
-    - [Récursivité (13)](#récursivité-13)
-    - [Modularité (21)](#modularité-21)
-    - [Programmation objet (17)](#programmation-objet-17)
-    - [Mise au point de programmes (15)](#mise-au-point-de-programmes-15)
-    - [Listes chaînées (17)](#listes-chaînées-17)
-    - [Piles et files (14)](#piles-et-files-14)
-  - [Période 2 (6 semaines, 08/11..18/12) (10.2)](#période-2-6-semaines-08111812-102)
-    - [Modèle relationnel (10)](#modèle-relationnel-10)
-    - [Bases de données relationnelles (9)](#bases-de-données-relationnelles-9)
-    - [Requêtes SQL et mise à jour (16)](#requêtes-sql-et-mise-à-jour-16)
-    - [Arbres binaires (8)](#arbres-binaires-8)
-    - [Arbres binaires de recherche (13)](#arbres-binaires-de-recherche-13)
-  - [Période 3 (5 semaines, 03/01..05/02) (13.2)](#période-3-5-semaines-03010502-132)
-    - [Autres structures arborescentes (12)](#autres-structures-arborescentes-12)
-    - [Diviser pour régner (8)](#diviser-pour-régner-8)
-    - [Circuits intégrés (9)](#circuits-intégrés-9)
-    - [Gestion des processus et des ressources (19)](#gestion-des-processus-et-des-ressources-19)
-  - [Période 4.1 (2 semaines, 21/02..05/03) (9.5)](#période-41-2-semaines-21020503-95)
-    - [Protocoles de routage  (19)](#protocoles-de-routage--19)
-  - [Période 4.2 (5 semaines, 07/03..09/04) (12.8)](#période-42-5-semaines-07030904-128)
-    - [Graphes (15)](#graphes-15)
-    - [Parcours en profondeur et en largeur (11)](#parcours-en-profondeur-et-en-largeur-11)
-    - [Programmation dynamique (13)](#programmation-dynamique-13)
-    - [Recherche textuelle (12)](#recherche-textuelle-12)
-  - [Période 5 (10 semaines, 25/04..fin) (15)](#période-5-10-semaines-2504fin-15)
-    - [Calculabilité (17)](#calculabilité-17)
-    - [Programmation fonctionnelle (11)](#programmation-fonctionnelle-11)
-    - [Système de Gestion de Base de Donnée (13)](#système-de-gestion-de-base-de-donnée-13)
-    - [Sécurisation des communications (19)](#sécurisation-des-communications-19)
-
 ## Période 1 (7 semaines, 02/09..23/10) (16.2)
 
 ---
@@ -106,8 +82,8 @@ Calendrier prévisionnel
 **Langages**
 </br> Récursivité.
 
-- Écrire un programme récursif.
-- Analyser le fonctionnement d’un
+* Écrire un programme récursif.
+* Analyser le fonctionnement d’un
 programme récursif.
 
 > Des exemples relevant de
@@ -116,11 +92,11 @@ domaines variés sont à privilégier.
 **Histoire**
 </br> Événements clés de l’histoire de l’informatique
 
-- Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
-- Identifier l’évolution des rôles relatifs des logiciels et des matériels.
+* Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
+* Identifier l’évolution des rôles relatifs des logiciels et des matériels.
 
-> Ces repères viennent compléterceux qui ont été introduits en première.
-</br> Ces repères historiques sontconstruits au fur et à mesure de la présentation des concepts et techniques.
+> Ces repères viennent compléter ceux qui ont été introduits en première.
+</br> Ces repères historiques sont construits au fur et à mesure de la présentation des concepts et techniques.
 
 ---
 
@@ -129,21 +105,21 @@ domaines variés sont à privilégier.
 **Langages**
 </br> Modularité.
 
-- Utiliser des API (Application
+* Utiliser des API (Application
 Programming Interface) ou des
 bibliothèques.
-- Exploiter leur documentation.
-- Créer des modules simples et
+* Exploiter leur documentation.
+* Créer des modules simples et
 les documenter.
 
 **Histoire**
 </br> Événements clés de l’histoire de l’informatique
 
-- Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
-- Identifier l’évolution des rôles relatifs des logiciels et des matériels.
+* Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
+* Identifier l’évolution des rôles relatifs des logiciels et des matériels.
 
-> Ces repères viennent compléterceux qui ont été introduits en première.
-</br> Ces repères historiques sontconstruits au fur et à mesure de la présentation des concepts et techniques.
+> Ces repères viennent compléter ceux qui ont été introduits en première.
+</br> Ces repères historiques sont construits au fur et à mesure de la présentation des concepts et techniques.
 
 ---
 
@@ -155,8 +131,8 @@ programmation objet :
 classes, attributs,
 méthodes, objets.
 
-- Écrire la définition d’une classe.
-- Accéder aux attributs et
+* Écrire la définition d’une classe.
+* Accéder aux attributs et
 méthodes d’une classe.
 
 > On n’aborde pas ici tous les
@@ -167,11 +143,11 @@ l’héritage.
 **Histoire**
 </br> Événements clés de l’histoire de l’informatique
 
-- Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
-- Identifier l’évolution des rôles relatifs des logiciels et des matériels.
+* Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
+* Identifier l’évolution des rôles relatifs des logiciels et des matériels.
 
-> Ces repères viennent compléterceux qui ont été introduits en première.
-</br> Ces repères historiques sontconstruits au fur et à mesure de la présentation des concepts et techniques.
+> Ces repères viennent compléter ceux qui ont été introduits en première.
+</br> Ces repères historiques sont construits au fur et à mesure de la présentation des concepts et techniques.
 
 ---
 
@@ -182,7 +158,7 @@ l’héritage.
 programmes.
 </br> Gestion des bugs.
 
-- Dans la pratique de la
+* Dans la pratique de la
 programmation, savoir répondre
 aux causes typiques de bugs :
 problèmes liés au typage, effets
@@ -208,11 +184,11 @@ erreurs.
 **Histoire**
 </br> Événements clés de l’histoire de l’informatique
 
-- Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
-- Identifier l’évolution des rôles relatifs des logiciels et des matériels.
+* Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
+* Identifier l’évolution des rôles relatifs des logiciels et des matériels.
 
-> Ces repères viennent compléterceux qui ont été introduits en première.
-</br> Ces repères historiques sontconstruits au fur et à mesure de la présentation des concepts et techniques.
+> Ces repères viennent compléter ceux qui ont été introduits en première.
+</br> Ces repères historiques sont construits au fur et à mesure de la présentation des concepts et techniques.
 
 ---
 
@@ -224,13 +200,13 @@ structures linéaires.
 </br> Dictionnaires, index et
 clé.
 
-- Distinguer des structures par le
+* Distinguer des structures par le
 jeu des méthodes qui les
 caractérisent.
-- Choisir une structure de
+* Choisir une structure de
 données adaptée à la situation à
 modéliser.
-- Distinguer la recherche d’une
+* Distinguer la recherche d’une
 valeur dans une liste et dans un
 dictionnaire.
 
@@ -243,11 +219,11 @@ out) des piles et des files.
 interface et
 implémentation.
 
-- Spécifier une structure de
+* Spécifier une structure de
 données par son interface.
-- Distinguer interface et
+* Distinguer interface et
 implémentation.
-- Écrire plusieurs implémentations
+* Écrire plusieurs implémentations
 d’une même structure de
 données.
 
@@ -261,11 +237,11 @@ piles).
 **Histoire**
 </br> Événements clés de l’histoire de l’informatique
 
-- Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
-- Identifier l’évolution des rôles relatifs des logiciels et des matériels.
+* Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
+* Identifier l’évolution des rôles relatifs des logiciels et des matériels.
 
-> Ces repères viennent compléterceux qui ont été introduits en première.
-</br> Ces repères historiques sontconstruits au fur et à mesure de la présentation des concepts et techniques.
+> Ces repères viennent compléter ceux qui ont été introduits en première.
+</br> Ces repères historiques sont construits au fur et à mesure de la présentation des concepts et techniques.
 
 ---
 
@@ -277,13 +253,13 @@ structures linéaires.
 </br> Dictionnaires, index et
 clé.
 
-- Distinguer des structures par le
+* Distinguer des structures par le
 jeu des méthodes qui les
 caractérisent.
-- Choisir une structure de
+* Choisir une structure de
 données adaptée à la situation à
 modéliser.
-- Distinguer la recherche d’une
+* Distinguer la recherche d’une
 valeur dans une liste et dans un
 dictionnaire.
 
@@ -296,11 +272,11 @@ out) des piles et des files.
 interface et
 implémentation.
 
-- Spécifier une structure de
+* Spécifier une structure de
 données par son interface.
-- Distinguer interface et
+* Distinguer interface et
 implémentation.
-- Écrire plusieurs implémentations
+* Écrire plusieurs implémentations
 d’une même structure de
 données.
 
@@ -314,11 +290,11 @@ piles).
 **Histoire**
 </br> Événements clés de l’histoire de l’informatique
 
-- Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
-- Identifier l’évolution des rôles relatifs des logiciels et des matériels.
+* Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
+* Identifier l’évolution des rôles relatifs des logiciels et des matériels.
 
-> Ces repères viennent compléterceux qui ont été introduits en première.
-</br> Ces repères historiques sontconstruits au fur et à mesure de la présentation des concepts et techniques.
+> Ces repères viennent compléter ceux qui ont été introduits en première.
+</br> Ces repères historiques sont construits au fur et à mesure de la présentation des concepts et techniques.
 
 ## Période 2 (6 semaines, 08/11..18/12) (10.2)
 
@@ -333,7 +309,7 @@ domaine, clef primaire,
 clef étrangère, schéma
 relationnel.
 
-- Identifier les concepts définissant
+* Identifier les concepts définissant
 le modèle relationnel.
 
 > Ces concepts permettent
@@ -344,11 +320,11 @@ référence).
 **Histoire**
 </br> Événements clés de l’histoire de l’informatique
 
-- Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
-- Identifier l’évolution des rôles relatifs des logiciels et des matériels.
+* Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
+* Identifier l’évolution des rôles relatifs des logiciels et des matériels.
 
-> Ces repères viennent compléterceux qui ont été introduits en première.
-</br> Ces repères historiques sontconstruits au fur et à mesure de la présentation des concepts et techniques.
+> Ces repères viennent compléter ceux qui ont été introduits en première.
+</br> Ces repères historiques sont construits au fur et à mesure de la présentation des concepts et techniques.
 
 ### Bases de données relationnelles (9)
 
@@ -356,10 +332,10 @@ référence).
 </br>Base de données
 relationnelle.
 
-- Savoir distinguer la structure
+* Savoir distinguer la structure
 d’une base de données de son
 contenu.
-- Repérer des anomalies dans le
+* Repérer des anomalies dans le
 schéma d’une base de données.
 
 > La structure est un ensemble de
@@ -377,11 +353,11 @@ réalistes.
 **Histoire**
 </br> Événements clés de l’histoire de l’informatique
 
-- Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
-- Identifier l’évolution des rôles relatifs des logiciels et des matériels.
+* Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
+* Identifier l’évolution des rôles relatifs des logiciels et des matériels.
 
-> Ces repères viennent compléterceux qui ont été introduits en première.
-</br> Ces repères historiques sontconstruits au fur et à mesure de la présentation des concepts et techniques.
+> Ces repères viennent compléter ceux qui ont été introduits en première.
+</br> Ces repères historiques sont construits au fur et à mesure de la présentation des concepts et techniques.
 
 ---
 
@@ -393,13 +369,13 @@ requêtes d’interrogation
 et de mise à jour d’une
 base de données.
 
-- Identifier les composants d’une
+* Identifier les composants d’une
 requête.
-- Construire des requêtes
+* Construire des requêtes
 d’interrogation à l’aide des
 clauses du langage SQL :
 SELECT, FROM, WHERE, JOIN.
-- Construire des requêtes
+* Construire des requêtes
 d’insertion et de mise à jour à
 l’aide de : UPDATE, INSERT,
 DELETE.
@@ -412,11 +388,11 @@ clauses GROUP BY et HAVING.
 **Histoire**
 </br> Événements clés de l’histoire de l’informatique
 
-- Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
-- Identifier l’évolution des rôles relatifs des logiciels et des matériels.
+* Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
+* Identifier l’évolution des rôles relatifs des logiciels et des matériels.
 
-> Ces repères viennent compléterceux qui ont été introduits en première.
-</br> Ces repères historiques sontconstruits au fur et à mesure de la présentation des concepts et techniques.
+> Ces repères viennent compléter ceux qui ont été introduits en première.
+</br> Ces repères historiques sont construits au fur et à mesure de la présentation des concepts et techniques.
 
 ---
 
@@ -429,7 +405,7 @@ feuilles,
 sous-arbres gauches,
 sous-arbres droits.
 
-- Évaluer quelques mesures des
+* Évaluer quelques mesures des
 arbres binaires (taille,
 encadrement de la hauteur,
 etc.).
@@ -442,11 +418,11 @@ etc.).
 interface et
 implémentation.
 
-- Spécifier une structure de
+* Spécifier une structure de
 données par son interface.
-- Distinguer interface et
+* Distinguer interface et
 implémentation.
-- Écrire plusieurs implémentations
+* Écrire plusieurs implémentations
 d’une même structure de
 données.
 
@@ -461,9 +437,9 @@ piles).
 </br> Algorithmes sur les
 arbres binaires
 
-- Calculer la taille et la hauteur
+* Calculer la taille et la hauteur
 d’un arbre.
-- Parcourir un arbre de différentes
+* Parcourir un arbre de différentes
 façons (ordres infixe, préfixe ou
 suffixe ; ordre en largeur
 d’abord).
@@ -477,11 +453,11 @@ classe.
 **Histoire**
 </br> Événements clés de l’histoire de l’informatique
 
-- Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
-- Identifier l’évolution des rôles relatifs des logiciels et des matériels.
+* Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
+* Identifier l’évolution des rôles relatifs des logiciels et des matériels.
 
-> Ces repères viennent compléterceux qui ont été introduits en première.
-</br> Ces repères historiques sontconstruits au fur et à mesure de la présentation des concepts et techniques.
+> Ces repères viennent compléter ceux qui ont été introduits en première.
+</br> Ces repères historiques sont construits au fur et à mesure de la présentation des concepts et techniques.
 
 ---
 
@@ -494,7 +470,7 @@ feuilles,
 sous-arbres gauches,
 sous-arbres droits.
 
-- Évaluer quelques mesures des
+* Évaluer quelques mesures des
 arbres binaires (taille,
 encadrement de la hauteur,
 etc.).
@@ -507,11 +483,11 @@ etc.).
 interface et
 implémentation.
 
-- Spécifier une structure de
+* Spécifier une structure de
 données par son interface.
-- Distinguer interface et
+* Distinguer interface et
 implémentation.
-- Écrire plusieurs implémentations
+* Écrire plusieurs implémentations
 d’une même structure de
 données.
 
@@ -527,7 +503,7 @@ piles).
 arbres binaires binaires de
 recherche.
 
-- Rechercher une clé dans un
+* Rechercher une clé dans un
 arbre de recherche, insérer une
 clé.
 
@@ -538,11 +514,11 @@ logarithmique.
 **Histoire**
 </br> Événements clés de l’histoire de l’informatique
 
-- Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
-- Identifier l’évolution des rôles relatifs des logiciels et des matériels.
+* Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
+* Identifier l’évolution des rôles relatifs des logiciels et des matériels.
 
-> Ces repères viennent compléterceux qui ont été introduits en première.
-</br> Ces repères historiques sontconstruits au fur et à mesure de la présentation des concepts et techniques.
+> Ces repères viennent compléter ceux qui ont été introduits en première.
+</br> Ces repères historiques sont construits au fur et à mesure de la présentation des concepts et techniques.
 
 ---
 
@@ -556,7 +532,7 @@ logarithmique.
 </br> Arbres : structures
 hiérarchiques.
 
-- Identifier des situations
+* Identifier des situations
 nécessitant une structure de
 données arborescente.
 
@@ -566,11 +542,11 @@ données arborescente.
 **Histoire**
 </br> Événements clés de l’histoire de l’informatique
 
-- Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
-- Identifier l’évolution des rôles relatifs des logiciels et des matériels.
+* Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
+* Identifier l’évolution des rôles relatifs des logiciels et des matériels.
 
-> Ces repères viennent compléterceux qui ont été introduits en première.
-</br> Ces repères historiques sontconstruits au fur et à mesure de la présentation des concepts et techniques.
+> Ces repères viennent compléter ceux qui ont été introduits en première.
+</br> Ces repères historiques sont construits au fur et à mesure de la présentation des concepts et techniques.
 
 ---
 
@@ -580,7 +556,7 @@ données arborescente.
 </br>Méthode « diviser pour
 régner ».
 
-- Écrire un algorithme utilisant la
+* Écrire un algorithme utilisant la
 méthode « diviser pour régner ».
 
 > La rotation d’une image bitmap
@@ -596,11 +572,11 @@ dans les pires des cas.
 **Histoire**
 </br> Événements clés de l’histoire de l’informatique
 
-- Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
-- Identifier l’évolution des rôles relatifs des logiciels et des matériels.
+* Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
+* Identifier l’évolution des rôles relatifs des logiciels et des matériels.
 
-> Ces repères viennent compléterceux qui ont été introduits en première.
-</br> Ces repères historiques sontconstruits au fur et à mesure de la présentation des concepts et techniques.
+> Ces repères viennent compléter ceux qui ont été introduits en première.
+</br> Ces repères historiques sont construits au fur et à mesure de la présentation des concepts et techniques.
 
 ---
 
@@ -610,7 +586,7 @@ dans les pires des cas.
 Composants intégrés
 d’un système sur puce.
 
-- Identifier les principaux
+* Identifier les principaux
 composants sur un schéma de
 circuit et les avantages de leur
 intégration en termes de vitesse
@@ -627,11 +603,11 @@ réseaux sur puce, etc.
 **Histoire**
 </br> Événements clés de l’histoire de l’informatique
 
-- Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
-- Identifier l’évolution des rôles relatifs des logiciels et des matériels.
+* Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
+* Identifier l’évolution des rôles relatifs des logiciels et des matériels.
 
-> Ces repères viennent compléterceux qui ont été introduits en première.
-</br> Ces repères historiques sontconstruits au fur et à mesure de la présentation des concepts et techniques.
+> Ces repères viennent compléter ceux qui ont été introduits en première.
+</br> Ces repères historiques sont construits au fur et à mesure de la présentation des concepts et techniques.
 
 ---
 
@@ -643,7 +619,7 @@ et des ressources par
 un système
 d’exploitation.
 
-- Décrire la création d’un
+* Décrire la création d’un
 processus, l’ordonnancement de
 plusieurs processus par le
 système.
@@ -659,11 +635,11 @@ l’interblocage peut être proposée.
 **Histoire**
 </br> Événements clés de l’histoire de l’informatique
 
-- Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
-- Identifier l’évolution des rôles relatifs des logiciels et des matériels.
+* Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
+* Identifier l’évolution des rôles relatifs des logiciels et des matériels.
 
-> Ces repères viennent compléterceux qui ont été introduits en première.
-</br> Ces repères historiques sontconstruits au fur et à mesure de la présentation des concepts et techniques.
+> Ces repères viennent compléter ceux qui ont été introduits en première.
+</br> Ces repères historiques sont construits au fur et à mesure de la présentation des concepts et techniques.
 
 ## Période 4.1 (2 semaines, 21/02..05/03) (9.5)
 
@@ -674,7 +650,7 @@ l’interblocage peut être proposée.
 **Machines**
 </br> Protocoles de routage.
 
-- Identifier, suivant le protocole de
+* Identifier, suivant le protocole de
 routage utilisé, la route
 empruntée par un paquet.
 
@@ -690,11 +666,11 @@ graphe est mis en évidence.
 **Histoire**
 </br> Événements clés de l’histoire de l’informatique
 
-- Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
-- Identifier l’évolution des rôles relatifs des logiciels et des matériels.
+* Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
+* Identifier l’évolution des rôles relatifs des logiciels et des matériels.
 
-> Ces repères viennent compléterceux qui ont été introduits en première.
-</br> Ces repères historiques sontconstruits au fur et à mesure de la présentation des concepts et techniques.
+> Ces repères viennent compléter ceux qui ont été introduits en première.
+</br> Ces repères historiques sont construits au fur et à mesure de la présentation des concepts et techniques.
 
 ## Période 4.2 (5 semaines, 07/03..09/04) (12.8)
 
@@ -706,13 +682,13 @@ graphe est mis en évidence.
 </br> Graphes : structures relationnelles.
 </br> Sommets, arcs, arêtes, graphes orientés ou non orientés
 
-- Modéliser des situations sous
+* Modéliser des situations sous
 forme de graphes.
-- Écrire les implémentations
+* Écrire les implémentations
 correspondantes d’un graphe :
 matrice d’adjacence, liste de
 successeurs/de prédécesseurs.
-- Passer d’une représentation à
+* Passer d’une représentation à
 une autre.
 
 > On s’appuie sur des exemples
@@ -727,11 +703,11 @@ avec la rubrique « *algorithmique* ».
 **Histoire**
 </br> Événements clés de l’histoire de l’informatique
 
-- Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
-- Identifier l’évolution des rôles relatifs des logiciels et des matériels.
+* Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
+* Identifier l’évolution des rôles relatifs des logiciels et des matériels.
 
-> Ces repères viennent compléterceux qui ont été introduits en première.
-</br> Ces repères historiques sontconstruits au fur et à mesure de la présentation des concepts et techniques.
+> Ces repères viennent compléter ceux qui ont été introduits en première.
+</br> Ces repères historiques sont construits au fur et à mesure de la présentation des concepts et techniques.
 
 ---
 
@@ -740,12 +716,12 @@ avec la rubrique « *algorithmique* ».
 **Algorithmique**
 </br> Algorithmes sur les graphes.
 
-- Parcourir un graphe en
+* Parcourir un graphe en
 profondeur d’abord, en largeur
 d’abord.
-- Repérer la présence d’un cycle
+* Repérer la présence d’un cycle
 dans un graphe.
-- Chercher un chemin dans un
+* Chercher un chemin dans un
 graphe.
 
 > Le parcours d’un labyrinthe et le
@@ -759,11 +735,11 @@ en programmation.
 **Histoire**
 </br> Événements clés de l’histoire de l’informatique
 
-- Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
-- Identifier l’évolution des rôles relatifs des logiciels et des matériels.
+* Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
+* Identifier l’évolution des rôles relatifs des logiciels et des matériels.
 
-> Ces repères viennent compléterceux qui ont été introduits en première.
-</br> Ces repères historiques sontconstruits au fur et à mesure de la présentation des concepts et techniques.
+> Ces repères viennent compléter ceux qui ont été introduits en première.
+</br> Ces repères historiques sont construits au fur et à mesure de la présentation des concepts et techniques.
 
 ---
 
@@ -772,7 +748,7 @@ en programmation.
 **Algorithmique**
 </br>Programmation dynamique.
 
-- Utiliser la programmation
+* Utiliser la programmation
 dynamique pour écrire un
 algorithme.
 
@@ -785,11 +761,11 @@ mémoire peut être développée.
 **Histoire**
 </br> Événements clés de l’histoire de l’informatique
 
-- Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
-- Identifier l’évolution des rôles relatifs des logiciels et des matériels.
+* Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
+* Identifier l’évolution des rôles relatifs des logiciels et des matériels.
 
-> Ces repères viennent compléterceux qui ont été introduits en première.
-</br> Ces repères historiques sontconstruits au fur et à mesure de la présentation des concepts et techniques.
+> Ces repères viennent compléter ceux qui ont été introduits en première.
+</br> Ces repères historiques sont construits au fur et à mesure de la présentation des concepts et techniques.
 
 ---
 
@@ -798,7 +774,7 @@ mémoire peut être développée.
 **Algorithmique**
 </br>Recherche textuelle
 
-- Étudier l’algorithme de Boyer-Moore
+* Étudier l’algorithme de Boyer-Moore
 pour la recherche d’un motif dans un texte.
 
 > L’intérêt du prétraitement du motif
@@ -809,11 +785,11 @@ L’étude du coût, difficile, ne peut
 **Histoire**
 </br> Événements clés de l’histoire de l’informatique
 
-- Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
-- Identifier l’évolution des rôles relatifs des logiciels et des matériels.
+* Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
+* Identifier l’évolution des rôles relatifs des logiciels et des matériels.
 
-> Ces repères viennent compléterceux qui ont été introduits en première.
-</br> Ces repères historiques sontconstruits au fur et à mesure de la présentation des concepts et techniques.
+> Ces repères viennent compléter ceux qui ont été introduits en première.
+</br> Ces repères historiques sont construits au fur et à mesure de la présentation des concepts et techniques.
 
 ## Période 5 (10 semaines, 25/04..fin) (15)
 
@@ -825,13 +801,13 @@ L’étude du coût, difficile, ne peut
 </br> Notions de programme en tant que donnée.
 </br>Calculabilité, décidabilité
 
-- Comprendre que tout
+* Comprendre que tout
 programme est aussi une
 donnée.
-- Comprendre que la calculabilité
+* Comprendre que la calculabilité
 ne dépend pas du langage de
 programmation utilisé.
-- Montrer, sans formalisme
+* Montrer, sans formalisme
 théorique, que le problème de
 l’arrêt est indécidable.
 
@@ -847,11 +823,11 @@ programme.
 **Histoire**
 </br> Événements clés de l’histoire de l’informatique
 
-- Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
-- Identifier l’évolution des rôles relatifs des logiciels et des matériels.
+* Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
+* Identifier l’évolution des rôles relatifs des logiciels et des matériels.
 
-> Ces repères viennent compléterceux qui ont été introduits en première.
-</br> Ces repères historiques sontconstruits au fur et à mesure de la présentation des concepts et techniques.
+> Ces repères viennent compléter ceux qui ont été introduits en première.
+</br> Ces repères historiques sont construits au fur et à mesure de la présentation des concepts et techniques.
 
 ---
 
@@ -860,10 +836,10 @@ programme.
 **Langages**
 </br> Paradigmes de programmation
 
-- Distinguer sur des exemples les
+* Distinguer sur des exemples les
 paradigmes impératif,
 fonctionnel et objet.
-- Choisir le paradigme de
+* Choisir le paradigme de
 programmation selon le champ
 d’application d’un programme.
 
@@ -876,11 +852,11 @@ utiliser des paradigmes différents.
 **Histoire**
 </br> Événements clés de l’histoire de l’informatique
 
-- Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
-- Identifier l’évolution des rôles relatifs des logiciels et des matériels.
+* Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
+* Identifier l’évolution des rôles relatifs des logiciels et des matériels.
 
-> Ces repères viennent compléterceux qui ont été introduits en première.
-</br> Ces repères historiques sontconstruits au fur et à mesure de la présentation des concepts et techniques.
+> Ces repères viennent compléter ceux qui ont été introduits en première.
+</br> Ces repères historiques sont construits au fur et à mesure de la présentation des concepts et techniques.
 
 ---
 
@@ -889,7 +865,7 @@ utiliser des paradigmes différents.
 **Bases de données**
 </br> Système de gestion de bases de données relationnelles
 
-- Identifier les services rendus par
+* Identifier les services rendus par
 un système de gestion de bases
 de données relationnelles : persistance des données, gestion
 des accès concurrents, efficacité
@@ -904,11 +880,11 @@ fonctionnement.
 **Histoire**
 </br> Événements clés de l’histoire de l’informatique
 
-- Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
-- Identifier l’évolution des rôles relatifs des logiciels et des matériels.
+* Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
+* Identifier l’évolution des rôles relatifs des logiciels et des matériels.
 
-> Ces repères viennent compléterceux qui ont été introduits en première.
-</br> Ces repères historiques sontconstruits au fur et à mesure de la présentation des concepts et techniques.
+> Ces repères viennent compléter ceux qui ont été introduits en première.
+</br> Ces repères historiques sont construits au fur et à mesure de la présentation des concepts et techniques.
 
 ---
 
@@ -917,11 +893,11 @@ fonctionnement.
 **Machines**
 </br>Sécurisation des communications
 
-- Décrire les principes de
+* Décrire les principes de
 chiffrement symétrique (clef
 partagée) et asymétrique (avec
 clef privée/clef publique).
-- Décrire l’échange d’une clef
+* Décrire l’échange d’une clef
 symétrique en utilisant un
 protocole asymétrique pour
 sécuriser une communication
@@ -940,8 +916,8 @@ abordée.
 **Histoire**
 </br> Événements clés de l’histoire de l’informatique
 
-- Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
-- Identifier l’évolution des rôles relatifs des logiciels et des matériels.
+* Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
+* Identifier l’évolution des rôles relatifs des logiciels et des matériels.
 
-> Ces repères viennent compléterceux qui ont été introduits en première.
-</br> Ces repères historiques sontconstruits au fur et à mesure de la présentation des concepts et techniques.
+> Ces repères viennent compléter ceux qui ont été introduits en première.
+</br> Ces repères historiques sont construits au fur et à mesure de la présentation des concepts et techniques.
