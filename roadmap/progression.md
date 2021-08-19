@@ -62,15 +62,15 @@ Durant chaque période, il y aura de nombreux petits chapitres, un **projet** et
 
 [Période 5 (7 semaines, 25/04..fin)](#période-5-10-semaines-2504fin-15)
 
-| N° semaine | Activité                                                                                                 |
-| :--------: | :------------------------------------------------------------------------------------------------------- |
-|     17     | Chap 20. [Recherche textuelle](#recherche-textuelle-12)</br>**Projet.4 - rendu**                         |
-|     18     | Chap 21. [Calculabilité](#calculabilité-17)                                                              |
-|     19     | Chap 22. [Programmation fonctionnelle (11)](#programmation-fonctionnelle-11)                             |
-|     20     | **Projet.5 - début**                                                                                     |
-|     21     | Chap 23. [Système de Gestion de Base de Donnée](#système-de-gestion-de-base-de-donnée-13)                |
-|     22     | Chap 24. [Sécurisation des communications](#sécurisation-des-communications-19)</br>**Projet.5 - étape** |
-|     23     | **Projet.5 - rendu**                                                                                     |
+| N° semaine | Activité                                                                                                           |
+| :--------: | :----------------------------------------------------------------------------------------------------------------- |
+|     17     | Chap 20. [Recherche textuelle](#recherche-textuelle-12)</br>**Projet.4 - rendu**                                   |
+|     18     | Chap 21. [Calculabilité](#calculabilité-17)                                                                        |
+|     19     | **Projet.5 - début**                                                                                               |
+|     20     | Chap 22. [Programmation fonctionnelle (11)](#programmation-fonctionnelle-11)                                       |
+|     21     | Chap 23. [Système de Gestion de Base de Donnée](#système-de-gestion-de-base-de-donnée-13)</br>**Projet.5 - étape** |
+|     22     | Chap 24. [Sécurisation des communications](#sécurisation-des-communications-19)                                    |
+|     23     | **Projet.5 - rendu**                                                                                               |
 
 ## Période 1 (7 semaines, 02/09..23/10) (16.2)
 
