@@ -18,19 +18,19 @@ Calendrier prévisionnel
 
 | N° semaine | Activité                                                                                               |
 | :--------: | :----------------------------------------------------------------------------------------------------- |
-|     50     | Chap 7. [Modèle relationnel](#modèle-relationnel-10)</br>**Projet.2 - étape**                          |
-|     1      | Chap 8. [Bases de données relationnelles](#bases-de-données-relationnelles-9)</br>**Projet.2 - rendu** |
-|     2      | Chap 9. [Requêtes SQL et mise à jour](#requêtes-sql-et-mise-à-jour-16)                                 |
+|     45     | Chap 7. [Modèle relationnel](#modèle-relationnel-10)</br>**Projet.2 - étape**                          |
+|     46     | Chap 8. [Bases de données relationnelles](#bases-de-données-relationnelles-9)</br>**Projet.2 - rendu** |
+|     47     | Chap 9. [Requêtes SQL et mise à jour](#requêtes-sql-et-mise-à-jour-16)                                 |
 |     48     | DS </br> **Projet.2 - début**                                                                          |
-|     45     | Chap 10. [Arbres binaires](#arbres-binaires-8)</br>**Projet.1 - rendu**                                |
-|     46     | Chap 11. [Arbres binaires de recherche](#arbres-binaires-de-recherche-13)                              |
+|     49     | Chap 10. [Arbres binaires](#arbres-binaires-8)</br>**Projet.1 - rendu**                                |
+|     50     | Chap 11. [Arbres binaires de recherche](#arbres-binaires-de-recherche-13)                              |
 
 [Période 3 (5 semaines, 03/01..05/02)](#période-3-5-semaines-03010502-132)
 
 | N° semaine | Activité                                                                                                                   |
 | :--------: | :------------------------------------------------------------------------------------------------------------------------- |
-|     47     | Chap 12. [Autres structures arborescentes](#autres-structures-arborescentes-12)                                            |
-|     49     | Chap 13. [Diviser pour régner](#diviser-pour-régner-8)                                                                     |
+|     1      | Chap 12. [Autres structures arborescentes](#autres-structures-arborescentes-12)                                            |
+|     2      | Chap 13. [Diviser pour régner](#diviser-pour-régner-8)                                                                     |
 |     3      | DS </br> **Projet.3 - début**                                                                                              |
 |     4      | Chap 14. [Circuits intégrés](#circuits-intégrés-9)                                                                         |
 |     5      | Chap 15. [Gestion des processus et des ressources](#gestion-des-processus-et-des-ressources-19) </br> **Projet.3 - étape** |
