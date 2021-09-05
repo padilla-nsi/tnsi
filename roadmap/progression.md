@@ -14,40 +14,40 @@ Durant chaque période, il y aura de nombreux petits chapitres, un **projet** et
 
 | N° semaine | Activité                                                               |
 | :--------: | :--------------------------------------------------------------------- |
-|     36     | Chap 1. [Récursivité](#récursivité-13)                                 |
-|     37     | Chap 2. [Modularité](#modularité-21)                                   |
-|     38     | Chap 3. [Programmation objet](#programmation-objet-17)                 |
-|     39     | DS </br> **Projet.1 - début**                                          |
-|     40     | Chap 4. [Mise au point de programmes](#mise-au-point-de-programmes-15) |
-|     41     | Chap 5. [Listes chaînées](#listes-chaînées-17)                         |
-|     42     | Chap 6. [Piles et files](#piles-et-files-14)</br>**Projet.1 - étape**  |
+|     2     | Chap 1. [Récursivité](#récursivité-13)                                 |
+|     3     | Chap 2. [Modularité](#modularité-21)                                   |
+|     4     | Chap 3. [Programmation objet](#programmation-objet-17)                 |
+|     5     | DS </br> **Projet.1 - début**                                          |
+|     6     | Chap 4. [Mise au point de programmes](#mise-au-point-de-programmes-15) |
+|     7     | Chap 5. [Listes chaînées](#listes-chaînées-17)                         |
+|     8     | Chap 6. [Piles et files](#piles-et-files-14)</br>**Projet.1 - étape**  |
 
 [Période 2 (6 semaines, 08/11..18/12)](#période-2-6-semaines-08111812-102)
 
 | N° semaine | Activité                                                                                          |
 | :--------: | :------------------------------------------------------------------------------------------------ |
-|     45     | Chap 7. [Modèle relationnel](#modèle-relationnel-10)</br>**Projet.1 - rendu**                     |
-|     46     | Chap 8. [Bases de données relationnelles](#bases-de-données-relationnelles-9)                     |
-|     47     | Chap 9. [Requêtes SQL et mise à jour](#requêtes-sql-et-mise-à-jour-16)                            |
-|     48     | DS </br> **Projet.2 - début**                                                                     |
-|     49     | Chap 10. [Arbres binaires](#arbres-binaires-8)                                                    |
-|     50     | Chap 11. [Arbres binaires de recherche](#arbres-binaires-de-recherche-13)</br>**Projet.2- étape** |
+|     11     | Chap 7. [Modèle relationnel](#modèle-relationnel-10)</br>**Projet.1 - rendu**                     |
+|     12     | Chap 8. [Bases de données relationnelles](#bases-de-données-relationnelles-9)                     |
+|     13     | Chap 9. [Requêtes SQL et mise à jour](#requêtes-sql-et-mise-à-jour-16)                            |
+|     14     | DS </br> **Projet.2 - début**                                                                     |
+|     15     | Chap 10. [Arbres binaires](#arbres-binaires-8)                                                    |
+|     16     | Chap 11. [Arbres binaires de recherche](#arbres-binaires-de-recherche-13)</br>**Projet.2- étape** |
 
 [Période 3 (5 semaines, 03/01..05/02)](#période-3-5-semaines-03010502-132)
 
 | N° semaine | Activité                                                                                                                   |
 | :--------: | :------------------------------------------------------------------------------------------------------------------------- |
-|     1      | Chap 12. [Autres structures arborescentes](#autres-structures-arborescentes-12)</br>**Projet.2 - rendu**                   |
-|     2      | Chap 13. [Diviser pour régner](#diviser-pour-régner-8)                                                                     |
-|     3      | DS </br> **Projet.3 - début**                                                                                              |
-|     4      | Chap 14. [Circuits intégrés](#circuits-intégrés-9)                                                                         |
-|     5      | Chap 15. [Gestion des processus et des ressources](#gestion-des-processus-et-des-ressources-19) </br> **Projet.3 - étape** |
+|     19      | Chap 12. [Autres structures arborescentes](#autres-structures-arborescentes-12)</br>**Projet.2 - rendu**                   |
+|     20      | Chap 13. [Diviser pour régner](#diviser-pour-régner-8)                                                                     |
+|     21      | DS </br> **Projet.3 - début**                                                                                              |
+|     22      | Chap 14. [Circuits intégrés](#circuits-intégrés-9)                                                                         |
+|     23      | Chap 15. [Gestion des processus et des ressources](#gestion-des-processus-et-des-ressources-19) </br> **Projet.3 - étape** |
 
 [Période 4.1 (3 semaines, 21/02..05/03)](#période-41-2-semaines-21020503-95)
 
 | N° semaine | Activité                                                                              |
 | :--------: | :------------------------------------------------------------------------------------ |
-|     8      | Chap 16. [Protocoles de routage](#protocoles-de-routage--19)</br>**Projet.3 - rendu** |
+|     26      | Chap 16. [Protocoles de routage](#protocoles-de-routage--19)</br>**Projet.3 - rendu** |
 |    ???     | **Épreuves terminales**                                                               |
 |    ???     | **Épreuves terminales**                                                               |
 
@@ -55,22 +55,22 @@ Durant chaque période, il y aura de nombreux petits chapitres, un **projet** et
 
 | N° semaine | Activité                                                                                   |
 | :--------: | :----------------------------------------------------------------------------------------- |
-|     11     | **Projet.4 - début**                                                                       |
-|     12     | Chap 17. [Graphes](#graphes-15)                                                            |
-|     13     | Chap 18. [Parcours en profondeur et en largeur](#parcours-en-profondeur-et-en-largeur-11)  |
-|     14     | Chap 19. [Programmation dynamique](#programmation-dynamique-13) </br> **Projet.4 - étape** |
+|     29     | **Projet.4 - début**                                                                       |
+|     30     | Chap 17. [Graphes](#graphes-15)                                                            |
+|     31     | Chap 18. [Parcours en profondeur et en largeur](#parcours-en-profondeur-et-en-largeur-11)  |
+|     32     | Chap 19. [Programmation dynamique](#programmation-dynamique-13) </br> **Projet.4 - étape** |
 
 [Période 5 (7 semaines, 25/04..fin)](#période-5-10-semaines-2504fin-15)
 
 | N° semaine | Activité                                                                                                           |
 | :--------: | :----------------------------------------------------------------------------------------------------------------- |
-|     17     | Chap 20. [Recherche textuelle](#recherche-textuelle-12)</br>**Projet.4 - rendu**                                   |
-|     18     | Chap 21. [Calculabilité](#calculabilité-17)                                                                        |
-|     19     | **Projet.5 - début**                                                                                               |
-|     20     | Chap 22. [Programmation fonctionnelle (11)](#programmation-fonctionnelle-11)                                       |
-|     21     | Chap 23. [Système de Gestion de Base de Donnée](#système-de-gestion-de-base-de-donnée-13)</br>**Projet.5 - étape** |
-|     22     | Chap 24. [Sécurisation des communications](#sécurisation-des-communications-19)                                    |
-|     23     | **Projet.5 - rendu**                                                                                               |
+|     35     | Chap 20. [Recherche textuelle](#recherche-textuelle-12)</br>**Projet.4 - rendu**                                   |
+|     36     | Chap 21. [Calculabilité](#calculabilité-17)                                                                        |
+|     37     | **Projet.5 - début**                                                                                               |
+|     38     | Chap 22. [Programmation fonctionnelle (11)](#programmation-fonctionnelle-11)                                       |
+|     39     | Chap 23. [Système de Gestion de Base de Donnée](#système-de-gestion-de-base-de-donnée-13)</br>**Projet.5 - étape** |
+|     40     | Chap 24. [Sécurisation des communications](#sécurisation-des-communications-19)                                    |
+|     41     | **Projet.5 - rendu**                                                                                               |
 
 ## Période 1 (7 semaines, 02/09..23/10) (16.2)
 
