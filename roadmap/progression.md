@@ -1,4 +1,43 @@
-# Prévision de progression - Terminale NSI
+# Roadmap TNSI 2021-22
+
+## Cahier de texte
+
+---
+
+### lundi 6 septembre
+
+Accueil des élèves
+Présentation des formations possibles
+
+Architecture et matériel
+
+- Installation des postes informatiques en salle 202
+- installation de Debian 11 sur les postes
+  - partitionnement d'un disque dur
+  - secteur d'amorce d'un système d'exploitation
+
+Langage - Chap 1. Récursivité (1/3)
+
+- Situation problème sur la somme des n premiers entiers
+
+### jeudi 8 septembre
+
+- distribution DM France IOI ([pdf](../cours/langage/dm_france_ioi/dm_france_ioi.pdf))
+- premières connexion France IOI
+- résolution des premiers problèmes
+  - en ligne sur France IOI
+  - en ligne sur Basthon [https://basthon.fr/](https://basthon.fr/)
+  - avec l'IDE VSCodium
+
+Langage - Chap 1. Récursivité (2/3)
+
+
+https://mybinder.org/v2/gh/padilla-nsi/tnsi/HEAD?filepath=cours%2Flangage%2F1-r%C3%A9cursivit%C3%A9%2F1-1%20---%20R%C3%A9cursivit%C3%A9%20TD.ipynb
+
+---
+
+
+## Prévision de progression - Terminale NSI
 
 L'année scolaire est composée de 34 semaines partagées en 5 périodes :
 
