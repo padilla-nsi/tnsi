@@ -8,4 +8,4 @@ Ce dépot contient mes cours de NSI (Numérique et Sciences Informatiques) de te
 
 ## Liens utiles
 
-* Récursivité : [TD élèves](http://pa.dilla.fr/U)
+* Récursivité : TD élève ([Binder](http://pa.dilla.fr/U)) ([Basthon sans image](http://pa.dilla.fr/Y))
