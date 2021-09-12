@@ -39,7 +39,7 @@
 \definecolor{cyanamu}{RGB}{77,198,244}
 
 
-\usepackage{/home/bouscadilla/Documents/Code/nbconvert/template/latex/papier_eleve/xeboiboites}
+\usepackage{/home/bouscadilla/Documents/Code/nbconvert/template/latex/pdf_solution/xeboiboites}
 %
 % exemple
 \newbreakabletheorem[
@@ -70,9 +70,23 @@
         ]{reponse}{Correction}{}
 %
 
+%
+% À retenir
+%\newbreakabletheorem[
+%    small box style={fill=deepred!100, draw=deepred!80, line width=1pt,rounded corners,decorate},%
+%    big box style={fill=deepred!10,draw=deepred!50,thick,rounded corners,decorate},
+%    headfont={\color{white}\large\scshape\bfseries}
+%        ]{retenir}{À retenir}{}
+%
+\newboxedequation[%
+    big box style={fill=deepred!10,draw=deepred!0,thick,decoration=penciline,decorate}]%
+    {retenir}
+
+
+
 % astuce
 \newspanning[
-    image=fig-idee,headfont=\bfseries,
+    image=/home/bouscadilla/Documents/Code/nbconvert/template/latex/pdf_solution/fig-idee,headfont=\bfseries,
     spanning style={very thick,decoration=penciline,decorate}
     ]{astuce}{Astuce}{}
 %
@@ -83,7 +97,7 @@
     broken edges={draw=orangeamu!100,thick,fill=orangeamu!100, decoration={random steps, segment length=.5cm,amplitude=1.3mm},decorate},%
     other edges={decoration=penciline,decorate,thick},%
     headfont={\color{white}\large\scshape\bfseries}
-    ]{activite}{\adjustimage{height=1cm, valign=m}{/home/bouscadilla/Documents/Code/nbconvert/template/latex/papier_eleve/papier_eleve_investigation.png}%
+    ]{activite}{\adjustimage{height=1cm, valign=m}{/home/bouscadilla/Documents/Code/nbconvert/template/latex/pdf_solution/papier_eleve_investigation.png}%
     Activité}{}%{counterCa}
 %   
 %   environnement élève
@@ -451,7 +465,7 @@
       citecolor=citecolor,
       }
     % Slightly bigger margins than the latex defaults
-    \geometry{a4paper,tmargin=3cm,bmargin=2cm,lmargin=1cm,rmargin=1cm}\fancyhead[L]{Thème à définir}\fancyhead[L]{\adjustimage{height=1cm, valign=m}{/home/bouscadilla/Documents/Code/nbconvert/template/latex/papier_eleve/papier_eleve_ico_langage}\ttfamily\scshape Langage}\fancyhead[C]{\bfseries\MakeUppercase{1-1---Récursivité}}\fancyhead[C]{\bfseries\MakeUppercase{1 --- Récursivité}}\fancyhead[R]{\monthyeardate\today}
+    \geometry{a4paper,tmargin=3cm,bmargin=2cm,lmargin=1cm,rmargin=1cm}\fancyhead[L]{Thème à définir}\fancyhead[L]{\adjustimage{height=1cm, valign=m}{/home/bouscadilla/Documents/Code/nbconvert/template/latex/pdf_solution/papier_eleve_ico_langage}\ttfamily\scshape Langage}\fancyhead[C]{\bfseries\MakeUppercase{1-1---Récursivité}}\fancyhead[C]{\bfseries\MakeUppercase{1 --- Récursivité}}\fancyhead[R]{\monthyeardate\today}
 
     \fancyfoot[C]{\thepage}
     % #TODO ajouter les pages totales
@@ -1163,7 +1177,27 @@ Ici, il faut \(1+\lfloor \log_2(n) \rfloor\) appels. Ainsi, le calcul de
 \texttt{puissance(x,1000)} ne nécessite que
 \(1+\lfloor \log_2 (1000) \rfloor = 10\) appels !
 
-            \end{reponse}
+            \end{reponse}\begin{retenir}
+    Écrire une version récursive d'une fonction qui renvoie le nombre de
+bits égaux à 1 d'un entier strictement positif (par ex.
+\texttt{nombre\_de\_bit(255)} doit renvoyer \texttt{5}).
+
+            \end{retenir}\begin{retenir}
+    John McCarthy a inventé la fonction \(f_{91}(n)\) définie par :
+
+\[
+f_{91}(n) = \left\{
+\begin{array}{ll}
+    n-10 &\text{si $n>100$}, \\
+    f_{91} \big( f_{91} (n + 11) \big ) &\text{si $n \leq 100$}.
+\end{array}
+\right.
+\]
+
+\textbf{Implémenter} cette fonction et \textbf{donner} un tableau de
+valeurs de \(f_{91}(n)\) pour \(n \in [\![0..100]\!]\).
+
+            \end{retenir}
 
     % Add a bibliography block to the postdoc
     
