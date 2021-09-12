@@ -5,3 +5,7 @@ Ce dépot contient mes cours de NSI (Numérique et Sciences Informatiques) de te
 ## Roadmap
 
 * [Prévision de progression](./roadmap/progression.md)
+
+## Liens utiles
+
+* Récursivité : [TD élèves](http://pa.dilla.fr/U)
