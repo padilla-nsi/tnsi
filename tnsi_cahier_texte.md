@@ -1,5 +1,21 @@
 # Cahier de texte - TNSI
 
+## lundi 6 septembre
+
+Accueil des élèves
+Présentation des formations possibles
+
+Architecture et matériel
+
+- Installation des postes informatiques en salle 202
+- installation de Debian 11 sur les postes
+  - partitionnement d'un disque dur
+  - secteur d'amorce d'un système d'exploitation
+
+Langage - Chap 1. Récursivité (1/3)
+
+- Situation problème sur la somme des n premiers entiers
+
 ## Jeudi 9 septembre
 
 ### Chap. 1 - récursivité
@@ -11,6 +27,8 @@
 
 ### DM pour la rentrée des vacances de la Toussaint
 
+
+- Distribution DM France IOI ([pdf](../cours/langage/dm_france_ioi/dm_france_ioi.pdf))
 - Inscription / connexion France IOI
 - premier programme en ligne
 - premier programme avec VSCode
