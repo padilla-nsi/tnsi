@@ -27,8 +27,8 @@ Langage - Chap 1. Récursivité (1/3)
 
 ### DM pour la rentrée des vacances de la Toussaint
 
-
 - Distribution DM France IOI ([pdf](../cours/langage/dm_france_ioi/dm_france_ioi.pdf))
 - Inscription / connexion France IOI
 - premier programme en ligne
 - premier programme avec VSCode
+
