@@ -81,7 +81,7 @@ Durant chaque période, il y aura de nombreux petits chapitres, un **projet** et
 ### Récursivité (13)
 
 **Langages**
-</br> Récursivité.
+<br> Récursivité.
 
 * Écrire un programme récursif.
 * Analyser le fonctionnement d’un
@@ -91,7 +91,7 @@ programme récursif.
 domaines variés sont à privilégier.
 
 **Histoire**
-</br> Événements clés de l’histoire de l’informatique
+<br/> Événements clés de l’histoire de l’informatique
 
 * Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.
 * Identifier l’évolution des rôles relatifs des logiciels et des matériels.
