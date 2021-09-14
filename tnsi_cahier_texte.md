@@ -32,3 +32,18 @@ Langage - Chap 1. Récursivité (1/3)
 - premier programme en ligne
 - premier programme avec VSCode
 
+## lundi 13 septembre
+
+### Chap. 1 - récursivité
+
+- travail sur 1.5 - activités
+- distribution PDF synthèse
+- réalisation d'une fiche de révision
+- fin chapitre 1 récursivité
+
+### Chap. 2 - Modularité
+
+- activité d'introduction (dates d'anniversaire)
+- encapsulation
+- interfaces
+
