@@ -601,7 +601,7 @@ définissent d'une façon ou d'une autre cet ensemble.
 
             \end{remarque}
     \hypertarget{modules}{%
-\subsection{2.1 Modules}\label{modules}}
+\subsection{2.1 --- Modules}\label{modules}}
 
     Une des clés du développement à grande échelle consiste à séparer
 proprement les différentes parties d'un programme.
@@ -724,7 +724,7 @@ En moyenne 2388.026 élèves
 
             \end{reponse}
     \hypertarget{interfaces}{%
-\subsection{2.2 Interfaces}\label{interfaces}}
+\subsection{2.2 --- Interfaces}\label{interfaces}}
 \begin{retenir}
     Pour chaque module, on distingue :
 
@@ -808,7 +808,7 @@ ajoute la date \texttt{x} à l'ensemble \texttt{s}\strut
 
             \end{exemple}
     \hypertarget{encapsulation}{%
-\subsection{2.3 Encapsulation}\label{encapsulation}}
+\subsection{2.3 --- Encapsulation}\label{encapsulation}}
 
     Comme l'auteur d'un module est libre de s'y prendre comme il le souhaite
 pour respecter l'interface, il peut donc utiliser toute une série de
@@ -830,7 +830,7 @@ introduisent un contrôle stricte de l'encapsulation.
 
             \end{exemple}
     \hypertarget{les-exceptions}{%
-\subsection{3.1 Les exceptions}\label{les-exceptions}}
+\subsection{3.1 --- Les exceptions}\label{les-exceptions}}
 
     Selon l'implémentation d'un module, une mauvaise utilisation des
 fonctions de l'interface risque d'engendre des erreurs ou des effets qui
@@ -885,7 +885,7 @@ tableau. Il y a 7 valeurs donc les indices appartiennent ici à 0..6.
 
             \end{reponse}
     \hypertarget{signaler-un-probluxe8me-avec-un-exception}{%
-\subsection{3.2 Signaler un problème avec un
+\subsection{3.2 --- Signaler un problème avec un
 exception}\label{signaler-un-probluxe8me-avec-un-exception}}
 \begin{retenir}
     Il est possible de lever manuellement toutes ces exceptions en faisant
@@ -940,7 +940,8 @@ l'intervalle 1..365.
 
             \end{reponse}
     \hypertarget{rattraper-une-exception}{%
-\subsection{3.3 Rattraper une exception}\label{rattraper-une-exception}}
+\subsection{3.3 --- Rattraper une
+exception}\label{rattraper-une-exception}}
 
     Si des exceptions sont prévisibles et correspondent à des situations
 connues, il est parfois préférable de ne pas interrompre le programme.
@@ -1036,6 +1037,198 @@ On complète l'encapsulation d'un module en gérant explicitement à l'aide
 d'\textbf{exceptions} les utilisations non conformes de son interface.
 
             \end{retenir}
+    \hypertarget{applications}{%
+\subsection{4 --- Applications}\label{applications}}
+
+    Deux applications directes du cours.
+\begin{eleve}
+    \textbf{Réaliser} un module réalisant l'interface du cours suivant la
+stratégie du programme 1.
+        
+        \end{eleve}\begin{eleve}
+    \textbf{Réaliser} un module réalisant l'interface du cours suivant la
+stratégie du programme 2.
+        
+        \end{eleve}
+    Dans l'exercice suivant, tu vas tenter de réaliser toi-même des
+fonctions bien pratiques sur les tableaux\ldots{}
+\begin{eleve}
+    Sans utiliser les opérations \texttt{+} et \texttt{t{[}i:j{]}},
+\textbf{écrire} un module réalisant l'interface suivante :
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\begin{minipage}[b]{0.47\columnwidth}\raggedright
+fonction\strut
+\end{minipage} & \begin{minipage}[b]{0.47\columnwidth}\raggedright
+description\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{tranche(t,i,j)}\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+renvoie un nouveau tableau contenant les éléments de \texttt{t} de
+l'indice \texttt{i} inclus à l'indice \texttt{j} exclu (et le tableau
+vide si \texttt{j} \(\leq\) \texttt{i})\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{concatenation(t1,t2)}\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+renvoie un nouveau tableau contenant, dans l'ordre, les éléments de
+\texttt{t1} puis les éléments de \texttt{t2}\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Attention, il ne faut pas que ces fonctions modifient les tableaux
+passés en paramètres.
+        
+        \end{eleve}
+    Les tableaux de Python sont redimentionnables : leurs nombres d'éléments
+peut augmenter au fil du temps (par exemple avec des opérations commme
+\texttt{append()}). L'activité suivante te propose de réaliser une
+interface de tableau redimentionnable, mais \emph{sans utiliser les
+capacités natives des tableaux Python} (sinon c'est pas drôle et tu
+n'apprendras pas grand chose\ldots).
+
+    Voici l'interface minimale pour une structure de tableau
+redimensionnable :
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\begin{minipage}[b]{0.47\columnwidth}\raggedright
+fonction\strut
+\end{minipage} & \begin{minipage}[b]{0.47\columnwidth}\raggedright
+description\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{cree()}\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+crée et renvoie un tableau vide (équivalent à \texttt{{[}{]}})\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{lit(tr,i)}\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+renvoie l'élément de \texttt{tr} à l'indice \texttt{i} (équivalent à
+\texttt{tr{[}i{]}})\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{ecrit(tr,i,x)}\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+place la valeur \texttt{x} dans la case d'indice \texttt{i} du tableau
+\texttt{tr} (équivalent à \texttt{tr{[}i{]}\ =\ x})\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{ajoute(tr,x)}\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+ajoute le nouvel élément \texttt{x} au tableau \texttt{tr}, après ses
+éléments actuels (équivalent à \texttt{tr.append(x)})\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+\begin{eleve}
+    On décide de représenter un tableau redimensionnable \texttt{tr} de
+\(n\) éléments par un dictionnaire contenant (1) d'une part le nombre
+\texttt{\textquotesingle{}n\textquotesingle{}} appelé \emph{taille} et
+(2) d'autre part un tableau
+\texttt{\textquotesingle{}t\textquotesingle{}} de longueur supérieure ou
+égale à \(n\) appelée \emph{capacité}.
+
+Les \(n\) éléments sont stockés dans les cases d'indices \(0\) à
+\(n-1\). Les autres cases de \texttt{t} contiennent \texttt{None}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Écrire} une fonction \texttt{cree()} créant et renvoyant un
+  tableau redimensionnable de taille 0 et de capacité 8.
+\item
+  \textbf{Écrire} les deux fonctions \texttt{lit(tr,i)} et
+  \texttt{ecrit(tr,i,x)} en supposant que l'indice \texttt{i} est
+  compris entre 0 (inclus) et taille de \texttt{tr} exclue.
+\item
+  Avant d'écrire la fonction \texttt{ajoute} :
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    \textbf{Écrire} une fonction \texttt{ajoute\_aux(tr,x)} qui ajoute
+    \texttt{x} à la fin du tableau redimensionnable \texttt{tr} en
+    supposant que sa capacité est suffisante.
+  \item
+    \textbf{Écrire} une fonction \texttt{\_double(tr)} qui double la
+    capacité du tableau redimensionnable \texttt{tr} en conservant ses
+    éléments.
+  \item
+    \textbf{En déduire} la fonction \texttt{ajoute(tr,x)}. Lorsque le
+    tableau redimensionnable ne peut accueillir de nouvel élément, sa
+    capacité doit doubler.
+  \end{enumerate}
+\end{enumerate}
+        
+        \end{eleve}
+    Voici l'interface minimale pour une structure de dictionnaire.
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\begin{minipage}[b]{0.47\columnwidth}\raggedright
+fonction\strut
+\end{minipage} & \begin{minipage}[b]{0.47\columnwidth}\raggedright
+description\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{cree()}\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+crée et renvoie un dictionnaire vide\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{cle(d,k)}\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+renvoie \texttt{True} si et seulement si le dictionnaire \texttt{d}
+contient la clé \texttt{k}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{lit(d,k)}\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+renvoie la valeur associée à la clé \texttt{k} dans le dictionnaire
+\texttt{d}, et \texttt{None} si la clé \texttt{k} n'apparaît pas\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{ecrit(d,k,v)}\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+ajoute au dictionnaire \texttt{d} l'association entre la clé \texttt{k}
+et la valeur \texttt{v}, en remplaçant une éventuelle association déjà
+présente pour \texttt{k}\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+\begin{eleve}
+    On propose de réaliser cette interface de dictionnaire avec un tableau
+de couples clé-valeur, en faisant en sorte qu'aucune clé n'apparaisse
+deux fois.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{"Écrire} un module réalisant cela.
+\item
+  Une des quatre fonction de l'interface ne correspond pas exactement à
+  l'opération équivalente sur les dictionnaires de Python.
+  \textbf{Laquelle} ?
+\item
+  \textbf{Corriger} la description pour se rapprocher de celle de Python
+  et adapter l'implémentation.
+\end{enumerate}
+        
+        \end{eleve}
 
     % Add a bibliography block to the postdoc
     
