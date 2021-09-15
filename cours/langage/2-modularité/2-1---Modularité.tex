@@ -483,8 +483,11 @@
     
 
     
-    \hypertarget{chap.-2-modularituxe9}{%
-\section{Chap. 2 --- Modularité}\label{chap.-2-modularituxe9}}
+    \hypertarget{chap.-2-modularituxe9-pa.dilla.fr10}{%
+\section[Chap. 2 --- Modularité
+(\href{https://pa.dilla.fr/10}{pa.dilla.fr/10} )]{\texorpdfstring{Chap.
+2 --- Modularité (\href{https://pa.dilla.fr/10}{pa.dilla.fr/10}
+\protect\includegraphics{res/qr-td.png})}{Chap. 2 --- Modularité (pa.dilla.fr/10 )}}\label{chap.-2-modularituxe9-pa.dilla.fr10}}
 
     \hypertarget{un-exemple-le-paradoxe-des-anniversaires}{%
 \subsection{1.1 --- Un exemple : le paradoxe des
@@ -507,7 +510,7 @@ anniversaires}\label{un-exemple-le-paradoxe-des-anniversaires}}
 \end{tcolorbox}
     }
 
-            \end{exemple}\begin{exemple}
+        \end{exemple}\begin{exemple}
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{15}{\boxspacing}
@@ -525,7 +528,7 @@ anniversaires}\label{un-exemple-le-paradoxe-des-anniversaires}}
 \end{tcolorbox}
     }
 
-            \end{exemple}\begin{exemple}
+        \end{exemple}\begin{exemple}
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{16}{\boxspacing}
@@ -543,7 +546,7 @@ anniversaires}\label{un-exemple-le-paradoxe-des-anniversaires}}
 \end{tcolorbox}
     }
 
-            \end{exemple}
+        \end{exemple}
     \hypertarget{factorisation-du-code}{%
 \subsection{1.2 --- Factorisation du code}\label{factorisation-du-code}}
 
@@ -599,7 +602,7 @@ Ces trois fonctions représentent l'\textbf{interface} entre le programme
 qui utilise l'ensemble de dates \textbf{et} les programmes qui
 définissent d'une façon ou d'une autre cet ensemble.
 
-            \end{remarque}
+        \end{remarque}
     \hypertarget{modules}{%
 \subsection{2.1 --- Modules}\label{modules}}
 
@@ -612,14 +615,14 @@ proprement les différentes parties d'un programme.
 On peut aussi séparer la partie interface graphique d'une application de
 sa partie logique qui en constitue le cœur.
 
-            \end{exemple}\begin{retenir}
+        \end{exemple}\begin{retenir}
     Chaque morceau de code peut être placé dans un fichier différent appelé
 \textbf{module}.
 
 Pour importer les fonctions définies dans un module et les utiliser, il
 faut utiliser le mot clé \texttt{import}
 
-            \end{retenir}\begin{exemple}
+        \end{retenir}\begin{exemple}
     Par exemple, pour importer le module permettant de gérer les valeurs
 aléatoires, on importe \texttt{random} grâce à l'instruction
 \texttt{import\ random}. Auquel cas, pour utiliser la fonction
@@ -632,7 +635,7 @@ exemple \texttt{from\ random\ import\ randint} ne va importer que la
 fonction \texttt{randint(a,b)} qui permet de choisir aléatoirement un
 nombre entier compris entre \texttt{a} et \texttt{b} inclus.
 
-            \end{exemple}\begin{exemple}
+        \end{exemple}\begin{exemple}
     Par exemple, pour créer son propre module, il suffit de sauvegarder dans
 un fichier \texttt{monModule.py} les fonctions.
 
@@ -641,7 +644,7 @@ Pour importer les fonctionnalités d'un module, il faut que le fichier
 d'utiliser le mot clé \texttt{import} en écrivant :
 \texttt{from\ monModule\ import\ ...}.
 
-            \end{exemple}\begin{exemple}
+        \end{exemple}\begin{exemple}
     Par exemple, les fonctions \texttt{cree()}, \texttt{ajoute()} et
 \texttt{contient()} peuvent être sauvegarder dans le fichier
 \texttt{dates.py}.
@@ -679,7 +682,7 @@ que le fichier de travail \texttt{anniversaire.py} :
 \end{Highlighting}
 \end{Shaded}
 
-            \end{exemple}\begin{eleve}
+        \end{exemple}\begin{eleve}
     Après avoir écrit votre module \texttt{date.py}, \textbf{écrire} un
 programme permettant de savoir combien d'élève il faut en moyenne dans
 une école pour qu'un anniversaire soit fêté chaque jour.
@@ -722,7 +725,7 @@ Répéter cette expérience 1000 fois et afficher une valeur moyenne.
 En moyenne 2388.026 élèves
     \end{Verbatim}
 
-            \end{reponse}
+        \end{reponse}
     \hypertarget{interfaces}{%
 \subsection{2.2 --- Interfaces}\label{interfaces}}
 \begin{retenir}
@@ -738,7 +741,7 @@ En moyenne 2388.026 élèves
   réalisation d'autres modules, appelés \emph{clients}.
 \end{itemize}
 
-            \end{retenir}
+        \end{retenir}
     L'interface doit expliciter ce qu'un utilisateur a besoin de connaître
 des fonctions proposées : \emph{comment} et \emph{pourquoi} les
 utiliser.
@@ -775,7 +778,7 @@ entre l'auteur du module et ses utilisateurs.
 C'est mieux si le nombre de choses à lire est limité, facile à
 comprendre et à mémoriser.
 
-            \end{remarque}\begin{exemple}
+        \end{remarque}\begin{exemple}
     Par exemple, voici l'interface de l'ensemble de dates.
 
 \begin{longtable}[]{@{}ll@{}}
@@ -806,7 +809,7 @@ ajoute la date \texttt{x} à l'ensemble \texttt{s}\strut
 \bottomrule
 \end{longtable}
 
-            \end{exemple}
+        \end{exemple}
     \hypertarget{encapsulation}{%
 \subsection{2.3 --- Encapsulation}\label{encapsulation}}
 
@@ -819,7 +822,7 @@ pas être utilisés par les modules clients.
 on parle d'\textbf{encapsulation} pour dire qu'ils sont enfermés et que
 l'utilisateur n'a pas a connaître le contenu.
 
-            \end{retenir}\begin{exemple}
+        \end{retenir}\begin{exemple}
     En Python, pour indiquer que certains éléments (variables, fonctions)
 sont privés, on fait précéder leur nom par le symbole \texttt{\_}. Cette
 écriture n'est une \emph{convention} qu'il vaut mieux respecter. Mais
@@ -828,7 +831,7 @@ rien n'empêche l'accès aux éléments privés d'un module.
 D'autres langages mieux adaptés aux projets à grande échelle
 introduisent un contrôle stricte de l'encapsulation.
 
-            \end{exemple}
+        \end{exemple}
     \hypertarget{les-exceptions}{%
 \subsection{3.1 --- Les exceptions}\label{les-exceptions}}
 
@@ -845,7 +848,7 @@ explicites} et de pratiquer une \textbf{programmation defensive}.
 des messages variés. En programmation, ces \emph{erreurs} sont appelées
 des \textbf{exceptions}.
 
-            \end{retenir}
+        \end{retenir}
     Lorsqu'une exception est levée (c'est-à-dire détectée par l'interprète
 Python), l'exécution du programme s'interrompt \textbf{sauf si} une
 prise en charge spécifique a été prévue par le développeur.
@@ -868,7 +871,7 @@ incompatibles\tabularnewline
 \bottomrule
 \end{longtable}
 
-            \end{exemple}\begin{eleve}
+        \end{exemple}\begin{eleve}
     Tester le code ci-dessous et indiquer le nome de l'\textbf{exception}
 levée.
 
@@ -883,7 +886,7 @@ levée.
     Exception \texttt{IndexError} car l'indice 12 n'existe pas dans le
 tableau. Il y a 7 valeurs donc les indices appartiennent ici à 0..6.
 
-            \end{reponse}
+        \end{reponse}
     \hypertarget{signaler-un-probluxe8me-avec-un-exception}{%
 \subsection{3.2 --- Signaler un problème avec un
 exception}\label{signaler-un-probluxe8me-avec-un-exception}}
@@ -898,7 +901,7 @@ d'une chaîne de caractère donnant l'information sur l'erreur signalée.
 \end{Highlighting}
 \end{Shaded}
 
-            \end{retenir}\begin{eleve}
+        \end{retenir}\begin{eleve}
     \textbf{Définir} une fonction \texttt{ecrit(t,i,v)} qui affecte la
 valeur \texttt{v} à l'emplacement \texttt{t{[}i{]}} d'un tableau
 \textbf{et} qui lève une exception si l'indice est négatif.
@@ -918,7 +921,7 @@ valeur \texttt{v} à l'emplacement \texttt{t{[}i{]}} d'un tableau
 \end{tcolorbox}
     }
 
-            \end{reponse}\begin{eleve}
+        \end{reponse}\begin{eleve}
     Dans le module \texttt{date}, \textbf{modifier} la fonction
 \texttt{ajoute} afin de lever une exception si la date n'est pas dans
 l'intervalle 1..365.
@@ -938,7 +941,7 @@ l'intervalle 1..365.
 \end{tcolorbox}
     }
 
-            \end{reponse}
+        \end{reponse}
     \hypertarget{rattraper-une-exception}{%
 \subsection{3.3 --- Rattraper une
 exception}\label{rattraper-une-exception}}
@@ -961,11 +964,11 @@ un nombre entier lors de l'exécution du code ci-dessous
         \end{eleve}\begin{reponse}
     La fonction \texttt{int()} lève une exception \texttt{ValueError}.
 
-            \end{reponse}\begin{retenir}
+        \end{reponse}\begin{retenir}
     Pour rattraper une exception, on va utiliser les mots-clés \texttt{try}
 et \texttt{except}.
 
-            \end{retenir}\begin{exemple}
+        \end{retenir}\begin{exemple}
     Pour rattraper une exception \texttt{ValueError}, on va utiliser le mot
 clé \texttt{try} suivi du symbole \texttt{:} et d'un \emph{premier
 bloc}. Ensuite, le mot-clé \texttt{except} suivi du nom de l'exception
@@ -980,7 +983,7 @@ et du symbole \texttt{:} précède un \emph{deuxième bloc} de code.
 \end{Highlighting}
 \end{Shaded}
 
-            \end{exemple}
+        \end{exemple}
     Le premier bloc est le bloc \emph{normal}. Si son exécution s'achève
 normalement (sans lever d'exception) le second bloc est ignoré.
 
@@ -1010,7 +1013,7 @@ l'utilisateur tant que la date saisie est invalide.
 \end{tcolorbox}
     }
 
-            \end{reponse}\begin{retenir}
+        \end{reponse}\begin{retenir}
     \hypertarget{uxe0-retenir}{%
 \subsection{À retenir}\label{uxe0-retenir}}
 
@@ -1036,7 +1039,7 @@ Avec le principe d'\textbf{encapsulation} :
 On complète l'encapsulation d'un module en gérant explicitement à l'aide
 d'\textbf{exceptions} les utilisations non conformes de son interface.
 
-            \end{retenir}
+        \end{retenir}
     \hypertarget{applications}{%
 \subsection{4 --- Applications}\label{applications}}
 
