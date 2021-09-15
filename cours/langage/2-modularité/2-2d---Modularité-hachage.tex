@@ -483,39 +483,270 @@
     
 
     
-    \hypertarget{un-exemple-le-paradoxe-des-anniversaires}{%
-\subsection{1.1 --- Un exemple : le paradoxe des
-anniversaires}\label{un-exemple-le-paradoxe-des-anniversaires}}
+    \hypertarget{introduction-aux-tables-de-hachages}{%
+\subsection{Introduction aux tables de
+hachages}\label{introduction-aux-tables-de-hachages}}
+\begin{formule}
+    Dans le programme 2 du chapitre \emph{Modularité}, \texttt{s} est un
+tableau définit par \texttt{s={[}{]}} :
 
-    \hypertarget{groupe-4-la-table-de-hachage}{%
-\subsubsection{Groupe 4 --- la table de
-hachage}\label{groupe-4-la-table-de-hachage}}
+\begin{itemize}
+\tightlist
+\item
+  le tableau \texttt{s} est petit et prend peu de place en mémoire
+\item
+  \textbf{mais} la recherche \texttt{if\ x\ in\ s:} n'est pas immédiate.
+  Dans \emph{le pire des cas}, il faut parcourir tout le tableau pour
+  être certain que \texttt{x} n'y est pas.
+\end{itemize}
 
-    Connais-tu le \textbf{paradoxe des anniversaires} ? Lorsqu'on réunit 23
-personnes, il y a une chance sur deux pour que deux d'entre elles soient
-nées le même jour.
+Au contraire, dans le programme 3, \texttt{s} est définit par
+\texttt{s\ =\ {[}False{]}\ *\ 366}:
 
-Écrivons un programme qui vérifie expérimentalement ce paradoxe.
+\begin{itemize}
+\tightlist
+\item
+  la recherche \texttt{if\ s{[}x{]}:} est immédiate
+\item
+  \textbf{mais} le tableau \texttt{s} prend beaucoup de place en
+  mémoire.
+\end{itemize}
 
-On va répéter de nombreuses fois un tirage aléatoire de 23 dates
-d'anniversaire, c'est-à-dire 23 entiers entre 1 et 365, on va observer
-combien de fois au moins deux personnes sont nées el même jour.
+        \end{formule}\begin{retenir}
+    Le programme 4 ci-dessous te propose une solution qui prend le meilleur
+des deux tentatives précédentes :
+
+\begin{itemize}
+\tightlist
+\item
+  peu de place en mémoire (comme le programme 2)
+\item
+  quasi immédiateté de la recherche (comme le programme 3).
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\KeywordTok{def}\NormalTok{ contient\_doublon(t):}
+    \CommentTok{"""le tableau t contient{-}il un doublon ?"""}
+\NormalTok{    s }\OperatorTok{=}\NormalTok{ [[] }\ControlFlowTok{for}\NormalTok{ \_ }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\DecValTok{23}\NormalTok{)]}
+    \ControlFlowTok{for}\NormalTok{ x }\KeywordTok{in}\NormalTok{ t:}
+        \ControlFlowTok{if}\NormalTok{ x }\KeywordTok{in}\NormalTok{ s[x }\OperatorTok{\%} \DecValTok{23}\NormalTok{]:}
+            \ControlFlowTok{return} \VariableTok{True}
+\NormalTok{        s[x }\OperatorTok{\%} \DecValTok{23}\NormalTok{].append(x)}
+    \ControlFlowTok{return} \VariableTok{False}
+\end{Highlighting}
+\end{Shaded}
+
+        \end{retenir}\begin{remarque}
+    On crée un tableau \texttt{s} de 23 cases car on sait qu'il n'y aura 23
+dates à y enregistrer. L'occupation en mémoire est donc faible.
+
+Ensuite, on attribut à chacune des 365 dates possibles une case
+\emph{fixe et bien définie}. Par exemple, la date 42 sera toujours
+rangée dans \texttt{s{[}19{]}}.
+
+Comment sait-on que la date \texttt{42} est enregistrée dans
+l'emplacement \texttt{19} de \texttt{s} ? Pour obtenir ce rang
+(\texttt{19}) associé à la date \texttt{42}, on utilise l'opération
+\textbf{modulo 23} (notée \texttt{\%\ 23}) qui renvoie le \emph{reste de
+la division euclidienne par 23}. Cette opération renvoie un nombre
+compris entre 0..22. Ce qui est parfait car le tableau \texttt{s}
+contient 23 emplacements. Le calcul du rang \texttt{42\ \%\ 23} donne
+pour résultat \texttt{19} et est immédiat.
+
+        \end{remarque}\begin{remarque}
+    Mais il est \textbf{possible} que plusieurs dates soient dans la même
+case. Par exemple les dates 65 ou 88 se rangeront aussi dans
+\texttt{s{[}19{]}}.
+
+C'est pourquoi chaque case de \texttt{s} ne contient pas une date, mais
+un tableau de date que nous appellerons \textbf{paquet}. C'est donc
+pourquoi \texttt{s\ =\ {[}{[}{]}\ for\ \_\ in\ range(23){]}}.
+
+Pour rendre la recherche \emph{quasi} immédiate, il faut que chaque
+paquet soit quasiment vide. Puisque le tirage des 23 dates est
+aléatoire, il faudrait beaucoup beaucoup de malchance pour qu'un grand
+nombre d'entre elles se trouvent dans le même paquet.
+
+Par exemple, imaginons que la date tirée soit 42. On sait
+\emph{immédiatement} qu'il faut chercher dans le paquet
+\texttt{s{[}19{]}}. Maintenant si ce paquet contient beaucoup de dates
+(pas de chance !) la recherche prend du temps. Sinon, le paquet est
+quasiment vide et la recherche est \emph{quasi immédiate} !
+
+On peut donc conclure que, \emph{en moyenne}, la recherche
+\texttt{x\ in\ s{[}x\ \%\ 23{]}} est \emph{quasi immédiate}.
+
+        \end{remarque}\begin{retenir}
+    La méthode exposée ci-dessus est une ébauche de la structure de données
+fondamentale \textbf{table de hachage}.
+
+Cette structure de données est sous-jacente aux \textbf{ensembles} et
+aux \textbf{dictionnaires} de Python. Elle est très polyvalente, permet
+de représenter des ensembles de taille arbitraire avec des opérations
+d'accès aux éléments extrêmement rapides. Cette structure de données est
+considérée comme la plus efficace dans la plus grande variété des cas
+courants !
+
+        \end{retenir}
+    \hypertarget{amuxe9lioration-du-moduxe8le-de-tables-de-hachages}{%
+\subsection{\texorpdfstring{Amélioration du modèle de \textbf{tables de
+hachages}}{Amélioration du modèle de tables de hachages}}\label{amuxe9lioration-du-moduxe8le-de-tables-de-hachages}}
+
+    Dans la suite, nous allons améliorer notre modèle de \emph{tables de
+hachage} afin de :
+\begin{formule}
+    Représenter des ensembles de taille \emph{arbitraire} de façon efficace.
+Par exemple, ne plus limiter à 23 paquets !
+
+        \end{formule}\begin{formule}
+    Rendre vraiment aléatoire la répartition dans les paquets. Par exemple,
+faire en sorte que les multiples, les nombres proches ou liés les uns
+aux autres ne soient pas systématiquement associés au même paquet.
+
+        \end{formule}\begin{formule}
+    Rendre l'ensemble plus polyvalent en y associant autre chose que des
+nombres entiers. Par exemple on aimerait aussi associer des chaînes de
+caractères comme \texttt{"alice"} ou \texttt{"bob"} à différents
+paquets.
+
+        \end{formule}\begin{retenir}
+    Voici ce que donne le programme final :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ cree():}
+    \ControlFlowTok{return}\NormalTok{ \{ }\StringTok{\textquotesingle{}taille\textquotesingle{}}\NormalTok{:}\DecValTok{0}\NormalTok{ ,}
+             \StringTok{\textquotesingle{}paquets\textquotesingle{}}\NormalTok{: [[] }\ControlFlowTok{for}\NormalTok{ \_ }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\DecValTok{32}\NormalTok{)] \}}
+
+\KeywordTok{def}\NormalTok{ contient(s, x):}
+\NormalTok{    p }\OperatorTok{=} \BuiltInTok{hash}\NormalTok{(x) }\OperatorTok{\%} \BuiltInTok{len}\NormalTok{(s[}\StringTok{\textquotesingle{}paquets\textquotesingle{}}\NormalTok{])}
+    \ControlFlowTok{return}\NormalTok{ x }\KeywordTok{in}\NormalTok{ s[}\StringTok{\textquotesingle{}paquets\textquotesingle{}}\NormalTok{][p]}
+
+\KeywordTok{def}\NormalTok{ ajoute(s,x):}
+    \ControlFlowTok{if}\NormalTok{ contient(s, x):}
+        \ControlFlowTok{return}
+\NormalTok{    s[}\StringTok{\textquotesingle{}taille\textquotesingle{}}\NormalTok{] }\OperatorTok{+=} \DecValTok{1}
+    \ControlFlowTok{if}\NormalTok{ s[}\StringTok{\textquotesingle{}taille\textquotesingle{}}\NormalTok{] }\OperatorTok{\textgreater{}} \BuiltInTok{len}\NormalTok{(s[}\StringTok{\textquotesingle{}paquets\textquotesingle{}}\NormalTok{]):}
+\NormalTok{        \_etend(s)}
+\NormalTok{    \_ajoute\_aux(s[}\StringTok{\textquotesingle{}paquets\textquotesingle{}}\NormalTok{], x)}
+
+\KeywordTok{def}\NormalTok{ \_ajoute\_aux(t, x):}
+\NormalTok{    p }\OperatorTok{=} \BuiltInTok{hash}\NormalTok{(x) }\OperatorTok{\%} \BuiltInTok{len}\NormalTok{(t)}
+\NormalTok{    t[p].append(x)}
+
+\KeywordTok{def}\NormalTok{ \_etend(s):}
+\NormalTok{    tmp }\OperatorTok{=}\NormalTok{ [[] }\ControlFlowTok{for}\NormalTok{ \_ }\KeywordTok{in} \BuiltInTok{range}\NormalTok{( }\DecValTok{2} \OperatorTok{*} \BuiltInTok{len}\NormalTok{(s[}\StringTok{\textquotesingle{}paquets\textquotesingle{}}\NormalTok{]) )]}
+    \ControlFlowTok{for}\NormalTok{ x }\KeywordTok{in}\NormalTok{ enumere(s):}
+\NormalTok{        \_ajoute\_aux(tmp, x)}
+\NormalTok{    s[}\StringTok{\textquotesingle{}paquets\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ tmp}
+
+\KeywordTok{def}\NormalTok{ enumere(s):}
+\NormalTok{    tab }\OperatorTok{=}\NormalTok{ []}
+    \ControlFlowTok{for}\NormalTok{ paquet }\KeywordTok{in}\NormalTok{ s[}\StringTok{\textquotesingle{}paquets\textquotesingle{}}\NormalTok{]:}
+\NormalTok{        tab.extend(paquet)}
+    \ControlFlowTok{return}\NormalTok{ tab}
+\end{Highlighting}
+\end{Shaded}
+
+        \end{retenir}
+    \hypertarget{fonction-de-hachage}{%
+\subsubsection{Fonction de hachage}\label{fonction-de-hachage}}
+
+    Commençons par les deux derniers points. Pour obtenir une vraie table de
+hachage, on va utiliser une fonction appelée \emph{fonction de hachage},
+qui prend en paramètre un élément à stocker (nombre entier, chaîne de
+caractère, flottant, objet) et renvoie un nombre entier définissant le
+numéro dans lequel insérer l'élément.
+
+En utilisant cette fonction \emph{modulo le nombre de paquets}, on
+s'assure que l'association entre un objet et son paquet est aléatoire et
+indépendant.
+
+    En Python, l'appel à une fonction de hachage se fait par la fonction
+\texttt{hash(obj)} où \texttt{obj} est l'objet à associer.
+
+Pour remplir un tableau de 23 cases avec cette fonction de hachage, on
+remplace tout simplement \texttt{x\ \%\ 23} par
+\texttt{hash(x)\ \%\ 23}. La fonction \texttt{hash(x)} s'occupe de la
+répartition aléatoire et \texttt{\%\ 23} se charge de répartir le nombre
+entier obtenu en une nombre appartenant à 0..22.
+
+C'est pourquoi dans le programme on a
+\texttt{hash(x)\ \%\ len(s{[}\textquotesingle{}paquets\textquotesingle{}{]})}
+ou encore \texttt{hash(x)\ \%\ len(t)} : on obtient le rang \texttt{p}
+de la date \texttt{x} en effectuant un \emph{modulo le nombre de
+paquets} de la table de hachage.
+
+    \hypertarget{tableau-de-taille-variable}{%
+\subsubsection{Tableau de taille
+variable}\label{tableau-de-taille-variable}}
+
+    Afin de rendre la table de hachage efficace, il faut s'assurer que
+chaque paquet reste le plus petit possible. En effet, si un paquet
+contient beaucoup d'éléments, la recherche dans ce paquet n'est plus
+efficace. En revanche, si le paquet est vide ou contient un ou deux
+éléments, la recherche est \emph{immédiate}.
+
+On va alors se fixer la règle suivante :
+\begin{formule}
+    \emph{la taille de la table de hachage (le nombre de paquets) ne doit
+jamais être inférieure au nombre d'éléments stockés qui y sont stockés}.
+
+        \end{formule}
+    Ainsi, c'est la procédure \texttt{ajoute(s,x)} qui s'occupe d'ajouter
+l'élément \texttt{x} à la table de hachage \texttt{s} et qui a en charge
+d'augmenter la taille de la table.
+
+Si \texttt{x} est déjà présent \texttt{if\ contient(s,\ x)}, on ignore
+toutes les instructions suivante et on appelle un \texttt{return} tout
+seul qui termine l'appel à la fonction \texttt{ajoute()}.
+
+Si \texttt{x} n'est pas déjà dans \texttt{s}, alors les lignes après le
+\texttt{return} s'exécutent. Puisque \texttt{x} va être ajouté, on
+incrémente la taille de la table de hachage
+\texttt{s{[}\textquotesingle{}taille\textquotesingle{}{]}\ +=\ 1}.
+
+Ensuite la procédure vérifie si le nombre d'éléments dépasse le nombre
+de paquets
+\texttt{if\ s{[}\textquotesingle{}taille\textquotesingle{}{]}\ \textgreater{}\ len(s{[}\textquotesingle{}paquets\textquotesingle{}{]}):}.
+Si c'est le cas, la procédure \texttt{\_etend(s)} va :
+
+\begin{itemize}
+\tightlist
+\item
+  créer un tableau deux fois plus grand que la table de hachage
+  \texttt{tmp\ =\ {[}{[}{]}\ for\ \_\ in\ range(\ 2\ *\ len(s{[}\textquotesingle{}paquets\textquotesingle{}{]})\ ){]}}
+\item
+  répartir tous les éléments de la table de hachage dans ce tableau
+  temporaire \texttt{for\ x\ in\ enumere(s):\ \_ajoute\_aux(tmp,\ x)}
+\item
+  faire pointer la table de hachage vers le tableau temporaire
+  \texttt{s{[}\textquotesingle{}paquets\textquotesingle{}{]}\ =\ tmp}.
+\end{itemize}
+
+Pour finir, un appel à la procédure \texttt{\_ajoute\_aux()} s'occupe
+(enfin) d'ajouter l'élément \texttt{x} dans le paquet auquel il est
+associé
+\texttt{\_ajoute\_aux(s{[}\textquotesingle{}paquets\textquotesingle{}{]},\ x)}.
+
+    \hypertarget{test-du-module}{%
+\subsubsection{Test du module}\label{test-du-module}}
 
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{31}{\boxspacing}
+\prompt{In}{incolor}{11}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} Programme 4}
-
+\PY{c+c1}{\PYZsh{} créer doublon}
 \PY{k}{def} \PY{n+nf}{contient\PYZus{}doublon}\PY{p}{(}\PY{n}{t}\PY{p}{)}\PY{p}{:}
-    \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}le tableau t contient\PYZhy{}il un doublon ?\PYZdq{}\PYZdq{}\PYZdq{}}
-    \PY{n}{s} \PY{o}{=} \PY{p}{[}\PY{p}{[}\PY{p}{]} \PY{k}{for} \PY{n}{\PYZus{}} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{23}\PY{p}{)}\PY{p}{]}
+    \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}la structure contient\PYZhy{}elle un doublon?\PYZdq{}\PYZdq{}\PYZdq{}}
+    \PY{n}{s} \PY{o}{=} \PY{n}{cree}\PY{p}{(}\PY{p}{)}
     \PY{k}{for} \PY{n}{x} \PY{o+ow}{in} \PY{n}{t}\PY{p}{:}
-        \PY{k}{if} \PY{n}{x} \PY{o+ow}{in} \PY{n}{s}\PY{p}{[}\PY{n}{x} \PY{o}{\PYZpc{}} \PY{l+m+mi}{23}\PY{p}{]}\PY{p}{:}
+        \PY{k}{if} \PY{n}{contient}\PY{p}{(}\PY{n}{s}\PY{p}{,} \PY{n}{x}\PY{p}{)}\PY{p}{:}
             \PY{k}{return} \PY{k+kc}{True}
-        \PY{n}{s}\PY{p}{[}\PY{n}{x} \PY{o}{\PYZpc{}} \PY{l+m+mi}{23}\PY{p}{]}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{x}\PY{p}{)}
+        \PY{n}{ajoute}\PY{p}{(}\PY{n}{s}\PY{p}{,} \PY{n}{x}\PY{p}{)}
     \PY{k}{return} \PY{k+kc}{False}
-
 
 \PY{c+c1}{\PYZsh{} Création du tableau de dates aléatoires}
 \PY{k+kn}{from} \PY{n+nn}{random} \PY{k+kn}{import} \PY{n}{randint}
@@ -528,8 +759,7 @@ combien de fois au moins deux personnes sont nées el même jour.
     \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{23}\PY{p}{)}\PY{p}{:}
         \PY{n}{t}\PY{p}{[}\PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{n}{randint}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{365}\PY{p}{)}
     \PY{k}{if} \PY{n}{contient\PYZus{}doublon}\PY{p}{(}\PY{n}{t}\PY{p}{)}\PY{p}{:}
-        \PY{n}{n\PYZus{}doublons} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
-    
+        \PY{n}{n\PYZus{}doublons} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}    
     \PY{n}{n} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
 
 \PY{n+nb}{print} \PY{p}{(}\PY{n}{n\PYZus{}doublons}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{doublons sur}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{n}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{tirages}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
@@ -539,58 +769,10 @@ combien de fois au moins deux personnes sont nées el même jour.
     }
 
     \begin{Verbatim}[commandchars=\\\{\}]
-503 doublons sur 1000 tirages
-fréquence :  0.503
+483 doublons sur 1000 tirages
+fréquence :  0.483
     \end{Verbatim}
-\begin{eleve}
-    \emph{L'\textbf{objectif} de cette activité est de présenter la fonction
-\texttt{contient\_doublon(t)} à vos camarades.} Afin de vous aider à
-vous approprier la problématique, voici une liste de questions :
 
-\textbf{Analyse du programme 1 :}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  À quoi sert la boucle \texttt{while\ n\ \textless{}\ 1000} ?
-\item
-  Que pensez-vous de l'affirmation du paradoxe des anniversaires ?
-\end{enumerate}
-
-\textbf{Utilité de la fonction \texttt{contient\_doublon(t)}:}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{2}
-\tightlist
-\item
-  Dans la fonction \texttt{contient\_doublon(t)}, quel est le type
-  Python de la variable \texttt{t}?
-\item
-  Que renvoie la fonction \texttt{contient\_doublon(t)} ?
-\item
-  Comment fonctionne la ligne \texttt{if\ contient\_doublon(t)} ?
-\item
-  Quel est l'intérêt de la fonction \texttt{contient\_doublon(t)} ?
-\end{enumerate}
-
-\textbf{Fonctionnement de la fonction \texttt{contient\_doublon(t)} :}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{6}
-\tightlist
-\item
-  Quel est le type Python de la variable \texttt{s} ? Que contient-elle
-  ?
-\item
-  Quel est le but de la commande \texttt{s{[}x{]}\ =\ True} ?
-\item
-  Quel est l'effet de la ligne \texttt{for\ x\ in\ t:} ?
-\end{enumerate}
-        
-        \end{eleve}
 
     % Add a bibliography block to the postdoc
     
