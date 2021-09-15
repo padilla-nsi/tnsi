@@ -489,7 +489,7 @@
     \hypertarget{un-exemple-le-paradoxe-des-anniversaires}{%
 \subsection{1.1 --- Un exemple : le paradoxe des
 anniversaires}\label{un-exemple-le-paradoxe-des-anniversaires}}
-
+\begin{exemple}
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{14}{\boxspacing}
@@ -507,6 +507,7 @@ anniversaires}\label{un-exemple-le-paradoxe-des-anniversaires}}
 \end{tcolorbox}
     }
 
+            \end{exemple}\begin{exemple}
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{15}{\boxspacing}
@@ -524,6 +525,7 @@ anniversaires}\label{un-exemple-le-paradoxe-des-anniversaires}}
 \end{tcolorbox}
     }
 
+            \end{exemple}\begin{exemple}
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{16}{\boxspacing}
@@ -541,26 +543,25 @@ anniversaires}\label{un-exemple-le-paradoxe-des-anniversaires}}
 \end{tcolorbox}
     }
 
+            \end{exemple}
     \hypertarget{factorisation-du-code}{%
 \subsection{1.2 --- Factorisation du code}\label{factorisation-du-code}}
 
-    Les trois programmes précédents se ressemblent beaucoup :
+    Les trois programmes précédents se ressemblent beaucoup car ils font la
+même chose (mais avec des stratégies complètement différentes) et tous
+les trois ont la même structure :
 
 \begin{itemize}
 \tightlist
 \item
-  ils font la même chose, mais avec des stratégies complètement
-  différentes
+  \texttt{s} représente d'une manière ou d'une autre un ensemble de
+  dates qu'il faut \emph{créer}.
 \item
-  ils ont la même structure.
+  Il faut vérifier si \texttt{s} \emph{contient} l'élément \texttt{x}.
+\item
+  Il faut être capable d'\emph{ajouter} l'élément \texttt{x} à
+  \texttt{s} si besoin.
 \end{itemize}
-
-Cette structure peut d'ailleurs se résumer en :
-
--\texttt{s} représente d'une manière ou d'une autre un ensemble de dates
-qu'il faut \emph{créer}. - Il faut vérifier si \texttt{s}
-\emph{contient} l'élément \texttt{x}. - Il faut être capable
-d'\emph{ajouter} l'élément \texttt{x} à \texttt{s} si besoin.
 
 Ce qui donne, en délégant ces trois aspects aux fonctions
 \texttt{cree()}, \texttt{contient()} et \texttt{ajoute()} :
@@ -577,19 +578,20 @@ Ce qui donne, en délégant ces trois aspects aux fonctions
     \ControlFlowTok{return} \VariableTok{False}
 \end{Highlighting}
 \end{Shaded}
-
-    Ainsi :
+\begin{remarque}
+    Cette factorisation du code a de nombreux avantages :
 
 \begin{itemize}
 \tightlist
 \item
-  pour changer le mode de représentation des dates, il ne faut plus
-  changer \texttt{contient\_doublon()}
+  pour \textbf{changer le mode de représentation} des dates, il ne faut
+  plus changer \texttt{contient\_doublon()}
 \item
-  l'ensemble de dates peut être réutilisés dans d'autres programmes
+  l'ensemble de dates peut être \textbf{réutilisés} dans d'autres
+  programmes
 \item
-  il y a séparation entre le programme qui utilise les dates et les
-  programmes qui définissent comment sont programmées en interne ces
+  il y a \textbf{séparation} entre le programme qui utilise les dates et
+  les programmes qui définissent comment sont programmées en interne ces
   dates.
 \end{itemize}
 
@@ -597,24 +599,27 @@ Ces trois fonctions représentent l'\textbf{interface} entre le programme
 qui utilise l'ensemble de dates \textbf{et} les programmes qui
 définissent d'une façon ou d'une autre cet ensemble.
 
+            \end{remarque}
     \hypertarget{modules}{%
-\subsection{1.3 Modules}\label{modules}}
+\subsection{2.1 Modules}\label{modules}}
 
     Une des clés du développement à grande échelle consiste à séparer
 proprement les différentes parties d'un programme.
-
+\begin{exemple}
     Par exemple on peut séparer la définition d'une structure de données
 (comme l'ensemble de dates) et son utilisation.
 
 On peut aussi séparer la partie interface graphique d'une application de
 sa partie logique qui en constitue le cœur.
 
+            \end{exemple}\begin{retenir}
     Chaque morceau de code peut être placé dans un fichier différent appelé
 \textbf{module}.
 
 Pour importer les fonctions définies dans un module et les utiliser, il
 faut utiliser le mot clé \texttt{import}
 
+            \end{retenir}\begin{exemple}
     Par exemple, pour importer le module permettant de gérer les valeurs
 aléatoires, on importe \texttt{random} grâce à l'instruction
 \texttt{import\ random}. Auquel cas, pour utiliser la fonction
@@ -627,6 +632,7 @@ exemple \texttt{from\ random\ import\ randint} ne va importer que la
 fonction \texttt{randint(a,b)} qui permet de choisir aléatoirement un
 nombre entier compris entre \texttt{a} et \texttt{b} inclus.
 
+            \end{exemple}\begin{exemple}
     Par exemple, pour créer son propre module, il suffit de sauvegarder dans
 un fichier \texttt{monModule.py} les fonctions.
 
@@ -635,6 +641,7 @@ Pour importer les fonctionnalités d'un module, il faut que le fichier
 d'utiliser le mot clé \texttt{import} en écrivant :
 \texttt{from\ monModule\ import\ ...}.
 
+            \end{exemple}\begin{exemple}
     Par exemple, les fonctions \texttt{cree()}, \texttt{ajoute()} et
 \texttt{contient()} peuvent être sauvegarder dans le fichier
 \texttt{dates.py}.
@@ -672,6 +679,7 @@ que le fichier de travail \texttt{anniversaire.py} :
 \end{Highlighting}
 \end{Shaded}
 
+            \end{exemple}\begin{eleve}
     Après avoir écrit votre module \texttt{date.py}, \textbf{écrire} un
 programme permettant de savoir combien d'élève il faut en moyenne dans
 une école pour qu'un anniversaire soit fêté chaque jour.
@@ -680,7 +688,8 @@ Pour cela, tirer au hasard des dates et les stocker dans un ensemble
 jusqu'à ce que toutes les dates aient été obtenues au moins une fois.
 
 Répéter cette expérience 1000 fois et afficher une valeur moyenne.
-
+        
+        \end{eleve}\begin{reponse}
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{29}{\boxspacing}
@@ -713,9 +722,10 @@ Répéter cette expérience 1000 fois et afficher une valeur moyenne.
 En moyenne 2388.026 élèves
     \end{Verbatim}
 
+            \end{reponse}
     \hypertarget{interfaces}{%
-\subsection{1.4 Interfaces}\label{interfaces}}
-
+\subsection{2.2 Interfaces}\label{interfaces}}
+\begin{retenir}
     Pour chaque module, on distingue :
 
 \begin{itemize}
@@ -728,6 +738,7 @@ En moyenne 2388.026 élèves
   réalisation d'autres modules, appelés \emph{clients}.
 \end{itemize}
 
+            \end{retenir}
     L'interface doit expliciter ce qu'un utilisateur a besoin de connaître
 des fonctions proposées : \emph{comment} et \emph{pourquoi} les
 utiliser.
@@ -757,13 +768,14 @@ Pour chaque fonction il faut :
   sa spécification, c'est-à-dire les conditions auxquelles la fonction
   peut être appliquée et les résultats à attendre.
 \end{itemize}
-
+\begin{remarque}
     La documentation de l'interface peut être vue comme un \textbf{contrat}
 entre l'auteur du module et ses utilisateurs.
 
 C'est mieux si le nombre de choses à lire est limité, facile à
 comprendre et à mémoriser.
 
+            \end{remarque}\begin{exemple}
     Par exemple, voici l'interface de l'ensemble de dates.
 
 \begin{longtable}[]{@{}ll@{}}
@@ -794,6 +806,236 @@ ajoute la date \texttt{x} à l'ensemble \texttt{s}\strut
 \bottomrule
 \end{longtable}
 
+            \end{exemple}
+    \hypertarget{encapsulation}{%
+\subsection{2.3 Encapsulation}\label{encapsulation}}
+
+    Comme l'auteur d'un module est libre de s'y prendre comme il le souhaite
+pour respecter l'interface, il peut donc utiliser toute une série de
+fonctions ou d'objets annexes. Ces éléments \emph{internes} ne doivent
+pas être utilisés par les modules clients.
+\begin{retenir}
+    Ces éléments \emph{hors interface} sont qualifiés de \textbf{privés} et
+on parle d'\textbf{encapsulation} pour dire qu'ils sont enfermés et que
+l'utilisateur n'a pas a connaître le contenu.
+
+            \end{retenir}\begin{exemple}
+    En Python, pour indiquer que certains éléments (variables, fonctions)
+sont privés, on fait précéder leur nom par le symbole \texttt{\_}. Cette
+écriture n'est une \emph{convention} qu'il vaut mieux respecter. Mais
+rien n'empêche l'accès aux éléments privés d'un module.
+
+D'autres langages mieux adaptés aux projets à grande échelle
+introduisent un contrôle stricte de l'encapsulation.
+
+            \end{exemple}
+    \hypertarget{les-exceptions}{%
+\subsection{3.1 Les exceptions}\label{les-exceptions}}
+
+    Selon l'implémentation d'un module, une mauvaise utilisation des
+fonctions de l'interface risque d'engendre des erreurs ou des effets qui
+ne peuvent pas être compris et anticipés facilement. Il faudrait alors
+que l'utilisateur étudie le code du module ce qui contredit le principe
+de l'encapsulation.
+
+Une bonne pratique est de renvoyer à l'utilisateur des \textbf{erreurs
+explicites} et de pratiquer une \textbf{programmation defensive}.
+\begin{retenir}
+    Lorsqu'un programme s'interrompt à cause d'une \emph{erreur}, il affiche
+des messages variés. En programmation, ces \emph{erreurs} sont appelées
+des \textbf{exceptions}.
+
+            \end{retenir}
+    Lorsqu'une exception est levée (c'est-à-dire détectée par l'interprète
+Python), l'exécution du programme s'interrompt \textbf{sauf si} une
+prise en charge spécifique a été prévue par le développeur.
+\begin{exemple}
+    Par exemple, voici les exceptions classiques en Python :
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+exception & contexte\tabularnewline
+\midrule
+\endhead
+\texttt{NameError} & accès à une variable inexistante\tabularnewline
+\texttt{IndexError} & accès à un indice invalide dans un
+tableau\tabularnewline
+\texttt{KeyError} & accès à une clé inexistante d'un
+dictionnaire\tabularnewline
+\texttt{ZeroDivisionError} & division par zéro\tabularnewline
+\texttt{TypeError} & opération appliquée à des valeurs
+incompatibles\tabularnewline
+\bottomrule
+\end{longtable}
+
+            \end{exemple}\begin{eleve}
+    Tester le code ci-dessous et indiquer le nome de l'\textbf{exception}
+levée.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{t }\OperatorTok{=}\NormalTok{ [}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{14}\NormalTok{,}\DecValTok{42}\NormalTok{,}\DecValTok{132}\NormalTok{]}
+\BuiltInTok{print}\NormalTok{ (t[}\DecValTok{12}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+        
+        \end{eleve}\begin{reponse}
+    Exception \texttt{IndexError} car l'indice 12 n'existe pas dans le
+tableau. Il y a 7 valeurs donc les indices appartiennent ici à 0..6.
+
+            \end{reponse}
+    \hypertarget{signaler-un-probluxe8me-avec-un-exception}{%
+\subsection{3.2 Signaler un problème avec un
+exception}\label{signaler-un-probluxe8me-avec-un-exception}}
+\begin{retenir}
+    Il est possible de lever manuellement toutes ces exceptions en faisant
+suivre le mot clé \texttt{raise} du nom de l'exception, lui même suivi
+d'une chaîne de caractère donnant l'information sur l'erreur signalée.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{raise} \PreprocessorTok{IndexError}\NormalTok{(}\StringTok{\textquotesingle{}Indice trop grand\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+            \end{retenir}\begin{eleve}
+    \textbf{Définir} une fonction \texttt{ecrit(t,i,v)} qui affecte la
+valeur \texttt{v} à l'emplacement \texttt{t{[}i{]}} d'un tableau
+\textbf{et} qui lève une exception si l'indice est négatif.
+
+\textbf{Pourquoi} n'y a-t-il pas besoin de l'instruction \texttt{else}?
+        
+        \end{eleve}\begin{reponse}
+        {\scriptsize
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{35}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{ecrit}\PY{p}{(}\PY{n}{t}\PY{p}{,}\PY{n}{i}\PY{p}{,}\PY{n}{v}\PY{p}{)}\PY{p}{:}
+    \PY{k}{if} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{l+m+mi}{0}\PY{p}{:}
+        \PY{k}{raise} \PY{n+ne}{IndexError}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Indice négatif}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+    \PY{n}{t}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{v}
+\end{Verbatim}
+\end{tcolorbox}
+    }
+
+            \end{reponse}\begin{eleve}
+    Dans le module \texttt{date}, \textbf{modifier} la fonction
+\texttt{ajoute} afin de lever une exception si la date n'est pas dans
+l'intervalle 1..365.
+
+\textbf{Justifier} le type d'exception choisi.
+        
+        \end{eleve}\begin{reponse}
+        {\scriptsize
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{37}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{ajoute}\PY{p}{(}\PY{n}{s}\PY{p}{,}\PY{n}{x}\PY{p}{)}\PY{p}{:}
+    \PY{k}{if} \PY{n}{x} \PY{o}{\PYZlt{}} \PY{l+m+mi}{1} \PY{o+ow}{or} \PY{n}{x} \PY{o}{\PYZgt{}} \PY{l+m+mi}{365}\PY{p}{:}
+        \PY{k}{raise} \PY{n+ne}{ValueError}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{date}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n+nb}{str}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{invalide}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+    \PY{n}{s}\PY{p}{[}\PY{n}{x}\PY{p}{]} \PY{o}{=} \PY{k+kc}{True}
+\end{Verbatim}
+\end{tcolorbox}
+    }
+
+            \end{reponse}
+    \hypertarget{rattraper-une-exception}{%
+\subsection{3.3 Rattraper une exception}\label{rattraper-une-exception}}
+
+    Si des exceptions sont prévisibles et correspondent à des situations
+connues, il est parfois préférable de ne pas interrompre le programme.
+
+Par exemple en demandant à un utilisateur une date, il est tout à fait
+possible qu'il ne saisisse pas un nombre entier.
+\begin{eleve}
+    \textbf{Relever} l'exception levée lorsque l'utilisateur ne saisit pas
+un nombre entier lors de l'exécution du code ci-dessous
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OperatorTok{=} \BuiltInTok{int}\NormalTok{(}\BuiltInTok{input}\NormalTok{(}\StringTok{"Entrer une date"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+        
+        \end{eleve}\begin{reponse}
+    La fonction \texttt{int()} lève une exception \texttt{ValueError}.
+
+            \end{reponse}\begin{retenir}
+    Pour rattraper une exception, on va utiliser les mots-clés \texttt{try}
+et \texttt{except}.
+
+            \end{retenir}\begin{exemple}
+    Pour rattraper une exception \texttt{ValueError}, on va utiliser le mot
+clé \texttt{try} suivi du symbole \texttt{:} et d'un \emph{premier
+bloc}. Ensuite, le mot-clé \texttt{except} suivi du nom de l'exception
+et du symbole \texttt{:} précède un \emph{deuxième bloc} de code.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{try}\NormalTok{:}
+\NormalTok{    x }\OperatorTok{=} \BuiltInTok{int}\NormalTok{(}\BuiltInTok{input}\NormalTok{(}\StringTok{"Entrer une date"}\NormalTok{))}
+\ControlFlowTok{except} \PreprocessorTok{ValueError}\NormalTok{:}
+    \BuiltInTok{print}\NormalTok{(}\StringTok{"Prière de saisir un entier valide"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+            \end{exemple}
+    Le premier bloc est le bloc \emph{normal}. Si son exécution s'achève
+normalement (sans lever d'exception) le second bloc est ignoré.
+
+Le second bloc est le bloc \emph{alternatif}. Si une exception est levée
+dans le bloc normal, alors l'exception est comparée avec le nom précisé
+à la ligne \texttt{except}. Si les noms correspondent, l'exception est
+\textbf{rattrapée} et le bloc alternatif est exécuté \textbf{avant} de
+passer à la suite. Sinon, le programme s'interrompt (sauf si le tout est
+inclu dans une autre construction \texttt{try}/\texttt{except}).
+\begin{eleve}
+    \textbf{Proposer} un code demandant à l'utilisateur une date à
+l'utilisateur tant que la date saisie est invalide.
+        
+        \end{eleve}\begin{reponse}
+        {\scriptsize
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{while} \PY{k+kc}{True}\PY{p}{:}
+    \PY{k}{try}\PY{p}{:}
+        \PY{n}{x} \PY{o}{=} \PY{n+nb}{int}\PY{p}{(}\PY{n+nb}{input}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Saisir une date}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{)}
+        \PY{k}{break}
+    \PY{k}{except} \PY{n+ne}{ValueError}\PY{p}{:}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Il faut saisir un nombre entier entre 1 et 365}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+    
+\end{Verbatim}
+\end{tcolorbox}
+    }
+
+            \end{reponse}\begin{retenir}
+    \hypertarget{uxe0-retenir}{%
+\subsection{À retenir}\label{uxe0-retenir}}
+
+Un grand programme est décomposé en plusieurs \textbf{modules}, dont
+chacun est dédié à la réalisation d'une \textbf{tâche précise}.
+L'\textbf{interface} d'un module décrit l'ensemble des fonctions
+offertes par ce module.
+
+Avec le principe d'\textbf{encapsulation} :
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  il suffit de connaître l'interface pour utiliser convenablement un
+  module,
+\item
+  le développeur du module possède un cadre pour modifier, corriger,
+  améliorer son programme sans nuire aux autres programmes utilisant ce
+  module.
+\end{enumerate}
+
+On complète l'encapsulation d'un module en gérant explicitement à l'aide
+d'\textbf{exceptions} les utilisations non conformes de son interface.
+
+            \end{retenir}
 
     % Add a bibliography block to the postdoc
     
