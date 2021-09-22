@@ -1,0 +1,860 @@
+\documentclass[a4paper,17pt]{extarticle}
+
+
+    \usepackage[sfdefault, condensed]{roboto} % police d'écriture plus moderne
+\usepackage[french]{babel} % francisation
+\usepackage[parfill]{parskip} %suppression indentation
+
+\usepackage{fancyhdr}
+\usepackage{multicol}
+
+% figure non flotantes
+\usepackage{float}
+\let\origfigure\figure
+\let\endorigfigure\endfigure
+\renewenvironment{figure}[1][2] {
+    \expandafter\origfigure\expandafter[H]
+} {
+    \endorigfigure
+}
+
+% mois/année
+\usepackage{datetime}
+\newdateformat{monthyeardate}{%
+  \monthname[\THEMONTH] \THEYEAR}
+
+% couleurs perso
+\usepackage[table]{xcolor}
+\definecolor{deepblue}{rgb}{0.3,0.3,0.8}
+\definecolor{darkblue}{rgb}{0,0,0.3}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{iremred}{RGB}{204,35,50}
+\definecolor{deepgreen}{rgb}{0,0.6,0}
+\definecolor{backcolor}{rgb}{0.98,0.95,0.95}
+\definecolor{grisClair}{rgb}{0.95,0.95,0.95}
+\definecolor{orangeamu}{RGB}{250,178,11}
+\definecolor{noiramu}{RGB}{35,31,32}
+\definecolor{bleuamu}{RGB}{20,118,198}
+\definecolor{bleuamudark}{RGB}{15,90,150}
+\definecolor{cyanamu}{RGB}{77,198,244}
+
+
+\usepackage{/home/bouscadilla/Documents/Code/nbconvert/template/latex/pdf_solution/xeboiboites}
+%
+% exemple
+\newbreakabletheorem[
+    small box style={fill=deepblue!90,draw=deepblue!15, rounded corners,line width=1pt},%
+    big box style={fill=deepblue!5,draw=deepblue!15,thick,rounded corners,line width=1pt},%
+    headfont={\color{white}\bfseries}
+        ]{exemple}{Exemple}{}%{counterCo}
+%
+% remarque
+\newbreakabletheorem[
+    small box style={draw=ansi-green-intense!100,line width=2pt,fill=ansi-green-intense!0,rounded corners,decoration=penciline, decorate},%
+	big box style={color=ansi-green-intense!90,fill=ansi-green-intense!10,thick,decoration={penciline},decorate},
+    broken edges={draw=ansi-green-intense!90,thick,fill=orange!20!black!5, decoration={random steps, segment length=.5cm,amplitude=1.3mm},decorate},%
+    other edges={decoration=penciline,decorate,thick},%
+    headfont={\color{ansi-green-intense}\large\scshape\bfseries}
+    ]{remarque}{Remarque}{}%{counterCa}
+%
+% formule (sans titre)
+\newboxedequation[%
+    big box style={fill=cyanamu!10,draw=cyanamu!100,thick,decoration=penciline,decorate}]%
+    {form}
+%
+% Réponse
+\newbreakabletheorem[
+    small box style={fill=bleuamu!100, draw=bleuamu!60, line width=1pt,rounded corners,decorate},%
+    big box style={fill=bleuamu!10,draw=bleuamu!30,thick,rounded corners,decorate},
+    headfont={\color{white}\large\scshape\bfseries}
+        ]{reponse}{Correction}{}
+%
+
+%
+% À retenir
+%\newbreakabletheorem[
+%    small box style={fill=deepred!100, draw=deepred!80, line width=1pt,rounded corners,decorate},%
+%    big box style={fill=deepred!10,draw=deepred!50,thick,rounded corners,decorate},
+%    headfont={\color{white}\large\scshape\bfseries}
+%        ]{retenir}{À retenir}{}
+%
+\newboxedequation[%
+    big box style={fill=deepred!10,draw=deepred!0,thick,decoration=penciline,decorate}]%
+    {retenir}
+
+
+
+% astuce
+\newspanning[
+    image=/home/bouscadilla/Documents/Code/nbconvert/template/latex/pdf_solution/fig-idee,headfont=\bfseries,
+    spanning style={very thick,decoration=penciline,decorate}
+    ]{astuce}{Astuce}{}
+%
+% activité
+\newbreakabletheorem[
+    small box style={draw=orangeamu!100,line width=2pt,fill=orangeamu!100,rounded corners,decoration=penciline, decorate},%
+	big box style={color=orangeamu!100,fill=orangeamu!5,thick,decoration={penciline},decorate},
+    broken edges={draw=orangeamu!100,thick,fill=orangeamu!100, decoration={random steps, segment length=.5cm,amplitude=1.3mm},decorate},%
+    other edges={decoration=penciline,decorate,thick},%
+    headfont={\color{white}\large\scshape\bfseries}
+    ]{activite}{\adjustimage{height=1cm, valign=m}{/home/bouscadilla/Documents/Code/nbconvert/template/latex/pdf_solution/papier_eleve_investigation.png}%
+    Activité}{}%{counterCa}
+%   
+%   environnement élève
+%
+\newenvironment{eleve}%
+%{\begin{activite}\large\\} % écrire plus gros
+{\begin{activite}\color{noiramu}\\[-0.5cm]}
+{\end{activite}}
+
+\newenvironment{formule}%
+%{\begin{activite}\large\\} % écrire plus gros
+{\begin{form}\color{bleuamu}}
+{\end{form}}
+
+
+\usepackage[breakable]{tcolorbox}
+    \usepackage{parskip} % Stop auto-indenting (to mimic markdown behaviour)
+    
+    \usepackage{iftex}
+    \ifPDFTeX
+    	\usepackage[T1]{fontenc}
+    	\usepackage{mathpazo}
+    \else
+    	\usepackage{fontspec}
+    \fi
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % Maintain compatibility with old templates. Remove in nbconvert 6.0
+    \let\Oldincludegraphics\includegraphics
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionFormat{nocaption}{}
+    \captionsetup{format=nocaption,aboveskip=0pt,belowskip=0pt}
+
+    \usepackage[Export]{adjustbox} % Used to constrain images to a maximum size
+    \adjustboxset{max size={0.9\linewidth}{0.9\paperheight}}
+    \usepackage{float}
+    \floatplacement{figure}{H} % forces figures to be placed at the correct location
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    % The default LaTeX title has an obnoxious amount of whitespace. By default,
+    % titling removes some of it. It also provides customization options.
+    \usepackage{titling}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    \usepackage{mathrsfs}
+    
+
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+    \definecolor{ansi-default-inverse-fg}{HTML}{FFFFFF}
+    \definecolor{ansi-default-inverse-bg}{HTML}{000000}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatibility definitions
+    \def\gt{>}
+    \def\lt{<}
+    \let\Oldtex\TeX
+    \let\Oldlatex\LaTeX
+    \renewcommand{\TeX}{\textrm{\Oldtex}}
+    \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
+    % Document parameters
+    % Document title
+    \title{3-1---POO}
+    
+    
+    
+    
+    
+% Pygments definitions
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % For linebreaks inside Verbatim environment from package fancyvrb. 
+    \makeatletter
+        \newbox\Wrappedcontinuationbox 
+        \newbox\Wrappedvisiblespacebox 
+        \newcommand*\Wrappedvisiblespace {\textcolor{red}{\textvisiblespace}} 
+        \newcommand*\Wrappedcontinuationsymbol {\textcolor{red}{\llap{\tiny$\m@th\hookrightarrow$}}} 
+        \newcommand*\Wrappedcontinuationindent {3ex } 
+        \newcommand*\Wrappedafterbreak {\kern\Wrappedcontinuationindent\copy\Wrappedcontinuationbox} 
+        % Take advantage of the already applied Pygments mark-up to insert 
+        % potential linebreaks for TeX processing. 
+        %        {, <, #, %, $, ' and ": go to next line. 
+        %        _, }, ^, &, >, - and ~: stay at end of broken line. 
+        % Use of \textquotesingle for straight quote. 
+        \newcommand*\Wrappedbreaksatspecials {% 
+            \def\PYGZus{\discretionary{\char`\_}{\Wrappedafterbreak}{\char`\_}}% 
+            \def\PYGZob{\discretionary{}{\Wrappedafterbreak\char`\{}{\char`\{}}% 
+            \def\PYGZcb{\discretionary{\char`\}}{\Wrappedafterbreak}{\char`\}}}% 
+            \def\PYGZca{\discretionary{\char`\^}{\Wrappedafterbreak}{\char`\^}}% 
+            \def\PYGZam{\discretionary{\char`\&}{\Wrappedafterbreak}{\char`\&}}% 
+            \def\PYGZlt{\discretionary{}{\Wrappedafterbreak\char`\<}{\char`\<}}% 
+            \def\PYGZgt{\discretionary{\char`\>}{\Wrappedafterbreak}{\char`\>}}% 
+            \def\PYGZsh{\discretionary{}{\Wrappedafterbreak\char`\#}{\char`\#}}% 
+            \def\PYGZpc{\discretionary{}{\Wrappedafterbreak\char`\%}{\char`\%}}% 
+            \def\PYGZdl{\discretionary{}{\Wrappedafterbreak\char`\$}{\char`\$}}% 
+            \def\PYGZhy{\discretionary{\char`\-}{\Wrappedafterbreak}{\char`\-}}% 
+            \def\PYGZsq{\discretionary{}{\Wrappedafterbreak\textquotesingle}{\textquotesingle}}% 
+            \def\PYGZdq{\discretionary{}{\Wrappedafterbreak\char`\"}{\char`\"}}% 
+            \def\PYGZti{\discretionary{\char`\~}{\Wrappedafterbreak}{\char`\~}}% 
+        } 
+        % Some characters . , ; ? ! / are not pygmentized. 
+        % This macro makes them "active" and they will insert potential linebreaks 
+        \newcommand*\Wrappedbreaksatpunct {% 
+            \lccode`\~`\.\lowercase{\def~}{\discretionary{\hbox{\char`\.}}{\Wrappedafterbreak}{\hbox{\char`\.}}}% 
+            \lccode`\~`\,\lowercase{\def~}{\discretionary{\hbox{\char`\,}}{\Wrappedafterbreak}{\hbox{\char`\,}}}% 
+            \lccode`\~`\;\lowercase{\def~}{\discretionary{\hbox{\char`\;}}{\Wrappedafterbreak}{\hbox{\char`\;}}}% 
+            \lccode`\~`\:\lowercase{\def~}{\discretionary{\hbox{\char`\:}}{\Wrappedafterbreak}{\hbox{\char`\:}}}% 
+            \lccode`\~`\?\lowercase{\def~}{\discretionary{\hbox{\char`\?}}{\Wrappedafterbreak}{\hbox{\char`\?}}}% 
+            \lccode`\~`\!\lowercase{\def~}{\discretionary{\hbox{\char`\!}}{\Wrappedafterbreak}{\hbox{\char`\!}}}% 
+            \lccode`\~`\/\lowercase{\def~}{\discretionary{\hbox{\char`\/}}{\Wrappedafterbreak}{\hbox{\char`\/}}}% 
+            \catcode`\.\active
+            \catcode`\,\active 
+            \catcode`\;\active
+            \catcode`\:\active
+            \catcode`\?\active
+            \catcode`\!\active
+            \catcode`\/\active 
+            \lccode`\~`\~ 	
+        }
+    \makeatother
+
+    \let\OriginalVerbatim=\Verbatim
+    \makeatletter
+    \renewcommand{\Verbatim}[1][1]{%
+        %\parskip\z@skip
+        \sbox\Wrappedcontinuationbox {\Wrappedcontinuationsymbol}%
+        \sbox\Wrappedvisiblespacebox {\FV@SetupFont\Wrappedvisiblespace}%
+        \def\FancyVerbFormatLine ##1{\hsize\linewidth
+            \vtop{\raggedright\hyphenpenalty\z@\exhyphenpenalty\z@
+                \doublehyphendemerits\z@\finalhyphendemerits\z@
+                \strut ##1\strut}%
+        }%
+        % If the linebreak is at a space, the latter will be displayed as visible
+        % space at end of first line, and a continuation symbol starts next line.
+        % Stretch/shrink are however usually zero for typewriter font.
+        \def\FV@Space {%
+            \nobreak\hskip\z@ plus\fontdimen3\font minus\fontdimen4\font
+            \discretionary{\copy\Wrappedvisiblespacebox}{\Wrappedafterbreak}
+            {\kern\fontdimen2\font}%
+        }%
+        
+        % Allow breaks at special characters using \PYG... macros.
+        \Wrappedbreaksatspecials
+        % Breaks at punctuation characters . , ; ? ! and / need catcode=\active 	
+        \OriginalVerbatim[#1,codes*=\Wrappedbreaksatpunct]%
+    }
+    \makeatother
+
+    % Exact colors from NB
+    \definecolor{incolor}{HTML}{303F9F}
+    \definecolor{outcolor}{HTML}{D84315}
+    \definecolor{cellborder}{HTML}{CFCFCF}
+    \definecolor{cellbackground}{HTML}{F7F7F7}
+    
+    % prompt
+    \makeatletter
+    \newcommand{\boxspacing}{\kern\kvtcb@left@rule\kern\kvtcb@boxsep}
+    \makeatother
+    \newcommand{\prompt}[4]{
+        \ttfamily\llap{{\color{#2}[#3]:\hspace{3pt}#4}}\vspace{-\baselineskip}
+    }
+    
+
+    
+\setlength\headheight{30pt}
+\setcounter{secnumdepth}{0} % Turns off numbering for sections
+
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    \geometry{a4paper,tmargin=3cm,bmargin=2cm,lmargin=1cm,rmargin=1cm}\fancyhead[L]{Thème à définir}\fancyhead[L]{\adjustimage{height=1cm, valign=m}{/home/bouscadilla/Documents/Code/nbconvert/template/latex/pdf_solution/papier_eleve_ico_structure}\ttfamily\scshape Struct.de données}\fancyhead[C]{\bfseries\MakeUppercase{3-1---POO}}\fancyhead[C]{\bfseries\MakeUppercase{3 --- P.O.O.}}\fancyhead[R]{\monthyeardate\today}
+
+    \fancyfoot[C]{\thepage}
+    % #TODO ajouter les pages totales
+
+    \pagestyle{fancy}
+    
+
+
+\begin{document}
+    
+    \title{3 --- P.O.O.}
+% \maketitle
+
+    
+    
+
+    
+    \hypertarget{chap.-3-programmation-orientuxe9-objet-pa.dilla.fr10}{%
+\section{\texorpdfstring{Chap. 3 --- Programmation Orienté Objet
+(\href{https://pa.dilla.fr/10}{pa.dilla.fr/10}
+)}{Chap. 3 --- Programmation Orienté Objet (pa.dilla.fr/10 )}}\label{chap.-3-programmation-orientuxe9-objet-pa.dilla.fr10}}
+
+    \hypertarget{classes-et-attributs-structurer-les-donnuxe9es}{%
+\subsection{1 --- Classes et attributs : structurer les
+données}\label{classes-et-attributs-structurer-les-donnuxe9es}}
+
+    Une \textbf{classe} définit et nomme une structure de données de base du
+langage qui peut regrouper plusieurs composantes de natures variées
+
+    Chacune de ces composantes est appelée un \textbf{attribut} et est doté
+d'un nom.
+
+    Par exemple, voici une manipulation de trois nombres entiers
+représentant des durées (heures, minutes, secondes).
+
+On décide d'appeler la classe \texttt{Chrono} et de la munir de trois
+attributs : \texttt{heures}, \texttt{minutes} et \texttt{secondes}.
+
+Voici alors comment on pourrait figurer le temps \emph{21 heures, 34
+minutes et 55 secondes} :
+
+\includegraphics{res/chrono00.png}
+
+    \hypertarget{description-dune-classe}{%
+\subsubsection{1.1 --- Description d'une
+classe}\label{description-dune-classe}}
+
+    Voici comment définir cette structure sous la forme d'une \emph{classe}
+:
+
+        {\scriptsize
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{2}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{class} \PY{n+nc}{Chrono}\PY{p}{:}
+    \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\PY{l+s+sd}{    Une classe pour représenter un temps mesuré}
+\PY{l+s+sd}{    en heures, minutes et secondes.\PYZdq{}\PYZdq{}\PYZdq{}}
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{h}\PY{p}{,} \PY{n}{m}\PY{p}{,} \PY{n}{s}\PY{p}{)}\PY{p}{:}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{heures} \PY{o}{=} \PY{n}{h}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{minutes} \PY{o}{=} \PY{n}{m}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{secondes} \PY{o}{=} \PY{n}{s}
+\end{Verbatim}
+\end{tcolorbox}
+    }
+
+    Pour définir une nouvelle classe, on utilise :
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  le mot-clé \textbf{\texttt{class}}
+\item
+  suivi du nom choisi pour la classe et
+\item
+  suivi par les deux-points \texttt{:}.
+\end{enumerate}
+
+Tout le reste de la définition est alors en retrait (indentation).
+
+Par convention, le nom de la classe doit commencer par une
+\textbf{lettre majuscule}.
+
+Suivent alors
+
+\begin{itemize}
+\tightlist
+\item
+  une documentation puis
+\item
+  la définition d'une fonction \texttt{\_\_init\_\_} possédant
+
+  \begin{itemize}
+  \tightlist
+  \item
+    comme premier paramètre \texttt{self} puis ensuite
+  \item
+    les trois paramètres correspondants aux trois composantes d'un objet
+    admettant possédant la structure de \texttt{chrono}.
+  \end{itemize}
+\end{itemize}
+
+Les instructions de la forme \texttt{self.xxx\ =} correspondent aux
+affectations des valeurs aux trois attributs de la classe.
+
+    \hypertarget{cruxe9ation-dun-objet}{%
+\subsubsection{1.2 --- Création d'un
+objet}\label{cruxe9ation-dun-objet}}
+
+    Une fois la classe définie, un élément correspondant à la structure
+\texttt{Chrono} peut être construit avec une expression de la forme
+\(\texttt{Chrono(}h, m, s \texttt{)}\).
+
+    On appelle un tel élément un \textbf{objet} ou une \textbf{instance de
+la classe} \texttt{Chrono}.
+
+    Ainsi, pour définir et affecter à la variable \texttt{t} un objet
+représentant notre temps \emph{``21 heures, 34 mintes et 55 secondes''}
+on écrit :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{t }\OperatorTok{=}\NormalTok{ Chrono(}\DecValTok{21}\NormalTok{, }\DecValTok{34}\NormalTok{, }\DecValTok{55}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+    On remarque que, comme pour les tableaux, la variable \texttt{t} ne
+contient pas à strictement parler l'objet \textbf{mais} un pointeur vers
+le bloc de mémoire qui a été alloué à cet objet.
+
+La situation correspond donc au schéma suivant :
+
+\includegraphics{res/chrono01.png}
+
+    \hypertarget{manipulation-des-attributs}{%
+\subsubsection{1.3 --- Manipulation des
+attributs}\label{manipulation-des-attributs}}
+
+    On peut accéder aux attributs d'un objet \texttt{t} de la classe
+\texttt{Chrono} avec la notation \texttt{t.a} où \texttt{a} désigne le
+nom de l'attribut visé.
+
+Tout comme les cases d'un tableau, les attributs d'un objets sont
+mutables : on peut les consulter \textbf{et} les modifier.
+
+        {\scriptsize
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{4}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{t} \PY{o}{=} \PY{n}{Chrono}\PY{p}{(}\PY{l+m+mi}{21}\PY{p}{,} \PY{l+m+mi}{34}\PY{p}{,} \PY{l+m+mi}{55}\PY{p}{)}
+
+\PY{n}{t}\PY{o}{.}\PY{n}{secondes}
+\end{Verbatim}
+\end{tcolorbox}
+    }
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{4}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+55
+\end{Verbatim}
+\end{tcolorbox}
+        
+        {\scriptsize
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{5}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{t}\PY{o}{.}\PY{n}{secondes} \PY{o}{=} \PY{n}{t}\PY{o}{.}\PY{n}{secondes} \PY{o}{+} \PY{l+m+mi}{1}
+\PY{n}{t}\PY{o}{.}\PY{n}{secondes}
+\end{Verbatim}
+\end{tcolorbox}
+    }
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{5}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+56
+\end{Verbatim}
+\end{tcolorbox}
+        
+    On parle bien d'\textbf{attribut d'un objet} car chaque objet possède
+pour ses attributs des valeurs qui lui sont propres. On parle alors
+aussi d'\textbf{attribut d'instance}.
+
+    Ainsi, chaque objet de la classe \texttt{Chrono} possède trois attributs
+dont les valeurs sont indépendantes des valeurs des attributs (de même
+nom) des autres instances.
+
+Les définitions \texttt{t\ =\ Chrono(21,\ 34,\ 55)} et
+\texttt{u\ =\ Chrono(5,\ 8,\ 13)} conduisent donc à la situation
+suivante :
+
+\includegraphics{res/chrono01.png} \includegraphics{res/chrono02.png}
+
+Une avancée de cinq secondes du chronomètre \texttt{t} mènerait ainsi à
+la situation suivante :
+
+\includegraphics{res/chrono03.png} \includegraphics{res/chrono02.png}
+
+    Une classe peut également définir des \textbf{attributs de classe}, dont
+la valeur est attachée à la classe elle même.
+
+    Ainsi :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{ Chrono:}
+\NormalTok{    heure\_max }\OperatorTok{=} \DecValTok{24}
+\NormalTok{    ...}
+\end{Highlighting}
+\end{Shaded}
+
+On peut consulter de tels attributs depuis n'importe quelle instance
+avec \texttt{t.heure\_max} ou depuis la classe elle même avec
+\texttt{Chrono.heure\_max}.
+
+On peut modifier cet attribut de classe en y accédant via la classe elle
+même pour que la modification soit perseptible par toutes les instances
+présentes et futures :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Chrono.heure\_max }\OperatorTok{=} \DecValTok{12}
+\end{Highlighting}
+\end{Shaded}
+
+    \hypertarget{muxe9thodes-manipuler-les-donnuxe9es}{%
+\subsection{2 --- Méthodes : manipuler les
+données}\label{muxe9thodes-manipuler-les-donnuxe9es}}
+
+    Dans le \emph{paradigme} de la programmation objet, la notion de classe
+est associée à la notion d'\emph{encapsulation} : un programme
+manipulant un objet n'est pas censé accéder librement à la totalité de
+son contenu.
+
+L'utilisateur n'a pas à savoir ou à accéder aux détails
+d'implémentation.
+
+La manipulation de l'objet passe donc de préférence par une interface
+constituée de fonctions dédiées qui font partie de la définition de la
+calsse et sont appelée les \textbf{méthodes} de cette classe.
+
+    \hypertarget{utilisation-dun-muxe9thode}{%
+\subsubsection{2.1 --- Utilisation d'un
+méthode}\label{utilisation-dun-muxe9thode}}
+
+    Les méthodes d'une classe servent à manipuler les objets de cette
+classe. Même si les méthodes sont des fonctions qui peuvent recevoir des
+paramètres, chaque appel de méthode s'applique avant tout à un objet de
+la classe concerné.
+
+    L'appel d'une méthode \texttt{texte} s'appliquant au chronomètre
+\texttt{t} et renvoyant une chaîne de caractères décrivant le temps
+représenté par \texttt{t} est réalisé par l'instruction
+\texttt{t.texte()} et elle pourra renvoyer la chaîne de caractère
+\texttt{\textquotesingle{}21h\ 34h\ 55s\textquotesingle{}}.
+
+    Cette notation pour l'appel de méthode est la même notation pointée que
+l'accès aux attributs de \texttt{t}. \textbf{Mais} la paire de
+parenthèse fait bien apparaître une méthode, comme pour une fonction
+sans paramètre.
+
+Lorsqu'un méthode dépend d'autres paramètres que cet objet principal
+\texttt{t}, ces autres paramètres apparaissent de la manière habituelle.
+
+    Par exemple, s'il existe une méthode \texttt{avance} faisant avancer le
+chronomètre \texttt{t} d'un \emph{certain} nombre de secondes passé en
+paramètre, on écrira pour avancer le chronomètre de 5 secondes :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{t.avance(}\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Ainsi un nouvel appel à \texttt{t.texte()} renverra cette fois-ci
+\texttt{\textquotesingle{}21h\ 35m\ 0s\textquotesingle{}}.
+
+    Comme le montre l'exemple, on ne manipule pas directement les attributs
+d'un objet. On utilise pour cela des méthodes ce qui préserve
+l'encapsulation du code.
+
+    On a déjà rencontré des notations de ce type comme par exemple
+\texttt{tab.append(42)} pour ajouter le nombre \texttt{42} au tableau
+\texttt{tab}.
+
+    Les paramètres des méthodes peuvent être aussi bien des valeurs de base
+(nombre, chaîne de caractère, tableau, etc.) que des objets.
+
+    Par exemple si pour la classe \texttt{Chrono} on admet l'existence des
+méthodes suivantes :
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{egale} s'appliquant à deux chronomètres pour tester l'égalité
+  des temps représentés
+\item
+  \texttt{clone} s'appliquant à un chronomètre \texttt{t} et renvoyant
+  un nouveau chronomètre initialisé au même temps que \texttt{t}
+\end{itemize}
+
+On pourra alors écrire l'instruction suivante
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{u }\OperatorTok{=}\NormalTok{ t.clone()}
+\NormalTok{t.egale(u)}
+\end{Highlighting}
+\end{Shaded}
+
+qui nous renverra \texttt{True}.
+
+Puis après \texttt{t.avance(3)}, l'instruction \texttt{t.egale(u)} nous
+renverra alors \texttt{False}.
+
+    \hypertarget{duxe9finition-dune-muxe9thode}{%
+\subsubsection{2.2 --- Définition d'une
+méthode}\label{duxe9finition-dune-muxe9thode}}
+
+    Comme nous venons de le voir, une méthode d'une classe peut être vue
+comme une fonction ordinaire, pouvant dépendre d'un nombre de paramètres
+arbitraire \textbf{sauf} qu'elle doit avoir obligatoirement pour
+\textbf{premier paramètre} un objet de la classe. Une méthode ne peut
+donc pas avoir zéro paramètre.
+
+La définition d'une méthode de classe se fait avec la même notation que
+la définition d'un fonction. Le premier paramètre est systématiquement
+appelé \texttt{self}. Comme ce paramètre est un objet, on pourra accéder
+à ses attributs avec la notation \texttt{self.a}
+
+    Ainsi, les fonctions \texttt{texte} et \texttt{avance} de la classe
+\texttt{Chrono} peuvent être implémentée de la façon suivante :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{ Chrono:}
+\NormalTok{    ...}
+    \KeywordTok{def}\NormalTok{ texte(}\VariableTok{self}\NormalTok{):}
+        \ControlFlowTok{return}\NormalTok{ (  }\BuiltInTok{str}\NormalTok{(}\VariableTok{self}\NormalTok{.heures)   }\OperatorTok{+} \StringTok{\textquotesingle{}h \textquotesingle{}}
+                \OperatorTok{+} \BuiltInTok{str}\NormalTok{(}\VariableTok{self}\NormalTok{.minutes)  }\OperatorTok{+} \StringTok{\textquotesingle{}min \textquotesingle{}}
+                \OperatorTok{+} \BuiltInTok{str}\NormalTok{(}\VariableTok{self}\NormalTok{.secondes) }\OperatorTok{+} \StringTok{\textquotesingle{}s\textquotesingle{}}\NormalTok{   )}
+
+    \KeywordTok{def}\NormalTok{ avance(}\VariableTok{self}\NormalTok{, s):}
+        \VariableTok{self}\NormalTok{.secondes }\OperatorTok{+=}\NormalTok{ s}
+        
+        \CommentTok{\# dépassement secondes}
+        \VariableTok{self}\NormalTok{.minutes }\OperatorTok{+=} \VariableTok{self}\NormalTok{.secondes }\OperatorTok{//} \DecValTok{60}
+        \VariableTok{self}\NormalTok{.secondes }\OperatorTok{=} \VariableTok{self}\NormalTok{.secondes }\OperatorTok{\%}  \DecValTok{60}
+
+        \CommentTok{\# dépassement minutes}
+        \VariableTok{self}\NormalTok{.heures }\OperatorTok{+=} \VariableTok{self}\NormalTok{.minutes }\OperatorTok{//} \DecValTok{60}
+        \VariableTok{self}\NormalTok{.minutes }\OperatorTok{=} \VariableTok{self}\NormalTok{.minutes }\OperatorTok{\%}  \DecValTok{60}
+\end{Highlighting}
+\end{Shaded}
+
+    \hypertarget{constructeur}{%
+\subsubsection{2.3 --- Constructeur}\label{constructeur}}
+
+    La construction d'un nouvel objet avec une expression comme
+\texttt{Chrono(21,\ 34,\ 55)} déclenche deux choses :
+
+\begin{itemize}
+\tightlist
+\item
+  la création de l'objet lui même
+\item
+  l'appel à une méthode spéciale chargée d'initialiser les valeurs des
+  attributs. Cette méthode, appelée \textbf{constructeur}, est définie
+  par le programmeur. En Python, il s'agit de la méthode
+  \texttt{\_\_init\_\_} que nous avons pu observer dans le premier
+  exemple.
+\end{itemize}
+
+La définition de la méthode spéciale \texttt{\_\_init\_\_} ne se
+distingue pas des autres méthodes ordinaires : son premier paramètre est
+\texttt{self} et représente l'objet auquel elle s'applique. Les autres
+paramètres sont donnés explicitement lors de la construction.
+
+    \hypertarget{autre-muxe9thodes-particuliuxe8res-en-python}{%
+\subsubsection{2.4 --- Autre méthodes particulières en
+Python}\label{autre-muxe9thodes-particuliuxe8res-en-python}}
+
+    
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+\end{document}
