@@ -491,13 +491,15 @@
     \hypertarget{classes-et-attributs-structurer-les-donnuxe9es}{%
 \subsection{1 --- Classes et attributs : structurer les
 données}\label{classes-et-attributs-structurer-les-donnuxe9es}}
-
+\begin{retenir}
     Une \textbf{classe} définit et nomme une structure de données de base du
 langage qui peut regrouper plusieurs composantes de natures variées
 
+        \end{retenir}\begin{retenir}
     Chacune de ces composantes est appelée un \textbf{attribut} et est doté
 d'un nom.
 
+        \end{retenir}\begin{exemple}
     Par exemple, voici une manipulation de trois nombres entiers
 représentant des durées (heures, minutes, secondes).
 
@@ -509,16 +511,17 @@ minutes et 55 secondes} :
 
 \includegraphics{res/chrono00.png}
 
+        \end{exemple}
     \hypertarget{description-dune-classe}{%
 \subsubsection{1.1 --- Description d'une
 classe}\label{description-dune-classe}}
 
     Voici comment définir cette structure sous la forme d'une \emph{classe}
 :
-
+\begin{exemple}
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{2}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{class} \PY{n+nc}{Chrono}\PY{p}{:}
     \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
@@ -532,6 +535,7 @@ classe}\label{description-dune-classe}}
 \end{tcolorbox}
     }
 
+        \end{exemple}
     Pour définir une nouvelle classe, on utilise :
 
 \begin{enumerate}
@@ -579,10 +583,11 @@ objet}\label{cruxe9ation-dun-objet}}
     Une fois la classe définie, un élément correspondant à la structure
 \texttt{Chrono} peut être construit avec une expression de la forme
 \(\texttt{Chrono(}h, m, s \texttt{)}\).
-
+\begin{retenir}
     On appelle un tel élément un \textbf{objet} ou une \textbf{instance de
 la classe} \texttt{Chrono}.
 
+        \end{retenir}\begin{exemple}
     Ainsi, pour définir et affecter à la variable \texttt{t} un objet
 représentant notre temps \emph{``21 heures, 34 mintes et 55 secondes''}
 on écrit :
@@ -593,6 +598,7 @@ on écrit :
 \end{Highlighting}
 \end{Shaded}
 
+        \end{exemple}\begin{remarque}
     On remarque que, comme pour les tableaux, la variable \texttt{t} ne
 contient pas à strictement parler l'objet \textbf{mais} un pointeur vers
 le bloc de mémoire qui a été alloué à cet objet.
@@ -601,6 +607,7 @@ La situation correspond donc au schéma suivant :
 
 \includegraphics{res/chrono01.png}
 
+        \end{remarque}
     \hypertarget{manipulation-des-attributs}{%
 \subsubsection{1.3 --- Manipulation des
 attributs}\label{manipulation-des-attributs}}
@@ -614,7 +621,7 @@ mutables : on peut les consulter \textbf{et} les modifier.
 
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{4}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{t} \PY{o}{=} \PY{n}{Chrono}\PY{p}{(}\PY{l+m+mi}{21}\PY{p}{,} \PY{l+m+mi}{34}\PY{p}{,} \PY{l+m+mi}{55}\PY{p}{)}
 
@@ -623,34 +630,21 @@ mutables : on peut les consulter \textbf{et} les modifier.
 \end{tcolorbox}
     }
 
-            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
-\prompt{Out}{outcolor}{4}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-55
-\end{Verbatim}
-\end{tcolorbox}
-        
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{5}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{t}\PY{o}{.}\PY{n}{secondes} \PY{o}{=} \PY{n}{t}\PY{o}{.}\PY{n}{secondes} \PY{o}{+} \PY{l+m+mi}{1}
 \PY{n}{t}\PY{o}{.}\PY{n}{secondes}
 \end{Verbatim}
 \end{tcolorbox}
     }
-
-            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
-\prompt{Out}{outcolor}{5}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-56
-\end{Verbatim}
-\end{tcolorbox}
-        
+\begin{retenir}
     On parle bien d'\textbf{attribut d'un objet} car chaque objet possède
 pour ses attributs des valeurs qui lui sont propres. On parle alors
 aussi d'\textbf{attribut d'instance}.
 
+        \end{retenir}\begin{exemple}
     Ainsi, chaque objet de la classe \texttt{Chrono} possède trois attributs
 dont les valeurs sont indépendantes des valeurs des attributs (de même
 nom) des autres instances.
@@ -666,9 +660,11 @@ la situation suivante :
 
 \includegraphics{res/chrono03.png} \includegraphics{res/chrono02.png}
 
+        \end{exemple}\begin{retenir}
     Une classe peut également définir des \textbf{attributs de classe}, dont
 la valeur est attachée à la classe elle même.
 
+        \end{retenir}\begin{exemple}
     Ainsi :
 
 \begin{Shaded}
@@ -693,6 +689,7 @@ présentes et futures :
 \end{Highlighting}
 \end{Shaded}
 
+        \end{exemple}
     \hypertarget{muxe9thodes-manipuler-les-donnuxe9es}{%
 \subsection{2 --- Méthodes : manipuler les
 données}\label{muxe9thodes-manipuler-les-donnuxe9es}}
@@ -717,13 +714,14 @@ méthode}\label{utilisation-dun-muxe9thode}}
 classe. Même si les méthodes sont des fonctions qui peuvent recevoir des
 paramètres, chaque appel de méthode s'applique avant tout à un objet de
 la classe concerné.
-
+\begin{exemple}
     L'appel d'une méthode \texttt{texte} s'appliquant au chronomètre
 \texttt{t} et renvoyant une chaîne de caractères décrivant le temps
 représenté par \texttt{t} est réalisé par l'instruction
 \texttt{t.texte()} et elle pourra renvoyer la chaîne de caractère
 \texttt{\textquotesingle{}21h\ 34h\ 55s\textquotesingle{}}.
 
+        \end{exemple}
     Cette notation pour l'appel de méthode est la même notation pointée que
 l'accès aux attributs de \texttt{t}. \textbf{Mais} la paire de
 parenthèse fait bien apparaître une méthode, comme pour une fonction
@@ -731,7 +729,7 @@ sans paramètre.
 
 Lorsqu'un méthode dépend d'autres paramètres que cet objet principal
 \texttt{t}, ces autres paramètres apparaissent de la manière habituelle.
-
+\begin{exemple}
     Par exemple, s'il existe une méthode \texttt{avance} faisant avancer le
 chronomètre \texttt{t} d'un \emph{certain} nombre de secondes passé en
 paramètre, on écrira pour avancer le chronomètre de 5 secondes :
@@ -745,17 +743,20 @@ paramètre, on écrira pour avancer le chronomètre de 5 secondes :
 Ainsi un nouvel appel à \texttt{t.texte()} renverra cette fois-ci
 \texttt{\textquotesingle{}21h\ 35m\ 0s\textquotesingle{}}.
 
+        \end{exemple}\begin{remarque}
     Comme le montre l'exemple, on ne manipule pas directement les attributs
 d'un objet. On utilise pour cela des méthodes ce qui préserve
 l'encapsulation du code.
 
+        \end{remarque}\begin{exemple}
     On a déjà rencontré des notations de ce type comme par exemple
 \texttt{tab.append(42)} pour ajouter le nombre \texttt{42} au tableau
 \texttt{tab}.
 
+        \end{exemple}
     Les paramètres des méthodes peuvent être aussi bien des valeurs de base
 (nombre, chaîne de caractère, tableau, etc.) que des objets.
-
+\begin{exemple}
     Par exemple si pour la classe \texttt{Chrono} on admet l'existence des
 méthodes suivantes :
 
@@ -783,6 +784,7 @@ qui nous renverra \texttt{True}.
 Puis après \texttt{t.avance(3)}, l'instruction \texttt{t.egale(u)} nous
 renverra alors \texttt{False}.
 
+        \end{exemple}
     \hypertarget{duxe9finition-dune-muxe9thode}{%
 \subsubsection{2.2 --- Définition d'une
 méthode}\label{duxe9finition-dune-muxe9thode}}
@@ -797,7 +799,7 @@ La définition d'une méthode de classe se fait avec la même notation que
 la définition d'un fonction. Le premier paramètre est systématiquement
 appelé \texttt{self}. Comme ce paramètre est un objet, on pourra accéder
 à ses attributs avec la notation \texttt{self.a}
-
+\begin{exemple}
     Ainsi, les fonctions \texttt{texte} et \texttt{avance} de la classe
 \texttt{Chrono} peuvent être implémentée de la façon suivante :
 
@@ -823,9 +825,10 @@ appelé \texttt{self}. Comme ce paramètre est un objet, on pourra accéder
 \end{Highlighting}
 \end{Shaded}
 
+        \end{exemple}
     \hypertarget{constructeur}{%
 \subsubsection{2.3 --- Constructeur}\label{constructeur}}
-
+\begin{retenir}
     La construction d'un nouvel objet avec une expression comme
 \texttt{Chrono(21,\ 34,\ 55)} déclenche deux choses :
 
@@ -846,12 +849,276 @@ distingue pas des autres méthodes ordinaires : son premier paramètre est
 \texttt{self} et représente l'objet auquel elle s'applique. Les autres
 paramètres sont donnés explicitement lors de la construction.
 
+        \end{retenir}
     \hypertarget{autre-muxe9thodes-particuliuxe8res-en-python}{%
 \subsubsection{2.4 --- Autre méthodes particulières en
 Python}\label{autre-muxe9thodes-particuliuxe8res-en-python}}
 
-    
+    Il existe en Python d'autres \emph{méthodes particulières} :
 
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+\begin{minipage}[b]{0.30\columnwidth}\raggedright
+méthode\strut
+\end{minipage} & \begin{minipage}[b]{0.30\columnwidth}\raggedright
+appel\strut
+\end{minipage} & \begin{minipage}[b]{0.30\columnwidth}\raggedright
+effet\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+\texttt{\_\_str\_\_(self)}\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+\texttt{str(t)}\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+renvoie une chaîne de caractère décrivant \texttt{t}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+\texttt{\_\_lt\_\_(self,\ u)}\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+\texttt{t\ \textless{}\ u}\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+revoie \texttt{True} si \texttt{t} est strictement plus petit que
+\texttt{True}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+\texttt{\_\_hash\_\_(self)}\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+\texttt{hash(t)}\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+donne un code de hachage pour \texttt{t}, par exemple pour l'utiliser
+comme clé d'un dictionnaire \texttt{d}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+\texttt{\_\_len\_\_(self)}\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+\texttt{len(t)}\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+renvoie un nombre entier définissant la taille de \texttt{t}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+\texttt{\_\_contains\_\_(self,\ x)}\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+\texttt{x\ in\ t}\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+renvoie \texttt{True} si et seulement si \texttt{x} est dans la
+collection \texttt{t}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+\texttt{\_\_getitem\_\_(self,\ i)}\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+\texttt{t{[}i{]}}\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+renvoie le \texttt{i}-ième élément de \texttt{t}\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+\begin{exemple}
+    Par exemple, la méthode \texttt{texte} de la classe \texttt{Chrono}
+correspond exactement au rôle de la méthode \texttt{\_\_str\_\_}\ldots{}
+mais ne bénéficie pas de la syntaxe allégée
+
+        \end{exemple}
+    \hypertarget{uxe9galituxe9-entre-deux-objets}{%
+\paragraph{Égalité entre deux
+objets}\label{uxe9galituxe9-entre-deux-objets}}
+
+Par défaut, la comparaison avec \texttt{==} entre deux objets ne renvoie
+\texttt{True} que lorsqu'elle est appliquée deux fois au même objet,
+ayant la même adresse mémoire.
+
+Pour que la comparaison s'effectue en fonction de la valeur des
+attributs, il faut définir la méthode spéciale
+\texttt{\_\_eq\_\_(self,\ obj)}.
+\begin{remarque}
+    On remarque que deux classes différents peuvent sans problème définir
+des attributs de même nom. Il n'y a aucun conflit dans ce cas là car une
+classe définit un \emph{espace de noms}, c'est-à-dire une zone mémoire
+séparée des autres en ce qui concerne le nommage des variables et des
+autres éléments.
+
+Par exemple les attributs \texttt{.x} ou \texttt{.y} peuvent être
+utilisés dans plusieurs classes différentes sans risque de confusion.
+
+        \end{remarque}\begin{retenir}
+    \hypertarget{muxe9thodes-de-classe}{%
+\paragraph{Méthodes de classe}\label{muxe9thodes-de-classe}}
+
+Il existe des attributs de classe et il existe aussi des
+\textbf{méthodes de classe}, dont la valeur ne dépend pas des instances
+mais est partagée au niveau de la classe entière.
+
+Ces méthodes de classes sont appelées en programmation objet des
+\textbf{méthodes statiques}.
+
+        \end{retenir}\begin{exemple}
+    Par exemple :
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\tightlist
+\item
+  méthode pertinente pour réaliser des fonctions auxilières ne
+  travaillant pas directement sur les objets de la classe
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ est\_seconde\_valide(s):}
+    \ControlFlowTok{return} \DecValTok{0} \OperatorTok{\textless{}=}\NormalTok{ s }\KeywordTok{and}\NormalTok{ s }\OperatorTok{\textless{}} \DecValTok{60}
+\end{Highlighting}
+\end{Shaded}
+
+Une instruction \texttt{Chrono.est\_seconde\_valide(64)} renvoie donc
+\texttt{False}.
+
+        \end{exemple}\begin{exemple}
+    \begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  opérations d'appliquant à plusieurs instances aux rôles symétriques et
+  dont aucune n'est modifiée (pas d'effets de bords) :
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def} \BuiltInTok{max}\NormalTok{(t1, t2):}
+    \ControlFlowTok{if}\NormalTok{ t1.heures }\OperatorTok{\textgreater{}}\NormalTok{ t2.heures:}
+        \ControlFlowTok{return}\NormalTok{ t1}
+    \ControlFlowTok{elif}\NormalTok{ t2.heures }\OperatorTok{\textgreater{}}\NormalTok{ t1.heures:}
+        \ControlFlowTok{return}\NormalTok{ t2}
+    \ControlFlowTok{elif}\NormalTok{ t1.minutes }\OperatorTok{\textgreater{}}\NormalTok{ t2.minutes:}
+\NormalTok{        ...}
+\end{Highlighting}
+\end{Shaded}
+
+Une instruction \texttt{Chrono.max(t,u)} renvoie donc l'objet (sa classe
+et son adresse mémoire) comme par exemple
+\texttt{\textless{}\_\_main\_\_.Chrono\ object\ at\ 0x10d8ac198\textgreater{}}
+
+        \end{exemple}
+    \hypertarget{une-classe-pour-les-ensembles}{%
+\subsubsection{2.4 --- Une classe pour les
+ensembles}\label{une-classe-pour-les-ensembles}}
+\begin{exemple}
+        {\scriptsize
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{class} \PY{n+nc}{Ensemble}\PY{p}{:}
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{taille} \PY{o}{=} \PY{l+m+mi}{0}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{dates} \PY{o}{=} \PY{p}{[}\PY{k+kc}{False}\PY{p}{]} \PY{o}{*} \PY{l+m+mi}{366}
+
+    \PY{k}{def} \PY{n+nf}{contient}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{x}\PY{p}{)}\PY{p}{:}
+        \PY{k}{return} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{dates}\PY{p}{[}\PY{n}{x}\PY{p}{]}
+    
+    \PY{k}{def} \PY{n+nf}{ajoute}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{x}\PY{p}{)}\PY{p}{:}
+        \PY{k}{if} \PY{o+ow}{not} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{contient}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{:}
+            \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{taille} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+            \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{dates}\PY{p}{[}\PY{n}{x}\PY{p}{]} \PY{o}{=} \PY{k+kc}{True}
+
+\PY{k}{def} \PY{n+nf}{contient\PYZus{}doublon}\PY{p}{(}\PY{n}{t}\PY{p}{)}\PY{p}{:}
+    \PY{n}{s} \PY{o}{=} \PY{n}{Ensemble}\PY{p}{(}\PY{p}{)}
+    \PY{k}{for} \PY{n}{x} \PY{o+ow}{in} \PY{n}{t}\PY{p}{:}
+        \PY{k}{if} \PY{n}{s}\PY{o}{.}\PY{n}{contient}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{:}
+            \PY{k}{return} \PY{k+kc}{True}
+        \PY{n}{s}\PY{o}{.}\PY{n}{ajoute}\PY{p}{(}\PY{n}{x}\PY{p}{)}
+    \PY{k}{return} \PY{k+kc}{False}
+\end{Verbatim}
+\end{tcolorbox}
+    }
+
+        \end{exemple}
+    Le programme ci-dessus donne une adaptation du programme du
+\emph{chapitre 2 --- Modularité} sous la forme d'une classe.
+
+Puisqu'une classe peut regrouper plusieurs données, nous en profitons
+pour mémoriser la taille de l'ensemble de dates. Cela permettrait par
+exemple une définition simple d'une méthode \texttt{\_\_len\_\_}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{ Ensemble:}
+\NormalTok{    ...}
+    \KeywordTok{def} \FunctionTok{\_\_len\_\_}\NormalTok{(}\VariableTok{self}\NormalTok{):}
+        \ControlFlowTok{return} \VariableTok{self}\NormalTok{.taille}
+\end{Highlighting}
+\end{Shaded}
+\begin{remarque}
+    Plusieurs remarques :
+
+\begin{itemize}
+\tightlist
+\item
+  L'appel à la fonction \texttt{cree()} est remplacée par un appel au
+  constructeur \texttt{Ensemble()}.
+\item
+  Les appels de fonctions \texttt{contient(s,x)} et \texttt{ajoute(s,x)}
+  sont transformés en appels de méthodes \texttt{s.contient(x)} et
+  \texttt{s.ajoute(x)}.
+\end{itemize}
+
+        \end{remarque}
+    \hypertarget{retour-sur-lencapsulation}{%
+\subsection{3 --- Retour sur
+l'encapsulation}\label{retour-sur-lencapsulation}}
+
+    Dans la philosophie objet, l'interaction avec les objets se fait
+essentiellement \textbf{avec les méthodes}. Les attributs sont
+considérés par défaut comme relevant du \emph{détail d'implémentation}.
+
+    Ainsi, pour la classe \texttt{Chrono}, il est essentiel de savoir qu'on
+peut afficher et faire évoluer les temps, mais l'existance des trois
+attributs \texttt{heures}, \texttt{minutes} et \texttt{secondes} est
+anecdotique (et peut être cachée à l'utilisateur).
+\begin{exemple}
+    Par exemple, on peut simplifier la définition de la classe en ne
+définissant qu'un unique attribut \texttt{\_temps} mesurant le temps en
+seconde.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{ Chrono:}
+    \KeywordTok{def} \FunctionTok{\_\_init\_\_}\NormalTok{(}\VariableTok{self}\NormalTok{, h, m, s):}
+        \VariableTok{self}\NormalTok{.\_temps }\OperatorTok{=} \DecValTok{3600}\OperatorTok{*}\NormalTok{h }\OperatorTok{+} \DecValTok{60}\OperatorTok{*}\NormalTok{m }\OperatorTok{+}\NormalTok{ s}
+\end{Highlighting}
+\end{Shaded}
+
+        \end{exemple}\begin{eleve}
+    \textbf{Redéfinir} les méthodes \texttt{avance}, \texttt{texte} (ou
+\texttt{\_\_str\_\_}), \texttt{egale} (ou \texttt{\_\_eq\_\_}) et
+\texttt{clone} en tenant compte de ce changement d'implémentation.
+
+\textbf{Ajouter} une méthode \texttt{\_conversion} qui extrait d'un
+temps le triplet \texttt{(h,\ m,\ s)} correspondant. \textbf{Utiliser}
+cette méthode auxiliaire pour simplifier les implémentations de
+\texttt{texte} et \texttt{clone}.
+        
+        \end{eleve}\begin{remarque}
+    Les méthodes possédant un nom commençant par \texttt{\_} sont des
+méthodes auxiliaires et les autres méthodes forment l'\textbf{interface}
+des objets de cette classe.
+
+        \end{remarque}
+    \hypertarget{uxe0-retenir}{%
+\subsection{À retenir}\label{uxe0-retenir}}
+\begin{retenir}
+    La programmation orientée objet \textbf{structure} les programmes en
+regroupant dans une même entité des données et le code manipulant ces
+données.
+
+Dans ce paradigme de programmation, on manipule des \textbf{objets}
+pouvant contenir plusieurs données sous la forme d'\textbf{attributs} à
+l'aide de fonctions particulières appelées \textbf{méthodes}. Chaque
+objet est une \textbf{instance} d'une \textbf{classe}, la classe
+définissant l'ensemble des attributs et méthodes que possèdent ses
+instances.
+
+        \end{retenir}
 
     % Add a bibliography block to the postdoc
     
