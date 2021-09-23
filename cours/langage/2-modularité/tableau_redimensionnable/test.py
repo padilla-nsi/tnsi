@@ -1,8 +1,9 @@
-from tableauRedimensionnable import cree, lit
+from tableauRedimensionnable import cree, lit, ecrit, ajoute
 
 tab = cree()
 
-tab = {'n': 6, 't': [3, 1, 4, 1, 5, 9, None, None]}
+for i in range (9):
+    ajoute(tab, i)
+
 print(tab)
-print(lit(tab,3))
 
