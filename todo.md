@@ -1,8 +1,8 @@
 # TNSI
 
-Chap 1. Récursivité {due:2021-09-09} #lanquage {cm:2021-09-13} +tnsi
+Chap 1. Récursivité {due:2021-09-09} #langage {cm:2021-09-13} +tnsi
 
-Chap 2. Modularité {due:2021-09-16} #lanquage +tnsi   {c}
+Chap 2. Modularité {due:2021-09-16} #langage +tnsi    {cm:2021-09-23} {c}
     (A) activité introduction  {cm:2021-09-16}
     (A) encapsulation {cm:2021-09-16}
     (A) interface {cm:2021-09-16}
@@ -13,15 +13,15 @@ Chap 2. Modularité {due:2021-09-16} #lanquage +tnsi   {c}
     #application réaliser programme 1 {cm:2021-09-20}
     #application réaliser programme 2 {cm:2021-09-20}
     #application slice / concaténation {cm:2021-09-20}
-    #application table de hachage
-    #application tableaux redimensionnables
+    #application table de hachage {cm:2021-09-23}
+    #application tableaux redimensionnables {cm:2021-09-23}
     #application dictionnaires
 
-Chap 3. Programmation objet {due:2021-09-23} #structures_de_données  +tnsi  {c}
-    (A) classes et attributs : structurer les données
-    (A) description d'une classe
-    (A) création d'un objet
-    (A) manipulation des attributs
+Chap 3. Programmation objet {due:2021-09-23} #structures_de_données  +tnsi   {c}
+    (A) classes et attributs : structurer les données {cm:2021-09-23}
+    (A) description d'une classe {cm:2021-09-23}
+    (A) création d'un objet {cm:2021-09-23}
+    (A) manipulation des attributs {cm:2021-09-23}
     (C) tables de hachages
     (A) Méthodes : manipuler les données
     (A) utilisation d'une méthode
@@ -43,7 +43,7 @@ Chap 3. Programmation objet {due:2021-09-23} #structures_de_données  +tnsi  {c}
 
 DS1 {due:2021-09-27} +tnsi
 
-Chap 4. Mise au point de programmes {due:2021-10-07} #lanquage +tnsi
+Chap 4. Mise au point de programmes {due:2021-10-07} #langage +tnsi {c}
     (A) types en python
     (A) annoter les variables et les fonctions
     (B) types nommés, types paramétrés et généricité
@@ -58,7 +58,7 @@ Chap 4. Mise au point de programmes {due:2021-10-07} #lanquage +tnsi
     #application Chrono
 
 
-Chap 5. Listes chaînées {due:2021-10-14} +tnsi #structures_de_données
+Chap 5. Listes chaînées {due:2021-10-14} +tnsi #structures_de_données {c}
     (A) structure de liste chaînée
     (A) opérations sur les listes
     (A) longueur d'une liste
@@ -71,7 +71,7 @@ Chap 5. Listes chaînées {due:2021-10-14} +tnsi #structures_de_données
     #application listeN
     #application affiche_liste
     #application nieme_element
-    #application occurence
+    #application occurrence
     #application trouve
     #application concatener_inverse
     #application identiques
