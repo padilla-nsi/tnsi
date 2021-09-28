@@ -23,9 +23,9 @@ Chap 3. Programmation objet {due:2021-09-23} #structures_de_données  +tnsi   {c
     (A) création d'un objet {cm:2021-09-23}
     (A) manipulation des attributs {cm:2021-09-23}
     (C) tables de hachages
-    (A) Méthodes : manipuler les données
-    (A) utilisation d'une méthode
-    (A) définition d'une méthode
+    (A) Méthodes : manipuler les données {cm:2021-09-27}
+    (A) utilisation d'une méthode {cm:2021-09-27}
+    (A) définition d'une méthode {cm:2021-09-27}
     (A) constructeur
     (B) méthodes particulières
     (C) une classe pour les ensembles
