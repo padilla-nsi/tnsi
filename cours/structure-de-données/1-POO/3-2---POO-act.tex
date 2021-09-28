@@ -527,6 +527,130 @@ particulièrement un entier strictement positif.
   (bonus) S'assurer que les fractions sont toujours sous forme réduite.
 \end{enumerate}
         
+        \end{eleve}\begin{eleve}
+    Définir une classe \texttt{Intervalle} représentant des intervalles de
+nombres. Cette classe possède deux attributs \texttt{a} et \texttt{b}
+représentant respectivement l'extrémité inférieure et l'extrémité
+supérieure de l'intervalle. Les deux extrémités sont considérées comme
+incluses dans l'intervalle. Tout intervalle avec
+\texttt{b\ \textless{}\ a} représente l'intervalle vide.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Écrire le constructeur de la classe \texttt{Intervalle} et une méthode
+  \texttt{est\_\ vide} renvoyant \texttt{True} si l'objet représente
+  l'intervalle vide et \texttt{False} sinon.
+\item
+  Ajouter des méthodes \texttt{\_\_len\_\_} renvoyant la longueur de
+  l'intervalle (l'intervalle vide a une longueur \texttt{0}) et
+  \texttt{\_\_contains\_\_} testant l'appartenance d'un élément
+  \texttt{x} à l'intervalle.
+\item
+  Ajouter une méthode \texttt{\_\_eq\_\_} permettant de tester l'égalité
+  de deux intervalles avec \texttt{==} et une méthode
+  \texttt{\_\_le\_\_} permettant de tester l'inclusion d'un intervalle
+  dans un autre avec \texttt{\textless{}=}. Attention: toutes les
+  représentations de l'intervalle vide doivent être considérées égales,
+  et incluses dans tout intervalle.
+\item
+  Ajouter des méthodes intersection et union calculant respectivement
+  l'intersection de deux intervalles et le plus petit intervalle
+  contenant l'union de deux intervalles (l'intersection est bien
+  toujours un intervalle, alors que l'union ne l'est pas forcément). Ces
+  deux fonctions doivent renvoyer un nouvel intervalle sans modifier
+  leurs paramètres.
+\item
+  Tester ces méthodes.
+\end{enumerate}
+        
+        \end{eleve}\begin{eleve}
+    Définir une classe \texttt{Angle} pour représenter un angle en degrés.
+Cette classe contient un unique attribut, \texttt{angle}, qui est un
+entier. On demande que, quoiqu'il arrive, l'égalité
+\(0 \leq \texttt{angle} < 360\) reste vérifiée.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Écrire le constructeur de cette classe.
+\item
+  Ajouter une méthode \texttt{\_\_str\ \_\_} qui renvoie une chaîne de
+  caractères de la forme \texttt{"60\ degrés"}. Observer son effet en
+  construisant un objet de la classe \texttt{Angle} puis en l'affichant
+  avec \texttt{print}.
+\item
+  Ajouter une méthode \texttt{ajoute} qui reçoit un autre angle en
+  argument (un objet de la classe \texttt{Angle}) et l'ajoute au champ
+  \texttt{angle} de l'objet. Attention à ce que la valeur
+  d'\texttt{angle} reste bien dans le bon intervalle.
+\item
+  Ajouter deux méthodes \texttt{cos} et \texttt{sin} pour calculer
+  respectivement le cosinus et le sinus de l'angle. On utilisera pour
+  cela les fonctions \texttt{cos} et \texttt{sin} de la bibliothèque
+  \texttt{math}. Attention: il faut convertir l'angle en radians (en le
+  multipliant par \(\pi / 180\)) avant d'appeler les fonctions
+  \texttt{cos} et \texttt{sin}.
+\item
+  Tester les méthodes \texttt{ajoute}, \texttt{cos} et \texttt{sin}.
+\end{enumerate}
+        
+        \end{eleve}\begin{eleve}
+    Définir une classe \texttt{Date} pour représenter une date, avec trois
+attributs \texttt{jour}, \texttt{mois} et \texttt{annee}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Écrire son constructeur.
+\item
+  Ajouter une méthode \texttt{\_\_str\ \_\_} qui renvoie une chaîne de
+  caractères de la forme \texttt{"8\ mai\ 1945"}. On pourra se servir
+  d'un attribut de classe qui est un tableau donnant les noms des douze
+  mois de l'année. Tester en construisant des objets de la classe
+  \texttt{Date} puis en les affichant avec \texttt{print}.
+\item
+  Ajouter une méthode \texttt{\_\_lt\_\_} qui permet de déterminer si
+  une date \texttt{d1} est antérieure à une date \texttt{d2} en écrivant
+  \texttt{d1\ \textless{}\ d2}. La tester.
+\end{enumerate}
+        
+        \end{eleve}\begin{eleve}
+    Dans certains langages de programmation les tableaux ne sont pas
+nécessairement indexés à partir de \texttt{0}. Par exemple, on peut
+déclarer un tableau dont les indices vont de \texttt{-10} à \texttt{9}
+si on le souhaite. Dans cet exercice, on se propose de construire une
+classe \texttt{Tableau} pour réaliser de tels tableaux. Un objet de
+cette classe aura deux attributs, un attribut \texttt{premier} qui est
+la valeur de premier indice et un attribut \texttt{contenu} qui est un
+tableau Python contenant les éléments. Ce dernier est un vrai tableau
+Python, indexé à partir de 0.
+
+Écrire un constructeur \texttt{\_\_init\_\_(self,\ imin,\ imax,\ v)} où
+\texttt{imin} est le premier indice, \texttt{imax} le dernier indice et
+\texttt{v} la valeur utilisée pour initialiser toutes les cases du
+tableau. Ainsi, on peut écrire \texttt{t\ =\ Tableau(-10,\ 9,\ 42)} pour
+construire un tableau de vingt cases, indexées de \texttt{-10} à
+\texttt{9} et toutes initialisées avec la valeur \texttt{42}.
+
+Écrire une méthode \texttt{\_\_len\_\_(self)} qui renvoie la taille du
+tableau.
+
+Écrire une méthode \texttt{\_\_getitem\_\_(self,\ i)} qui renvoie
+l'élément du tableau self d'indice \texttt{i}. De même, écrire une
+méthode \texttt{\_\_setitem\_\_(self,\ i,\ v)} qui modifie l'élément du
+tableau \texttt{self} d'indice \texttt{i} pour lui donner la valeur
+\texttt{v}. Ces deux méthodes doivent vérifier que l'indice \texttt{i}
+est bien valide et, dans le cas contraire, lever l'exception
+\texttt{IndexError} avec la valeur de \texttt{i} en argument
+(c'est-à-dire \texttt{raise\ IndexError\ (i)}).
+
+Enfin, écrire une méthode \texttt{\_\_str\_\_(self)} qui renvoie une
+chaîne de caractères décrivant le contenu du tableau.
+        
         \end{eleve}
 
     % Add a bibliography block to the postdoc
