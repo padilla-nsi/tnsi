@@ -26,13 +26,13 @@ Chap 3. Programmation objet {due:2021-09-23} #structures_de_données  +tnsi   {c
     (A) Méthodes : manipuler les données {cm:2021-09-27}
     (A) utilisation d'une méthode {cm:2021-09-27}
     (A) définition d'une méthode {cm:2021-09-27}
-    (A) constructeur
-    (B) méthodes particulières
-    (C) une classe pour les ensembles
+    (A) constructeur {cm:2021-09-30}
+    (B) méthodes particulières {cm:2021-09-30}
+    (C) une classe pour les ensembles {cm:2021-09-30}
     (C) retour sur l'encapsulation
     (C) héritage
-    #application classe Fraction
-    #application Intervalle
+    #application classe Fraction {cm:2021-09-30}
+    #application Intervalle {cm:2021-09-30}
     #application Angle
     #application Date
     #application Tableau plage perso

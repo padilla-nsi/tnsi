@@ -527,7 +527,138 @@ particulièrement un entier strictement positif.
   (bonus) S'assurer que les fractions sont toujours sous forme réduite.
 \end{enumerate}
         
-        \end{eleve}\begin{eleve}
+        \end{eleve}
+        {\scriptsize
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kn}{from} \PY{n+nn}{doctest} \PY{k+kn}{import} \PY{n}{testmod}
+
+
+\PY{k}{class} \PY{n+nc}{Fraction}\PY{p}{:}
+
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{num}\PY{p}{,} \PY{n}{denom}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Nombre rationnel définit par la fraction}
+\PY{l+s+sd}{        num/denom avec denom \PYZgt{} 0}
+
+\PY{l+s+sd}{        Args:}
+\PY{l+s+sd}{            num (int): numérateur}
+\PY{l+s+sd}{            denom (int): dénominateur \PYZgt{} 0}
+\PY{l+s+sd}{        }
+\PY{l+s+sd}{        Exemples:}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} nb = Fraction(1,2)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(nb.num)}
+\PY{l+s+sd}{        1}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(nb.denom)}
+\PY{l+s+sd}{        2}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{k}{if} \PY{n}{denom} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{l+m+mi}{0}\PY{p}{:}
+            \PY{k}{raise} \PY{n+ne}{ValueError}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{le dénominateur doit être strictement positif}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{num} \PY{o}{=} \PY{n}{num}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{denom} \PY{o}{=} \PY{n}{denom}
+    
+
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}str\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Affichage de la classe Fraction}
+
+\PY{l+s+sd}{        Exemple :}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(Fraction(1,2))}
+\PY{l+s+sd}{        1 / 2}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(Fraction(5,1))}
+\PY{l+s+sd}{        5}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{k}{if} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{denom} \PY{o}{==} \PY{l+m+mi}{1}\PY{p}{:}
+            \PY{k}{return} \PY{n+nb}{str}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{num}\PY{p}{)}
+
+        \PY{n}{texte} \PY{o}{=} \PY{n+nb}{str}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{num}\PY{p}{)} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ / }\PY{l+s+s2}{\PYZdq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{denom}\PY{p}{)}
+        \PY{k}{return} \PY{n}{texte}
+
+
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}eq\PYZus{}\PYZus{}} \PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{frac}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Est ce que le nombre rationnel est égal à frac?}
+
+\PY{l+s+sd}{        Args:}
+\PY{l+s+sd}{            frac (Fraction): nombre rationnel à comparer}
+\PY{l+s+sd}{        }
+\PY{l+s+sd}{        Exemples:}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} Fraction(1,2) == Fraction(1,2)}
+\PY{l+s+sd}{        True}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} Fraction(1,2) == Fraction (2,1)}
+\PY{l+s+sd}{        False}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} Fraction(1,2) == Fraction(5,10)}
+\PY{l+s+sd}{        True}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{k}{if} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{denom} \PY{o}{==} \PY{n}{frac}\PY{o}{.}\PY{n}{denom}\PY{p}{:}
+            \PY{k}{return} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{num} \PY{o}{==} \PY{n}{frac}\PY{o}{.}\PY{n}{num}
+        
+        \PY{c+c1}{\PYZsh{} méthode du produit en croix pour tester égalité}
+        \PY{c+c1}{\PYZsh{} l\PYZsq{}avantage est de ne comparer que des nombres entiers}
+        \PY{c+c1}{\PYZsh{} et pas des float}
+        \PY{k}{return} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{num} \PY{o}{*} \PY{n}{frac}\PY{o}{.}\PY{n}{denom} \PY{o}{==} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{denom} \PY{o}{*} \PY{n}{frac}\PY{o}{.}\PY{n}{num}
+
+
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}lt\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{frac}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Est ce que le nombre rationnel est inférieur à frac?}
+
+\PY{l+s+sd}{        Args:}
+\PY{l+s+sd}{            frac (Fraction): nombre rationnel à comparer}
+
+\PY{l+s+sd}{        Returns:}
+\PY{l+s+sd}{            bool: True si inférieur à frac}
+
+\PY{l+s+sd}{        Exemple:}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} Fraction(5,7) \PYZlt{} Fraction(6,7)}
+\PY{l+s+sd}{        True}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} Fraction(5,7) \PYZlt{} Fraction(4,7)}
+\PY{l+s+sd}{        False}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} Fraction(5,7) \PYZlt{} Fraction(10,14)}
+\PY{l+s+sd}{        False}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} Fraction(3,4) \PYZlt{} Fraction(1,2)}
+\PY{l+s+sd}{        False}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{k}{if} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{denom} \PY{o}{==} \PY{n}{frac}\PY{o}{.}\PY{n}{denom}\PY{p}{:}
+            \PY{k}{return} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{num} \PY{o}{\PYZlt{}} \PY{n}{frac}\PY{o}{.}\PY{n}{num}
+        
+        \PY{c+c1}{\PYZsh{} méthode de comparaison par le produit en croix}
+        \PY{c+c1}{\PYZsh{} manipulation d\PYZsq{}entiers (moins de pb que les float)}
+        \PY{k}{return} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{num} \PY{o}{*} \PY{n}{frac}\PY{o}{.}\PY{n}{denom} \PY{o}{\PYZlt{}} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{denom} \PY{o}{*} \PY{n}{frac}\PY{o}{.}\PY{n}{num}
+
+
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}mul\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{frac}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}résultat du produit par frac}
+
+\PY{l+s+sd}{        Args:}
+\PY{l+s+sd}{            frac (Fraction): nb rationnel avec lequel on multiplie}
+
+\PY{l+s+sd}{        Returns:}
+\PY{l+s+sd}{            Fraction: nb rationnel produit des deux fractions}
+
+\PY{l+s+sd}{        Exemple:}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} Fraction(1,3) * Fraction(3,5) == Fraction(1,5)}
+\PY{l+s+sd}{        True}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{n}{num} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{num} \PY{o}{*} \PY{n}{frac}\PY{o}{.}\PY{n}{num}
+        \PY{n}{denom} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{denom} \PY{o}{*} \PY{n}{frac}\PY{o}{.}\PY{n}{denom}
+        \PY{k}{return} \PY{n}{Fraction}\PY{p}{(}\PY{n}{num}\PY{p}{,} \PY{n}{denom}\PY{p}{)}    
+
+
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}add\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{frac}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} Fraction(1,2) + Fraction(3,5) == Fraction(11,10)}
+\PY{l+s+sd}{        True}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} Fraction(1,2) + Fraction(50,50) == Fraction(3,2)}
+\PY{l+s+sd}{        True}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{n}{denom} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{denom} \PY{o}{*} \PY{n}{frac}\PY{o}{.}\PY{n}{denom}
+        \PY{n}{num} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{num} \PY{o}{*} \PY{n}{frac}\PY{o}{.}\PY{n}{denom} \PY{o}{+} \PY{n}{frac}\PY{o}{.}\PY{n}{num} \PY{o}{*} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{denom}
+        \PY{k}{return} \PY{n}{Fraction}\PY{p}{(}\PY{n}{num}\PY{p}{,} \PY{n}{denom}\PY{p}{)}
+
+
+\PY{n}{testmod}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+    }
+\begin{eleve}
     Définir une classe \texttt{Intervalle} représentant des intervalles de
 nombres. Cette classe possède deux attributs \texttt{a} et \texttt{b}
 représentant respectivement l'extrémité inférieure et l'extrémité
@@ -565,7 +696,344 @@ incluses dans l'intervalle. Tout intervalle avec
   Tester ces méthodes.
 \end{enumerate}
         
-        \end{eleve}\begin{eleve}
+        \end{eleve}
+        {\scriptsize
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{class} \PY{n+nc}{Intervalle}\PY{p}{:}
+
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{debut}\PY{p}{,} \PY{n}{fin}\PY{p}{)}\PY{p}{:}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{a} \PY{o}{=} \PY{n}{debut}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{b} \PY{o}{=} \PY{n}{fin}
+
+
+    \PY{k}{def} \PY{n+nf}{est\PYZus{}vide}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+        \PY{k}{return} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{b} \PY{o}{\PYZlt{}} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{a}
+
+
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}len\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+        \PY{k}{if} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{est\PYZus{}vide}\PY{p}{(}\PY{p}{)} \PY{p}{:}
+            \PY{k}{return} \PY{l+m+mi}{0}
+        \PY{k}{return} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{b} \PY{o}{\PYZhy{}} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{a}
+
+
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}contains\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{x}\PY{p}{)}\PY{p}{:}
+        \PY{k}{if} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{est\PYZus{}vide}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+            \PY{k}{return} \PY{k+kc}{False}
+        \PY{k}{if} \PY{n}{x} \PY{o}{\PYZgt{}} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{b} \PY{o+ow}{or}  \PY{n}{x} \PY{o}{\PYZlt{}} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{a}\PY{p}{:}
+            \PY{k}{return} \PY{k+kc}{False}
+        \PY{k}{return} \PY{k+kc}{True}
+
+
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}eq\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{inter2}\PY{p}{)}\PY{p}{:}
+        \PY{k}{if} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{est\PYZus{}vide}\PY{p}{(}\PY{p}{)} \PY{o+ow}{and} \PY{n}{inter2}\PY{o}{.}\PY{n}{est\PYZus{}vide}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+            \PY{k}{return} \PY{k+kc}{True}
+        
+        \PY{k}{if} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{a} \PY{o}{==} \PY{n}{inter2}\PY{o}{.}\PY{n}{a} \PY{o+ow}{and} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{b} \PY{o}{==} \PY{n}{inter2}\PY{o}{.}\PY{n}{b}\PY{p}{:}
+            \PY{k}{return} \PY{k+kc}{True}
+
+        \PY{k}{return} \PY{k+kc}{False} 
+
+
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}le\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{inter2}\PY{p}{)}\PY{p}{:}
+        \PY{k}{if} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{est\PYZus{}vide}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+            \PY{k}{return} \PY{k+kc}{True}
+
+        \PY{k}{return} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{a} \PY{o}{\PYZgt{}}\PY{o}{=} \PY{n}{inter2}\PY{o}{.}\PY{n}{a} \PY{o+ow}{and} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{b} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{inter2}\PY{o}{.}\PY{n}{b}
+
+
+    \PY{k}{def} \PY{n+nf}{intersection}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{inter2}\PY{p}{)}\PY{p}{:}
+        \PY{k}{if} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{est\PYZus{}vide}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+            \PY{k}{return} \PY{n+nb+bp}{self}
+        
+        \PY{k}{if} \PY{n}{inter2}\PY{o}{.}\PY{n}{est\PYZus{}vide}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+            \PY{k}{return} \PY{n}{inter2}
+
+        \PY{n}{tmp\PYZus{}a} \PY{o}{=} \PY{n+nb}{max}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{a}\PY{p}{,} \PY{n}{inter2}\PY{o}{.}\PY{n}{a}\PY{p}{)}
+        \PY{n}{tmp\PYZus{}b} \PY{o}{=} \PY{n+nb}{min}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{b}\PY{p}{,} \PY{n}{inter2}\PY{o}{.}\PY{n}{b}\PY{p}{)}
+
+        \PY{k}{return} \PY{n}{Intervalle}\PY{p}{(} \PY{n}{tmp\PYZus{}a}\PY{p}{,} \PY{n}{tmp\PYZus{}b} \PY{p}{)}
+    
+
+    \PY{k}{def} \PY{n+nf}{reunion}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{inter2}\PY{p}{)}\PY{p}{:}
+        \PY{k}{if} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{est\PYZus{}vide}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+            \PY{k}{return} \PY{n}{inter2}
+        \PY{k}{if} \PY{n}{inter2}\PY{o}{.}\PY{n}{est\PYZus{}vide}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+            \PY{k}{return} \PY{n+nb+bp}{self}
+        
+        \PY{n}{intersec} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{intersection}\PY{p}{(}\PY{n}{inter2}\PY{p}{)}
+        \PY{k}{if} \PY{n}{intersec}\PY{o}{.}\PY{n}{est\PYZus{}vide}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+            \PY{k}{if} \PY{n+nb}{len}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{inter2}\PY{p}{)}\PY{p}{:}
+                \PY{k}{return} \PY{n+nb+bp}{self}
+            \PY{k}{else}\PY{p}{:}
+                \PY{k}{return} \PY{n}{inter2}
+        
+        \PY{n}{tmp\PYZus{}a} \PY{o}{=} \PY{n+nb}{min}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{a}\PY{p}{,} \PY{n}{inter2}\PY{o}{.}\PY{n}{a}\PY{p}{)}
+        \PY{n}{tmp\PYZus{}b} \PY{o}{=} \PY{n+nb}{max}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{b}\PY{p}{,} \PY{n}{inter2}\PY{o}{.}\PY{n}{b}\PY{p}{)}
+
+        \PY{k}{return} \PY{n}{Intervalle}\PY{p}{(}\PY{n}{tmp\PYZus{}a}\PY{p}{,} \PY{n}{tmp\PYZus{}b}\PY{p}{)}
+        
+        
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}str\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+        \PY{k}{return} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{[}\PY{l+s+s2}{\PYZdq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{a}\PY{p}{)} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ ; }\PY{l+s+s2}{\PYZdq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{b}\PY{p}{)} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{]}\PY{l+s+s2}{\PYZdq{}}
+\end{Verbatim}
+\end{tcolorbox}
+    }
+
+        {\scriptsize
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Tests des méthodes}
+
+\PY{n}{mon\PYZus{}inter}  \PY{o}{=} \PY{n}{Intervalle}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{12}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{mon\PYZus{}inter.a:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{mon\PYZus{}inter}\PY{o}{.}\PY{n}{a}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{mon\PYZus{}inter.b:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{mon\PYZus{}inter}\PY{o}{.}\PY{n}{b}\PY{p}{)}
+
+\PY{n}{mon\PYZus{}inter2} \PY{o}{=} \PY{n}{Intervalle}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{mon\PYZus{}inter2.a:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{mon\PYZus{}inter2}\PY{o}{.}\PY{n}{a}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{mon\PYZus{}inter2.b:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{mon\PYZus{}inter2}\PY{o}{.}\PY{n}{b}\PY{p}{)}
+
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{mon\PYZus{}inter.est\PYZus{}vide():}\PY{l+s+s2}{\PYZdq{}} \PY{p}{,} \PY{n}{mon\PYZus{}inter}\PY{o}{.}\PY{n}{est\PYZus{}vide}\PY{p}{(}\PY{p}{)}  \PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{mon\PYZus{}inter2.est\PYZus{}vide():}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{mon\PYZus{}inter2}\PY{o}{.}\PY{n}{est\PYZus{}vide}\PY{p}{(}\PY{p}{)} \PY{p}{)}
+
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{len(mon\PYZus{}inter):}\PY{l+s+s2}{\PYZdq{}} \PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{mon\PYZus{}inter}\PY{p}{)}  \PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{len(mon\PYZus{}inter2):}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{mon\PYZus{}inter2}\PY{p}{)} \PY{p}{)}
+
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{mon\PYZus{}inter.\PYZus{}\PYZus{}contains\PYZus{}\PYZus{}(5):}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{mon\PYZus{}inter}\PY{o}{.}\PY{n+nf+fm}{\PYZus{}\PYZus{}contains\PYZus{}\PYZus{}}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{)} \PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{5 in mon\PYZus{}inter:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{5} \PY{o+ow}{in} \PY{n}{mon\PYZus{}inter} \PY{p}{)}
+
+\PY{n+nb}{print}\PY{p}{(} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{3 in mon\PYZus{}inter:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{3} \PY{o+ow}{in} \PY{n}{mon\PYZus{}inter} \PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{12.001 in mon\PYZus{}inter:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mf}{12.001} \PY{o+ow}{in} \PY{n}{mon\PYZus{}inter} \PY{p}{)}
+
+\PY{n+nb}{print} \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{mon\PYZus{}inter == mon\PYZus{}inter2:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{mon\PYZus{}inter} \PY{o}{==} \PY{n}{mon\PYZus{}inter2}\PY{p}{)}
+
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Intervalle(4,10) \PYZlt{}= Intervalle(5,12):}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{Intervalle}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{Intervalle}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{12}\PY{p}{)} \PY{p}{)}
+
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{[4,6] inters. [5,10] == [5, 6]:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{Intervalle}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{)}\PY{o}{.}\PY{n}{intersection}\PY{p}{(}\PY{n}{Intervalle}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{)} \PY{o}{==} \PY{n}{Intervalle}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{)} \PY{p}{)}
+
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{[4,6] reunion [9,10] == [9,10]:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{Intervalle}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{)}\PY{o}{.}\PY{n}{reunion}\PY{p}{(}\PY{n}{Intervalle}\PY{p}{(}\PY{l+m+mi}{9}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{)} \PY{o}{==} \PY{n}{Intervalle}\PY{p}{(}\PY{l+m+mi}{9}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)} \PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{[4,6] reunion [5, 8] == [4, 8]:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{Intervalle}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{)}\PY{o}{.}\PY{n}{reunion}\PY{p}{(}\PY{n}{Intervalle}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,} \PY{l+m+mi}{8}\PY{p}{)}\PY{p}{)} \PY{o}{==} \PY{n}{Intervalle}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{8}\PY{p}{)} \PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+    }
+
+    Voici ci-dessous une version du code précédent :
+
+\begin{itemize}
+\tightlist
+\item
+  avec une documentation correcte
+\item
+  avec des tests unitaires utilisant la bibliothèque \texttt{doctest}.
+\end{itemize}
+
+        {\scriptsize
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kn}{from} \PY{n+nn}{doctest} \PY{k+kn}{import} \PY{n}{testmod}
+
+
+\PY{k}{class} \PY{n+nc}{Intervalle}\PY{p}{:}
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{debut}\PY{p}{,} \PY{n}{fin}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Intervalle d\PYZsq{}extrémité [a ; b]}
+
+\PY{l+s+sd}{        Args:}
+\PY{l+s+sd}{            debut (int): borne inf de l\PYZsq{}intervalle}
+\PY{l+s+sd}{            fin (int): borne sup de l\PYZsq{}intervalle}
+\PY{l+s+sd}{        }
+\PY{l+s+sd}{        Exemples:}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} inter = Intervalle(5,12)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} inter.a}
+\PY{l+s+sd}{        5}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} inter.b}
+\PY{l+s+sd}{        12}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{a} \PY{o}{=} \PY{n}{debut}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{b} \PY{o}{=} \PY{n}{fin}
+
+
+    \PY{k}{def} \PY{n+nf}{est\PYZus{}vide}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Est ce que l\PYZsq{}intervalle est vide?}
+\PY{l+s+sd}{        Est considéré vide un intervalle }
+\PY{l+s+sd}{        [a,b] dont b \PYZlt{}= a.}
+
+\PY{l+s+sd}{        Returns:}
+\PY{l+s+sd}{            bool: True si intervalle vide}
+
+\PY{l+s+sd}{        Exemple:}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} inter1 = Intervalle(5,12)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} inter1.est\PYZus{}vide()}
+\PY{l+s+sd}{        False}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} inter2 = Intervalle(5, 3)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} inter2.est\PYZus{}vide()}
+\PY{l+s+sd}{        True}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{k}{return} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{b} \PY{o}{\PYZlt{}} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{a}
+
+
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}len\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Longueur d\PYZsq{}un intervalle.}
+
+\PY{l+s+sd}{        Returns:}
+\PY{l+s+sd}{            int: longueur de l\PYZsq{}intervalle [a,b]}
+
+\PY{l+s+sd}{        Exemple:}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} len(Intervalle(5,12))}
+\PY{l+s+sd}{        7}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} len(Intervalle(5,3))}
+\PY{l+s+sd}{        0}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{k}{if} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{est\PYZus{}vide}\PY{p}{(}\PY{p}{)} \PY{p}{:}
+            \PY{k}{return} \PY{l+m+mi}{0}
+        \PY{k}{return} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{b} \PY{o}{\PYZhy{}} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{a} 
+
+
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}contains\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{x}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Est ce que la valeur x appartient}
+\PY{l+s+sd}{        à l\PYZsq{}intervalle [a,b]?}
+
+\PY{l+s+sd}{        Args:}
+\PY{l+s+sd}{            x (float/int): nombre}
+
+\PY{l+s+sd}{        Returns:}
+\PY{l+s+sd}{            bool: True ssi x in [a,b]}
+
+\PY{l+s+sd}{        Exemples:}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} 6 in Intervalle(5,12)}
+\PY{l+s+sd}{        True}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} 5 in Intervalle(5,12)}
+\PY{l+s+sd}{        True}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} 4.9 in Intervalle(5,12)}
+\PY{l+s+sd}{        False}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{k}{if} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{est\PYZus{}vide}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+            \PY{k}{return} \PY{k+kc}{False}
+        \PY{k}{if} \PY{n}{x} \PY{o}{\PYZgt{}} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{b} \PY{o+ow}{or}  \PY{n}{x} \PY{o}{\PYZlt{}} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{a}\PY{p}{:}
+            \PY{k}{return} \PY{k+kc}{False}
+        \PY{k}{return} \PY{k+kc}{True}
+
+
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}eq\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{inter}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Est ce que l\PYZsq{}intervalle est }
+\PY{l+s+sd}{        égale à l\PYZsq{}intervalle inter}
+
+\PY{l+s+sd}{        Args:}
+\PY{l+s+sd}{            inter2 (Intervalle): Intervalle à comparer}
+
+\PY{l+s+sd}{        Returns:}
+\PY{l+s+sd}{            bool: True ssi les deux intervalles ont les}
+\PY{l+s+sd}{            mêmes bornes}
+
+\PY{l+s+sd}{        Exemple:}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} Intervalle(5,12) == Intervalle(5,7)}
+\PY{l+s+sd}{        False}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} Intervalle(5,12) == Intervalle(5,12)}
+\PY{l+s+sd}{        True}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} Intervalle(5,3) == Intervalle(7,2)}
+\PY{l+s+sd}{        True}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{k}{if} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{est\PYZus{}vide}\PY{p}{(}\PY{p}{)} \PY{o+ow}{and} \PY{n}{inter}\PY{o}{.}\PY{n}{est\PYZus{}vide}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+            \PY{k}{return} \PY{k+kc}{True}
+        
+        \PY{k}{if} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{a} \PY{o}{==} \PY{n}{inter}\PY{o}{.}\PY{n}{a} \PY{o+ow}{and} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{b} \PY{o}{==} \PY{n}{inter}\PY{o}{.}\PY{n}{b}\PY{p}{:}
+            \PY{k}{return} \PY{k+kc}{True}
+
+        \PY{k}{return} \PY{k+kc}{False} 
+
+
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}le\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{inter}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Est ce que l\PYZsq{}intervalle est inclu}
+\PY{l+s+sd}{        dans l\PYZsq{}intervalle inter?}
+
+\PY{l+s+sd}{        Args:}
+\PY{l+s+sd}{            inter (Intervalle): Intervalle [a,b]}
+
+\PY{l+s+sd}{        Returns:}
+\PY{l+s+sd}{            bool: True ssi l\PYZsq{}intervalle est inclus dans inter}
+\PY{l+s+sd}{        }
+\PY{l+s+sd}{        Exemples:}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} Intervalle(4,10) \PYZlt{}= Intervalle(5,12)}
+\PY{l+s+sd}{        False}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} Intervalle(5,12) \PYZlt{}= Intervalle(4,10)}
+\PY{l+s+sd}{        False}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} Intervalle(6,10) \PYZlt{}= Intervalle(5,12)}
+\PY{l+s+sd}{        True}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{k}{if} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{est\PYZus{}vide}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+            \PY{k}{return} \PY{k+kc}{True}
+
+        \PY{k}{return} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{a} \PY{o}{\PYZgt{}}\PY{o}{=} \PY{n}{inter}\PY{o}{.}\PY{n}{a} \PY{o+ow}{and} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{b} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{inter}\PY{o}{.}\PY{n}{b}
+
+
+    \PY{k}{def} \PY{n+nf}{intersection}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{inter}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Intersection avec l\PYZsq{}intervalle inter.}
+
+\PY{l+s+sd}{        Args:}
+\PY{l+s+sd}{            inter (Intervalle)}
+
+\PY{l+s+sd}{        Returns:}
+\PY{l+s+sd}{            Intervalle: égal à l\PYZsq{}intersection de self }
+\PY{l+s+sd}{            avec inter.}
+\PY{l+s+sd}{        }
+\PY{l+s+sd}{        Exemples:}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} Intervalle(4,6).intersection(Intervalle(5,10)) == Intervalle(5,6)}
+\PY{l+s+sd}{        True}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{k}{if} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{est\PYZus{}vide}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+            \PY{k}{return} \PY{n+nb+bp}{self}
+        
+        \PY{k}{if} \PY{n}{inter}\PY{o}{.}\PY{n}{est\PYZus{}vide}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+            \PY{k}{return} \PY{n}{inter}
+
+        \PY{n}{tmp\PYZus{}a} \PY{o}{=} \PY{n+nb}{max}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{a}\PY{p}{,} \PY{n}{inter}\PY{o}{.}\PY{n}{a}\PY{p}{)}
+        \PY{n}{tmp\PYZus{}b} \PY{o}{=} \PY{n+nb}{min}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{b}\PY{p}{,} \PY{n}{inter}\PY{o}{.}\PY{n}{b}\PY{p}{)}
+
+        \PY{k}{return} \PY{n}{Intervalle}\PY{p}{(} \PY{n}{tmp\PYZus{}a}\PY{p}{,} \PY{n}{tmp\PYZus{}b} \PY{p}{)}
+
+    
+    \PY{k}{def} \PY{n+nf}{reunion}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{inter}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Réunion avec l\PYZsq{}intervalle inter. Si la réunion}
+\PY{l+s+sd}{        n\PYZsq{}est pas un intervalle, renvoie le plus petit}
+\PY{l+s+sd}{        des deux intervalles.}
+
+\PY{l+s+sd}{        Args:}
+\PY{l+s+sd}{            inter (Intervalle)}
+
+\PY{l+s+sd}{        Returns:}
+\PY{l+s+sd}{            Intervalle: réunion avec inter}
+
+\PY{l+s+sd}{        Exemples :}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} Intervalle(4,6).reunion(Intervalle(9,10)) == Intervalle(9,10)}
+\PY{l+s+sd}{        True}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} Intervalle(4,6).reunion(Intervalle(5,8)) == Intervalle(4,8)}
+\PY{l+s+sd}{        True}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{k}{if} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{est\PYZus{}vide}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+            \PY{k}{return} \PY{n}{inter}
+        \PY{k}{if} \PY{n}{inter}\PY{o}{.}\PY{n}{est\PYZus{}vide}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+            \PY{k}{return} \PY{n+nb+bp}{self}
+        
+        \PY{n}{intersec} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{intersection}\PY{p}{(}\PY{n}{inter}\PY{p}{)}
+        \PY{k}{if} \PY{n}{intersec}\PY{o}{.}\PY{n}{est\PYZus{}vide}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+            \PY{k}{if} \PY{n+nb}{len}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{inter}\PY{p}{)}\PY{p}{:}
+                \PY{k}{return} \PY{n+nb+bp}{self}
+            \PY{k}{else}\PY{p}{:}
+                \PY{k}{return} \PY{n}{inter}
+        
+        \PY{n}{tmp\PYZus{}a} \PY{o}{=} \PY{n+nb}{min}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{a}\PY{p}{,} \PY{n}{inter}\PY{o}{.}\PY{n}{a}\PY{p}{)}
+        \PY{n}{tmp\PYZus{}b} \PY{o}{=} \PY{n+nb}{max}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{b}\PY{p}{,} \PY{n}{inter}\PY{o}{.}\PY{n}{b}\PY{p}{)}
+
+        \PY{k}{return} \PY{n}{Intervalle}\PY{p}{(}\PY{n}{tmp\PYZus{}a}\PY{p}{,} \PY{n}{tmp\PYZus{}b}\PY{p}{)}
+
+
+\PY{n}{testmod}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+    }
+\begin{eleve}
     Définir une classe \texttt{Angle} pour représenter un angle en degrés.
 Cette classe contient un unique attribut, \texttt{angle}, qui est un
 entier. On demande que, quoiqu'il arrive, l'égalité
@@ -597,7 +1065,150 @@ entier. On demande que, quoiqu'il arrive, l'égalité
   Tester les méthodes \texttt{ajoute}, \texttt{cos} et \texttt{sin}.
 \end{enumerate}
         
-        \end{eleve}\begin{eleve}
+        \end{eleve}
+        {\scriptsize
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} version avec tests unitaires}
+\PY{c+c1}{\PYZsh{} de toutes les méthodes}
+\PY{k+kn}{from} \PY{n+nn}{doctest} \PY{k+kn}{import} \PY{n}{testmod}
+
+
+\PY{k}{class} \PY{n+nc}{Angle}\PY{p}{:}
+    \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Angles compris entre 0 et 360°}
+\PY{l+s+sd}{    \PYZdq{}\PYZdq{}\PYZdq{}}
+
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{mesure}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Angle de mesure entière comprise entre 0 et 360.}
+
+\PY{l+s+sd}{        Args:}
+\PY{l+s+sd}{            mesure (int): mesure de l\PYZsq{}angle}
+
+\PY{l+s+sd}{        Exemple:}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} a = Angle(90)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} a.angle}
+\PY{l+s+sd}{        90}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} a = Angle(365)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} a.angle}
+\PY{l+s+sd}{        5}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{n}{mesure} \PY{o}{=} \PY{n}{Angle}\PY{o}{.}\PY{n}{\PYZus{}ajuste}\PY{p}{(}\PY{n}{mesure}\PY{p}{)}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{angle} \PY{o}{=} \PY{n}{mesure}
+    
+
+    \PY{k}{def} \PY{n+nf}{\PYZus{}ajuste}\PY{p}{(}\PY{n}{angle}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Méthode de classe auxiliaire (hors interface)}
+\PY{l+s+sd}{        utilisée dans le constructeur \PYZus{}\PYZus{}init\PYZus{}\PYZus{} pour }
+\PY{l+s+sd}{        vérifier, quoi qu\PYZsq{}il arrive la contrainte d\PYZsq{}un }
+\PY{l+s+sd}{        angle compris entre 0 et 360.}
+
+\PY{l+s+sd}{        Renvoie la valeur angle restreinte à }
+\PY{l+s+sd}{        l\PYZsq{}intervalle [0 ; 360[.}
+
+\PY{l+s+sd}{        Args:}
+\PY{l+s+sd}{            angle (int): mesure d\PYZsq{}un angle}
+
+\PY{l+s+sd}{        Returns:}
+\PY{l+s+sd}{            int: valeur ajustée de l\PYZsq{}angle}
+
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} Angle.\PYZus{}ajuste(360)}
+\PY{l+s+sd}{        0}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} Angle.\PYZus{}ajuste(365)}
+\PY{l+s+sd}{        5}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} Angle.\PYZus{}ajuste(90)}
+\PY{l+s+sd}{        90}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{k}{return} \PY{n}{angle} \PY{o}{\PYZpc{}} \PY{l+m+mi}{360}
+
+
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}str\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Affiche un angle sous la forme}
+\PY{l+s+sd}{        \PYZsq{}90 degrés\PYZsq{}}
+
+\PY{l+s+sd}{        Returns:}
+\PY{l+s+sd}{            str: }
+\PY{l+s+sd}{        }
+\PY{l+s+sd}{        Exemples:}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(Angle(90))}
+\PY{l+s+sd}{        90 degrés}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(Angle(390))}
+\PY{l+s+sd}{        30 degrés}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{k}{return} \PY{n+nb}{str}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{angle}\PY{p}{)} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ degrés}\PY{l+s+s2}{\PYZdq{}}
+
+
+    \PY{k}{def} \PY{n+nf}{ajoute}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{obj}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Ajoute l\PYZsq{}angle actuel avec un autre antre obj}
+
+\PY{l+s+sd}{        Args:}
+\PY{l+s+sd}{            obj (Angle): angle à ajouter}
+
+\PY{l+s+sd}{        Returns:}
+\PY{l+s+sd}{            Angle: Angle de mesure égale à la somme des deux angles}
+
+\PY{l+s+sd}{        Exemples:}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} a1 = Angle(90)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} a2 = Angle(350)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print( a1.ajoute(a2) )}
+\PY{l+s+sd}{        80 degrés}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{n}{mesure} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{angle} \PY{o}{+} \PY{n}{obj}\PY{o}{.}\PY{n}{angle}
+        \PY{k}{return} \PY{n}{Angle}\PY{p}{(}\PY{n}{mesure}\PY{p}{)}
+
+
+    \PY{k}{def} \PY{n+nf}{\PYZus{}radian}\PY{p}{(}\PY{n}{mesure}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Methode de classe auxiliaire utilisée}
+\PY{l+s+sd}{        dans cos et sin.}
+\PY{l+s+sd}{        Convertit la mesure en degré en radian}
+
+\PY{l+s+sd}{        Args:}
+\PY{l+s+sd}{            mesure (int): valeur en degré}
+
+\PY{l+s+sd}{        Returns:}
+\PY{l+s+sd}{            float: valeur en radian}
+
+\PY{l+s+sd}{        Exemple:}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} round( Angle.\PYZus{}radian(90) ,5)}
+\PY{l+s+sd}{        1.5708}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{k+kn}{from} \PY{n+nn}{math} \PY{k+kn}{import} \PY{n}{pi}
+        \PY{k}{return} \PY{n}{mesure} \PY{o}{*} \PY{n}{pi} \PY{o}{/} \PY{l+m+mi}{180}
+
+
+    \PY{k}{def} \PY{n+nf}{cos}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Cosinus de l\PYZsq{}angle.}
+
+\PY{l+s+sd}{        Returns:}
+\PY{l+s+sd}{            float: cosinus de la mesure de l\PYZsq{}angle}
+
+\PY{l+s+sd}{        Exemple :}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} round( Angle(45).cos() ,5)}
+\PY{l+s+sd}{        0.70711}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{k+kn}{from} \PY{n+nn}{math} \PY{k+kn}{import} \PY{n}{cos}
+        \PY{k}{return} \PY{n}{cos}\PY{p}{(} \PY{n}{Angle}\PY{o}{.}\PY{n}{\PYZus{}radian}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{angle}\PY{p}{)} \PY{p}{)}
+
+
+    \PY{k}{def} \PY{n+nf}{sin}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Sinus de l\PYZsq{}angle}
+
+\PY{l+s+sd}{        Returns:}
+\PY{l+s+sd}{            float: sinus de la mesure de l\PYZsq{}angle}
+
+\PY{l+s+sd}{        Exemple:}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} round ( Angle(45).sin() ,5 )}
+\PY{l+s+sd}{        0.70711}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{k+kn}{from} \PY{n+nn}{math} \PY{k+kn}{import} \PY{n}{sin}
+        \PY{k}{return} \PY{n}{sin}\PY{p}{(} \PY{n}{Angle}\PY{o}{.}\PY{n}{\PYZus{}radian} \PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{angle}\PY{p}{)} \PY{p}{)}
+
+
+\PY{n}{testmod}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+    }
+\begin{eleve}
     Définir une classe \texttt{Date} pour représenter une date, avec trois
 attributs \texttt{jour}, \texttt{mois} et \texttt{annee}.
 
@@ -618,7 +1229,86 @@ attributs \texttt{jour}, \texttt{mois} et \texttt{annee}.
   \texttt{d1\ \textless{}\ d2}. La tester.
 \end{enumerate}
         
-        \end{eleve}\begin{eleve}
+        \end{eleve}
+        {\scriptsize
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} version avec des test unitaire}
+
+\PY{k+kn}{from} \PY{n+nn}{doctest} \PY{k+kn}{import} \PY{n}{testmod}
+
+
+\PY{k}{class} \PY{n+nc}{Date}\PY{p}{:}
+
+    \PY{n}{mois\PYZus{}fr} \PY{o}{=} \PY{p}{[} \PY{k+kc}{None}\PY{p}{,} 
+            \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{janvier}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{février}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mars}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+            \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{avril}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mai}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{juin}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+            \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{juillet}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{août}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{septembre}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+            \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{octobre}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{novembre}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{décembre}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{j}\PY{p}{,} \PY{n}{m}\PY{p}{,} \PY{n}{a}\PY{p}{)}\PY{p}{:}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{jour}  \PY{o}{=} \PY{n}{j}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{mois}  \PY{o}{=} \PY{n}{m}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{annee} \PY{o}{=} \PY{n}{a}
+
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}str\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Affiche une date en français.}
+\PY{l+s+sd}{        Par exemple \PYZsq{}8 mai 1945\PYZsq{}.}
+
+\PY{l+s+sd}{        Returns:}
+\PY{l+s+sd}{            str}
+\PY{l+s+sd}{        }
+\PY{l+s+sd}{        Exemple:}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(Date(8,5,1945))}
+\PY{l+s+sd}{        8 mai 1945}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(Date(5,6,1977))}
+\PY{l+s+sd}{        5 juin 1977}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{n}{date}  \PY{o}{=} \PY{n+nb}{str}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{jour}\PY{p}{)} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}}
+        \PY{n}{date} \PY{o}{+}\PY{o}{=} \PY{n}{Date}\PY{o}{.}\PY{n}{mois\PYZus{}fr}\PY{p}{[}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{mois}\PY{p}{]} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}}
+        \PY{n}{date} \PY{o}{+}\PY{o}{=} \PY{n+nb}{str}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{annee}\PY{p}{)}
+        \PY{k}{return} \PY{n}{date}
+
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}lt\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{date}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Est ce que la date est antérieure à date?}
+
+\PY{l+s+sd}{        Args:}
+\PY{l+s+sd}{            date (Date)}
+
+\PY{l+s+sd}{        Returns:}
+\PY{l+s+sd}{            bool: True ssi est strictement antérieure à date}
+\PY{l+s+sd}{        }
+\PY{l+s+sd}{        Exemples:}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} Date(5,6,1978) \PYZlt{} Date(4,6,1978)}
+\PY{l+s+sd}{        False}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} Date(5,6,1978) \PYZlt{} Date(7,6,1978)}
+\PY{l+s+sd}{        True}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} Date(1,1,2006) \PYZlt{} Date(1,1,2006)}
+\PY{l+s+sd}{        False}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} Date(1,1,2004) \PYZlt{} Date(1,1,2006)}
+\PY{l+s+sd}{        True}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} Date(1,4,2003) \PYZlt{} Date(1,5,2003)}
+\PY{l+s+sd}{        True}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{k}{if} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{annee} \PY{o}{\PYZlt{}} \PY{n}{date}\PY{o}{.}\PY{n}{annee}\PY{p}{:}
+            \PY{k}{return} \PY{k+kc}{True}
+        \PY{k}{if} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{annee} \PY{o}{\PYZgt{}} \PY{n}{date}\PY{o}{.}\PY{n}{annee}\PY{p}{:}
+            \PY{k}{return} \PY{k+kc}{False}
+        \PY{k}{if} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{mois} \PY{o}{\PYZlt{}} \PY{n}{date}\PY{o}{.}\PY{n}{mois}\PY{p}{:}
+            \PY{k}{return} \PY{k+kc}{True}
+        \PY{k}{if} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{mois} \PY{o}{\PYZgt{}} \PY{n}{date}\PY{o}{.}\PY{n}{mois}\PY{p}{:}
+            \PY{k}{return} \PY{k+kc}{False}
+        \PY{k}{if} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{jour} \PY{o}{\PYZlt{}} \PY{n}{date}\PY{o}{.}\PY{n}{jour}\PY{p}{:}
+            \PY{k}{return} \PY{k+kc}{True}
+        \PY{k}{return} \PY{k+kc}{False}    
+
+
+\PY{n}{testmod}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+    }
+\begin{eleve}
     Dans certains langages de programmation les tableaux ne sont pas
 nécessairement indexés à partir de \texttt{0}. Par exemple, on peut
 déclarer un tableau dont les indices vont de \texttt{-10} à \texttt{9}
@@ -652,6 +1342,82 @@ Enfin, écrire une méthode \texttt{\_\_str\_\_(self)} qui renvoie une
 chaîne de caractères décrivant le contenu du tableau.
         
         \end{eleve}
+        {\scriptsize
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kn}{from} \PY{n+nn}{doctest} \PY{k+kn}{import} \PY{n}{testmod}
+
+\PY{k}{class} \PY{n+nc}{TableauIndex}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{imin}\PY{p}{,} \PY{n}{imax}\PY{p}{,} \PY{n}{v}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Tableau d\PYZsq{}indices quelconque.}
+
+\PY{l+s+sd}{        Args:}
+\PY{l+s+sd}{            imin (int): indice de début}
+\PY{l+s+sd}{            imax (int): indice de fin de tableau}
+\PY{l+s+sd}{            v (object): valeur initiale de toutes les cellules du tableau}
+
+\PY{l+s+sd}{        Exemples:}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} t = TableauIndex(\PYZhy{}10, 9, 42)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} t.contenu}
+\PY{l+s+sd}{        [42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42]}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{premier} \PY{o}{=} \PY{n}{imin}
+        \PY{n}{longueur} \PY{o}{=} \PY{n}{imax} \PY{o}{\PYZhy{}} \PY{n}{imin} \PY{o}{+} \PY{l+m+mi}{1}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{contenu} \PY{o}{=} \PY{p}{[}\PY{n}{v}\PY{p}{]} \PY{o}{*} \PY{n}{longueur}
+
+
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}len\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\PY{l+s+sd}{        Exemples:}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} t = TableauIndex(\PYZhy{}10, 9, 42)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} len(t)}
+\PY{l+s+sd}{        20}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{k}{return} \PY{n+nb}{len}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{contenu}\PY{p}{)}
+
+    
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}getitem\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{i}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Exemples:}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} t = TableauIndex(\PYZhy{}10, 9, 42)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} t[\PYZhy{}10]}
+\PY{l+s+sd}{        42}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{k}{if} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{premier} \PY{o+ow}{or} \PY{n}{i} \PY{o}{\PYZgt{}}\PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{premier} \PY{o}{+} \PY{n+nb}{len}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+            \PY{k}{raise} \PY{n+ne}{IndexError} \PY{p}{(}\PY{n}{i}\PY{p}{)}
+
+        \PY{n}{indice} \PY{o}{=} \PY{n}{i} \PY{o}{+} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{premier}
+        \PY{k}{return} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{contenu}\PY{p}{[}\PY{n}{indice}\PY{p}{]}
+    
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}setitem\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{i}\PY{p}{,} \PY{n}{v}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Exemples:}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} t = TableauIndex(\PYZhy{}10, 9, 42)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} t[\PYZhy{}10] = 12}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} t[\PYZhy{}10]}
+\PY{l+s+sd}{        12}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} t[\PYZhy{}9]}
+\PY{l+s+sd}{        42}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{k}{if} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{premier} \PY{o+ow}{or} \PY{n}{i} \PY{o}{\PYZgt{}}\PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{premier} \PY{o}{+} \PY{n+nb}{len}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+            \PY{k}{raise} \PY{n+ne}{IndexError} \PY{p}{(}\PY{n}{i}\PY{p}{)}
+
+        \PY{n}{indice} \PY{o}{=} \PY{n}{i} \PY{o}{\PYZhy{}} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{premier}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{contenu}\PY{p}{[}\PY{n}{indice}\PY{p}{]} \PY{o}{=} \PY{n}{v}
+
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}str\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Exemples:}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} t = TableauIndex(5,9,10)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(t)}
+\PY{l+s+sd}{        [10, 10, 10, 10, 10]}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{k}{return} \PY{n+nb}{str}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{contenu}\PY{p}{)}
+
+
+\PY{n}{testmod}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+    }
+
 
     % Add a bibliography block to the postdoc
     
