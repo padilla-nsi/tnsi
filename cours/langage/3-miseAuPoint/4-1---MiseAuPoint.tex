@@ -485,10 +485,18 @@
     
 
     
-    \hypertarget{chap.-4-mise-au-point-de-programmes-pa.dilla.fr1c}{%
-\section{\texorpdfstring{Chap. 4 --- Mise au point de programmes
-(\href{https://pa.dilla.fr/1c}{pa.dilla.fr/1c}
-)}{Chap. 4 --- Mise au point de programmes (pa.dilla.fr/1c )}}\label{chap.-4-mise-au-point-de-programmes-pa.dilla.fr1c}}
+    \begin{longtable}[]{@{}ll@{}}
+\toprule
+\url{https://pa.dilla.fr/1c} &
+\includegraphics{res/qr.png}\tabularnewline
+\midrule
+\endhead
+\bottomrule
+\end{longtable}
+
+    \hypertarget{chap.-4-mise-au-point-de-programmes}{%
+\section{Chap. 4 --- Mise au point de
+programmes}\label{chap.-4-mise-au-point-de-programmes}}
 
     \hypertarget{types}{%
 \subsection{4.1 --- Types}\label{types}}
@@ -801,14 +809,14 @@ On peut remarquer que :
   les instructions à interpréter sont précédées de trois chevrons
   \texttt{\textgreater{}\textgreater{}\textgreater{}}
 \item
-  les résultats attendus écrits directement
+  les résultats attendus sont écrits directement
 \item
   il suffit d'écrire l'instruction \texttt{testmod()} pour lancer les
   tests.
 \end{itemize}
 
         \end{exemple}
-    4.2.1 --- Tester la correction d'un programme
+    4.2.2 --- Tester la correction d'un programme
 \begin{eleve}
     \textbf{Écrire} une fonction \texttt{tri} qui trie un tableau d'entiers,
 en place, par ordre croissant.
@@ -961,7 +969,7 @@ un peu plus ambitieux.
 \end{tcolorbox}
     }
 
-    4.2.2 --- Tester les performances
+    4.2.3 --- Tester les performances
 \begin{retenir}
     Après la correction, on souhaite le plus souvent vérifier les
 \textbf{performances} de nos programmes.
@@ -1107,7 +1115,7 @@ déporter cette vérification dans une méthode spécifique.
 \end{Highlighting}
 \end{Shaded}
 
-        \end{exemple}
+        \end{exemple}\begin{retenir}
     Afin d'aider à la mise au point des programmes, on peut annoter les
 fonctions Python avec des \textbf{types}, qui décrivent la nature des
 arguments et des résultats. Bien qu'il ne s'agisse là que d'une forme de
@@ -1119,6 +1127,7 @@ phase de test rigoureuse, qui s'assure de la correction mais également
 des performances. Le test de fonctions Python peut avantageusement se
 contruire autour de l'instruction \texttt{assert}.
 
+        \end{retenir}
 
     % Add a bibliography block to the postdoc
     
