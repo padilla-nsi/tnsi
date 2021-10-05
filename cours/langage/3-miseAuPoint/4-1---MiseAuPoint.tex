@@ -1128,6 +1128,143 @@ des performances. Le test de fonctions Python peut avantageusement se
 contruire autour de l'instruction \texttt{assert}.
 
         \end{retenir}
+    \hypertarget{exercices}{%
+\subsection{4.3 --- Exercices}\label{exercices}}
+\begin{eleve}
+    \emph{(Capytale : ba76-90127)} Modifier l'implémentation des fonctions
+suivantes en proposant un type pour chacun de ses arguments et un type
+pour son résultat :
+
+Dans certains cas, il peut y avoir plusieurs solutions.
+        
+        \end{eleve}
+        {\scriptsize
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{3}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{f1} \PY{p}{(}\PY{n}{t}\PY{p}{)} \PY{p}{:}
+    \PY{k}{return} \PY{n}{t}\PY{p}{[}\PY{n}{O}\PY{p}{]} \PY{o}{+} \PY{l+m+mi}{1}
+
+\PY{k}{def} \PY{n+nf}{f2} \PY{p}{(}\PY{n}{x}\PY{p}{)} \PY{p}{:}
+    \PY{k}{return} \PY{n+nb}{str}\PY{p}{(}\PY{l+m+mf}{3.14} \PY{o}{*} \PY{n}{x}\PY{p}{)}
+
+\PY{k}{def} \PY{n+nf}{f3} \PY{p}{(}\PY{n}{p}\PY{p}{)} \PY{p}{:}
+    \PY{n}{x}\PY{p}{,} \PY{n}{y} \PY{o}{=} \PY{n}{p}
+    \PY{k}{return} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{x} \PY{o}{+} \PY{n}{y}
+
+\PY{k}{def} \PY{n+nf}{f4} \PY{p}{(}\PY{n}{s}\PY{p}{)} \PY{p}{:}
+    \PY{n}{s}\PY{o}{.}\PY{n}{add}\PY{p}{(}\PY{l+m+mi}{42}\PY{p}{)}
+
+\PY{k}{def} \PY{n+nf}{f} \PY{p}{(}\PY{n}{d}\PY{p}{,} \PY{n}{s}\PY{p}{)}\PY{p}{:}
+    \PY{k}{if} \PY{n}{s} \PY{o}{!=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{toto}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:}
+        \PY{n}{d}\PY{p}{[}\PY{n}{s}\PY{p}{]} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+    \PY{k}{return} \PY{n}{d}\PY{p}{[}\PY{n}{s}\PY{p}{]}
+\end{Verbatim}
+\end{tcolorbox}
+    }
+\begin{eleve}
+    \emph{(Capytale : 334a-90136)} On suppose avoir écrit une fonction
+\texttt{mult(x,\ y)} qui calcule et renvoie le produit de deux entiers
+\texttt{x} et \texttt{y} reçus en arguments. L'idée est que cette
+fonction ne se contente pas d'appeler l'opération \texttt{*} mais
+réalise un autre algorithme, comme la multiplication russe, la méthode
+de Karatsuba, etc.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Proposer des tests de correction pour cette fonction \texttt{mult}.
+\item
+  Proposer ensuite des tests de performances.
+\end{enumerate}
+        
+        \end{eleve}\begin{eleve}
+    \emph{(Capytale : 88da-90142)} Proposer des tests pour une fonction
+\texttt{miroir(ch)} qui prend en argument une chaîne de caractères
+\texttt{ch} et renvoie la chaîne contenant les caractères de \texttt{ch}
+en ordre inverse.
+        
+        \end{eleve}\begin{eleve}
+    \emph{(Capytale : d94e-90146 )} On suppose qu'une classe contient un
+tableau dans un attribut \texttt{tab} et délimite une portion de ce
+tableau à l'aide de deux autres attributs \texttt{deb} et \texttt{fin}.
+
+La portion s'étend de l'indice \texttt{deb} inclus à l'indice
+\texttt{fin} exclu.
+
+\textbf{Écrire} une méthode \texttt{valide}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ valide(}\VariableTok{self}\NormalTok{):}
+    \ControlFlowTok{assert}\NormalTok{ ...}
+\end{Highlighting}
+\end{Shaded}
+
+qui vérifie que les attributs \texttt{deb} et \texttt{fin} définissent
+bien une portion valide du tableau \texttt{tab}.
+        
+        \end{eleve}\begin{eleve}
+    \emph{(Capytale : 6f1f-90157)} On suppose avoir écrit une fonction
+\texttt{retire\_com(nomf)}. Cette fonction ouvre en lecture un fichier
+dont le nom est donné en argument et qui doit obligatoirement se
+terminer par l'extension ``.\texttt{py}''.
+
+Pour un tel fichier ``\(t\)\texttt{.py}'', la fonction crée un nouveau
+fichier ``\(t\)\texttt{\_sanscomm.py}'' qui est une copie du fichier
+original dont on a retiré tous les commentaires. Si le fichier de
+destination existe déjà, il est écrasé. La fonction renvoie
+\texttt{True} en cas de succès et \texttt{False} en cas d'erreur.
+
+Lister les conditions sous lesquelles cette fonction peut renvoyer
+\texttt{False}.
+        
+        \end{eleve}\begin{eleve}
+    \emph{(Capytale : 355d-90159)} On souhaite que les instances de la
+classe \texttt{Chrono} ébauchée ci-dessous respectent les invariants de
+structure suivants:
+
+\begin{itemize}
+\tightlist
+\item
+  la valeur de l'attribut heures est comprise entre 0 et 23,
+\item
+  les valeurs des attributs minutes et secondes sont comprises entre 0
+  et 59.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{ Chrono:}
+    \CommentTok{"""une classe pour représenter un temps }
+\CommentTok{    mesuré en heures, minutes et secondes"""}
+    \KeywordTok{def} \FunctionTok{\_\_init\_\_}\NormalTok{(}\VariableTok{self}\NormalTok{, h, m, s):}
+        \VariableTok{self}\NormalTok{.heures   }\OperatorTok{=}\NormalTok{ h}
+        \VariableTok{self}\NormalTok{.minutes  }\OperatorTok{=}\NormalTok{ m}
+        \VariableTok{self}\NormalTok{.secondes }\OperatorTok{=}\NormalTok{ s}
+    
+    \KeywordTok{def}\NormalTok{ avance(}\VariableTok{self}\NormalTok{, s):}
+        \VariableTok{self}\NormalTok{.secondes }\OperatorTok{+=}\NormalTok{ s}
+        \VariableTok{self}\NormalTok{.minutes  }\OperatorTok{+=} \VariableTok{self}\NormalTok{.secondes }\OperatorTok{//} \DecValTok{60}
+        \VariableTok{self}\NormalTok{.secondes  }\OperatorTok{=} \VariableTok{self}\NormalTok{.secondes }\OperatorTok{\%}  \DecValTok{60}
+        \VariableTok{self}\NormalTok{.heures   }\OperatorTok{+=} \VariableTok{self}\NormalTok{.minutes  }\OperatorTok{//} \DecValTok{60}
+        \VariableTok{self}\NormalTok{.minutes   }\OperatorTok{=} \VariableTok{self}\NormalTok{.minutes  }\OperatorTok{\%}  \DecValTok{60}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Que manque-t-il à ce code pour que ces invariants soient bien toujours
+  valides quoiqu'il arrive?
+\item
+  Le corriger, en précisant au besoin la spécification de chacune des
+  méthodes.
+\end{enumerate}
+        
+        \end{eleve}
 
     % Add a bibliography block to the postdoc
     
