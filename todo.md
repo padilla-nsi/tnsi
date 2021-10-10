@@ -33,7 +33,7 @@ Chap 3. Programmation objet {due:2021-09-23} #structures_de_données  +tnsi   {c
     (C) héritage
     #application classe Fraction {cm:2021-09-30}
     #application Intervalle {cm:2021-09-30}
-    #application Angle
+    #application Angle {cm:2021-10-10}
     #application Date
     #application Tableau plage perso
     #application TaBiDir
@@ -44,10 +44,10 @@ Chap 3. Programmation objet {due:2021-09-23} #structures_de_données  +tnsi   {c
 DS1 {due:2021-09-27} +tnsi
 
 Chap 4. Mise au point de programmes {due:2021-10-07} #langage +tnsi {c}
-    (A) types en python
-    (A) annoter les variables et les fonctions
-    (B) types nommés, types paramétrés et généricité
-    (A) tester un programme
+    (A) types en python {cm:2021-10-10}
+    (A) annoter les variables et les fonctions {cm:2021-10-10}
+    (B) types nommés, types paramétrés et généricité {cm:2021-10-10}
+    (A) tester un programme {cm:2021-10-10}
     (B) tester les performances
     (B) invariant de structure
     #application types de fonctions

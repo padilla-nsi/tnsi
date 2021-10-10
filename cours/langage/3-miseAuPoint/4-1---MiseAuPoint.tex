@@ -818,29 +818,23 @@ On peut remarquer que :
         \end{exemple}
     4.2.2 --- Tester la correction d'un programme
 \begin{eleve}
-    \textbf{Écrire} une fonction \texttt{tri} qui trie un tableau d'entiers,
-en place, par ordre croissant.
+    (Question bonus) \textbf{Écrire} une fonction \texttt{tri} qui trie un
+tableau d'entiers, en place, par ordre croissant.
 
-On cherche maintenant à tester la fonction \texttt{tri}.
+On cherche maintenant à tester la fonction \texttt{tri} créée.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
 \tightlist
 \item
   \textbf{Proposer} une fonction \texttt{test()} qui prend en argument
   un tableau \texttt{t}, appelle la fonction \texttt{tri} sur ce tableau
   puis vérifie que le tableau \texttt{t} est bien trié.
+\item
+  \textbf{Améliorer} votre fonction de test en vérifiant que le tableau
+  avant tri et après tri contient les mêmes éléments \textbf{et} pour
+  chaque élément le même nombre d'occurrence.
 \end{enumerate}
-
-\begin{itemize}
-\tightlist
-\item
-  implémenter une fonction de test naïve
-\item
-  vérifier que le tableau avant tri et après tri contient les mêmes
-  éléments, et pour chaque élément le même nombre d'occurrence.
-\end{itemize}
         
         \end{eleve}
         {\scriptsize
@@ -948,15 +942,12 @@ un peu plus ambitieux.
 \PY{k+kn}{from} \PY{n+nn}{random} \PY{k+kn}{import} \PY{n}{randint}
 \PY{k+kn}{from} \PY{n+nn}{typing} \PY{k+kn}{import} \PY{n}{List}
 
-
 \PY{k}{def} \PY{n+nf}{tri}\PY{p}{(}\PY{n}{t}\PY{p}{)}\PY{p}{:}
     \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}fonction de tri correcte\PYZdq{}\PYZdq{}\PYZdq{}}
     \PY{n}{t}\PY{o}{.}\PY{n}{sort}\PY{p}{(}\PY{p}{)}
 
-
 \PY{k}{def} \PY{n+nf}{tableau\PYZus{}aleatoire}\PY{p}{(}\PY{n}{n}\PY{p}{:} \PY{n+nb}{int}\PY{p}{,} \PY{n}{a}\PY{p}{:} \PY{n+nb}{int}\PY{p}{,} \PY{n}{b}\PY{p}{:} \PY{n+nb}{int}\PY{p}{)} \PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}} \PY{n}{List}\PY{p}{[}\PY{n+nb}{int}\PY{p}{]}\PY{p}{:}
     \PY{k}{return} \PY{p}{[}\PY{n}{randint}\PY{p}{(}\PY{n}{a}\PY{p}{,}\PY{n}{b}\PY{p}{)} \PY{k}{for} \PY{n}{\PYZus{}} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{]}
-
 
 \PY{k}{for} \PY{n}{n} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{100}\PY{p}{)}\PY{p}{:}
     \PY{c+c1}{\PYZsh{} [0,0,...,0]}
@@ -1163,6 +1154,10 @@ Dans certains cas, il peut y avoir plusieurs solutions.
 \end{tcolorbox}
     }
 \begin{eleve}
+    \emph{(Capytale : 6c03-101374)} \textbf{Tester} en boite noire 9
+fonctions de tris.
+        
+        \end{eleve}\begin{eleve}
     \emph{(Capytale : 334a-90136)} On suppose avoir écrit une fonction
 \texttt{mult(x,\ y)} qui calcule et renvoie le produit de deux entiers
 \texttt{x} et \texttt{y} reçus en arguments. L'idée est que cette
@@ -1221,9 +1216,10 @@ Lister les conditions sous lesquelles cette fonction peut renvoyer
 \texttt{False}.
         
         \end{eleve}\begin{eleve}
-    \emph{(Capytale : 355d-90159)} On souhaite que les instances de la
-classe \texttt{Chrono} ébauchée ci-dessous respectent les invariants de
-structure suivants:
+    \emph{(Capytale : \textbf{355d-90159})}
+
+On souhaite que les instances de la classe \texttt{Chrono} ébauchée
+ci-dessous respectent les invariants de structure suivants:
 
 \begin{itemize}
 \tightlist
@@ -1237,13 +1233,11 @@ structure suivants:
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{class}\NormalTok{ Chrono:}
-    \CommentTok{"""une classe pour représenter un temps }
-\CommentTok{    mesuré en heures, minutes et secondes"""}
     \KeywordTok{def} \FunctionTok{\_\_init\_\_}\NormalTok{(}\VariableTok{self}\NormalTok{, h, m, s):}
         \VariableTok{self}\NormalTok{.heures   }\OperatorTok{=}\NormalTok{ h}
         \VariableTok{self}\NormalTok{.minutes  }\OperatorTok{=}\NormalTok{ m}
         \VariableTok{self}\NormalTok{.secondes }\OperatorTok{=}\NormalTok{ s}
-    
+
     \KeywordTok{def}\NormalTok{ avance(}\VariableTok{self}\NormalTok{, s):}
         \VariableTok{self}\NormalTok{.secondes }\OperatorTok{+=}\NormalTok{ s}
         \VariableTok{self}\NormalTok{.minutes  }\OperatorTok{+=} \VariableTok{self}\NormalTok{.secondes }\OperatorTok{//} \DecValTok{60}

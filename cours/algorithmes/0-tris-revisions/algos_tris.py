@@ -1,23 +1,104 @@
 def _permute(tab, i, j):
+    """permute les élement tab[i] et tab[j]
+
+    Args:
+        tab (list): tableau source
+        i (type): élément à permuter
+        j (type): élément à permuter
+    """
     temp = tab[i]
     tab[i] = tab[j]
     tab[j] = temp
 
 
-def tri_bulle(tab: list):
+
+def tri0(t: list) -> None:
+    """Supprime les doublons mais trie"""
+    tab = []
+    for x in t:
+        if x not in tab:
+            tab.append(x)
+    tab.sort()
+    t.clear()
+    for x in tab:
+        t.append(x)
+
+
+def tri0(tab: list):
+    """efface le tableau"""
+    tab.clear()
+
+
+def tri8(tab: list):
+    """supprime de manière aléatoire un élément
+    avec la probabilité proba"""
+    proba = 1/500 # p = 1/proba
+
+    n_inter = int(1/proba)
+    tab.sort()
+    from random import randint
+    tirage = randint(0, n_inter)
+    if tirage == 0:
+        tab.pop()
+
+
+def tri3(tab: list):
+    """supprime de manière aléatoire un élément
+    avec la probabilité proba"""
+    proba = 1/100 # p = 1/proba
+
+    n_inter = int(1/proba)
+    tab.sort()
+    from random import randint
+    tirage = randint(0, n_inter)
+    if tirage == 0:
+        tab.pop()
+
+
+def tri4(tab: list):
+    """tri à l'envers"""
+    tab.sort(reverse=True)
+
+
+def tri6(tab: list):
+    """
+    tri à bulles
+    tri le tableau tab dans l'ordre croissant
+
+    Args:
+        tab (list): tableau à trier
+    """
     for i in range(len(tab)):
         for j in range(len(tab)- 1 - i):
             if tab[j] > tab[j+1]:
                 _permute(tab, j, j+1)
 
 
+def tri2(tab: list):
+    """Tri python"""
+    tab.sort()
 
-def tri_insertion(tab: list):
-    pass
 
-
-def tri_selection(tab: list):
+def tri5(tab: list):
     """
+    tri par insertion
+    tri le tableau tab dans l'ordre croissant
+
+    Args:
+        tab (list): tableau à trier
+    """
+    for i in range(1,len(tab)):
+        j = i
+        v = tab[i]
+        while not(j<=0 or tab[j-1] <= v):
+            tab[j] = tab[j-1]
+            j -= 1
+        tab[j] = v
+
+
+def tri7(tab: list):
+    """
+    tri par sélection
     tri le tableau tab dans l'ordre croissant
 
     Args:
@@ -31,7 +112,9 @@ def tri_selection(tab: list):
         _permute(tab, i, i_min)
 
 
-def _occurence(tab: list) -> dict:
+
+# code de l'algo de test du cours
+def _occurences(tab: list) -> dict:
     """
     copie les éléments de tab dans un dictionnaire tel que :
       key   : éléments distincts de tab
@@ -52,34 +135,83 @@ def _occurence(tab: list) -> dict:
     return dic
 
 
-def _identique(dic1: dict, dic2: dict) -> bool:
-    """
-    est ce que dic1 et dic2 sont identiques?
-
-    Exemples:
-    >>> _identique({1: 1, 2: 5}, {2: 5, 1: 1})
-    True
-    >>> _identique({1: 1, 2: 5}, {1:1})
-    False
-    """
-    for k in dic1:
-        if k not in dic2 or dic1[k] != dic2[k]:
-            return False
-    for k in dic2:
-        if k not in dic1 or dic2[k] != dic1[k]:
-            return False
-    return True
-
 from typing import Callable
 
-def test(tab: list, func_tri: Callable) -> bool:
-    occ0 = _occurence(tab)
-    func_tri(tab)
-    for i in range(len(tab)-1):
-        if tab[i] > tab[i+1]:
-            return False
+def _identiques(d1, d2):
+    """deux dictionnaires identiques
 
-    return _identique(occ0, _occurence(tab))
+    Args:
+        d1 (dict)
+        d2 (dict)
+    """
+    for x in d1:
+        assert x in d2
+        assert d1[x] == d2[x]
+    for x in d2:
+        assert x in d1
+        assert d2[x] == d1[x]
+
+def test(t):
+    """teste la fonction tri sur le tableau t
+
+    Args:
+        t (list): tableau à tester
+    """
+    occ = _occurences(t)
+    tri(t)
+    for i in range(0, len(t) - 1):
+        assert t[i] <= t[i+1]
+    _identiques(occ, _occurences(t))
 
 
-print(test([0,4,1,2,0,2,10,8,19], tri_selection))
+# Correction des algorithmes
+from random import randint
+from typing import List
+
+
+def tri(tab: list):
+    """fonction de tri correcte"""
+    tri0(tab)
+
+
+
+def tableau_aleatoire(n: int, a: int, b: int) -> List[int]:
+    return [randint(a,b) for _ in range(n)]
+
+
+for n in range(100):
+    # [0,0,...,0]
+    test(tableau_aleatoire(n,0,0))
+    # tableau avec bcp de doublons
+    test(tableau_aleatoire(n, -n//4, n//4))
+    # tableau de grande amplitude
+    test(tableau_aleatoire(n, -10*n, 10*10))
+
+
+# Tests de performance
+# complexité temporelle
+from time import time
+
+
+def tests_performance():
+    X = []
+    Y = []
+
+    for k in range(10, 14):
+        n = 2 ** k
+        tab = tableau_aleatoire(n, -100, 100)
+        t0 = time()
+        tri (tab)
+        duree = time() - t0
+        print(n, duree)
+        X.append(n)
+        Y.append(duree)
+
+    import matplotlib.pyplot as plt
+
+    plt.plot(X,Y)       # lignes
+    plt.scatter(X,Y)    # points
+
+    plt.show()
+
+# tests_performance()
