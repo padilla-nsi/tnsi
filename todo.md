@@ -48,10 +48,10 @@ Chap 4. Mise au point de programmes {due:2021-10-07} #langage +tnsi {c}
     (A) annoter les variables et les fonctions {cm:2021-10-10}
     (B) types nommés, types paramétrés et généricité {cm:2021-10-10}
     (A) tester un programme {cm:2021-10-10}
-    (B) tester les performances
-    (B) invariant de structure
-    #application types de fonctions
-    #application mult
+    (B) tester les performances {cm:2021-10-12}
+    (B) invariant de structure {cm:2021-10-12}
+    #application types de fonctions {cm:2021-10-12}
+    #application mult {cm:2021-10-12}
     #application miroir(ch)
     #application tab deb fin
     #application retire_com(nomf)
