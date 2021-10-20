@@ -42,3 +42,24 @@ ecrire_nb_rec(4, 12)
 # affiche_rec(tab)
 
 print(nbchiffre_rec(10345))
+
+class Voiture():
+    def __init__(self, nb_porte, couleur, annee):
+        self.nb_porte = nb_porte
+        self.couleur  = couleur
+        self.annee    = annee
+
+    def info(self):
+        texte = "année : " + str(self.annee) + ", couleur : " + self.couleur
+        return texte
+
+class Voiture():
+    def __init__(self, nb_porte: int, couleur: str, annee: int):
+        self.nb_porte = nb_porte
+        self.couleur  = couleur
+        self.annee    = annee
+
+    def info(self) -> str:
+        texte = "année : " + str(self.annee) + ", couleur : " + self.couleur
+        return texte
+
