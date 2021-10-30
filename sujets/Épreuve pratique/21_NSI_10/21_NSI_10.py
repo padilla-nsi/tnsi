@@ -11,4 +11,3 @@ def positif(T):
         ...
     print('T = ',T)
     return T2
-

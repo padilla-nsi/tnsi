@@ -6,6 +6,10 @@ def distance(point1, point2):
     assert len(point1) == 2
     assert isinstance(point1[0], int)
     assert isinstance(point1[1], int)
+    assert isinstance(point2, tuple)
+    assert len(point2) == 2
+    assert isinstance(point2[0], int)
+    assert isinstance(point2[1], int)
     return sqrt((point1[0]-point2[0])**2 + (point1[1]-point2[1])**2)
 
 assert distance((1, 0), (5, 3)) == 5.0, "erreur de calcul"
@@ -23,12 +27,27 @@ def plus_courte_distance(tab, depart):
 
 assert plus_courte_distance([(7, 9), (2, 5), (5, 2)], (0, 0)) == (2, 5), "erreur"
 
-# import unittest
+import unittest
+from random import randint
 
-# class correction(unittest.TestCase):
-#     def test_assertion(self):
-#         self.assertRaises(AssertionError, distance((1,2,3), (0,0)))
+class validation(unittest.TestCase):
+    def test_distance_assert_tuple1(self):
+        a, b, c, d = [randint(-100, 100) for _ in range(4)]
+        self.assertRaises( AssertionError, distance, [a, b], (c, d) )
+        self.assertRaises( AssertionError, distance, (a, b), [c, d] )
 
+    def test_distance_assert_couple(self):
+        a, b, c, d, e = [randint(-100, 100) for _ in range(5)]
+        self.assertRaises(AssertionError, distance, (a, b, c), (d, e))
+        self.assertRaises(AssertionError, distance, (a, b), (c, d, e))
+    
+    def test_distance_assert_int(self):
+        a = chr(randint(65, 90))
+        n1, n2, n3 = [randint(-100, 100) for _ in range(3)]
+        self.assertRaises(AssertionError, distance, (a, n1), (n2, n3))
+        self.assertRaises(AssertionError, distance, (n1, a), (n2, n3))
+        self.assertRaises(AssertionError, distance, (n1, n2), (a, n3))
+        self.assertRaises(AssertionError, distance, (n1, n2), (n3, a))
 
-# if __name__ == '__main__':
-#     unittest.main()
+if __name__ == '__main__':
+    unittest.main()
