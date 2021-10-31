@@ -18,11 +18,11 @@ class validation(unittest.TestCase):
 
 
     def test_present(self):
-        self.assertEqual(exo.moyenne('Dupont'), 14.5)
-        self.assertEqual(exo.moyenne('Durand'), 9.2)
+        self.assertEqual(exo.moyenne('Dupont'), 14.5, msg="\nErreur:\nvaleurs de l'exemple incorrecte avec 'Dupont'")
+        self.assertEqual(exo.moyenne('Durand'), 9.2, msg="\nErreur:\nvaleurs de l'exemple incorrecte avec 'Durand'")
 
     def test_absent(self):
-        self.assertEqual(exo.moyenne('Dupond'), -1)
+        self.assertEqual(exo.moyenne('Dupond'), -1, msg="\nErreur:\nun nom inconnu doit renvoyer '-1'")
 
 
     def test_alea(self):
@@ -37,10 +37,10 @@ class validation(unittest.TestCase):
                             }
 
 
-        self.assertEqual(exo.moyenne('test'), self.correcte('test'))
+        self.assertEqual(exo.moyenne('test'), self.correcte('test'), msg="\nErreur:\ncalcul de moyenne incorrecte avec" + str(exo.resultats))
         
         exo.resultats = sauv.copy()
         
 
 
-unittest.main()
+unittest.main() 
