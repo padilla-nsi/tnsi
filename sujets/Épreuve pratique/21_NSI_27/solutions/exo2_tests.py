@@ -1,3 +1,7 @@
+import exo2 as exo 
+import unittest
+
+from random import randint
 coeur = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], \
          [0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0], \
          [0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0], \
@@ -11,17 +15,6 @@ coeur = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], \
          [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], \
          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
 
-def affiche(dessin):
-    ''' affichage d'une grille : les 1 sont représentés par 
-        des "*" , les 0 par deux espaces "  " '''
-    for ligne in dessin:
-        for col in ligne:
-            if col == 1:
-                print(" *",end="")
-            else:
-                print("  ",end="")
-        print()
-
 
 def zoomListe(liste_depart,k):
     '''renvoie une liste contenant k fois chaque 
@@ -31,6 +24,7 @@ def zoomListe(liste_depart,k):
         for i in range(k):
             liste_zoom.append(elt)
     return liste_zoom
+
 
 def zoomDessin(grille,k):
     '''renvoie une grille où les lignes sont zoomées k fois 
@@ -42,6 +36,30 @@ def zoomDessin(grille,k):
             grille_zoom.append(liste_zoom)
     return grille_zoom
 
-affiche(coeur)
-affiche(zoomDessin(coeur,3))
 
+class Validation(unittest.TestCase):
+    def test_zoomListe(self):
+        for zoom in range(1,4):
+            liste = [randint(0, 1), randint(0, 1), randint(0, 1)]
+            test = exo.zoomListe(liste, zoom)
+            ok   = zoomListe(liste, zoom)
+            self.assertEqual(test, ok,
+                    msg="\nErreur:\nfonction 'zoomListe("+ str(liste) +", "+ str(zoom) +")' incorrecte")
+        
+    def test_zoomDessin(self):
+
+        grille = coeur
+        zoom = 3
+        test = exo.zoomDessin(grille, zoom)
+        ok   =     zoomDessin(grille, zoom)
+        self.assertEqual(test, ok,
+                    msg="\nErreur:\nfonction 'zoomGrille()' incorrecte sur l'exemple (coeur avec zoom=3)")
+        
+        grille = [[randint(0, 1) for _ in range(3)] for _ in range(3)]
+        for zoom in range(1,4):
+            test = exo.zoomDessin(grille, zoom)
+            ok   =     zoomDessin(grille, zoom)
+            self.assertEqual(test, ok,
+                    msg="\nErreur:\nfonction 'zoomGrille("+ str(grille) +", "+ str(zoom) +")' incorrecte")
+            
+unittest.main()
