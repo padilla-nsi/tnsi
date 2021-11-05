@@ -4,6 +4,6 @@ def tri_iteratif(tab):
         for i in range(0 , ... ):
             if tab[i] > ... :
                 imax = i
-        if tab[max] > ... :
+        if tab[imax] > ... :
             ... , tab[imax] = tab[imax] , ...
     return tab
