@@ -59,12 +59,12 @@ Chap 4. Mise au point de programmes {due:2021-10-07} #langage +tnsi {c}
 
 
 Chap 5. Listes chaînées {due:2021-10-14} +tnsi #structures_de_données {c}
-    (A) structure de liste chaînée
-    (A) opérations sur les listes
-    (A) longueur d'une liste
-    (A) N-ième élément d'une liste
-    (A) concaténation de deux listes
-    (A) renverser une liste
+    (A) structure de liste chaînée {cm:2021-11-09}
+    (A) opérations sur les listes {cm:2021-11-09}
+    (A) longueur d'une liste {cm:2021-11-09}
+    (A) N-ième élément d'une liste {cm:2021-11-09}
+    (A) concaténation de deux listes {cm:2021-11-09}
+    (A) renverser une liste {cm:2021-11-09}
     (A) modification d'une liste
     (C) attention listes mutables
     (A) encapsulation dans un objet
