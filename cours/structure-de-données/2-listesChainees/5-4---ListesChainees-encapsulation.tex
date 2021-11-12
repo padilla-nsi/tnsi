@@ -485,51 +485,13 @@
     
 
     
-        {\scriptsize
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{1}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{k+kn}{from} \PY{n+nn}{doctest} \PY{k+kn}{import} \PY{n}{testmod}
-\end{Verbatim}
-\end{tcolorbox}
-    }
-
-        {\scriptsize
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{2}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{k}{class} \PY{n+nc}{Maillon}\PY{p}{:}
-    \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
-\PY{l+s+sd}{    Une classe pour représenter le maillon d\PYZsq{}une liste}
-
-\PY{l+s+sd}{    Attributs}
-\PY{l+s+sd}{    \PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}
-\PY{l+s+sd}{    valeur : type}
-\PY{l+s+sd}{        valeur contenue dans le maillon}
-\PY{l+s+sd}{    suivant : maillon}
-\PY{l+s+sd}{        maillon suivant ou None si pas de maillon}
-\PY{l+s+sd}{    \PYZdq{}\PYZdq{}\PYZdq{}}
-
-    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{valeur}\PY{p}{,} \PY{n}{suivant}\PY{p}{)}\PY{p}{:}
-        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Constructeur de classe}
-
-\PY{l+s+sd}{        Args:}
-\PY{l+s+sd}{            valeur (type): valeur stockée dans le maillon}
-\PY{l+s+sd}{            suivant (maillon): maillon suivant ou None}
-\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
-        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{valeur} \PY{o}{=} \PY{n}{valeur}
-        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{suivant} \PY{o}{=} \PY{n}{suivant}
-\end{Verbatim}
-\end{tcolorbox}
-    }
-
     \hypertarget{encapsulation-dans-un-objet}{%
 \subsection{4 --- Encapsulation dans un
 objet}\label{encapsulation-dans-un-objet}}
 
     \hypertarget{muxe9thodes-de-bases}{%
 \subsubsection{Méthodes de bases}\label{muxe9thodes-de-bases}}
-
+\begin{retenir}
     Pour finir nous allons maintenant encapsuler une liste chaînée
 \textbf{dans un objet}.
 
@@ -539,6 +501,7 @@ chaînée. On l'appelle tete car il désigne la tête de la liste, lorsque
 celle-ci n'est pas vide (et \texttt{None} sinon). Le constructeur
 initialise l'attribut \texttt{tete} avec la valeur \texttt{None}.
 
+        \end{retenir}
     Il y a de multiples intérêts à cette encapsulation :
 
 \begin{itemize}
@@ -560,7 +523,7 @@ initialise l'attribut \texttt{tete} avec la valeur \texttt{None}.
   simples fonctions, il faudrait distinguer \texttt{liste\_est\_vide},
   \texttt{pile\_est\_vide}, \texttt{ensemble\_est\_vide}, etc.
 \end{itemize}
-
+\begin{eleve}
     Implémenter la classe \texttt{Liste} avec un constructeur qui initialise
 l'attribut \texttt{tete} à None.
 
@@ -571,7 +534,8 @@ Exemple :
 >>> print(lst.tete)
 None
 \end{verbatim}
-
+        
+        \end{eleve}
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{3}{\boxspacing}
@@ -613,7 +577,7 @@ derrière cet objet. Pour cette raison, on n e souhaite pas que
 l'utilisateur de la classe \texttt{Liste} teste explicitement si
 l'attribut \texttt{tete} vaut \texttt{None}, mais qu'il utilise cette
 méthode \texttt{est\_vide}.
-
+\begin{eleve}
     Ajouter à la classe \texttt{Liste} la méthode \texttt{est\_vide()} qui
 renvoie \texttt{True} si la liste est vide et \texttt{False} sinon.
 
@@ -629,7 +593,8 @@ True
 >>> print(lst.est_vide())
 False
 \end{verbatim}
-
+        
+        \end{eleve}
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{4}{\boxspacing}
@@ -686,7 +651,7 @@ situation représentée à droite :
 (schéma)
 
 On a donc construit ainsi la liste 1, 2, 3, dans cet ordre.
-
+\begin{eleve}
     Implémenter dans la classe \texttt{Liste} la méthode \texttt{ajoute}
 ayant un paramètre \texttt{valeur}. Cette méthode ajoute un nouveau
 maillon en tête de la liste ayant pour valeur : \texttt{valeur} et pour
@@ -705,7 +670,8 @@ Exemples :
 >>> print(lst.tete.suivant.valeur)
 1
 \end{verbatim}
-
+        
+        \end{eleve}
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{5}{\boxspacing}
@@ -795,7 +761,7 @@ obtenir la longueur de la liste \texttt{lst}.
 TestResults(failed=0, attempted=8)
 \end{Verbatim}
 \end{tcolorbox}
-        
+        \begin{remarque}
     Il est important de noter qu'il n'y a pas confusion ici entre la
 fonction \texttt{longueur} définie précédemment et la méthode
 \texttt{longueur}. En particulier, la seconde est définie en appelant la
@@ -807,6 +773,7 @@ méthode \texttt{longueur} (un appel récursif s'écrirait
 \texttt{longueur()} et \texttt{self.longueur()} sont deux fonctions
 différentes !
 
+        \end{remarque}
     On peut donner à cette méthode le nom \texttt{\_\_len\_\_} et Python
 nous permet alors d'écrire \texttt{len(lst)} comme pour un tableau. En
 effet, lorsque l'on écrit \texttt{len(e)} en Python, ce n'est qu'un
@@ -866,7 +833,7 @@ faire le choix d'un nom idiomatique en Python, à savoir
 
 Ceci nous permet alors d'écrire \texttt{lst{[}i{]}} pour accéder au
 i-ième élément de notre liste, exactement comme pour les tableaux.
-
+\begin{eleve}
     Implémenter dans la classe \texttt{Liste} la méthode
 \texttt{\_\_getitem\_\_} de paramètre \texttt{index} permettant de
 renvoyer la valeur du maillon de rang \texttt{index} de la liste.
@@ -883,7 +850,8 @@ Exemple:
 >>> assert lst[1] == 2
 >>> assert lst[2] == 4
 \end{verbatim}
-
+        
+        \end{eleve}
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{10}{\boxspacing}
@@ -926,7 +894,7 @@ TestResults(failed=0, attempted=7)
     Pour la fonction \texttt{renverser}, on fait le choix de nommer la
 méthode \texttt{reverse} car là encore c'est un nom qui existe déjà pour
 les tableaux de Python.
-
+\begin{eleve}
     Implémenter dans la classe \texttt{Liste} une méthode \texttt{reverse}
 ne renvoie rien mais inverse l'ordre des maillons de la liste.
 
@@ -942,7 +910,8 @@ Exemple :
 >>> assert lst[1] == 2
 >>> assert lst[2] == 1
 \end{verbatim}
-
+        
+        \end{eleve}
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{12}{\boxspacing}
@@ -986,7 +955,7 @@ TestResults(failed=0, attempted=8)
 renvoyer une nouvelle liste, c'est-à-dire un nouvel objet. On choisit
 d'appeler la méthode \texttt{\_\_add\_\_}, qui correspond à la syntaxe
 \texttt{+} de Python.
-
+\begin{eleve}
     Implémenter la méthode \texttt{\_\_add\_\_} de paramètre
 \texttt{autre\_liste} qui renvoie une nouvelle liste, résultat de la
 concaténation de la liste actuelle et de \texttt{autre\_liste}.
@@ -1004,7 +973,8 @@ Exemple :
 >>> assert lst_3[1] == 2
 >>> assert lst_3[2] == 3
 \end{verbatim}
-
+        
+        \end{eleve}
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{16}{\boxspacing}
@@ -1048,7 +1018,7 @@ Exemple :
 TestResults(failed=0, attempted=9)
 \end{Verbatim}
 \end{tcolorbox}
-        
+        \begin{retenir}
     Une liste chaînée est une structure de données pour représenter une
 séquence finie d'éléments. Chaque élément est contenu dans un Maillon,
 qui fournit par ailleurs un moyen d'accéder au maillon suivant. Les
@@ -1056,6 +1026,7 @@ opérations sur les listes chaînées se programment sous la forme de
 parcours qui suivent ces liaisons, en utilisant une fonction récursive
 ou une boucle.
 
+        \end{retenir}
 
     % Add a bibliography block to the postdoc
     
