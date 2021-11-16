@@ -707,8 +707,43 @@ Exemple et test :
     None
 \end{verbatim}
 
+        {\scriptsize
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kn}{from} \PY{n+nn}{doctest} \PY{k+kn}{import} \PY{n}{testmod}
+
+
+\PY{k}{class} \PY{n+nc}{Maillon}\PY{p}{:}
+    \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{} Maillon d\PYZsq{}une liste chaînée \PYZdq{}\PYZdq{}\PYZdq{}}
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{valeur}\PY{p}{,} \PY{n}{suivant}\PY{p}{)}\PY{p}{:}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{valeur}  \PY{o}{=} \PY{n}{valeur}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{suivant} \PY{o}{=} \PY{n}{suivant}
+
+\PY{k}{class} \PY{n+nc}{Pile}\PY{p}{:}
+    \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\PY{l+s+sd}{    Encapsulation des piles à l\PYZsq{}aide des Maillons de listes chaînées.}
+\PY{l+s+sd}{    \PYZdq{}\PYZdq{}\PYZdq{}}
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\PY{l+s+sd}{        Constructeur de Pile.}
+
+\PY{l+s+sd}{        Exemple et tests:}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} p = Pile()}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(p.contenu)}
+\PY{l+s+sd}{        None}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{contenu} \PY{o}{=} \PY{k+kc}{None}
+
+
+\PY{c+c1}{\PYZsh{} tests de la classe}
+\PY{n}{testmod}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+    }
+
     Étendre la classe \texttt{Pile} en implémentant la méthode
-\texttt{est\_vide()}.
+\texttt{est\_vide}.
 
 Exemples et tests :
 
@@ -721,9 +756,296 @@ Exemples et tests :
     False
 \end{verbatim}
 
+        {\scriptsize
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{class} \PY{n+nc}{Pile}\PY{p}{(}\PY{n}{Pile}\PY{p}{)}\PY{p}{:}
+    \PY{k}{def} \PY{n+nf}{est\PYZus{}vide}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)} \PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}} \PY{n+nb}{bool}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\PY{l+s+sd}{        Est ce que la pile est vide ?}
+
+\PY{l+s+sd}{        Returns:}
+\PY{l+s+sd}{            bool: True si et seulement si la pile est vide}
+
+\PY{l+s+sd}{        Exemple et test:}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} p = Pile()}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(p.est\PYZus{}vide())}
+\PY{l+s+sd}{        True}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} p.contenu = Maillon(1, None)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(p.est\PYZus{}vide())}
+\PY{l+s+sd}{        False}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{k}{return} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{contenu} \PY{o+ow}{is} \PY{k+kc}{None}
+
+
+\PY{n}{testmod}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+    }
+
+    Implémenter la méthode \texttt{empile} dans la classe \texttt{Pile}.
+Pour cela construire une nouvelle liste chaînée dont le premier maillon
+contient :
+
+\begin{itemize}
+\tightlist
+\item
+  valeur : la valeur à empiler
+\item
+  suivant : le premier maillon de la liste d'origine de la pile
+\end{itemize}
+
+Puis mettre à jour le contenu de la pile avec cette nouvelle liste.
+
+Exemple et tests:
+
+\begin{verbatim}
+    >>> p = Pile()
+    >>> p.empiler(1)
+    >>> assert not p.est_vide()
+    >>> print(p.contenu.valeur)
+    1
+    >>> p.empiler(2)
+    >>> print(p.contenu.valeur)
+    2
+\end{verbatim}
+
+        {\scriptsize
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{class} \PY{n+nc}{Pile}\PY{p}{(}\PY{n}{Pile}\PY{p}{)}\PY{p}{:}
+    \PY{k}{def} \PY{n+nf}{empiler}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{valeur}\PY{p}{)}\PY{p}{:}
+            \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\PY{l+s+sd}{            Empile valeur dans la pile courante.}
+
+\PY{l+s+sd}{            Args:}
+\PY{l+s+sd}{                valeur (T): valeur à empiler}
+
+\PY{l+s+sd}{            Exemple et tests:}
+\PY{l+s+sd}{            \PYZgt{}\PYZgt{}\PYZgt{} p = Pile()}
+\PY{l+s+sd}{            \PYZgt{}\PYZgt{}\PYZgt{} p.empiler(1)}
+\PY{l+s+sd}{            \PYZgt{}\PYZgt{}\PYZgt{} assert not p.est\PYZus{}vide()}
+\PY{l+s+sd}{            \PYZgt{}\PYZgt{}\PYZgt{} print(p.contenu.valeur)}
+\PY{l+s+sd}{            1}
+\PY{l+s+sd}{            \PYZgt{}\PYZgt{}\PYZgt{} p.empiler(2)}
+\PY{l+s+sd}{            \PYZgt{}\PYZgt{}\PYZgt{} print(p.contenu.valeur)}
+\PY{l+s+sd}{            2}
+\PY{l+s+sd}{            \PYZdq{}\PYZdq{}\PYZdq{}}
+            \PY{n}{tete\PYZus{}courante} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{contenu}
+            \PY{n}{tete\PYZus{}nouvelle} \PY{o}{=} \PY{n}{Maillon}\PY{p}{(}\PY{n}{valeur}\PY{p}{,} \PY{n}{tete\PYZus{}courante}\PY{p}{)}
+            \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{contenu} \PY{o}{=} \PY{n}{tete\PYZus{}nouvelle}
+
+            \PY{c+c1}{\PYZsh{} version courte ;)}
+            \PY{c+c1}{\PYZsh{} self.contenu = Maillon(valeur, self.contenu)}
+
+
+\PY{n}{testmod}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+    }
+
+    Pour finir, implémenter \texttt{depiler} afin de récupérer la valeur au
+sommet de la pile.
+
+Si la pile est vide, lever une exception indiquant :
+\texttt{"IndexError:\ depiler\ sur\ une\ pile\ vide"}.
+
+Sinon, il faut récupérer la valeur du premier maillon puis retirer ce
+maillon de la liste chaînée. Pour cela, le nouveau maillon de tête doit
+être le maillon suivant du maillon supprimé.
+
+Enfin, après la mise à jour de la liste chaînée, il faut renvoyer la
+valeur qui avait été prélevée dans le maillon de tête d'origine.
+
+Exemple et tests:
+
+\begin{verbatim}
+    >>> p = Pile()
+    >>> p.empiler(1)
+    >>> p.empiler(2)
+    >>> v = p.depiler()
+    >>> print(v)
+    2
+    >>> v = p.depiler()
+    >>> print(v)
+    1
+    >>> v = p.depiler()
+    Traceback (most recent call last):
+    IndexError: depiler sur une pile vide
+\end{verbatim}
+
+        {\scriptsize
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{class} \PY{n+nc}{Pile}\PY{p}{(}\PY{n}{Pile}\PY{p}{)}\PY{p}{:}
+    \PY{k}{def} \PY{n+nf}{depiler}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\PY{l+s+sd}{        Dépile la valeur de tête de la pile.}
+
+\PY{l+s+sd}{        Raises:}
+\PY{l+s+sd}{            IndexError: si la pile est vide}
+
+\PY{l+s+sd}{        Returns:}
+\PY{l+s+sd}{            T: valeur de tête de la pile}
+
+\PY{l+s+sd}{        Exemple et tests:}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} p = Pile()}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} p.empiler(1)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} p.empiler(2)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} v = p.depiler()}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(v)}
+\PY{l+s+sd}{        2}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} v = p.depiler()}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(v)}
+\PY{l+s+sd}{        1}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} v = p.depiler()}
+\PY{l+s+sd}{        Traceback (most recent call last):}
+\PY{l+s+sd}{        IndexError: depiler sur une pile vide}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{k}{if} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{est\PYZus{}vide}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+            \PY{k}{raise} \PY{n+ne}{IndexError}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{depiler sur une pile vide}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        
+        \PY{n}{tete} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{contenu}
+        \PY{n}{valeur\PYZus{}tete} \PY{o}{=} \PY{n}{tete}\PY{o}{.}\PY{n}{valeur}
+        \PY{n}{maillon\PYZus{}suivant} \PY{o}{=} \PY{n}{tete}\PY{o}{.}\PY{n}{suivant}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{contenu} \PY{o}{=} \PY{n}{maillon\PYZus{}suivant}
+        
+        \PY{k}{return} \PY{n}{valeur\PYZus{}tete}
+
+
+\PY{n}{testmod}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+    }
+
     \hypertarget{ruxe9alisation-dune-file-avec-une-liste-mutable}{%
-\subsection{6.5 --- Réalisation d'une file avec une liste
+\subsection{6.6 --- Réalisation d'une file avec une liste
 (mutable)}\label{ruxe9alisation-dune-file-avec-une-liste-mutable}}
+
+    \hypertarget{ruxe9alisation-dune-pile-avec-les-tableaux-de-python}{%
+\subsection{6.7 --- Réalisation d'une pile avec les tableaux de
+Python}\label{ruxe9alisation-dune-pile-avec-les-tableaux-de-python}}
+
+    Les tableaux de Python réalisent également directement une structure de
+pile, avec leurs opérations \texttt{append} et \texttt{pop} qui
+s'exécutent en moyenne en temps constant. Cette richesse des tableaux
+redimensionnables propre au langage Python peut donc donner une
+définition en apparence très simple à une autre version de la classe
+\texttt{Pile}.
+
+Implémenter la classe \texttt{Pile} en utilisant la structure
+\texttt{list} pour y stocker les valeurs.
+
+Exemples et tests :
+
+\begin{verbatim}
+>>> p = Pile()
+>>> print(p.contenu)
+[]
+
+>>> print(p.est_vide())
+True
+
+>>> p.empiler(1)
+>>> print(p.est_vide())
+False
+>>> print(p.contenu)
+[1]
+>>> p.empiler(2)
+>>> p.empiler(3)
+>>> print(p.contenu)
+[1, 2, 3]
+
+>>> v = p.depiler()
+>>> print(v)
+3
+>>> v = p.depiler()
+>>> print(v)
+2
+>>> v = p.depiler()
+>>> print(v)
+1
+>>> v = p.depiler()
+Traceback (most recent call last):
+IndexError: depiler sur une pile vide
+ 
+\end{verbatim}
+
+        {\scriptsize
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{class} \PY{n+nc}{Pile}\PY{p}{:}
+    \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\PY{l+s+sd}{    Classe Pile}
+\PY{l+s+sd}{    (implémentée avec les tableaux Python)}
+\PY{l+s+sd}{    \PYZdq{}\PYZdq{}\PYZdq{}}
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}        }
+\PY{l+s+sd}{        Exemples et tests :}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} p = Pile()}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(p.contenu)}
+\PY{l+s+sd}{        []}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{contenu} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+    
+    \PY{k}{def} \PY{n+nf}{est\PYZus{}vide}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\PY{l+s+sd}{        Exemples et tests :}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} p = Pile()}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(p.est\PYZus{}vide())}
+\PY{l+s+sd}{        True}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{k}{return} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{contenu} \PY{o}{==} \PY{p}{[}\PY{p}{]}
+    
+    \PY{k}{def} \PY{n+nf}{empiler}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{valeur}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\PY{l+s+sd}{        Exemples et tests :}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} p = Pile()}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} p.empiler(1)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(p.est\PYZus{}vide())}
+\PY{l+s+sd}{        False}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(p.contenu)}
+\PY{l+s+sd}{        [1]}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} p.empiler(2)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} p.empiler(3)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(p.contenu)}
+\PY{l+s+sd}{        [1, 2, 3]}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{contenu}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{valeur}\PY{p}{)}
+
+    \PY{k}{def} \PY{n+nf}{depiler}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\PY{l+s+sd}{        Exemples et tests :}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} p = Pile()}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} p.empiler(1)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} p.empiler(2)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} p.empiler(3)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} v = p.depiler()}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(v)}
+\PY{l+s+sd}{        3}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} v = p.depiler()}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(v)}
+\PY{l+s+sd}{        2}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} v = p.depiler()}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(v)}
+\PY{l+s+sd}{        1}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} v = p.depiler()}
+\PY{l+s+sd}{        Traceback (most recent call last):}
+\PY{l+s+sd}{        IndexError: depiler sur une pile vide}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{k}{if} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{est\PYZus{}vide}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+            \PY{k}{raise} \PY{n+ne}{IndexError}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{depiler sur une pile vide}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{k}{return} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{contenu}\PY{o}{.}\PY{n}{pop}\PY{p}{(}\PY{p}{)}
+
+
+\PY{n}{testmod}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+    }
 
     \hypertarget{ruxe9alisation-dune-file-avec-deux-piles}{%
 \subsection{6.6 --- Réalisation d'une file avec deux

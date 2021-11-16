@@ -183,6 +183,70 @@ class Pile:
         return valeur_tete
 
 
+# activité
+# implémentation de Pile avec les `list` Python
+
+class Pile:
+    def __init__(self):
+        """        
+        Exemples et tests :
+        >>> p = Pile()
+        >>> print(p.contenu)
+        []
+        """
+        self.contenu = []
+    
+    def est_vide(self):
+        """
+        Exemples et tests :
+        >>> p = Pile()
+        >>> print(p.est_vide())
+        True
+        """
+        return self.contenu == []
+    
+    def empiler(self, valeur):
+        """
+        Exemples et tests :
+        >>> p = Pile()
+        >>> p.empiler(1)
+        >>> print(p.est_vide())
+        False
+        >>> print(p.contenu)
+        [1]
+        >>> p.empiler(2)
+        >>> p.empiler(3)
+        >>> print(p.contenu)
+        [1, 2, 3]
+        """
+        self.contenu.append(valeur)
+
+    def depiler(self):
+        """
+        Exemples et tests :
+        >>> p = Pile()
+        >>> p.empiler(1)
+        >>> p.empiler(2)
+        >>> p.empiler(3)
+        >>> v = p.depiler()
+        >>> print(v)
+        3
+        >>> v = p.depiler()
+        >>> print(v)
+        2
+        >>> v = p.depiler()
+        >>> print(v)
+        1
+        >>> v = p.depiler()
+        Traceback (most recent call last):
+        IndexError: depiler sur une pile vide
+        """
+        if self.est_vide():
+            raise IndexError("depiler sur une pile vide")
+        return self.contenu.pop()
+
+
+
 if __name__ == '__main__':
     from doctest import testmod
     testmod(verbose=False)
