@@ -185,12 +185,25 @@ class Liste:
         return concatenation
 
     def __add__(self, liste):
-        """ Permet d'utiliser l'opérateur + entre instances de Liste"""
+        """
+        Permet d'utiliser l'opérateur + entre instances de Liste
+        
+        Exemple:
+        >>> lst1 = Liste()
+        >>> lst1.ajoute(1)
+        >>> lst2 = Liste()
+        >>> lst2.ajoute(3)
+        >>> lst2.ajoute(2)
+        >>> lst3 = lst1.concatener(lst2)
+        >>> assert lst3[0] == 1
+        >>> assert lst3[1] == 2
+        >>> assert lst3[2] == 3
+        """
 
         return self.concatener(liste)
 
 
-    def renverser(self):
+    def reverse(self):
         """
         Renvoyer une nouvelle liste chainée renversée
 
@@ -199,7 +212,7 @@ class Liste:
         >>> lst.ajoute(3)
         >>> lst.ajoute(2)
         >>> lst.ajoute(1)
-        >>> lst_r = lst.renverser()
+        >>> lst_r = lst.reverse()
         >>> assert lst_r[0] == 3    # lst_r inversée
         >>> assert lst_r[1] == 2
         >>> assert lst_r[2] == 1

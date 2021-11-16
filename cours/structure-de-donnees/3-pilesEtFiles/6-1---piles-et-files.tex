@@ -252,7 +252,7 @@
     \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
     % Document parameters
     % Document title
-    \title{5-4---ListesChainees-encapsulation}
+    \title{6-1---piles-et-files}
     
     
     
@@ -467,7 +467,7 @@
       citecolor=citecolor,
       }
     % Slightly bigger margins than the latex defaults
-    \geometry{a4paper,tmargin=3cm,bmargin=2cm,lmargin=1cm,rmargin=1cm}\fancyhead[L]{Thème à définir}\fancyhead[L]{\adjustimage{height=1cm, valign=m}{/home/bouscadilla/Documents/Code/nbconvert/template/latex/pdf_solution/papier_eleve_ico_structure}\ttfamily\scshape Struct.de données}\fancyhead[C]{\bfseries\MakeUppercase{5-4---ListesChainees-encapsulation}}\fancyhead[C]{\bfseries\MakeUppercase{3 --- P.O.O.}}\fancyhead[R]{\monthyeardate\today}
+    \geometry{a4paper,tmargin=3cm,bmargin=2cm,lmargin=1cm,rmargin=1cm}\fancyhead[L]{Thème à définir}\fancyhead[L]{\adjustimage{height=1cm, valign=m}{/home/bouscadilla/Documents/Code/nbconvert/template/latex/pdf_solution/papier_eleve_ico_structure}\ttfamily\scshape Struct.de données}\fancyhead[C]{\bfseries\MakeUppercase{6-1---piles-et-files}}\fancyhead[C]{\bfseries\MakeUppercase{6 --- Piles et files}}\fancyhead[R]{\monthyeardate\today}
 
     \fancyfoot[C]{\thepage}
     % #TODO ajouter les pages totales
@@ -478,555 +478,257 @@
 
 \begin{document}
     
-    \title{3 --- P.O.O.}
+    \title{6 --- Piles et files}
 % \maketitle
 
     
     
 
     
-    \hypertarget{encapsulation-dans-un-objet}{%
-\subsection{4 --- Encapsulation dans un
-objet}\label{encapsulation-dans-un-objet}}
+    \hypertarget{chap.-6-piles-et-files}{%
+\section{Chap. 6 --- Piles et files}\label{chap.-6-piles-et-files}}
 
-    \hypertarget{muxe9thodes-de-bases}{%
-\subsubsection{Méthodes de bases}\label{muxe9thodes-de-bases}}
-\begin{retenir}
-    Pour finir nous allons maintenant encapsuler une liste chaînée
-\textbf{dans un objet}.
+    \hypertarget{introduction}{%
+\subsection{6.1 --- Introduction}\label{introduction}}
 
-L'idée consiste à définir une nouvelle classe, \texttt{Liste}, qui
-possède un unique attribut, \texttt{tete}, qui contient une liste
-chaînée. On l'appelle tete car il désigne la tête de la liste, lorsque
-celle-ci n'est pas vide (et \texttt{None} sinon). Le constructeur
-initialise l'attribut \texttt{tete} avec la valeur \texttt{None}.
+    Tout comme les \emph{tableaux}, \textbf{Pile} et \textbf{File} sont des
+structures de données qui permettent de (1) \textbf{stocker} des
+ensembles d'objets et (2) \textbf{ajouter}/\textbf{retirer} des objets
+un à un.
 
-        \end{retenir}
-    Il y a de multiples intérêts à cette encapsulation :
+    Dans une \textbf{pile} (en anglais \emph{stack}), chaque opération
+\texttt{depile} retire l'élément arrivé le plus récemment. Pour imaginer
+cette structure, il suffit de penser à une \emph{pile d'assiettes} : on
+ajoute une assiette sur le sommet et quant on retire une assiette, c'est
+forcément celle du sommet.
 
-\begin{itemize}
-\tightlist
-\item
-  D'une part, il cache la représentation de la structure à
-  l'utilisateur. Ainsi, celui qui utilise notre classe \texttt{Liste}
-  n'a plus à manipuler explicitement la classe \texttt{Maillon}. Mieux
-  encore, il peut complètement ignorer son existence. De même, il ignore
-  que la liste vide est représentée par la valeur \texttt{None}. En
-  particulier, la réalisation de la classe \texttt{Liste} pourrait être
-  modifiée sans pour autant que le code qui l'utilise n'ait besoin
-  d'être modifié à son tour.
-\item
-  D'autre part, l'utilisation de classes et de méthodes nous permet de
-  donner le même nom à toutes les méthodes qui sont de même nature.
-  Ainsi, on peut avoir plusieurs classes avec des méthodes
-  \texttt{est\_vide}, \texttt{ajoute}, etc. Si nous avions utilisé de
-  simples fonctions, il faudrait distinguer \texttt{liste\_est\_vide},
-  \texttt{pile\_est\_vide}, \texttt{ensemble\_est\_vide}, etc.
-\end{itemize}
-\begin{eleve}
-    Implémenter la classe \texttt{Liste} avec un constructeur qui initialise
-l'attribut \texttt{tete} à None.
+\begin{longtable}[]{@{}c@{}}
+\toprule
+\endhead
+\includegraphics{img-pile.png}\tabularnewline
+\emph{Dernier entré, premier sorti} (en anglais \textbf{LIFO} pour
+\emph{last in, first out})\tabularnewline
+\bottomrule
+\end{longtable}
 
-Exemple :
+    Dans une \textbf{file} (en anglais \emph{queue}), chaque opération
+\texttt{defile} retire l'élément \emph{qui avait été ajouté} le premier.
+Pour imaginer cette structure, on pense à une file d'attente dans
+laquelle (1) les personnes arrivent à tour de rôle, (2) patientent et
+(3) sont servies dans leur ordre d'arrivé.
 
-\begin{verbatim}
->>> lst = Liste()
->>> print(lst.tete)
-None
-\end{verbatim}
-        
-        \end{eleve}
-        {\scriptsize
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{3}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{k}{class} \PY{n+nc}{Liste}\PY{p}{:}
-    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
-        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
-\PY{l+s+sd}{        Constructeur d\PYZsq{}une liste vide.}
+\begin{longtable}[]{@{}c@{}}
+\toprule
+\endhead
+\includegraphics{img-file.png}\tabularnewline
+\emph{Premier arrivé, premier sorti} (en anglais \textbf{FIFO} pour
+\emph{first in, first out})\tabularnewline
+\bottomrule
+\end{longtable}
 
-\PY{l+s+sd}{        Exemples :}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} lst = Liste()}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(lst.tete)}
-\PY{l+s+sd}{        None}
-\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+    \hypertarget{interface-commune-aux-piles-et-aux-files}{%
+\subsection{6.2 --- Interface commune aux piles et aux
+files}\label{interface-commune-aux-piles-et-aux-files}}
 
-        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{tete} \PY{o}{=} \PY{k+kc}{None}
+    Classiquement, chacune de ces deux structures a une \textbf{interface}
+proposant au minimum les quatre opérations suivantes :
 
+\begin{longtable}[]{@{}ccl@{}}
+\toprule
+\endhead
+\textbf{pile} & \textbf{file} & \textbf{opérations}\tabularnewline
+\texttt{Pile()} & \texttt{File()} & créer une structure initialement
+vide\tabularnewline
+\texttt{est\_vide()} & \texttt{est\_vide()} & tester si une structure
+est vide\tabularnewline
+\texttt{empile()} & \texttt{enfile()} & ajouter un élément à une
+structure\tabularnewline
+\texttt{depile()} & \texttt{defile()} & retirer et obtenir un élément
+d'une structure\tabularnewline
+\bottomrule
+\end{longtable}
 
-\PY{c+c1}{\PYZsh{} test avec l\PYZsq{}exemple}
-\PY{n}{testmod}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-    }
+    Comme pour les tableaux et les listes chaînées, on préconisé pour les
+piles et les files une \textbf{structures homogènes}. C'est-à-dire que
+tous les éléments stockés aient le même type.
 
-            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
-\prompt{Out}{outcolor}{3}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-TestResults(failed=0, attempted=2)
-\end{Verbatim}
-\end{tcolorbox}
-        
-    Ainsi, un objet construit avec \texttt{Liste()} représente une liste
-vide.
+    Dans ce cours, nos structures de pile et de file seront considérées
+\textbf{mutables} : chaque opération d'ajout ou de retrait d'un élément
+\textbf{modifie la pile ou la file} à laquelle elle s'applique.
 
-On peut également introduire une méthode \texttt{est\_vide} qui renvoie
-un booléen indiquant si la liste est vide. En effet, notre intention est
-d'encapsuler, c'est-à-dire de cacher, la représentation de la liste
-derrière cet objet. Pour cette raison, on n e souhaite pas que
-l'utilisateur de la classe \texttt{Liste} teste explicitement si
-l'attribut \texttt{tete} vaut \texttt{None}, mais qu'il utilise cette
-méthode \texttt{est\_vide}.
-\begin{eleve}
-    Ajouter à la classe \texttt{Liste} la méthode \texttt{est\_vide()} qui
-renvoie \texttt{True} si la liste est vide et \texttt{False} sinon.
+Mais il aurait été tout à fait possible d'en décider autrement.
 
-Exemples :
+    \hypertarget{interface-et-utilisation-dune-pile}{%
+\subsection{6.3 --- Interface et utilisation d'une
+pile}\label{interface-et-utilisation-dune-pile}}
 
-\begin{verbatim}
->>> lst = Liste()
->>> print(lst.est_vide())
-True
+    Détaillons l'interface des piles.
 
->>> lst = Liste()
->>> lst.tete = Maillon(1, None)
->>> print(lst.est_vide())
-False
-\end{verbatim}
-        
-        \end{eleve}
-        {\scriptsize
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{4}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} modification de la classe Liste existante}
-\PY{c+c1}{\PYZsh{}}
-\PY{c+c1}{\PYZsh{} Pour ne pas supprimer les implémentations précédentes,}
-\PY{c+c1}{\PYZsh{} il faut \PYZdq{}étendre\PYZdq{} la classe Liste pour l\PYZsq{}enrichir.}
-\PY{c+c1}{\PYZsh{}}
-\PY{c+c1}{\PYZsh{} Pour cela, il faut écrire }
-\PY{c+c1}{\PYZsh{} `class Liste(Liste):` à la place de `class Liste:`}
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\begin{minipage}[b]{0.47\columnwidth}\raggedright
+interface\strut
+\end{minipage} & \begin{minipage}[b]{0.47\columnwidth}\raggedright
+explications et commentaires\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{Pile{[}T{]}}\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+le type des piles contenant des éléments de type \texttt{T}. Par exemple
+\texttt{T} peut être \texttt{int} pour les nombres entiers ou encore
+\texttt{str} pour les chaînes de caractères\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{est\_vide(p:\ Pile{[}T{]})\ -\textgreater{}\ bool}\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+prend en paramètre une pile \texttt{p} et renvoie un booléen indiquant
+si la pile est vide ou pas\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{creer\_pile()\ -\textgreater{}\ Pile{[}T{]}}\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+aucun paramètre et renvoie une pile vide capable de contenir n'importe
+quel type d'élément \texttt{T}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{empiler(p:\ Pile{[}T{]},\ e:\ T)\ -\textgreater{}\ None}\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+ajout de l'élément \texttt{e} au sommet de la pile \texttt{p}
+(\emph{push} en anglais), fonction qui prend en paramètre une pile
+\texttt{p} et l'élément \texttt{e} de type \texttt{T} homogène avec
+celui des éléments de la pile\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{depiler(p:\ Pile{[}T{]})\ -\textgreater{}\ T}\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+retrait de l'élément au sommet de la pile \texttt{p} (\emph{pop} en
+anglais) qui prend en paramètre la pile \texttt{p} et renvoie l'élément
+qui en a été retiré. On suppose que la pile est non vide et une
+exception est levée le cas échéant\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
 
-\PY{k}{class} \PY{n+nc}{Liste}\PY{p}{(}\PY{n}{Liste}\PY{p}{)}\PY{p}{:}
-    \PY{k}{def} \PY{n+nf}{est\PYZus{}vide}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)} \PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}} \PY{n+nb}{bool}\PY{p}{:}
-        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{} Est ce que la liste est vide ?}
+    Exemple d'utilisation des piles : Considérons un navigateur web dans
+lequel on s'intéresse à deux opérations : \textbf{aller} à une nouvelle
+page et \textbf{revenir} à la page précédente. On veut que le bouton de
+retour en arrière permette de remonter une à une les pages précédentes,
+et ce jusqu'au début de la navigation.
 
-\PY{l+s+sd}{        Returns:}
-\PY{l+s+sd}{            bool: True si et seulement si la liste est vide}
+En plus de l'adresse courante, qui peut être stockée dans une variable à
+part, il nous faut donc conserver l'ensemble des pages précédentes
+auxquelles il est possible de revenir. \emph{Puisque le retour en
+arrière se fait vers la dernière page qui a été quittée}, la discipline
+\textbf{\emph{dernier entré, premier sorti}} des piles est exactement ce
+dont nous avons besoin pour cet ensemble.
 
-\PY{l+s+sd}{        Exemples :}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} lst = Liste()}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(lst.est\PYZus{}vide())}
-\PY{l+s+sd}{        True}
+    \hypertarget{interface-et-utilisation-dune-file}{%
+\subsection{6.4 --- Interface et utilisation d'une
+file}\label{interface-et-utilisation-dune-file}}
 
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} lst = Liste()}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} lst.tete = Maillon(1, None)}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(lst.est\PYZus{}vide())}
-\PY{l+s+sd}{        False}
-\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+    Comme pour les piles, on note \texttt{File{[}T{]}} le type des files
+contenant des éléments de type \texttt{T}.
 
-        \PY{k}{return} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{tete} \PY{o+ow}{is} \PY{k+kc}{None}
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\begin{minipage}[b]{0.47\columnwidth}\raggedright
+\textbf{interface}\strut
+\end{minipage} & \begin{minipage}[b]{0.47\columnwidth}\raggedright
+\textbf{explications et commentaires}\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{File{[}T{]}}\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+le type des files contenant des éléments de type \texttt{T}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{creer\_file()\ -\textgreater{}\ File{[}T{]}}\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+créer une file vide\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{est\_vide(f:\ File{[}T{]})\ -\textgreater{}\ bool}\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+renvoie \texttt{True} si \texttt{f} est vide et \texttt{False}
+sinon\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{enfiler(f:\ File{[}T{]},\ e)\ -\textgreater{}\ None}\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+ajoute l'élément \texttt{e} à la fin de la file \texttt{f}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{defiler(f:\ File{[}T{]})\ -\textgreater{}\ T}\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+retirer et renvoyer l'élément situé au début de la file \texttt{f}\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
 
+    Exemple d'utilisation des files : Considérons le jeu de cartes de la
+bataille. Chaque joueur possède un paquet de cartes et pose à chaque
+manche la carte prise \textbf{sur le dessus du paquet}. Le vainqueur de
+la manche récupère alors les cartes posées, pour les placer
+\textbf{au-dessous de son paquet}.
 
-\PY{c+c1}{\PYZsh{} tests avec les exemples}
-\PY{n}{testmod}\PY{p}{(}\PY{p}{)}   
-\end{Verbatim}
-\end{tcolorbox}
-    }
+En plus des cartes posées au centre de la table nous avons besoin de
+conserver en mémoire le paquet de cartes de chaque joueur. \emph{Puisque
+les cartes sont remises dans un paquet à une extrémité et prélevées à
+l'autre}, la discipline \textbf{\emph{premier entré, premier sorti}} des
+files est exactement ce dont nous avons besoin pour chacun de ces
+ensembles.
 
-            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
-\prompt{Out}{outcolor}{4}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-TestResults(failed=0, attempted=5)
-\end{Verbatim}
-\end{tcolorbox}
-        
-    On poursuit la construction de la classe \texttt{Liste} avec une méthode
-pour \texttt{ajouter} un élément en tête de la liste.
+    \hypertarget{ruxe9alisation-dune-pile-avec-une-liste-chauxeenuxe9e}{%
+\subsection{6.5 --- Réalisation d'une pile avec une liste
+chaînée}\label{ruxe9alisation-dune-pile-avec-une-liste-chauxeenuxe9e}}
 
-Cette méthode modifie l'attribut \texttt{tete} et ne renvoie rien. Si
-par exemple on exécute les quatre instructions à gauche, on obtient la
-situation représentée à droite :
+    La structure de \textbf{liste chaînée} donne une manière élémentaire de
+réaliser une pile. Empiler un nouvel élément revient à ajouter un
+nouveau maillon en tête de liste, tandis que dépiler un élément revient
+à supprimer le maillon de tête.
 
-(schéma)
+On peut ainsi construire une classe \texttt{Pile} définie par un unique
+attribut contenu associé à l'ensemble des éléments de la pile, stockés
+sous la forme d'une liste chaînée.
 
-On a donc construit ainsi la liste 1, 2, 3, dans cet ordre.
-\begin{eleve}
-    Implémenter dans la classe \texttt{Liste} la méthode \texttt{ajoute}
-ayant un paramètre \texttt{valeur}. Cette méthode ajoute un nouveau
-maillon en tête de la liste ayant pour valeur : \texttt{valeur} et pour
-attribut \texttt{suivant} : l'ancien attribut \texttt{tete} de la liste.
+    Implémenter le constructeur de la classe \texttt{Pile} qui construit une
+pile vide en définissant son attribut \texttt{contenu} comme la liste
+vide \texttt{None}.
 
-Exemples :
-
-\begin{verbatim}
->>> lst = Liste()
->>> lst.ajoute(1)
->>> print(lst.tete.valeur)
-1
->>> lst.ajoute(2)
->>> print(lst.tete.valeur)
-2
->>> print(lst.tete.suivant.valeur)
-1
-\end{verbatim}
-        
-        \end{eleve}
-        {\scriptsize
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{5}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{k}{class} \PY{n+nc}{Liste}\PY{p}{(}\PY{n}{Liste}\PY{p}{)}\PY{p}{:}
-    \PY{k}{def} \PY{n+nf}{ajoute}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{valeur}\PY{p}{)}\PY{p}{:}
-        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
-\PY{l+s+sd}{        Ajouter un nouveau maillon en tête de liste}
-
-\PY{l+s+sd}{        Args:}
-\PY{l+s+sd}{            valeur (type): valeur du nouveau maillon}
-
-\PY{l+s+sd}{        Exemples :}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} lst = Liste()}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} lst.ajoute(1)}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(lst.tete.valeur)}
-\PY{l+s+sd}{        1}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} lst.ajoute(2)}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(lst.tete.valeur)}
-\PY{l+s+sd}{        2}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(lst.tete.suivant.valeur)}
-\PY{l+s+sd}{        1}
-\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
-        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{tete} \PY{o}{=} \PY{n}{Maillon}\PY{p}{(}\PY{n}{valeur}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{tete}\PY{p}{)}
-
-
-\PY{n}{testmod}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-    }
-
-            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
-\prompt{Out}{outcolor}{5}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-TestResults(failed=0, attempted=6)
-\end{Verbatim}
-\end{tcolorbox}
-        
-    \hypertarget{autres-muxe9thodes}{%
-\subsubsection{Autres méthodes}\label{autres-muxe9thodes}}
-
-    On peut maintenant reformuler nos opérations, à savoir
-\texttt{longueur}, \texttt{nieme\_element}, \texttt{concatener} ou
-encore \texttt{renverser}, comme autant de méthodes de la classe
-\texttt{Liste}. Ainsi, on peut écrire par exemple la méthode
-\texttt{longueur} qui nous permet d'écrire \texttt{lst.longueur()} pour
-obtenir la longueur de la liste \texttt{lst}.
-
-        {\scriptsize
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{6}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} il faut importer la fonction `longueur`}
-\PY{c+c1}{\PYZsh{} d\PYZsq{}une liste chaînée (cf. partie 3 du cours)}
-\PY{k+kn}{from} \PY{n+nn}{operations\PYZus{}base} \PY{k+kn}{import} \PY{n}{longueur}
-
-
-\PY{k}{class} \PY{n+nc}{Liste}\PY{p}{(}\PY{n}{Liste}\PY{p}{)}\PY{p}{:}
-    \PY{k}{def} \PY{n+nf}{longueur}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)} \PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}} \PY{n+nb}{int}\PY{p}{:}
-        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
-\PY{l+s+sd}{        Longueur d\PYZsq{}une liste chaînée}
-
-\PY{l+s+sd}{        Returns:}
-\PY{l+s+sd}{            int: longueur de la liste}
-
-\PY{l+s+sd}{        Exemples:}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} lst = Liste()}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} assert lst.longueur() == 0}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} lst.ajoute(4)}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} assert lst.longueur() == 1}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} lst.ajoute(2)}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} assert lst.longueur() == 2}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} lst.ajoute(1)}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} assert lst.longueur() == 3}
-\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
-        \PY{k}{return} \PY{n}{longueur}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{tete}\PY{p}{)}
-
-
-\PY{n}{testmod}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-    }
-
-            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
-\prompt{Out}{outcolor}{6}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-TestResults(failed=0, attempted=8)
-\end{Verbatim}
-\end{tcolorbox}
-        \begin{remarque}
-    Il est important de noter qu'il n'y a pas confusion ici entre la
-fonction \texttt{longueur} définie précédemment et la méthode
-\texttt{longueur}. En particulier, la seconde est définie en appelant la
-première. Le langage Python est ainsi fait que, lorsqu'on écrit
-\texttt{longueur(self.tete)}, il ne s'agit pas d'un appel récursif à la
-méthode \texttt{longueur} (un appel récursif s'écrirait
-\texttt{self.longueur()}).
-
-\texttt{longueur()} et \texttt{self.longueur()} sont deux fonctions
-différentes !
-
-        \end{remarque}
-    On peut donner à cette méthode le nom \texttt{\_\_len\_\_} et Python
-nous permet alors d'écrire \texttt{len(lst)} comme pour un tableau. En
-effet, lorsque l'on écrit \texttt{len(e)} en Python, ce n'est qu'un
-synonyme pour l'appel de méthode \texttt{e.\_\_len\_\_()}.
-
-        {\scriptsize
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{8}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} il faut importer la fonction `longueur`}
-\PY{c+c1}{\PYZsh{} d\PYZsq{}une liste chaînée (cf. partie 3 du cours)}
-\PY{k+kn}{from} \PY{n+nn}{operations\PYZus{}base} \PY{k+kn}{import} \PY{n}{longueur}
-
-
-\PY{c+c1}{\PYZsh{} étendre la classe Liste pour ajouter des méthodes}
-\PY{k}{class} \PY{n+nc}{Liste}\PY{p}{(}\PY{n}{Liste}\PY{p}{)}\PY{p}{:}
-
-    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}len\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
-        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
-\PY{l+s+sd}{        Permet d\PYZsq{}utiliser :}
-\PY{l+s+sd}{            \PYZhy{} la fonction len avec les Liste}
-\PY{l+s+sd}{            \PYZhy{} une instance de Liste comme une expression booléenne :}
-\PY{l+s+sd}{                True  si et seulement si l\PYZsq{}instance est de longueur \PYZgt{} 0}
-\PY{l+s+sd}{                False si et seulement si l\PYZsq{}instance est de longueur nulle}
-
-\PY{l+s+sd}{        Exemples:}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} lst = Liste()}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} assert len(lst) == 0}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} if lst: print(\PYZdq{}expression booléenne évaluée à False\PYZdq{})}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} lst.ajoute(4)}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} assert len(lst) == 1}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} if lst: print(\PYZdq{}expression booléenne évaluée à True\PYZdq{})}
-\PY{l+s+sd}{        expression booléenne évaluée à True}
-\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
-        \PY{k}{return} \PY{n}{longueur}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{tete}\PY{p}{)}
-
-
-\PY{n}{testmod}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-    }
-
-            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
-\prompt{Out}{outcolor}{8}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-TestResults(failed=0, attempted=6)
-\end{Verbatim}
-\end{tcolorbox}
-        
-    De même, on peut ajouter à la classe \texttt{Liste} une méthode pour
-accéder au n-ième élément de la liste, c'est-à-dire une méthode qui va
-appeler notre fonction \texttt{nieme\_element} sur \texttt{self.tete}.
-Le nom de la méthode est arbitraire et nous pourrions choisir de
-conserver le nom \texttt{nieme\_element}. Mais là encore nous pouvons
-faire le choix d'un nom idiomatique en Python, à savoir
-\texttt{\_\_getitem\_\_}.
-
-Ceci nous permet alors d'écrire \texttt{lst{[}i{]}} pour accéder au
-i-ième élément de notre liste, exactement comme pour les tableaux.
-\begin{eleve}
-    Implémenter dans la classe \texttt{Liste} la méthode
-\texttt{\_\_getitem\_\_} de paramètre \texttt{index} permettant de
-renvoyer la valeur du maillon de rang \texttt{index} de la liste.
-Utiliser pour cela la fonction \texttt{nieme\_element()}.
-
-Exemple:
+Exemple et test :
 
 \begin{verbatim}
->>> lst = Liste()
->>> lst.ajoute(4)
->>> lst.ajoute(2)
->>> lst.ajoute(1)
->>> assert lst[0] == 1
->>> assert lst[1] == 2
->>> assert lst[2] == 4
+    >>> p = Pile()
+    >>> print(p.contenu)
+    None
 \end{verbatim}
-        
-        \end{eleve}
-        {\scriptsize
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{10}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} il faut importer la fonction `longueur`}
-\PY{c+c1}{\PYZsh{} d\PYZsq{}une liste chaînée (cf. partie 3 du cours)}
-\PY{k+kn}{from} \PY{n+nn}{operations\PYZus{}base} \PY{k+kn}{import} \PY{n}{nieme\PYZus{}element}
 
+    Étendre la classe \texttt{Pile} en implémentant la méthode
+\texttt{est\_vide()}.
 
-\PY{c+c1}{\PYZsh{} étendre la classe Liste pour ajouter des méthodes}
-\PY{k}{class} \PY{n+nc}{Liste}\PY{p}{(}\PY{n}{Liste}\PY{p}{)}\PY{p}{:}
-
-    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}getitem\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{index}\PY{p}{)}\PY{p}{:}
-        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{} Permet d\PYZsq{}utiliser la syntaxe des listes}
-
-\PY{l+s+sd}{        Exemples:}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} lst = Liste()}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} lst.ajoute(4)}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} lst.ajoute(2)}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} lst.ajoute(1)}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} assert lst[0] == 1}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} assert lst[1] == 2}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} assert lst[2] == 4}
-\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
-        \PY{k}{return} \PY{n}{nieme\PYZus{}element}\PY{p}{(}\PY{n}{index}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{tete}\PY{p}{)}
-
-
-\PY{n}{testmod}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-    }
-
-            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
-\prompt{Out}{outcolor}{10}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-TestResults(failed=0, attempted=7)
-\end{Verbatim}
-\end{tcolorbox}
-        
-    Pour la fonction \texttt{renverser}, on fait le choix de nommer la
-méthode \texttt{reverse} car là encore c'est un nom qui existe déjà pour
-les tableaux de Python.
-\begin{eleve}
-    Implémenter dans la classe \texttt{Liste} une méthode \texttt{reverse}
-ne renvoie rien mais inverse l'ordre des maillons de la liste.
-
-Exemple :
+Exemples et tests :
 
 \begin{verbatim}
->>> lst = Liste()
->>> lst.ajoute(3)
->>> lst.ajoute(2)
->>> lst.ajoute(1)
->>> lst.reverse()
->>> assert lst[0] == 3
->>> assert lst[1] == 2
->>> assert lst[2] == 1
+    >>> p = Pile()
+    >>> print(p.est_vide())
+    True
+    >>> p.contenu = Maillon(1, None)
+    >>> print(p.est_vide())
+    False
 \end{verbatim}
-        
-        \end{eleve}
-        {\scriptsize
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{12}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} il faut importer la fonction `renverser`}
-\PY{c+c1}{\PYZsh{} d\PYZsq{}une liste chaînée (cf. partie 3 du cours)}
-\PY{k+kn}{from} \PY{n+nn}{operations\PYZus{}base} \PY{k+kn}{import} \PY{n}{renverser}
 
+    \hypertarget{ruxe9alisation-dune-file-avec-une-liste-mutable}{%
+\subsection{6.5 --- Réalisation d'une file avec une liste
+(mutable)}\label{ruxe9alisation-dune-file-avec-une-liste-mutable}}
 
-\PY{k}{class} \PY{n+nc}{Liste}\PY{p}{(}\PY{n}{Liste}\PY{p}{)}\PY{p}{:}
-    \PY{k}{def} \PY{n+nf}{reverse}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
-        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
-\PY{l+s+sd}{        Renverse la liste en place}
+    \hypertarget{ruxe9alisation-dune-file-avec-deux-piles}{%
+\subsection{6.6 --- Réalisation d'une file avec deux
+piles}\label{ruxe9alisation-dune-file-avec-deux-piles}}
 
-\PY{l+s+sd}{        Exemples:}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} lst = Liste()}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} lst.ajoute(3)}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} lst.ajoute(2)}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} lst.ajoute(1)}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} lst.reverse()}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} assert lst[0] == 3}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} assert lst[1] == 2}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} assert lst[2] == 1}
-\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
-        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{tete} \PY{o}{=} \PY{n}{renverser}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{tete}\PY{p}{)}
-
-
-\PY{n}{testmod}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-    }
-
-            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
-\prompt{Out}{outcolor}{12}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-TestResults(failed=0, attempted=8)
-\end{Verbatim}
-\end{tcolorbox}
-        
-    Enfin, le cas de la concaténation est plus subtil, car il s'agit de
-renvoyer une nouvelle liste, c'est-à-dire un nouvel objet. On choisit
-d'appeler la méthode \texttt{\_\_add\_\_}, qui correspond à la syntaxe
-\texttt{+} de Python.
-\begin{eleve}
-    Implémenter la méthode \texttt{\_\_add\_\_} de paramètre
-\texttt{autre\_liste} qui renvoie une nouvelle liste, résultat de la
-concaténation de la liste actuelle et de \texttt{autre\_liste}.
-
-Exemple :
-
-\begin{verbatim}
->>> lst_1 = Liste()
->>> lst_1.ajoute(1)
->>> lst_2 = Liste()
->>> lst_2.ajoute(3)
->>> lst_2.ajoute(2)
->>> lst_3 = lst_1 + lst_2
->>> assert lst_3[0] == 1     # lst_3 concaténée !
->>> assert lst_3[1] == 2
->>> assert lst_3[2] == 3
-\end{verbatim}
-        
-        \end{eleve}
-        {\scriptsize
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{16}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} il faut importer la fonction `concatener`}
-\PY{c+c1}{\PYZsh{} d\PYZsq{}une liste chaînée (cf. partie 3 du cours)}
-\PY{k+kn}{from} \PY{n+nn}{operations\PYZus{}base} \PY{k+kn}{import} \PY{n}{concatener}
-
-
-\PY{c+c1}{\PYZsh{} étendre la classe Liste pour ajouter des méthodes}
-\PY{k}{class} \PY{n+nc}{Liste}\PY{p}{(}\PY{n}{Liste}\PY{p}{)}\PY{p}{:}
-    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}add\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{liste}\PY{p}{)}\PY{p}{:}
-        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
-\PY{l+s+sd}{        Permet d\PYZsq{}utiliser l\PYZsq{}opérateur + entre instances de Liste}
-
-\PY{l+s+sd}{        Exemples:}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} lst\PYZus{}1 = Liste()}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} lst\PYZus{}1.ajoute(1)}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} lst\PYZus{}2 = Liste()}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} lst\PYZus{}2.ajoute(3)}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} lst\PYZus{}2.ajoute(2)}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} lst\PYZus{}3 = lst\PYZus{}1 + lst\PYZus{}2}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} assert lst\PYZus{}3[0] == 1     \PYZsh{} lst\PYZus{}3 concaténée !}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} assert lst\PYZus{}3[1] == 2}
-\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} assert lst\PYZus{}3[2] == 3}
-\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
-
-        \PY{n}{concat} \PY{o}{=} \PY{n}{Liste}\PY{p}{(}\PY{p}{)}
-        \PY{n}{concat}\PY{o}{.}\PY{n}{tete} \PY{o}{=} \PY{n}{concatener}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{tete}\PY{p}{,} \PY{n}{liste}\PY{o}{.}\PY{n}{tete}\PY{p}{)}
-        \PY{k}{return} \PY{n}{concat}
-
-
-\PY{n}{testmod}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-    }
-
-            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
-\prompt{Out}{outcolor}{16}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-TestResults(failed=0, attempted=9)
-\end{Verbatim}
-\end{tcolorbox}
-        \begin{retenir}
-    Une liste chaînée est une structure de données pour représenter une
-séquence finie d'éléments. Chaque élément est contenu dans un Maillon,
-qui fournit par ailleurs un moyen d'accéder au maillon suivant. Les
-opérations sur les listes chaînées se programment sous la forme de
-parcours qui suivent ces liaisons, en utilisant une fonction récursive
-ou une boucle.
-
-        \end{retenir}
 
     % Add a bibliography block to the postdoc
     
