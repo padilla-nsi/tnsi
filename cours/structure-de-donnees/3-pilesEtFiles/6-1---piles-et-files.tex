@@ -485,6 +485,15 @@
     
 
     
+        {\scriptsize
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{3}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kn}{from} \PY{n+nn}{doctest} \PY{k+kn}{import} \PY{n}{testmod}
+\end{Verbatim}
+\end{tcolorbox}
+    }
+
     \hypertarget{chap.-6-piles-et-files}{%
 \section{Chap. 6 --- Piles et files}\label{chap.-6-piles-et-files}}
 
@@ -760,6 +769,16 @@ Exemples et tests :
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} attention, lorsqu\PYZsq{}on implémente une }
+\PY{c+c1}{\PYZsh{} classe en une seule fois, il faut écrire}
+\PY{c+c1}{\PYZsh{} `class Pile:`.}
+\PY{c+c1}{\PYZsh{} La syntaxe `class Pile(Ma\PYZus{}Classe):` est utilisée}
+\PY{c+c1}{\PYZsh{} dans ce notebook (et dans les juges en lignes)}
+\PY{c+c1}{\PYZsh{} pour étendre la classe existante Ma\PYZus{}Classe et lui}
+\PY{c+c1}{\PYZsh{} ajouter de nouvelles méthodes.}
+\PY{c+c1}{\PYZsh{}}
+\PY{c+c1}{\PYZsh{} Ici, la classe Pile s\PYZsq{}étend elle même !}
+
 \PY{k}{class} \PY{n+nc}{Pile}\PY{p}{(}\PY{n}{Pile}\PY{p}{)}\PY{p}{:}
     \PY{k}{def} \PY{n+nf}{est\PYZus{}vide}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)} \PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}} \PY{n+nb}{bool}\PY{p}{:}
         \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
@@ -815,6 +834,16 @@ Exemple et tests:
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} attention, lorsqu\PYZsq{}on implémente une }
+\PY{c+c1}{\PYZsh{} classe en une seule fois, il faut écrire}
+\PY{c+c1}{\PYZsh{} `class Pile:`.}
+\PY{c+c1}{\PYZsh{} La syntaxe `class Pile(Ma\PYZus{}Classe):` est utilisée}
+\PY{c+c1}{\PYZsh{} dans ce notebook (et dans les juges en lignes)}
+\PY{c+c1}{\PYZsh{} pour étendre la classe existante Ma\PYZus{}Classe et lui}
+\PY{c+c1}{\PYZsh{} ajouter de nouvelles méthodes.}
+\PY{c+c1}{\PYZsh{}}
+\PY{c+c1}{\PYZsh{} Ici, la classe Pile s\PYZsq{}étend elle même !}
+
 \PY{k}{class} \PY{n+nc}{Pile}\PY{p}{(}\PY{n}{Pile}\PY{p}{)}\PY{p}{:}
     \PY{k}{def} \PY{n+nf}{empiler}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{valeur}\PY{p}{)}\PY{p}{:}
             \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
@@ -880,6 +909,17 @@ Exemple et tests:
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} attention, lorsqu\PYZsq{}on implémente une }
+\PY{c+c1}{\PYZsh{} classe en une seule fois, il faut écrire}
+\PY{c+c1}{\PYZsh{} `class Pile:`.}
+\PY{c+c1}{\PYZsh{} La syntaxe `class Pile(Ma\PYZus{}Classe):` est utilisée}
+\PY{c+c1}{\PYZsh{} dans ce notebook (et dans les juges en lignes)}
+\PY{c+c1}{\PYZsh{} pour étendre la classe existante Ma\PYZus{}Classe et lui}
+\PY{c+c1}{\PYZsh{} ajouter de nouvelles méthodes.}
+\PY{c+c1}{\PYZsh{}}
+\PY{c+c1}{\PYZsh{} Ici, la classe Pile s\PYZsq{}étend elle même !}
+
+
 \PY{k}{class} \PY{n+nc}{Pile}\PY{p}{(}\PY{n}{Pile}\PY{p}{)}\PY{p}{:}
     \PY{k}{def} \PY{n+nf}{depiler}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
         \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
@@ -923,8 +963,321 @@ Exemple et tests:
 
     \hypertarget{ruxe9alisation-dune-file-avec-une-liste-mutable}{%
 \subsection{6.6 --- Réalisation d'une file avec une liste
-(mutable)}\label{ruxe9alisation-dune-file-avec-une-liste-mutable}}
+mutable}\label{ruxe9alisation-dune-file-avec-une-liste-mutable}}
 
+    La structure de liste chaînée donne également une manière de réaliser
+une file, à condition de considérer la variante des \emph{listes
+chaînées mutables}.
+
+En effet, on peut retirer l'élément de tête en retirant le maillon de
+tête. MAIS, l'ajout d'un nouvel élément à l'arrière de la file revient à
+ajouter un nouveau maillon en queue de liste. \textbf{Une mutation
+intervient} à cet endroit : alors que le maillon qui était le dernier de
+la liste chaînée avant l'ajout n'avait pas de suivant définie, il a
+comme suivant après l'ajout le nouveau maillon créé pour le nouvel
+élément.
+
+    Autre différence avec la structure de pile, il faut accéder
+\emph{efficacement} au dernier maillon.
+
+Pour cela, le plus intéressant est de conserver dans notre structure de
+donnée un attribut permettant d'accéder directement au dernier maillon.
+
+    On peut ainsi construire une classe \texttt{File} dont le constructeur
+définit deux attributs, l'un appelé \texttt{tete} et l'autre appelé
+\texttt{queue}, et désignant respectivement le premier maillon et le
+dernier maillon de la liste chaînée utilisée pour stocker les éléments.
+
+Implémenter le constructeur de la classe \texttt{File} qui définit les
+deux attributs \texttt{tete} et \texttt{queue} et les initialise à
+\texttt{None}.
+
+Exemples et tests:
+
+\begin{verbatim}
+    >>> f = File()
+    >>> print(f.tete)
+    None
+    >>> print(f.queue)
+    None
+\end{verbatim}
+
+        {\scriptsize
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{4}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{class} \PY{n+nc}{Maillon}\PY{p}{:}
+    \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{} Maillon d\PYZsq{}une liste chaînée \PYZdq{}\PYZdq{}\PYZdq{}}
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{valeur}\PY{p}{,} \PY{n}{suivant}\PY{p}{)}\PY{p}{:}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{valeur}  \PY{o}{=} \PY{n}{valeur}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{suivant} \PY{o}{=} \PY{n}{suivant}
+
+\PY{k}{class} \PY{n+nc}{File}\PY{p}{:}
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\PY{l+s+sd}{        Exemples et tests:}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} f = File()}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(f.tete)}
+\PY{l+s+sd}{        None}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(f.queue)}
+\PY{l+s+sd}{        None}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{tete}  \PY{o}{=} \PY{k+kc}{None}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{queue} \PY{o}{=} \PY{k+kc}{None}
+
+
+\PY{n}{testmod}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+    }
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{4}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+TestResults(failed=0, attempted=3)
+\end{Verbatim}
+\end{tcolorbox}
+        
+    La file vide est caractérisée par le fait qu'elle ne contient aucun
+maillon. En conséquence, sa tête et sa queue sont indéfinies. En outre,
+l'un comme l'autre ne peut valoir \texttt{None} que dans ce cas. Pour
+tester la vacuité de la file, il suffit donc de consulter l'un des deux
+attributs.
+
+Implémenter la méthode \texttt{est\_vide()} qui renvoie \texttt{True} si
+et seulement si l'attribut \texttt{tete} vaut \texttt{None}.
+
+Exemples et tests:
+
+\begin{verbatim}
+    >>> f = File()
+    >>> print(f.est_vide())
+    True
+    >>> f.tete = Maillon(1, None)
+    >>> print(f.est_vide())
+    False
+\end{verbatim}
+
+        {\scriptsize
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{5}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} attention, lorsqu\PYZsq{}on implémente une }
+\PY{c+c1}{\PYZsh{} classe en une seule fois, il faut écrire}
+\PY{c+c1}{\PYZsh{} `class File:`.}
+\PY{c+c1}{\PYZsh{} La syntaxe `class File(Ma\PYZus{}Classe):` est utilisée}
+\PY{c+c1}{\PYZsh{} dans ce notebook (et dans les juges en lignes)}
+\PY{c+c1}{\PYZsh{} pour étendre la classe existante Ma\PYZus{}Classe et lui}
+\PY{c+c1}{\PYZsh{} ajouter de nouvelles méthodes.}
+\PY{c+c1}{\PYZsh{}}
+\PY{c+c1}{\PYZsh{} Ici, la classe File s\PYZsq{}étend elle même !}
+ 
+\PY{k}{class} \PY{n+nc}{File}\PY{p}{(}\PY{n}{File}\PY{p}{)}\PY{p}{:}
+
+    \PY{k}{def} \PY{n+nf}{est\PYZus{}vide}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\PY{l+s+sd}{        Est ce que la file est vide?}
+
+\PY{l+s+sd}{        Returns:}
+\PY{l+s+sd}{            bool: True ssi la file est vide}
+\PY{l+s+sd}{        }
+\PY{l+s+sd}{        Exemples et tests:}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} f = File()}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(f.est\PYZus{}vide())}
+\PY{l+s+sd}{        True}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} f.tete = Maillon(1, None)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(f.est\PYZus{}vide())}
+\PY{l+s+sd}{        False}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{k}{return} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{tete} \PY{o+ow}{is} \PY{k+kc}{None}
+    
+
+
+\PY{n}{testmod}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+    }
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{5}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+TestResults(failed=0, attempted=4)
+\end{Verbatim}
+\end{tcolorbox}
+        
+    L'ajout d'un nouvel élément à l'arrière de la file demande de créer un
+nouveau maillon. Ce maillon prend la dernière place, et n'a donc pas de
+maillon suivant.
+
+Ce maillon est alors définie comme suivant le maillon de queue actuel.
+
+On a cependant besoin de traiter le cas particulier où il n'existe pas
+de maillon de queue, qui correspond à une file initialement vide. Dans
+ce cas le nouveau maillon devient l'unique maillon de la file, et donc
+son maillon de tête.
+
+Pour finir, dans tous les cas, notre nouveau maillon devient en outre le
+nouveau maillon de de queue de la file.
+
+    En suivant l'algorithme décrit ci-dessus, implémenter la méthode
+\texttt{enfiler} qui admet comme argument une \texttt{valeur} à ajouter
+en queue de file.
+
+Exemples et tests:
+
+\begin{verbatim}
+    >>> f = File()
+    >>> f.enfiler(1)
+    >>> print(f.tete.valeur)
+    1
+    >>> print(f.queue.valeur)
+    1
+    >>> f.enfiler(2)
+    >>> f.enfiler(3)
+    >>> print(f.tete.valeur)
+    1
+    >>> print(f.queue.valeur)
+    3
+\end{verbatim}
+
+        {\scriptsize
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{6}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{class} \PY{n+nc}{File}\PY{p}{(}\PY{n}{File}\PY{p}{)}\PY{p}{:}
+    \PY{k}{def} \PY{n+nf}{enfiler}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{valeur}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\PY{l+s+sd}{        Ajoute la valeur à la fin de la file}
+
+\PY{l+s+sd}{        Args:}
+\PY{l+s+sd}{            valeur (T): valeur à ajouter}
+\PY{l+s+sd}{        }
+\PY{l+s+sd}{        Exemples et tests:}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} f = File()}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} f.enfiler(1)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(f.tete.valeur)}
+\PY{l+s+sd}{        1}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(f.queue.valeur)}
+\PY{l+s+sd}{        1}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} f.enfiler(2)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} f.enfiler(3)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(f.tete.valeur)}
+\PY{l+s+sd}{        1}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(f.queue.valeur)}
+\PY{l+s+sd}{        3}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{n}{nouveau} \PY{o}{=} \PY{n}{Maillon}\PY{p}{(}\PY{n}{valeur}\PY{p}{,} \PY{k+kc}{None}\PY{p}{)}
+
+        \PY{k}{if} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{est\PYZus{}vide}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+            \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{tete} \PY{o}{=} \PY{n}{nouveau}
+        \PY{k}{else}\PY{p}{:}
+            \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{queue}\PY{o}{.}\PY{n}{suivant} \PY{o}{=} \PY{n}{nouveau}
+        
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{queue} \PY{o}{=} \PY{n}{nouveau}
+
+
+\PY{n}{testmod}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+    }
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{6}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+TestResults(failed=0, attempted=8)
+\end{Verbatim}
+\end{tcolorbox}
+        
+    Pour retirer un élément il s'agit de supprimer le premier maillon de la
+file, exactement comme il avait été fait lors de l'utilisation d'une
+liste chaînée pour réaliser une pile. Cependant, si le maillon retiré
+est le dernier, on veut également redéfinir l'attribut
+\texttt{self.queue} à \texttt{None}, afin de maintenir notre invariant
+qu'une file vide a ses deux attributs qui valent \texttt{None}.
+
+    Implémenter la méthode \texttt{defiler} qui retire le premier maillon de
+la file et renvoie la valeur de ce maillon.
+
+Exemples et tests:
+
+\begin{verbatim}
+    >>> f = File()
+    >>> f.enfiler(1)
+    >>> f.enfiler(2)
+    >>> f.enfiler(3)
+    >>> print( f.defiler() )
+    1
+    >>> assert f.queue.valeur == 3
+    >>> print( f.defiler() )
+    2
+    >>> assert f.queue.valeur == 3
+    >>> print( f.defiler() )
+    3
+    >>> assert f.tete  == None
+    >>> assert f.queue == None
+    >>> f.defiler()
+    Traceback (most recent call last):
+    IndexError: defiler sur une file vide
+\end{verbatim}
+
+        {\scriptsize
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{8}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{class} \PY{n+nc}{File}\PY{p}{(}\PY{n}{File}\PY{p}{)}\PY{p}{:}
+    \PY{k}{def} \PY{n+nf}{defiler}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\PY{l+s+sd}{        Supprime et renvoie le premier élément de la file}
+
+\PY{l+s+sd}{        Raises:}
+\PY{l+s+sd}{            IndexError: si la file est vide}
+
+\PY{l+s+sd}{        Returns:}
+\PY{l+s+sd}{            T: valeur du premier élément de la file}
+\PY{l+s+sd}{        }
+\PY{l+s+sd}{        Exemples et tests:}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} f = File()}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} f.enfiler(1)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} f.enfiler(2)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} f.enfiler(3)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print( f.defiler() )}
+\PY{l+s+sd}{        1}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} assert f.queue.valeur == 3}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print( f.defiler() )}
+\PY{l+s+sd}{        2}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} assert f.queue.valeur == 3}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print( f.defiler() )}
+\PY{l+s+sd}{        3}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} assert f.tete  == None}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} assert f.queue == None}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} f.defiler()}
+\PY{l+s+sd}{        Traceback (most recent call last):}
+\PY{l+s+sd}{        IndexError: defiler sur une file vide}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{k}{if} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{est\PYZus{}vide}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+            \PY{k}{raise} \PY{n+ne}{IndexError}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{defiler sur une file vide}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        
+        \PY{n}{valeur} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{tete}\PY{o}{.}\PY{n}{valeur}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{tete} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{tete}\PY{o}{.}\PY{n}{suivant}
+
+        \PY{k}{if} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{tete} \PY{o+ow}{is} \PY{k+kc}{None}\PY{p}{:}
+            \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{queue} \PY{o}{=} \PY{k+kc}{None}
+
+        \PY{k}{return} \PY{n}{valeur}
+
+
+\PY{n}{testmod}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+    }
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{8}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+TestResults(failed=0, attempted=12)
+\end{Verbatim}
+\end{tcolorbox}
+        
     \hypertarget{ruxe9alisation-dune-pile-avec-les-tableaux-de-python}{%
 \subsection{6.7 --- Réalisation d'une pile avec les tableaux de
 Python}\label{ruxe9alisation-dune-pile-avec-les-tableaux-de-python}}
@@ -1047,9 +1400,7 @@ IndexError: depiler sur une pile vide
 \end{tcolorbox}
     }
 
-    \hypertarget{ruxe9alisation-dune-file-avec-deux-piles}{%
-\subsection{6.6 --- Réalisation d'une file avec deux
-piles}\label{ruxe9alisation-dune-file-avec-deux-piles}}
+    
 
 
     % Add a bibliography block to the postdoc
