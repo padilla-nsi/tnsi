@@ -365,6 +365,81 @@ class Pile:
 
 
 
+class File:
+    def __init__(self):
+        """ 
+        Exemples et tests:
+        >>> f = File()
+        >>> print(type(f.entree))
+        <class '__main__.Pile'>
+        >>> print(type(f.sortie))
+        <class '__main__.Pile'>
+        """
+        self.entree = Pile()
+        self.sortie = Pile()
+
+    def est_vide(self):
+        """ 
+        Exemples et tests :
+        >>> f = File()
+        >>> print(f.est_vide())
+        True
+        >>> f.entree.empiler(1)
+        >>> print(f.est_vide())
+        False
+        >>> f.entree.depiler()
+        1
+        >>> f.sortie.empiler(1)
+        >>> print(f.est_vide())
+        False
+        """
+        return self.entree.est_vide() and self.sortie.est_vide()
+
+
+    def enfiler(self, valeur):
+        """ 
+        Exemples et tests
+        >>> f = File()
+        >>> f.enfiler(1)
+        >>> f.enfiler(2)
+        >>> f.enfiler(3)
+        >>> f.entree.depiler()
+        3
+        >>> f.entree.depiler()
+        2
+        >>> f.entree.depiler()
+        1
+        """
+        self.entree.empiler(valeur)
+
+    def defiler(self):
+        """ 
+        Exemples et tests :
+        >>> f = File()
+        >>> f.enfiler(1)
+        >>> f.enfiler(2)
+        >>> f.enfiler(3)
+        >>> f.defiler()
+        1
+        >>> f.defiler()
+        2
+        >>> f.defiler()
+        3
+        >>> f.defiler()
+        Traceback (most recent call last):
+        IndexError: defiler sur file vide
+        """
+        if self.sortie.est_vide():
+            while not self.entree.est_vide():
+                valeur = self.entree.depiler()
+                self.sortie.empiler(valeur)
+        
+        if self.sortie.est_vide():
+            raise IndexError("defiler sur file vide")
+
+        return self.sortie.depiler()
+
+
 if __name__ == '__main__':
     from doctest import testmod
     testmod(verbose=False)

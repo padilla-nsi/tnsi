@@ -487,7 +487,7 @@
     
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{3}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k+kn}{from} \PY{n+nn}{doctest} \PY{k+kn}{import} \PY{n}{testmod}
 \end{Verbatim}
@@ -499,12 +499,13 @@
 
     \hypertarget{introduction}{%
 \subsection{6.1 --- Introduction}\label{introduction}}
-
+\begin{retenir}
     Tout comme les \emph{tableaux}, \textbf{Pile} et \textbf{File} sont des
 structures de données qui permettent de (1) \textbf{stocker} des
 ensembles d'objets et (2) \textbf{ajouter}/\textbf{retirer} des objets
 un à un.
 
+        \end{retenir}
     Dans une \textbf{pile} (en anglais \emph{stack}), chaque opération
 \texttt{depile} retire l'élément arrivé le plus récemment. Pour imaginer
 cette structure, il suffit de penser à une \emph{pile d'assiettes} : on
@@ -556,17 +557,19 @@ structure\tabularnewline
 d'une structure\tabularnewline
 \bottomrule
 \end{longtable}
-
+\begin{remarque}
     Comme pour les tableaux et les listes chaînées, on préconisé pour les
 piles et les files une \textbf{structures homogènes}. C'est-à-dire que
 tous les éléments stockés aient le même type.
 
+        \end{remarque}\begin{remarque}
     Dans ce cours, nos structures de pile et de file seront considérées
 \textbf{mutables} : chaque opération d'ajout ou de retrait d'un élément
 \textbf{modifie la pile ou la file} à laquelle elle s'applique.
 
 Mais il aurait été tout à fait possible d'en décider autrement.
 
+        \end{remarque}
     \hypertarget{interface-et-utilisation-dune-pile}{%
 \subsection{6.3 --- Interface et utilisation d'une
 pile}\label{interface-et-utilisation-dune-pile}}
@@ -619,7 +622,7 @@ exception est levée le cas échéant\strut
 \end{minipage}\tabularnewline
 \bottomrule
 \end{longtable}
-
+\begin{exemple}
     Exemple d'utilisation des piles : Considérons un navigateur web dans
 lequel on s'intéresse à deux opérations : \textbf{aller} à une nouvelle
 page et \textbf{revenir} à la page précédente. On veut que le bouton de
@@ -633,6 +636,7 @@ arrière se fait vers la dernière page qui a été quittée}, la discipline
 \textbf{\emph{dernier entré, premier sorti}} des piles est exactement ce
 dont nous avons besoin pour cet ensemble.
 
+        \end{exemple}
     \hypertarget{interface-et-utilisation-dune-file}{%
 \subsection{6.4 --- Interface et utilisation d'une
 file}\label{interface-et-utilisation-dune-file}}
@@ -703,7 +707,7 @@ nouveau maillon en tête de liste, tandis que dépiler un élément revient
 On peut ainsi construire une classe \texttt{Pile} définie par un unique
 attribut contenu associé à l'ensemble des éléments de la pile, stockés
 sous la forme d'une liste chaînée.
-
+\begin{eleve}
     Implémenter le constructeur de la classe \texttt{Pile} qui construit une
 pile vide en définissant son attribut \texttt{contenu} comme la liste
 vide \texttt{None}.
@@ -715,7 +719,8 @@ Exemple et test :
     >>> print(p.contenu)
     None
 \end{verbatim}
-
+        
+        \end{eleve}
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{ }{\boxspacing}
@@ -750,7 +755,7 @@ Exemple et test :
 \end{Verbatim}
 \end{tcolorbox}
     }
-
+\begin{eleve}
     Étendre la classe \texttt{Pile} en implémentant la méthode
 \texttt{est\_vide}.
 
@@ -764,7 +769,8 @@ Exemples et tests :
     >>> print(p.est_vide())
     False
 \end{verbatim}
-
+        
+        \end{eleve}
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{ }{\boxspacing}
@@ -802,8 +808,8 @@ Exemples et tests :
 \end{Verbatim}
 \end{tcolorbox}
     }
-
-    Implémenter la méthode \texttt{empile} dans la classe \texttt{Pile}.
+\begin{eleve}
+    Implémenter la méthode \texttt{empiler} dans la classe \texttt{Pile}.
 Pour cela construire une nouvelle liste chaînée dont le premier maillon
 contient :
 
@@ -829,6 +835,13 @@ Exemple et tests:
     >>> print(p.contenu.valeur)
     2
 \end{verbatim}
+        
+        \end{eleve}
+    \begin{figure}
+\centering
+\includegraphics{img-empiler.png}
+\caption{Empiler un maillon}
+\end{figure}
 
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
@@ -874,7 +887,7 @@ Exemple et tests:
 \end{Verbatim}
 \end{tcolorbox}
     }
-
+\begin{eleve}
     Pour finir, implémenter \texttt{depiler} afin de récupérer la valeur au
 sommet de la pile.
 
@@ -904,6 +917,13 @@ Exemple et tests:
     Traceback (most recent call last):
     IndexError: depiler sur une pile vide
 \end{verbatim}
+        
+        \end{eleve}
+    \begin{figure}
+\centering
+\includegraphics{img-depiler.png}
+\caption{Algorithme pour depiler}
+\end{figure}
 
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
@@ -982,7 +1002,7 @@ comme suivant après l'ajout le nouveau maillon créé pour le nouvel
 
 Pour cela, le plus intéressant est de conserver dans notre structure de
 donnée un attribut permettant d'accéder directement au dernier maillon.
-
+\begin{eleve}
     On peut ainsi construire une classe \texttt{File} dont le constructeur
 définit deux attributs, l'un appelé \texttt{tete} et l'autre appelé
 \texttt{queue}, et désignant respectivement le premier maillon et le
@@ -1001,10 +1021,11 @@ Exemples et tests:
     >>> print(f.queue)
     None
 \end{verbatim}
-
+        
+        \end{eleve}
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{4}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{class} \PY{n+nc}{Maillon}\PY{p}{:}
     \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{} Maillon d\PYZsq{}une liste chaînée \PYZdq{}\PYZdq{}\PYZdq{}}
@@ -1030,14 +1051,7 @@ Exemples et tests:
 \end{Verbatim}
 \end{tcolorbox}
     }
-
-            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
-\prompt{Out}{outcolor}{4}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-TestResults(failed=0, attempted=3)
-\end{Verbatim}
-\end{tcolorbox}
-        
+\begin{eleve}
     La file vide est caractérisée par le fait qu'elle ne contient aucun
 maillon. En conséquence, sa tête et sa queue sont indéfinies. En outre,
 l'un comme l'autre ne peut valoir \texttt{None} que dans ce cas. Pour
@@ -1057,10 +1071,11 @@ Exemples et tests:
     >>> print(f.est_vide())
     False
 \end{verbatim}
-
+        
+        \end{eleve}
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{5}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{} attention, lorsqu\PYZsq{}on implémente une }
 \PY{c+c1}{\PYZsh{} classe en une seule fois, il faut écrire}
@@ -1098,13 +1113,6 @@ Exemples et tests:
 \end{tcolorbox}
     }
 
-            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
-\prompt{Out}{outcolor}{5}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-TestResults(failed=0, attempted=4)
-\end{Verbatim}
-\end{tcolorbox}
-        
     L'ajout d'un nouvel élément à l'arrière de la file demande de créer un
 nouveau maillon. Ce maillon prend la dernière place, et n'a donc pas de
 maillon suivant.
@@ -1118,7 +1126,7 @@ son maillon de tête.
 
 Pour finir, dans tous les cas, notre nouveau maillon devient en outre le
 nouveau maillon de de queue de la file.
-
+\begin{eleve}
     En suivant l'algorithme décrit ci-dessus, implémenter la méthode
 \texttt{enfiler} qui admet comme argument une \texttt{valeur} à ajouter
 en queue de file.
@@ -1139,10 +1147,17 @@ Exemples et tests:
     >>> print(f.queue.valeur)
     3
 \end{verbatim}
+        
+        \end{eleve}
+    \begin{figure}
+\centering
+\includegraphics{img-enfiler.png}
+\caption{Algorithme pour enfiler une valeur}
+\end{figure}
 
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{6}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{class} \PY{n+nc}{File}\PY{p}{(}\PY{n}{File}\PY{p}{)}\PY{p}{:}
     \PY{k}{def} \PY{n+nf}{enfiler}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{valeur}\PY{p}{)}\PY{p}{:}
@@ -1181,20 +1196,13 @@ Exemples et tests:
 \end{tcolorbox}
     }
 
-            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
-\prompt{Out}{outcolor}{6}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-TestResults(failed=0, attempted=8)
-\end{Verbatim}
-\end{tcolorbox}
-        
     Pour retirer un élément il s'agit de supprimer le premier maillon de la
 file, exactement comme il avait été fait lors de l'utilisation d'une
 liste chaînée pour réaliser une pile. Cependant, si le maillon retiré
 est le dernier, on veut également redéfinir l'attribut
 \texttt{self.queue} à \texttt{None}, afin de maintenir notre invariant
 qu'une file vide a ses deux attributs qui valent \texttt{None}.
-
+\begin{eleve}
     Implémenter la méthode \texttt{defiler} qui retire le premier maillon de
 la file et renvoie la valeur de ce maillon.
 
@@ -1219,10 +1227,17 @@ Exemples et tests:
     Traceback (most recent call last):
     IndexError: defiler sur une file vide
 \end{verbatim}
+        
+        \end{eleve}
+    \begin{figure}
+\centering
+\includegraphics{img-defiler.png}
+\caption{Algorithme pour defiler une valeur}
+\end{figure}
 
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{8}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{class} \PY{n+nc}{File}\PY{p}{(}\PY{n}{File}\PY{p}{)}\PY{p}{:}
     \PY{k}{def} \PY{n+nf}{defiler}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
@@ -1271,17 +1286,10 @@ Exemples et tests:
 \end{tcolorbox}
     }
 
-            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
-\prompt{Out}{outcolor}{8}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-TestResults(failed=0, attempted=12)
-\end{Verbatim}
-\end{tcolorbox}
-        
     \hypertarget{ruxe9alisation-dune-pile-avec-les-tableaux-de-python}{%
 \subsection{6.7 --- Réalisation d'une pile avec les tableaux de
 Python}\label{ruxe9alisation-dune-pile-avec-les-tableaux-de-python}}
-
+\begin{eleve}
     Les tableaux de Python réalisent également directement une structure de
 pile, avec leurs opérations \texttt{append} et \texttt{pop} qui
 s'exécutent en moyenne en temps constant. Cette richesse des tableaux
@@ -1326,7 +1334,8 @@ Traceback (most recent call last):
 IndexError: depiler sur une pile vide
  
 \end{verbatim}
-
+        
+        \end{eleve}
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{ }{\boxspacing}
@@ -1400,7 +1409,227 @@ IndexError: depiler sur une pile vide
 \end{tcolorbox}
     }
 
-    
+    \hypertarget{ruxe9aliser-une-file-avec-deux-piles}{%
+\subsection{6.8 --- Réaliser une file avec deux
+piles}\label{ruxe9aliser-une-file-avec-deux-piles}}
+
+    Une réalisation radicalement différente de cette même structure de file
+consiste à utiliser \textbf{deux piles}.
+\begin{exemple}
+    Illustrons cette construction par un exemple.
+
+On prend pour cela modèle sur un jeu de cartes où l'on disposerait d'une
+pioche, au sommet de laquelle on prend des cartes (disposées face
+cachée), et d'une défausse, au sommet de laquelle on en repose
+(disposées face visible).
+
+Chacun de ces deux paquets de cartes est une \textbf{pile}, et ces deux
+paquets forment ensemble la réserve de cartes. On a ensuite la
+discipline suivante :
+
+\begin{itemize}
+\tightlist
+\item
+  toute carte prise dans la réserve est retirée dans l'une de ces piles
+  (la pioche),
+\item
+  toute carte remise dans la réserve est ajoutée à l'autre pile (la
+  défausse)
+\end{itemize}
+
+S'ajoute un mécanisme liant les deux paquets: une fois la pioche vide on
+retourne la défausse pour en faire une nouvelle pioche, laissant à la
+place une défausse vide.
+
+Cette gestion des cartes correspond à une structure de file : une fois
+la pioche initiale vidée, les cartes seront piochées précisément dans
+l'ordre dans lequel elles ont été défaussées.
+
+\emph{La première défaussée sera la première piochée} (\textbf{FIFO}).
+
+        \end{exemple}
+    On peut donc définir une nouvelle version de la classe \texttt{File}
+utilisant ce principe. Une file réalisée ainsi est caractérisée par deux
+attributs \texttt{entree} et \texttt{sortie} :
+
+\begin{itemize}
+\tightlist
+\item
+  le premier contenant une pile dans laquelle on ajoute les nouveaux
+  éléments et
+\item
+  le second une pile d'où l'on prend les éléments retirés.
+\end{itemize}
+
+    Une file ainsi crée est vide lorsque ces deux piles sont toutes les deux
+vides.
+
+    Ajouter un nouvel élément consiste simplement à empiler cet élément sur
+la pile d'entrée.
+
+    Retirer un élément est l'opération la plus délicate.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Pour commencer, deux cas de figures :
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Si la pile de sortie \textbf{n'est pas vide} (cas simple), il suffit
+    de dépiler son premier élément.
+  \item
+    Sinon la pile de sortie \textbf{est vide} (cas délicat). Il faut
+    alors commencer par retourner la pile d'entrée pour la mettre à la
+    place de la pile de sortie. On peut réaliser cette opération
+    intermédiaire en transférant un à un tous les éléments de la pile
+    d'entrée sur la pile de sortie. En effet, le premier élément prélevé
+    sur la pile d'entrée est le dernier entrant (discipline LIFO de la
+    pile utilisée), c'est-à-dire celui qui devra sortir de la file après
+    tous les autres (discipline FIFO de la file que l'on veut réaliser),
+    et il sortira bien le dernier puisqu'il sera ajouté le premier sur
+    la pile de sortie (discipline LIFO de la pile utilisée).
+  \end{itemize}
+\item
+  On peut alors maintenant dépiler le premier élément de la nouvelle
+  pile de sortie, qui, s'il y a eu retournement, était auparavant le
+  dernier élément de la pile d'entrée. À moins que cette pile soit
+  encore vide (ce qui signifierait que les deux piles étaient vide), et
+  donc la file est également vide.
+\end{enumerate}
+\begin{eleve}
+    Implémenter la classe File en utilisant deux pile.
+
+Exemples et tests :
+
+\begin{verbatim}
+    >>> f = File()
+    >>> print(type(f.entree))
+    <class '__main__.Pile'>
+    >>> print(type(f.sortie))
+    <class '__main__.Pile'>
+
+    >>> f = File()
+    >>> print(f.est_vide())
+    True
+    >>> f.entree.empiler(1)
+    >>> print(f.est_vide())
+    False
+    >>> f.entree.depiler()
+    1
+    >>> f.sortie.empiler(1)
+    >>> print(f.est_vide())
+    False
+
+    >>> f = File()
+    >>> f.enfiler(1)
+    >>> f.enfiler(2)
+    >>> f.enfiler(3)
+    >>> f.entree.depiler()
+    3
+    >>> f.entree.depiler()
+    2
+    >>> f.entree.depiler()
+    1
+
+    >>> f = File()
+    >>> f.enfiler(1)
+    >>> f.enfiler(2)
+    >>> f.enfiler(3)
+    >>> f.defiler()
+    1
+    >>> f.defiler()
+    2
+    >>> f.defiler()
+    3
+    >>> f.defiler()
+    Traceback (most recent call last):
+    IndexError: defiler sur file vide
+\end{verbatim}
+        
+        \end{eleve}
+        {\scriptsize
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{class} \PY{n+nc}{File}\PY{p}{:}
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{} }
+\PY{l+s+sd}{        Exemples et tests:}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} f = File()}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(type(f.entree))}
+\PY{l+s+sd}{        \PYZlt{}class \PYZsq{}\PYZus{}\PYZus{}main\PYZus{}\PYZus{}.Pile\PYZsq{}\PYZgt{}}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(type(f.sortie))}
+\PY{l+s+sd}{        \PYZlt{}class \PYZsq{}\PYZus{}\PYZus{}main\PYZus{}\PYZus{}.Pile\PYZsq{}\PYZgt{}}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{entree} \PY{o}{=} \PY{n}{Pile}\PY{p}{(}\PY{p}{)}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{sortie} \PY{o}{=} \PY{n}{Pile}\PY{p}{(}\PY{p}{)}
+
+    \PY{k}{def} \PY{n+nf}{est\PYZus{}vide}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{} }
+\PY{l+s+sd}{        Exemples et tests :}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} f = File()}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(f.est\PYZus{}vide())}
+\PY{l+s+sd}{        True}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} f.entree.empiler(1)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(f.est\PYZus{}vide())}
+\PY{l+s+sd}{        False}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} f.entree.depiler()}
+\PY{l+s+sd}{        1}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} f.sortie.empiler(1)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} print(f.est\PYZus{}vide())}
+\PY{l+s+sd}{        False}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{k}{return} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{entree}\PY{o}{.}\PY{n}{est\PYZus{}vide}\PY{p}{(}\PY{p}{)} \PY{o+ow}{and} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{sortie}\PY{o}{.}\PY{n}{est\PYZus{}vide}\PY{p}{(}\PY{p}{)}
+
+
+    \PY{k}{def} \PY{n+nf}{enfiler}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{valeur}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{} }
+\PY{l+s+sd}{        Exemples et tests}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} f = File()}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} f.enfiler(1)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} f.enfiler(2)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} f.enfiler(3)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} f.entree.depiler()}
+\PY{l+s+sd}{        3}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} f.entree.depiler()}
+\PY{l+s+sd}{        2}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} f.entree.depiler()}
+\PY{l+s+sd}{        1}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{entree}\PY{o}{.}\PY{n}{empiler}\PY{p}{(}\PY{n}{valeur}\PY{p}{)}
+
+    \PY{k}{def} \PY{n+nf}{defiler}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{} }
+\PY{l+s+sd}{        Exemples et tests :}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} f = File()}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} f.enfiler(1)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} f.enfiler(2)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} f.enfiler(3)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} f.defiler()}
+\PY{l+s+sd}{        1}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} f.defiler()}
+\PY{l+s+sd}{        2}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} f.defiler()}
+\PY{l+s+sd}{        3}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} f.defiler()}
+\PY{l+s+sd}{        Traceback (most recent call last):}
+\PY{l+s+sd}{        IndexError: defiler sur file vide}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{k}{if} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{sortie}\PY{o}{.}\PY{n}{est\PYZus{}vide}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+            \PY{k}{while} \PY{o+ow}{not} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{entree}\PY{o}{.}\PY{n}{est\PYZus{}vide}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+                \PY{n}{valeur} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{entree}\PY{o}{.}\PY{n}{depiler}\PY{p}{(}\PY{p}{)}
+                \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{sortie}\PY{o}{.}\PY{n}{empiler}\PY{p}{(}\PY{n}{valeur}\PY{p}{)}
+        
+        \PY{k}{if} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{sortie}\PY{o}{.}\PY{n}{est\PYZus{}vide}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+            \PY{k}{raise} \PY{n+ne}{IndexError}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{defiler sur file vide}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+        \PY{k}{return} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{sortie}\PY{o}{.}\PY{n}{depiler}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+    }
 
 
     % Add a bibliography block to the postdoc
