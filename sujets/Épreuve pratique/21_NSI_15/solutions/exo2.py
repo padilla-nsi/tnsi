@@ -30,8 +30,8 @@ class PaquetDeCarte:
 
     """Remplit le paquet de cartes"""
     def remplir(self):
-        for c in range(1, 5):
-            for v in range(1, 14):
+        for v in range(1, 14):
+            for c in range(1, 5):
                 self.contenu.append(Carte(c, v))
 
     """Renvoie la Carte qui se trouve à la position donnée"""
@@ -44,4 +44,4 @@ class PaquetDeCarte:
 unPaquet = PaquetDeCarte()
 unPaquet.remplir()
 uneCarte = unPaquet.getCarteAt(20)
-# print(uneCarte.getNom(), "de", uneCarte.getCouleur())
+print(uneCarte.getNom(), "de", uneCarte.getCouleur())
