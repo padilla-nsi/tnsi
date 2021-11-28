@@ -467,7 +467,7 @@
       citecolor=citecolor,
       }
     % Slightly bigger margins than the latex defaults
-    \geometry{a4paper,tmargin=3cm,bmargin=2cm,lmargin=1cm,rmargin=1cm}\fancyhead[L]{Thème à définir}\fancyhead[L]{\adjustimage{height=1cm, valign=m}{/home/bouscadilla/Documents/Code/nbconvert/template/latex/pdf_solution/papier_eleve_ico_structure}\ttfamily\scshape Struct.de données}\fancyhead[C]{\bfseries\MakeUppercase{5-1---ListesChainees}}\fancyhead[C]{\bfseries\MakeUppercase{3 --- P.O.O.}}\fancyhead[R]{\monthyeardate\today}
+    \geometry{a4paper,tmargin=3cm,bmargin=2cm,lmargin=1cm,rmargin=1cm}\fancyhead[L]{Thème à définir}\fancyhead[L]{\adjustimage{height=1cm, valign=m}{/home/bouscadilla/Documents/Code/nbconvert/template/latex/pdf_solution/papier_eleve_ico_structure}\ttfamily\scshape Struct.de données}\fancyhead[C]{\bfseries\MakeUppercase{5-1---ListesChainees}}\fancyhead[C]{\bfseries\MakeUppercase{5 --- Listes chaînées}}\fancyhead[R]{\monthyeardate\today}
 
     \fancyfoot[C]{\thepage}
     % #TODO ajouter les pages totales
@@ -478,7 +478,7 @@
 
 \begin{document}
     
-    \title{3 --- P.O.O.}
+    \title{5 --- Listes chaînées}
 % \maketitle
 
     
@@ -501,12 +501,13 @@ efficaces : \texttt{pop} et \texttt{append}.
 
     \hypertarget{append}{%
 \subsubsection{\texorpdfstring{\texttt{append()}}{append()}}\label{append}}
-
+\begin{retenir}
     La méthode \texttt{append} ajoute un élément à la fin d'un tableau
 
+        \end{retenir}
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{1}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{nb\PYZus{}premiers} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{un}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{trois}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{cinq}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sept}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{onze}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
 
@@ -522,19 +523,23 @@ efficaces : \texttt{pop} et \texttt{append}.
 
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{2}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{} Affiche le contenu de la variable}
 \PY{c+c1}{\PYZsh{} nb\PYZus{}premiers}
 
-\PY{o}{.}\PY{o}{.}\PY{o}{.}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{nb\PYZus{}premiers}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
     }
 
-    Comme tu peux le voir, le tableau a bien été modifié !
+    \begin{Verbatim}[commandchars=\\\{\}]
+['un', 'trois', 'cinq', 'sept', 'onze', 'treize']
+    \end{Verbatim}
 
-\textbf{Dans le bloc suivant, implémenter la fonction
+    Comme tu peux le voir, le tableau a bien été modifié !
+\begin{eleve}
+    \textbf{Dans le bloc suivant, implémenter la fonction
 \texttt{pair(n:\ int)\ -\textgreater{}\ list} qui renvoie un tableau
 contenant les \texttt{n} premiers nombres pairs en commençant par 0}
 
@@ -544,13 +549,17 @@ contenant les \texttt{n} premiers nombres pairs en commençant par 0}
 \emph{Exemple 2 : \texttt{tab\_pairs\ =\ pair(10)} ne devrait rien
 afficher mais seulement affecter à \texttt{tab\_pairs} le tableau des 10
 premiers nombres premiers.}
-
+        
+        \end{eleve}\begin{reponse}
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{3}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{def} \PY{n+nf}{pair}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{:}
-    \PY{o}{.}\PY{o}{.}\PY{o}{.}
+    \PY{n}{tab} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+    \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{:}
+        \PY{n}{tab}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{i} \PY{o}{*} \PY{l+m+mi}{2}\PY{p}{)}
+    \PY{k}{return} \PY{n}{tab}
 
 
 \PY{n+nb}{print}\PY{p}{(}\PY{n}{pair}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
@@ -558,9 +567,14 @@ premiers nombres premiers.}
 \end{tcolorbox}
     }
 
+    \begin{Verbatim}[commandchars=\\\{\}]
+[0, 2, 4, 6, 8]
+    \end{Verbatim}
+
+        \end{reponse}
     \hypertarget{pop}{%
 \subsubsection{\texorpdfstring{\texttt{pop()}}{pop()}}\label{pop}}
-
+\begin{retenir}
     La méthode \texttt{pop} fait deux choses :
 
 \begin{itemize}
@@ -571,9 +585,10 @@ premiers nombres premiers.}
   renvoyer l'élément supprimé
 \end{itemize}
 
+        \end{retenir}
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{4}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{nb\PYZus{}premiers}\PY{o}{.}\PY{n}{pop}\PY{p}{(}\PY{p}{)}
 \PY{n}{nb\PYZus{}premiers}\PY{o}{.}\PY{n}{pop}\PY{p}{(}\PY{p}{)}
@@ -582,6 +597,13 @@ premiers nombres premiers.}
 \end{tcolorbox}
     }
 
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{4}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+'sept'
+\end{Verbatim}
+\end{tcolorbox}
+        
     Normalement, le bloc précédent affiche
 \texttt{\textquotesingle{}sept\textquotesingle{}}.
 
@@ -610,7 +632,7 @@ variable pour le réutiliser plus tard.
 
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{5}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{dernier} \PY{o}{=} \PY{n}{nb\PYZus{}premiers}\PY{o}{.}\PY{n}{pop}\PY{p}{(}\PY{p}{)}
 
@@ -621,6 +643,10 @@ variable pour le réutiliser plus tard.
 \end{tcolorbox}
     }
 
+    \begin{Verbatim}[commandchars=\\\{\}]
+cinqcinqcinqcinqcinq
+    \end{Verbatim}
+\begin{eleve}
     \textbf{Implémenter la fonction
 \texttt{vide(tab:\ list)\ -\textgreater{}\ None} qui vide un tableau
 élémént par élément en commençant par la fin et en affichant à chaque
@@ -639,19 +665,29 @@ fois l'élément supprimé.}
 \end{Highlighting}
 \end{Shaded}
 
-\emph{doit afficher \texttt{1998}, puis \texttt{2003}, puis
-\texttt{2004}, puis \texttt{2008} puis \texttt{2021} puis
+\emph{doit afficher \texttt{2021}, puis \texttt{2008}, puis
+\texttt{2004}, puis \texttt{2003} puis \texttt{1998} puis
 \texttt{{[}{]}}. Le dernier affichage s'explique car le tableau
 \texttt{annee} est vide à la fin.}
-
+        
+        \end{eleve}\begin{reponse}
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{6}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{def} \PY{n+nf}{vide}\PY{p}{(}\PY{n}{tab}\PY{p}{)}\PY{p}{:}
-    \PY{o}{.}\PY{o}{.}\PY{o}{.}
+    \PY{n}{n} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{tab}\PY{p}{)}
+    \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{:}
+        \PY{n+nb}{print}\PY{p}{(}\PY{n}{tab}\PY{o}{.}\PY{n}{pop}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+    }
 
-
+        \end{reponse}\begin{exemple}
+        {\scriptsize
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{7}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{annee} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{1998}\PY{p}{,} \PY{l+m+mi}{2003}\PY{p}{,} \PY{l+m+mi}{2004}\PY{p}{,} \PY{l+m+mi}{2008}\PY{p}{,} \PY{l+m+mi}{2021}\PY{p}{]}
 \PY{n}{vide}\PY{p}{(}\PY{n}{annee}\PY{p}{)}
 \PY{n+nb}{print}\PY{p}{(}\PY{n}{annee}\PY{p}{)}
@@ -659,6 +695,16 @@ fois l'élément supprimé.}
 \end{tcolorbox}
     }
 
+    \begin{Verbatim}[commandchars=\\\{\}]
+2021
+2008
+2004
+2003
+1998
+[]
+    \end{Verbatim}
+
+        \end{exemple}
     \hypertarget{ajouter-un-uxe9luxe9ment-au-duxe9but-dun-tableau}{%
 \subsection{1.2 --- Ajouter un élément au début d'un
 tableau}\label{ajouter-un-uxe9luxe9ment-au-duxe9but-dun-tableau}}
@@ -692,7 +738,7 @@ v & 1 & 1 & 2 & 3 & 5 & 8 & 13\tabularnewline
 \endhead
 \bottomrule
 \end{longtable}
-
+\begin{remarque}
     Cette opération est cependant très coûteuse, car elle déplace tous les
 éléments du tableau d'une case vers la droite après avoir agrandi le
 tableau.
@@ -748,35 +794,55 @@ v & 1 & 1 & 2 & 3 & 5 & 8 & 13\tabularnewline
 \bottomrule
 \end{longtable}
 
+        \end{remarque}\begin{eleve}
     \textbf{Utiliser la description de l'algorithme en 3 étapes ci-dessus
 pour implémenter la fonction
 \texttt{entete(tab:\ list,\ val:\ int)\ -\textgreater{}\ None} qui
 insère en début de tableau le nombre entier \texttt{val}.}
 
-\emph{Exemple 1 : Le code suivant}
+Exemples et tests :
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{tab\_impairs }\OperatorTok{=}\NormalTok{ [}\DecValTok{3}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{7}\NormalTok{, }\DecValTok{9}\NormalTok{]}
-\NormalTok{entete(tab\_impairs, }\DecValTok{1}\NormalTok{)}
-\BuiltInTok{print}\NormalTok{(tab\_impairs)}
-\end{Highlighting}
-\end{Shaded}
-
-\emph{doit afficher \texttt{{[}1,\ 3,\ 5,\ 7,\ 9{]}}}
-
-\emph{Exemple 2 : L'instruction
-\texttt{print(entete(\ pair(4),\ 100\ ))} doit afficher
-\texttt{{[}100,\ 0,\ 2,\ 4,\ 6{]}}.}
-
+\begin{verbatim}
+    >>> tab_impairs = [3, 5, 7, 9]
+    >>> entete(tab_impairs, 1)
+    >>> 
+    [1, 3, 5, 7, 9]
+    
+\end{verbatim}
+        
+        \end{eleve}\begin{reponse}
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{8}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{def} \PY{n+nf}{entete}\PY{p}{(}\PY{n}{tab}\PY{p}{,} \PY{n}{val}\PY{p}{)}\PY{p}{:}
-    \PY{o}{.}\PY{o}{.}\PY{o}{.}
+    \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\PY{l+s+sd}{    Procédure qui modifie tab }
+\PY{l+s+sd}{    en ajoutant val en tête du tableau.}
+\PY{l+s+sd}{    \PYZdq{}\PYZdq{}\PYZdq{}}
+    \PY{c+c1}{\PYZsh{} étape 1}
+    \PY{n}{tab}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{k+kc}{None}\PY{p}{)}
 
+    \PY{c+c1}{\PYZsh{} étape 2}
+    \PY{n}{n} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{tab}\PY{p}{)}
+    \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{n}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{:}
+        \PY{c+c1}{\PYZsh{} parcours de n\PYZhy{}1 (inclus) à 0 (exclus) }
+        \PY{c+c1}{\PYZsh{} en soustrayant 1 à chaque tour de boucle}
+        \PY{n}{temp} \PY{o}{=} \PY{n}{tab}\PY{p}{[}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}
+        \PY{n}{tab}\PY{p}{[}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{=} \PY{n}{tab}\PY{p}{[}\PY{n}{i}\PY{p}{]}
+        \PY{n}{tab}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{temp}
 
+    \PY{c+c1}{\PYZsh{} étape 3    }
+    \PY{n}{tab}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{=} \PY{n}{val}
+\end{Verbatim}
+\end{tcolorbox}
+    }
+
+        \end{reponse}\begin{exemple}
+        {\scriptsize
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{9}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{tab\PYZus{}impairs} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{,} \PY{l+m+mi}{7}\PY{p}{,} \PY{l+m+mi}{9}\PY{p}{]}
 \PY{n}{entete}\PY{p}{(}\PY{n}{tab\PYZus{}impairs}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}
 \PY{n+nb}{print}\PY{p}{(}\PY{n}{tab\PYZus{}impairs}\PY{p}{)}
@@ -784,12 +850,18 @@ insère en début de tableau le nombre entier \texttt{val}.}
 \end{tcolorbox}
     }
 
+    \begin{Verbatim}[commandchars=\\\{\}]
+[1, 3, 5, 7, 9]
+    \end{Verbatim}
+
+        \end{exemple}\begin{retenir}
     En Python, la méthode \texttt{insert(index:int,\ val)} est équivalente à
 \texttt{entete} si on définit \texttt{index} à \texttt{0}.
 
 Ainsi, \texttt{tab.insert(0,\ 42)} est équivalent à
 \texttt{entete(tab,\ 42)}.
 
+        \end{retenir}\begin{remarque}
     Mais comme on l'a dit plus haut, que l'on utilise \texttt{entete} ou
 \texttt{insert} on a réalisé au total un nombre d'opérations
 proportionnel à la taille du tableau. Si par exemple le tableau contient
@@ -797,17 +869,18 @@ un million d'éléments, on fera un million d'opérations pour ajouter un
 premier élément. En outre, supprimer le premier élément serait tout
 aussi coûteux, pour les mêmes raisons.
 
-Dans ce chapitre nous étudions une structure de données, la
+        \end{remarque}
+    Dans ce chapitre nous étudions une structure de données, la
 \textbf{liste chaînée}, qui d'une part apporte une meilleure solution au
 problème de l'insertion et de la suppression au début d'une séquence
 d'éléments, et d'autre part servira de brique de base à plusieurs autres
 structures dans les prochains chapitres.
-
+\begin{eleve}
     \textbf{Implémenter à l'aide de la méthode \texttt{pop} une fonction
 \texttt{supprime(tab:\ list)} qui supprime le premier élément du tableau
 \texttt{tab}.}
 
-\emph{Exemple 1 : Le code suivant}
+\emph{Exemple : Le code suivant}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -818,18 +891,39 @@ structures dans les prochains chapitres.
 \end{Shaded}
 
 \emph{doit afficher \texttt{{[}5,\ 7,\ 9{]}}}
-
-\emph{Exemple 2 : L'instruction \texttt{print(supprime(\ pair(4)\ )}
-doit afficher \texttt{{[}2,\ 4,\ 6{]}}.}
-
+        
+        \end{eleve}\begin{reponse}
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{26}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{def} \PY{n+nf}{supprime}\PY{p}{(}\PY{n}{tab}\PY{p}{)}\PY{p}{:}
-    \PY{o}{.}\PY{o}{.}\PY{o}{.}
+    \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\PY{l+s+sd}{    Procédure qui supprime le premier élément d\PYZsq{}un tableau}
+\PY{l+s+sd}{    en utilisant la méthode pop}
 
+\PY{l+s+sd}{    Args:}
+\PY{l+s+sd}{        tab (list): tableau à modifier}
+\PY{l+s+sd}{    \PYZdq{}\PYZdq{}\PYZdq{}}
+    \PY{n}{n} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{tab}\PY{p}{)}
+    \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{n}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{:}
+        \PY{c+c1}{\PYZsh{} parcours le tableau de façon ascendante}
+        \PY{c+c1}{\PYZsh{} en s\PYZsq{}arrêtant une cellule avant la fin}
+        \PY{n}{temp} \PY{o}{=} \PY{n}{tab}\PY{p}{[}\PY{n}{i}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}
+        \PY{n}{tab}\PY{p}{[}\PY{n}{i}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{=} \PY{n}{tab}\PY{p}{[}\PY{n}{i}\PY{p}{]}
+        \PY{n}{tab}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{temp}
 
+    \PY{c+c1}{\PYZsh{} modification du tableau}
+    \PY{n}{tab}\PY{o}{.}\PY{n}{pop}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+    }
+
+        \end{reponse}\begin{exemple}
+        {\scriptsize
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{27}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{tab\PYZus{}impairs} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{,} \PY{l+m+mi}{7}\PY{p}{,} \PY{l+m+mi}{9}\PY{p}{]}
 \PY{n}{supprime}\PY{p}{(}\PY{n}{tab\PYZus{}impairs}\PY{p}{)}
 \PY{n+nb}{print}\PY{p}{(}\PY{n}{tab\PYZus{}impairs}\PY{p}{)}
@@ -837,6 +931,11 @@ doit afficher \texttt{{[}2,\ 4,\ 6{]}}.}
 \end{tcolorbox}
     }
 
+    \begin{Verbatim}[commandchars=\\\{\}]
+[5, 7, 9]
+    \end{Verbatim}
+
+        \end{exemple}
 
     % Add a bibliography block to the postdoc
     

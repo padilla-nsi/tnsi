@@ -487,7 +487,7 @@
     
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{1}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k+kn}{from} \PY{n+nn}{doctest} \PY{k+kn}{import} \PY{n}{testmod}
 \end{Verbatim}
@@ -723,7 +723,7 @@ Exemple et test :
         \end{eleve}
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{2}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k+kn}{from} \PY{n+nn}{doctest} \PY{k+kn}{import} \PY{n}{testmod}
 
@@ -755,7 +755,14 @@ Exemple et test :
 \end{Verbatim}
 \end{tcolorbox}
     }
-\begin{eleve}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{2}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+TestResults(failed=0, attempted=2)
+\end{Verbatim}
+\end{tcolorbox}
+        \begin{eleve}
     Étendre la classe \texttt{Pile} en implémentant la méthode
 \texttt{est\_vide}.
 
@@ -773,7 +780,7 @@ Exemples et tests :
         \end{eleve}
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{3}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{} attention, lorsqu\PYZsq{}on implémente une }
 \PY{c+c1}{\PYZsh{} classe en une seule fois, il faut écrire}
@@ -808,7 +815,14 @@ Exemples et tests :
 \end{Verbatim}
 \end{tcolorbox}
     }
-\begin{eleve}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{3}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+TestResults(failed=0, attempted=4)
+\end{Verbatim}
+\end{tcolorbox}
+        \begin{eleve}
     Implémenter la méthode \texttt{empiler} dans la classe \texttt{Pile}.
 Pour cela construire une nouvelle liste chaînée dont le premier maillon
 contient :
@@ -845,7 +859,7 @@ Exemple et tests:
 
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{4}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{} attention, lorsqu\PYZsq{}on implémente une }
 \PY{c+c1}{\PYZsh{} classe en une seule fois, il faut écrire}
@@ -887,7 +901,14 @@ Exemple et tests:
 \end{Verbatim}
 \end{tcolorbox}
     }
-\begin{eleve}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{4}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+TestResults(failed=0, attempted=6)
+\end{Verbatim}
+\end{tcolorbox}
+        \begin{eleve}
     Pour finir, implémenter \texttt{depiler} afin de récupérer la valeur au
 sommet de la pile.
 
@@ -927,7 +948,7 @@ Exemple et tests:
 
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{5}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{} attention, lorsqu\PYZsq{}on implémente une }
 \PY{c+c1}{\PYZsh{} classe en une seule fois, il faut écrire}
@@ -981,6 +1002,13 @@ Exemple et tests:
 \end{tcolorbox}
     }
 
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{5}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+TestResults(failed=0, attempted=8)
+\end{Verbatim}
+\end{tcolorbox}
+        
     \hypertarget{ruxe9alisation-dune-file-avec-une-liste-mutable}{%
 \subsection{6.6 --- Réalisation d'une file avec une liste
 mutable}\label{ruxe9alisation-dune-file-avec-une-liste-mutable}}
@@ -1025,7 +1053,7 @@ Exemples et tests:
         \end{eleve}
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{6}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{class} \PY{n+nc}{Maillon}\PY{p}{:}
     \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{} Maillon d\PYZsq{}une liste chaînée \PYZdq{}\PYZdq{}\PYZdq{}}
@@ -1051,7 +1079,14 @@ Exemples et tests:
 \end{Verbatim}
 \end{tcolorbox}
     }
-\begin{eleve}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{6}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+TestResults(failed=0, attempted=11)
+\end{Verbatim}
+\end{tcolorbox}
+        \begin{eleve}
     La file vide est caractérisée par le fait qu'elle ne contient aucun
 maillon. En conséquence, sa tête et sa queue sont indéfinies. En outre,
 l'un comme l'autre ne peut valoir \texttt{None} que dans ce cas. Pour
@@ -1075,7 +1110,7 @@ Exemples et tests:
         \end{eleve}
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{7}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{} attention, lorsqu\PYZsq{}on implémente une }
 \PY{c+c1}{\PYZsh{} classe en une seule fois, il faut écrire}
@@ -1113,6 +1148,13 @@ Exemples et tests:
 \end{tcolorbox}
     }
 
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{7}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+TestResults(failed=0, attempted=12)
+\end{Verbatim}
+\end{tcolorbox}
+        
     L'ajout d'un nouvel élément à l'arrière de la file demande de créer un
 nouveau maillon. Ce maillon prend la dernière place, et n'a donc pas de
 maillon suivant.
@@ -1157,7 +1199,7 @@ Exemples et tests:
 
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{8}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{class} \PY{n+nc}{File}\PY{p}{(}\PY{n}{File}\PY{p}{)}\PY{p}{:}
     \PY{k}{def} \PY{n+nf}{enfiler}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{valeur}\PY{p}{)}\PY{p}{:}
@@ -1196,6 +1238,13 @@ Exemples et tests:
 \end{tcolorbox}
     }
 
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{8}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+TestResults(failed=0, attempted=16)
+\end{Verbatim}
+\end{tcolorbox}
+        
     Pour retirer un élément il s'agit de supprimer le premier maillon de la
 file, exactement comme il avait été fait lors de l'utilisation d'une
 liste chaînée pour réaliser une pile. Cependant, si le maillon retiré
@@ -1237,7 +1286,7 @@ Exemples et tests:
 
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{9}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{class} \PY{n+nc}{File}\PY{p}{(}\PY{n}{File}\PY{p}{)}\PY{p}{:}
     \PY{k}{def} \PY{n+nf}{defiler}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
@@ -1286,6 +1335,13 @@ Exemples et tests:
 \end{tcolorbox}
     }
 
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{9}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+TestResults(failed=0, attempted=20)
+\end{Verbatim}
+\end{tcolorbox}
+        
     \hypertarget{ruxe9alisation-dune-pile-avec-les-tableaux-de-python}{%
 \subsection{6.7 --- Réalisation d'une pile avec les tableaux de
 Python}\label{ruxe9alisation-dune-pile-avec-les-tableaux-de-python}}
@@ -1338,7 +1394,7 @@ IndexError: depiler sur une pile vide
         \end{eleve}
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{10}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{class} \PY{n+nc}{Pile}\PY{p}{:}
     \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
@@ -1409,6 +1465,13 @@ IndexError: depiler sur une pile vide
 \end{tcolorbox}
     }
 
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{10}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+TestResults(failed=0, attempted=34)
+\end{Verbatim}
+\end{tcolorbox}
+        
     \hypertarget{ruxe9aliser-une-file-avec-deux-piles}{%
 \subsection{6.8 --- Réaliser une file avec deux
 piles}\label{ruxe9aliser-une-file-avec-deux-piles}}
@@ -1552,7 +1615,7 @@ Exemples et tests :
         \end{eleve}
         {\scriptsize
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{12}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{class} \PY{n+nc}{File}\PY{p}{:}
     \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
@@ -1627,10 +1690,19 @@ Exemples et tests :
             \PY{k}{raise} \PY{n+ne}{IndexError}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{defiler sur file vide}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 
         \PY{k}{return} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{sortie}\PY{o}{.}\PY{n}{depiler}\PY{p}{(}\PY{p}{)}
+
+\PY{n}{testmod}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
     }
 
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{12}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+TestResults(failed=0, attempted=47)
+\end{Verbatim}
+\end{tcolorbox}
+        
 
     % Add a bibliography block to the postdoc
     

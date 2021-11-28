@@ -203,4 +203,5 @@ class Liste:
         self.tete = renverser(self.tete)
 
 
-testmod()
+if __name__ == '__main__':
+    testmod(verbose=True)

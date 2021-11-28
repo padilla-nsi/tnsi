@@ -467,7 +467,7 @@
       citecolor=citecolor,
       }
     % Slightly bigger margins than the latex defaults
-    \geometry{a4paper,tmargin=3cm,bmargin=2cm,lmargin=1cm,rmargin=1cm}\fancyhead[L]{Thème à définir}\fancyhead[L]{\adjustimage{height=1cm, valign=m}{/home/bouscadilla/Documents/Code/nbconvert/template/latex/pdf_solution/papier_eleve_ico_structure}\ttfamily\scshape Struct.de données}\fancyhead[C]{\bfseries\MakeUppercase{5-2---ListesChainees}}\fancyhead[C]{\bfseries\MakeUppercase{3 --- P.O.O.}}\fancyhead[R]{\monthyeardate\today}
+    \geometry{a4paper,tmargin=3cm,bmargin=2cm,lmargin=1cm,rmargin=1cm}\fancyhead[L]{Thème à définir}\fancyhead[L]{\adjustimage{height=1cm, valign=m}{/home/bouscadilla/Documents/Code/nbconvert/template/latex/pdf_solution/papier_eleve_ico_structure}\ttfamily\scshape Struct.de données}\fancyhead[C]{\bfseries\MakeUppercase{5-2---ListesChainees}}\fancyhead[C]{\bfseries\MakeUppercase{5 --- Listes chaînées}}\fancyhead[R]{\monthyeardate\today}
 
     \fancyfoot[C]{\thepage}
     % #TODO ajouter les pages totales
@@ -478,7 +478,7 @@
 
 \begin{document}
     
-    \title{3 --- P.O.O.}
+    \title{5 --- Listes chaînées}
 % \maketitle
 
     
@@ -492,12 +492,14 @@ chaînée}\label{structure-de-liste-chauxeenuxe9e}}
     Une \textbf{liste chaînée} permet avant tout de réprésenter une liste
 dont les éléments sont chaînés entres eux, permettant ainsi le passage
 d'un élément à l'élément suivant.
-
+\begin{retenir}
     Ainsi, chaque élément est stocké dans un bloc mémoire que l'on pourra
 appeler \textbf{maillon}. Ce maillon possède deux informations : la
-valeur stockée et l'adresse mémoire du maillon suivant.
+\texttt{valeur} stockée et l'adresse mémoire du maillon
+\texttt{suivant}.
 
-Par exemple on a illustré une liste contenant trois éléments,
+        \end{retenir}\begin{exemple}
+    Par exemple on a illustré une liste contenant trois éléments,
 respectivement 1, 2 et 3.
 
 \begin{figure}
@@ -514,8 +516,143 @@ Dans le cas du dernier élément, qui ne possède pas de valeur suivante,
 on utilise une valeur spéciale désignée ici par le symbole \(\bot\) et
 marquant la fin de la liste
 
-    
+        \end{exemple}
+    Une façon traditionnelle de représenter une liste chaînée en Python
+consiste à utiliser une classe décrivant les maillons de la liste, de
+sorte que \textbf{chaque élément de la liste est matérialisé par un
+objet de cette classe}.
 
+\textbf{Implémenter la classe \texttt{Maillon} possédant deux attributs
+: \texttt{valeur} pour la valeur de l'élément (l'entier, dans notre
+exemple) ; et \texttt{suivant} pour le maillon suivant de la liste.}
+\begin{exemple}
+    \emph{Exemple 1 : pour affecter à \texttt{m2} le maillon contenant la
+valeur \texttt{3} et n'ayant aucun maillon suivant on écrira
+l'instruction \texttt{m2\ =\ Maillon(3,\ None)}.}
+
+        \end{exemple}\begin{exemple}
+    \emph{Exemple 2 : Pour construire une liste, on applique le constructeur
+autant de fois qu'il y a d'éléments dans la liste. Ainsi pour construire
+la liste 1, 2, 3 du schéma que l'on stocke dans la variable \texttt{lst}
+on écrira :
+\texttt{lst\ =\ Maillon(1,\ Maillon(2,\ Maillon(3,\ None)))}.}
+
+        \end{exemple}
+        {\scriptsize
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{11}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kn}{from} \PY{n+nn}{doctest} \PY{k+kn}{import} \PY{n}{testmod}
+
+\PY{k}{class} \PY{n+nc}{Maillon}\PY{p}{:}
+    \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\PY{l+s+sd}{    Une classe pour représenter le maillon d\PYZsq{}une liste}
+
+\PY{l+s+sd}{    Attributs}
+\PY{l+s+sd}{    \PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}
+\PY{l+s+sd}{    valeur : type}
+\PY{l+s+sd}{        valeur contenue dans le maillon}
+\PY{l+s+sd}{    suivant : maillon}
+\PY{l+s+sd}{        maillon suivant ou None si pas de maillon}
+\PY{l+s+sd}{    \PYZdq{}\PYZdq{}\PYZdq{}}
+
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{valeur}\PY{p}{,} \PY{n}{suivant}\PY{p}{)}\PY{p}{:}
+        \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Constructeur de classe}
+
+\PY{l+s+sd}{        Args:}
+\PY{l+s+sd}{            valeur (type): valeur stockée dans le maillon}
+\PY{l+s+sd}{            suivant (maillon): maillon suivant ou None}
+
+\PY{l+s+sd}{        Exemples et tests:}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} l3 = Maillon(3, None)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} assert (l3.valeur == 3)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} assert (l3.suivant == None)}
+\PY{l+s+sd}{        }
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} l2 = Maillon(2, l3)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} assert (l2.valeur == 2)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} assert (l2.suivant.valeur == 3)}
+
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} l1 = Maillon(1, l2)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} assert (l1.valeur == 1)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} assert (l1.suivant.valeur == 2)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} assert (l1.suivant.suivant.valeur == 3)}
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} assert (l1.suivant.suivant.suivant == None)}
+\PY{l+s+sd}{        }
+\PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} l1.suivant.suivant.suivant.valeur}
+\PY{l+s+sd}{        Traceback (most recent call last):}
+\PY{l+s+sd}{        AttributeError: \PYZsq{}NoneType\PYZsq{} object has no attribute \PYZsq{}valeur\PYZsq{}}
+\PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{valeur} \PY{o}{=} \PY{n}{valeur}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{suivant} \PY{o}{=} \PY{n}{suivant}
+
+
+
+\PY{n}{lst} \PY{o}{=} \PY{n}{Maillon}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{Maillon}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{Maillon}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,} \PY{k+kc}{None}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+
+\PY{n}{testmod}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+    }
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{11}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+TestResults(failed=0, attempted=12)
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{figure}
+\centering
+\includegraphics{maillon.png}
+\caption{exemple de liste avec la classe Maillon}
+\end{figure}
+
+    La valeur contenue dans la variable lst est l'adresse mémoire de l'objet
+contenant la valeur 1,
+
+    \hypertarget{duxe9finition-ruxe9cursive-dune-liste-chauxeenuxe9e}{%
+\subsubsection{Définition récursive d'une liste
+chaînée}\label{duxe9finition-ruxe9cursive-dune-liste-chauxeenuxe9e}}
+
+Comme on le voit, une liste est soit la valeur \texttt{None}, soit un
+objet de la classe \texttt{Maillon} dont l'attribut \texttt{suivant}
+contient une liste. C'est là une \textbf{définition récursive} de la
+notion de liste.
+\begin{remarque}
+    \textbf{Représentation alternatives}
+
+On peut représenter une liste chaînée par autre chose qu'un classe :
+
+\begin{itemize}
+\tightlist
+\item
+  avec des couples : \texttt{lst\ =\ (1,\ (2,\ (3,\ None)))}
+\item
+  avec des tableaux à deux éléments :
+  \texttt{lst\ =\ {[}1,\ {[}2,\ {[}3,\ None{]}{]}{]}}
+\item
+  avec des champs nommés (dictionnaires)
+\end{itemize}
+
+        \end{remarque}\begin{remarque}
+    \textbf{Variantes des listes chaînées}
+
+Il existe de nombreuses variantes des listes chaînées :
+
+\begin{itemize}
+\tightlist
+\item
+  listes cycliques (le dernier élément est lié au premier)
+\item
+  listes doublement chaînées où chaque élément est lié à l'élément
+  suivant \textbf{et} à l'élément précédent dans la liste
+\item
+  listes cycliques doublement chaînées
+\item
+  etc.
+\end{itemize}
+
+        \end{remarque}
 
     % Add a bibliography block to the postdoc
     
