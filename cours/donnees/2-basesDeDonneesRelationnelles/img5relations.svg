@@ -1,0 +1,110 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="438" height="280" view_box="0 0 438 280"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:link="http://www.w3.org/1999/xlink">\n\n<desc>Généré par Mocodo 2.3.7 le Wed, 01 Dec 2021 13:34:18</desc>
+
+<rect id="frame" x="0" y="0" width="438" height="280" fill="#ffffff" stroke="none" stroke-width="0"/>
+
+<!-- Entity emprunt -->
+<g id="entity-emprunt">
+	<g id="frame-emprunt">
+		<rect x="41" y="161" width="90" height="25" fill="#bababa" stroke="#bababa" stroke-width="0"/>
+		<rect x="41" y="186.0" width="90" height="43" fill="#e0e0e0" stroke="#e0e0e0" stroke-width="0"/>
+		<rect x="41" y="161" width="90" height="68" fill="none" stroke="#878787" stroke-width="2"/>
+		<line x1="41" y1="186" x2="131" y2="186" stroke="#878787" stroke-width="1"/>
+	</g>
+	<text x="60" y="178.7" fill="#000000" font-family="Verdana" font-size="12">emprunt</text>
+	<text x="46" y="203.8" fill="#000000" font-family="Verdana" font-size="12">#code_barre</text>
+	<line x1="46" y1="206" x2="125" y2="206" stroke="#000000" stroke-width="1"/>
+	<text x="46" y="220.8" fill="#000000" font-family="Verdana" font-size="12">#isbn</text>
+	<line x1="46" y1="223" x2="81" y2="223" stroke="#000000" stroke-width="1"/>
+</g>
+
+<!-- Entity livre -->
+<g id="entity-livre">
+	<g id="frame-livre">
+		<rect x="59" y="9" width="54" height="25" fill="#bababa" stroke="#bababa" stroke-width="0"/>
+		<rect x="59" y="34.0" width="54" height="77" fill="#e0e0e0" stroke="#e0e0e0" stroke-width="0"/>
+		<rect x="59" y="9" width="54" height="102" fill="none" stroke="#878787" stroke-width="2"/>
+		<line x1="59" y1="34" x2="113" y2="34" stroke="#878787" stroke-width="1"/>
+	</g>
+	<text x="72" y="26.7" fill="#000000" font-family="Verdana" font-size="12">livre</text>
+	<text x="64" y="51.7" fill="#000000" font-family="Verdana" font-size="12">isbn</text>
+	<line x1="64" y1="54" x2="90" y2="54" stroke="#000000" stroke-width="1"/>
+	<text x="64" y="68.8" fill="#000000" font-family="Verdana" font-size="12">titre</text>
+	<text x="64" y="85.8" fill="#000000" font-family="Verdana" font-size="12">editeur</text>
+	<text x="64" y="102.8" fill="#000000" font-family="Verdana" font-size="12">annee</text>
+</g>
+
+<!-- Entity auteur -->
+<g id="entity-auteur">
+	<g id="frame-auteur">
+		<rect x="339" y="18" width="58" height="25" fill="#bababa" stroke="#bababa" stroke-width="0"/>
+		<rect x="339" y="43.0" width="58" height="59" fill="#e0e0e0" stroke="#e0e0e0" stroke-width="0"/>
+		<rect x="339" y="18" width="58" height="84" fill="none" stroke="#878787" stroke-width="2"/>
+		<line x1="339" y1="43" x2="397" y2="43" stroke="#878787" stroke-width="1"/>
+	</g>
+	<text x="348" y="35.7" fill="#000000" font-family="Verdana" font-size="12">auteur</text>
+	<text x="344" y="60.8" fill="#000000" font-family="Verdana" font-size="12">a_id</text>
+	<line x1="344" y1="63" x2="371" y2="63" stroke="#000000" stroke-width="1"/>
+	<text x="344" y="77.8" fill="#000000" font-family="Verdana" font-size="12">nom</text>
+	<text x="344" y="94.8" fill="#000000" font-family="Verdana" font-size="12">prenom</text>
+</g>
+
+<!-- Entity usager -->
+<g id="entity-usager">
+	<g id="frame-usager">
+		<rect x="195" y="119" width="80" height="25" fill="#bababa" stroke="#bababa" stroke-width="0"/>
+		<rect x="195" y="144.0" width="80" height="127" fill="#e0e0e0" stroke="#e0e0e0" stroke-width="0"/>
+		<rect x="195" y="119" width="80" height="152" fill="none" stroke="#878787" stroke-width="2"/>
+		<line x1="195" y1="144" x2="275" y2="144" stroke="#878787" stroke-width="1"/>
+	</g>
+	<text x="214" y="136.7" fill="#000000" font-family="Verdana" font-size="12">usager</text>
+	<text x="200" y="161.7" fill="#000000" font-family="Verdana" font-size="12">code_barre</text>
+	<line x1="200" y1="164" x2="269" y2="164" stroke="#000000" stroke-width="1"/>
+	<text x="200" y="178.7" fill="#000000" font-family="Verdana" font-size="12">nom</text>
+	<text x="200" y="195.8" fill="#000000" font-family="Verdana" font-size="12">prenom</text>
+	<text x="200" y="212.8" fill="#000000" font-family="Verdana" font-size="12">adresse</text>
+	<text x="200" y="229.8" fill="#000000" font-family="Verdana" font-size="12">cp</text>
+	<text x="200" y="246.8" fill="#000000" font-family="Verdana" font-size="12">ville</text>
+	<text x="200" y="263.8" fill="#000000" font-family="Verdana" font-size="12">email</text>
+</g>
+
+<!-- Entity auteur de -->
+<g id="entity-auteur de">
+	<g id="frame-auteur de">
+		<rect x="200" y="26" width="70" height="25" fill="#bababa" stroke="#bababa" stroke-width="0"/>
+		<rect x="200" y="51.0" width="70" height="43" fill="#e0e0e0" stroke="#e0e0e0" stroke-width="0"/>
+		<rect x="200" y="26" width="70" height="68" fill="none" stroke="#878787" stroke-width="2"/>
+		<line x1="200" y1="51" x2="270" y2="51" stroke="#878787" stroke-width="1"/>
+	</g>
+	<text x="205" y="43.7" fill="#000000" font-family="Verdana" font-size="12">auteur de</text>
+	<text x="205" y="68.8" fill="#000000" font-family="Verdana" font-size="12">#a_id</text>
+	<line x1="205" y1="71" x2="241" y2="71" stroke="#000000" stroke-width="1"/>
+	<text x="205" y="85.8" fill="#000000" font-family="Verdana" font-size="12">#isbn</text>
+	<line x1="205" y1="88" x2="240" y2="88" stroke="#000000" stroke-width="1"/>
+</g>
+
+<!-- Link from "code_barre" (emprunt) to "code_barre" (usager) -->
+<path d="M131 199.5 C 163.0 178.5 152.333333333 157.5 195 157.5" fill="none" stroke="#d6604d" stroke-width="2"/>
+<path d="M 195 157.5 L 183.0 163.5 L 187.0 157.5 L 183.0 151.5 Z" fill="#d6604d" stroke-width="0"/>
+<circle cx="131" cy="199.5" r="2" stroke="#d6604d" stroke-width="2" fill="#d6604d"/>
+
+<!-- Link from "isbn" (emprunt) to "isbn" (livre) -->
+<path d="M41 216.5 C -13 132.0 5 47.5 59 47.5" fill="none" stroke="#d6604d" stroke-width="2"/>
+<path d="M 59 47.5 L 47.0 53.5 L 51.0 47.5 L 47.0 41.5 Z" fill="#d6604d" stroke-width="0"/>
+<circle cx="41" cy="216.5" r="2" stroke="#d6604d" stroke-width="2" fill="#d6604d"/>
+
+<!-- Link from "a_id" (auteur de) to "a_id" (auteur) -->
+<path d="M270 64.5 C 304.5 60.5 293.0 56.5 339 56.5" fill="none" stroke="#d6604d" stroke-width="2"/>
+<path d="M 339 56.5 L 327.0 62.5 L 331.0 56.5 L 327.0 50.5 Z" fill="#d6604d" stroke-width="0"/>
+<circle cx="270" cy="64.5" r="2" stroke="#d6604d" stroke-width="2" fill="#d6604d"/>
+
+<!-- Link from "isbn" (auteur de) to "isbn" (livre) -->
+<path d="M200 81.5 C 156.5 64.5 171.0 47.5 113 47.5" fill="none" stroke="#d6604d" stroke-width="2"/>
+<path d="M 113 47.5 L 125.0 41.5 L 121.0 47.5 L 125.0 53.5 Z" fill="#d6604d" stroke-width="0"/>
+<circle cx="200" cy="81.5" r="2" stroke="#d6604d" stroke-width="2" fill="#d6604d"/>
+</svg>
