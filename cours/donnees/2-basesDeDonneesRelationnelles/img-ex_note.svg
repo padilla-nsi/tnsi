@@ -1,0 +1,65 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="380" height="102" view_box="0 0 380 102"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:link="http://www.w3.org/1999/xlink">\n\n<desc>Généré par Mocodo 2.3.7 le Sat, 04 Dec 2021 11:07:11</desc>
+
+<rect id="frame" x="0" y="0" width="380" height="102" fill="#ffffff" stroke="none" stroke-width="0"/>
+
+<!-- Entity note -->
+<g id="entity-note">
+	<g id="frame-note">
+		<rect x="163" y="9" width="54" height="25" fill="#bababa" stroke="#bababa" stroke-width="0"/>
+		<rect x="163" y="34.0" width="54" height="59" fill="#e0e0e0" stroke="#e0e0e0" stroke-width="0"/>
+		<rect x="163" y="9" width="54" height="84" fill="none" stroke="#878787" stroke-width="2"/>
+		<line x1="163" y1="34" x2="217" y2="34" stroke="#878787" stroke-width="1"/>
+	</g>
+	<text x="176" y="26.7" fill="#000000" font-family="Verdana" font-size="12">note</text>
+	<text x="168" y="51.8" fill="#000000" font-family="Verdana" font-size="12">num</text>
+	<line x1="168" y1="54" x2="196" y2="54" stroke="#000000" stroke-width="1"/>
+	<text x="168" y="68.8" fill="#000000" font-family="Verdana" font-size="12">mat_id</text>
+	<line x1="168" y1="71" x2="211" y2="71" stroke="#000000" stroke-width="1"/>
+	<text x="168" y="85.8" fill="#000000" font-family="Verdana" font-size="12">note</text>
+</g>
+
+<!-- Entity matiere -->
+<g id="entity-matiere">
+	<g id="frame-matiere">
+		<rect x="281" y="17" width="58" height="25" fill="#bababa" stroke="#bababa" stroke-width="0"/>
+		<rect x="281" y="42.0" width="58" height="43" fill="#e0e0e0" stroke="#e0e0e0" stroke-width="0"/>
+		<rect x="281" y="17" width="58" height="68" fill="none" stroke="#878787" stroke-width="2"/>
+		<line x1="281" y1="42" x2="339" y2="42" stroke="#878787" stroke-width="1"/>
+	</g>
+	<text x="286" y="34.7" fill="#000000" font-family="Verdana" font-size="12">matiere</text>
+	<text x="286" y="59.8" fill="#000000" font-family="Verdana" font-size="12">mat_id</text>
+	<line x1="286" y1="62" x2="329" y2="62" stroke="#000000" stroke-width="1"/>
+	<text x="286" y="76.8" fill="#000000" font-family="Verdana" font-size="12">intitule</text>
+</g>
+
+<!-- Entity eleve -->
+<g id="entity-eleve">
+	<g id="frame-eleve">
+		<rect x="41" y="9" width="58" height="25" fill="#bababa" stroke="#bababa" stroke-width="0"/>
+		<rect x="41" y="34.0" width="58" height="59" fill="#e0e0e0" stroke="#e0e0e0" stroke-width="0"/>
+		<rect x="41" y="9" width="58" height="84" fill="none" stroke="#878787" stroke-width="2"/>
+		<line x1="41" y1="34" x2="99" y2="34" stroke="#878787" stroke-width="1"/>
+	</g>
+	<text x="53" y="26.7" fill="#000000" font-family="Verdana" font-size="12">eleve</text>
+	<text x="46" y="51.8" fill="#000000" font-family="Verdana" font-size="12">num</text>
+	<line x1="46" y1="54" x2="74" y2="54" stroke="#000000" stroke-width="1"/>
+	<text x="46" y="68.8" fill="#000000" font-family="Verdana" font-size="12">nom</text>
+	<text x="46" y="85.8" fill="#000000" font-family="Verdana" font-size="12">prenom</text>
+</g>
+
+<!-- Link from "num" (note) to "num" (eleve) -->
+<path d="M163 47.5 C 131.0 47.5 141.666666667 47.5 99 47.5" fill="none" stroke="#d6604d" stroke-width="2"/>
+<path d="M 99 47.5 L 111.0 41.5 L 107.0 47.5 L 111.0 53.5 Z" fill="#d6604d" stroke-width="0"/>
+<circle cx="163" cy="47.5" r="2" stroke="#d6604d" stroke-width="2" fill="#d6604d"/>
+
+<!-- Link from "mat_id" (note) to "mat_id" (matiere) -->
+<path d="M217 64.5 C 249.0 60.0 238.333333333 55.5 281 55.5" fill="none" stroke="#d6604d" stroke-width="2"/>
+<path d="M 281 55.5 L 269.0 61.5 L 273.0 55.5 L 269.0 49.5 Z" fill="#d6604d" stroke-width="0"/>
+<circle cx="217" cy="64.5" r="2" stroke="#d6604d" stroke-width="2" fill="#d6604d"/>
+</svg>
