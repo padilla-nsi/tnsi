@@ -252,7 +252,7 @@
     \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
     % Document parameters
     % Document title
-    \title{01-SQL-Mediatheque-Eleve}
+    \title{01-SQL-Mediatheque-Prof}
     
     
     
@@ -467,7 +467,7 @@
       citecolor=citecolor,
       }
     % Slightly bigger margins than the latex defaults
-    \geometry{a4paper,tmargin=3cm,bmargin=2cm,lmargin=1cm,rmargin=1cm}\fancyhead[L]{Thème à définir}\fancyhead[L]{\adjustimage{height=1cm, valign=m}{/home/bouscadilla/Documents/Code/nbconvert/template/latex/pdf_solution/papier_eleve_ico_data}\ttfamily\scshape Données}\fancyhead[C]{\bfseries\MakeUppercase{01-SQL-Mediatheque-Eleve}}\fancyhead[C]{\bfseries\MakeUppercase{8 --- Base de donnée relationnelle}}\fancyhead[R]{\monthyeardate\today}
+    \geometry{a4paper,tmargin=3cm,bmargin=2cm,lmargin=1cm,rmargin=1cm}\fancyhead[L]{Thème à définir}\fancyhead[L]{\adjustimage{height=1cm, valign=m}{/home/bouscadilla/Documents/Code/nbconvert/template/latex/pdf_solution/papier_eleve_ico_data}\ttfamily\scshape Données}\fancyhead[C]{\bfseries\MakeUppercase{01-SQL-Mediatheque-Prof}}\fancyhead[C]{\bfseries\MakeUppercase{8 --- Base de donnée relationnelle}}\fancyhead[R]{\monthyeardate\today}
 
     \fancyfoot[C]{\thepage}
     % #TODO ajouter les pages totales
@@ -522,9 +522,8 @@ Pour cela :
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{o}{\PYZhy{}}\PY{o}{\PYZhy{}} \PY{n}{Commandes} \PY{n}{pour} \PY{n}{effacer} \PY{n}{les} \PY{n}{relations}
-\PY{o}{\PYZhy{}}\PY{o}{\PYZhy{}}
-\PY{o}{\PYZhy{}}\PY{o}{\PYZhy{}} \PY{n}{utile} \PY{n}{en} \PY{n}{cas} \PY{n}{d}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{erreurs pour recommencer calmement}
+\PY{o}{\PYZhy{}}\PY{o}{\PYZhy{}} \PY{n}{Commandes} \PY{n}{pour} \PY{n}{effacer} \PY{n}{les} \PY{n}{relations} 
+\PY{o}{\PYZhy{}}\PY{o}{\PYZhy{}} \PY{n}{utiles} \PY{n}{en} \PY{n}{cas} \PY{n}{d}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{erreurs pour recommencer calmement}
 \PY{o}{\PYZhy{}}\PY{o}{\PYZhy{}} 
 \PY{o}{\PYZhy{}}\PY{o}{\PYZhy{}} \PY{n}{DROP} \PY{n}{TABLE} \PY{n}{IF} \PY{n}{EXISTS} \PY{n}{auteur\PYZus{}de}\PY{p}{;}
 \PY{o}{\PYZhy{}}\PY{o}{\PYZhy{}} \PY{n}{DROP} \PY{n}{TABLE} \PY{n}{IF} \PY{n}{EXISTS} \PY{n}{livre}\PY{p}{;}
@@ -689,7 +688,22 @@ relation \texttt{auteur} ayant le schéma suivant :
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZhy{}}\PY{o}{\PYZhy{}} \PY{n}{Commandes} \PY{n}{pour} \PY{n}{effacer} \PY{n}{les} \PY{n}{relations} 
+\PY{o}{\PYZhy{}}\PY{o}{\PYZhy{}} \PY{n}{utiles} \PY{n}{en} \PY{n}{cas} \PY{n}{d}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{erreurs pour recommencer calmement}
+\PY{o}{\PYZhy{}}\PY{o}{\PYZhy{}} 
+\PY{o}{\PYZhy{}}\PY{o}{\PYZhy{}} \PY{n}{DROP} \PY{n}{TABLE} \PY{n}{IF} \PY{n}{EXISTS} \PY{n}{auteur\PYZus{}de}\PY{p}{;}
+\PY{o}{\PYZhy{}}\PY{o}{\PYZhy{}} \PY{n}{DROP} \PY{n}{TABLE} \PY{n}{IF} \PY{n}{EXISTS} \PY{n}{auteur}\PY{p}{;}
+\end{Verbatim}
+\end{tcolorbox}
+    }
 
+        {\scriptsize
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{CREATE} \PY{n}{TABLE} \PY{n}{auteur} \PY{p}{(}\PY{n}{a\PYZus{}id} \PY{n}{INTEGER} \PY{n}{PRIMARY} \PY{n}{KEY}\PY{p}{,}
+                     \PY{n}{nom} \PY{n}{TEXT}\PY{p}{,}
+                     \PY{n}{prenom} \PY{n}{TEXT}\PY{p}{)}\PY{p}{;}
 \end{Verbatim}
 \end{tcolorbox}
     }
@@ -728,7 +742,21 @@ relation \texttt{auteur} ayant le schéma suivant :
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-
+\PY{n}{INSERT} \PY{n}{INTO} \PY{n}{auteur} \PY{n}{VALUES}
+    \PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Twain}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Mark}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,}
+    \PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Asimov}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Isaac}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,}
+    \PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Ōtomo}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Katsuhiro}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,}
+    \PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Martelle}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Myriam}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,}
+    \PY{p}{(}\PY{l+m+mi}{4}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Touache}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Sébastien}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,}
+    \PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Goscinny}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{René}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,}
+    \PY{p}{(}\PY{l+m+mi}{6}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Ferri}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Jean\PYZhy{}Yves}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,}
+    \PY{p}{(}\PY{l+m+mi}{7}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Uderzo}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Albert}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,}
+    \PY{p}{(}\PY{l+m+mi}{8}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Conrad}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Didier}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,}
+    \PY{p}{(}\PY{l+m+mi}{9}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{SILVERBERG}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Robert}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,}
+    \PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Swift}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Jonathan}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,}
+    \PY{p}{(}\PY{l+m+mi}{11}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Ligaran}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,}
+    \PY{p}{(}\PY{l+m+mi}{12}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Nabokov}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Vladimir}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,}
+    \PY{p}{(}\PY{l+m+mi}{13}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{BARJAVEL}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{René}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{;}
 \end{Verbatim}
 \end{tcolorbox}
     }
@@ -745,7 +773,7 @@ relation \texttt{auteur} ayant le schéma suivant :
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-
+\PY{n}{SELECT} \PY{o}{*} \PY{n}{FROM} \PY{n}{auteur}\PY{p}{;}
 \end{Verbatim}
 \end{tcolorbox}
     }
@@ -805,9 +833,7 @@ définitions des attributs, on va ajouter trois lignes :
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{o}{\PYZhy{}}\PY{o}{\PYZhy{}} \PY{n}{en} \PY{n}{cas} \PY{n}{d}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{erreur, décommenter...}
-\PY{o}{\PYZhy{}}\PY{o}{\PYZhy{}}
-\PY{o}{\PYZhy{}}\PY{o}{\PYZhy{}} \PY{n}{DROP} \PY{n}{TABLE} \PY{n}{IF} \PY{n}{EXISTS} \PY{n}{auteur\PYZus{}de}\PY{p}{;}
+\PY{n}{DROP} \PY{n}{TABLE} \PY{n}{IF} \PY{n}{EXISTS} \PY{n}{auteur\PYZus{}de}\PY{p}{;}
 \end{Verbatim}
 \end{tcolorbox}
     }

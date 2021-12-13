@@ -252,7 +252,7 @@
     \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
     % Document parameters
     % Document title
-    \title{7-1---modeleRelationnel}
+    \title{02-SQL-TDetCours}
     
     
     
@@ -467,7 +467,7 @@
       citecolor=citecolor,
       }
     % Slightly bigger margins than the latex defaults
-    \geometry{a4paper,tmargin=3cm,bmargin=2cm,lmargin=1cm,rmargin=1cm}\fancyhead[L]{Thème à définir}\fancyhead[L]{\adjustimage{height=1cm, valign=m}{/home/bouscadilla/Documents/Code/nbconvert/template/latex/pdf_solution/papier_eleve_ico_data}\ttfamily\scshape Données}\fancyhead[C]{\bfseries\MakeUppercase{7-1---modeleRelationnel}}\fancyhead[C]{\bfseries\MakeUppercase{7 --- Modèle relationnel}}\fancyhead[R]{\monthyeardate\today}
+    \geometry{a4paper,tmargin=3cm,bmargin=2cm,lmargin=1cm,rmargin=1cm}\fancyhead[L]{Thème à définir}\fancyhead[L]{\adjustimage{height=1cm, valign=m}{/home/bouscadilla/Documents/Code/nbconvert/template/latex/pdf_solution/papier_eleve_ico_data}\ttfamily\scshape Données}\fancyhead[C]{\bfseries\MakeUppercase{02-SQL-TDetCours}}\fancyhead[C]{\bfseries\MakeUppercase{8 --- Base de donnée relationnelle}}\fancyhead[R]{\monthyeardate\today}
 
     \fancyfoot[C]{\thepage}
     % #TODO ajouter les pages totales
@@ -478,420 +478,399 @@
 
 \begin{document}
     
-    \title{7 --- Modèle relationnel}
+    \title{8 --- Base de donnée relationnelle}
 % \maketitle
 
     
     
 
     
-    \hypertarget{chap.-7-moduxe8le-relationnel}{%
-\section{Chap. 7 --- Modèle
-relationnel}\label{chap.-7-moduxe8le-relationnel}}
+    \hypertarget{bases-de-donnuxe9es-relationnelles-en-sql}{%
+\section{Bases de données relationnelles en
+SQL}\label{bases-de-donnuxe9es-relationnelles-en-sql}}
 
-    \hypertarget{exemple-de-la-bibliothuxe8quemuxe9diathuxe8que}{%
-\subsubsection{Exemple de la
-bibliothèque/médiathèque}\label{exemple-de-la-bibliothuxe8quemuxe9diathuxe8que}}
+    \hypertarget{impluxe9mentation-de-contraintes-suppluxe9mentaires}{%
+\subsection{Implémentation de contraintes
+supplémentaires}\label{impluxe9mentation-de-contraintes-suppluxe9mentaires}}
 
-    Si on imagine le fonctionnement d'une bibliothèque, on réalise que la
-gestion des personnes, des objets, mais aussi des liens qui les relient,
-est complexe.
-
-    \begin{itemize}
-\tightlist
-\item
-  il faut lister les personnes, les objets et les relations (usager,
-  livre, emprunt, employé, etc.)
-\item
-  pour chaque élément de la liste, il faut choisir les données
-  pertinentes et donc procéder à une approximation des données : c'est
-  la \textbf{modélisation}
-\end{itemize}
-
-Lors du fonctionnement du système, il faut fournir un certains nombres
-de services :
+    Lorsque l'on crée une relation, on peut ajouter des contraintes
+d'intégrités autres que clés primaires (\texttt{PRIMARY\ KEY}) ou
+étrangères (\texttt{FOREIGN\ KEY\ ...\ REFERENCES\ ...}).
 
 \begin{itemize}
 \tightlist
 \item
-  garantir l'absence d'erreur
+  \texttt{UNIQUE} : la valeur de l'attribut doit être unique
 \item
-  permettre l'ajout/suppression de données
-\item
-  gérer les droits (car un usager ne doit pas avoir les même
-  possibilités qu'un employé)
-\item
-  etc.
+  \texttt{NOT\ NULL} : la valeur de l'attribut de peut pas être laissée
+  vide (attention, contrairement à Python la chaîne de caractère vide
+  \texttt{\textquotesingle{}\textquotesingle{}} n'est pas égale à
+  \texttt{NULL} !)(j'insiste :
+  \texttt{\textquotesingle{}\textquotesingle{}} \(\neq\) \texttt{NULL})
 \end{itemize}
 
-C'est dans ce but qu'ont été mis en place les \textbf{systèmes de
-gestion de bases de données}.
+    Exemple d'utilisation de \texttt{UNIQUE} et \texttt{NOT\ NULL}
 
-    \hypertarget{le-moduxe8le-relationnel}{%
-\subsection{7.1 --- Le modèle
-relationnel}\label{le-moduxe8le-relationnel}}
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{CREATE} \KeywordTok{TABLE}\NormalTok{ livre (titre TEXT }\KeywordTok{NOT} \KeywordTok{NULL}\NormalTok{,}
+\NormalTok{                    editeur TEXT }\KeywordTok{NOT} \KeywordTok{NULL}\NormalTok{,}
+\NormalTok{                    annee }\DataTypeTok{INTEGER} \KeywordTok{NOT} \KeywordTok{NULL}\NormalTok{,}
+\NormalTok{                    isbn TEXT }\KeywordTok{UNIQUE} \KeywordTok{NOT} \KeywordTok{NULL} \KeywordTok{PRIMARY} \KeywordTok{KEY}\NormalTok{);}
+\end{Highlighting}
+\end{Shaded}
 
-    Le modèle relationnel est une façon de représenter et de manipuler les
-bases de données.
+    Remarque : il est redondant d'écrire \texttt{PRIMARY\ KEY} et
+\texttt{NOT\ NULL\ UNIQUE}. Cependant, à cause d'un bug de DBeaver avec
+SQLITE on prendra la peine d'ajouter explicitement
+\texttt{NOT\ NULL\ UNIQUE} pour un attribut de contrainte clé primaire.
 
-    Ce modèle se fonde sur quelques principes essentiels
+    Pour les chaînes de caractères, il existe est possible d'expliciter un
+nombre fixe de caractères ou un nombre variable :
 
 \begin{itemize}
 \tightlist
 \item
-  une assise mathématique forte sur la théorie des ensembles
+  \texttt{VARCHAR(}\(n\)\texttt{)} : chaîne de caractère de taille
+  variable d'au plus \(n\) caractères
 \item
-  une implémentation informatique très proche des mathématiques
-\item
-  une formulation des énoncés sous forme de termes \textbf{logiques}
-\item
-  une ensemble d'opérations élémentaires que l'on peut enchaîner pour
-  créer des requêtes complexes
+  \texttt{CHAR(}\(n\)\texttt{)} : chaîne de caractère de taille \(n\)
+  (si la valeur est inférieure à n, des espaces sont ajoutées)
 \end{itemize}
 
-    \hypertarget{moduxe8le-de-donnuxe9es-structure-de-donnuxe9es}{%
-\subsubsection{Modèle de données, structure de
-données}\label{moduxe8le-de-donnuxe9es-structure-de-donnuxe9es}}
+    Par exemple, on peut explicitement indiquer que l'\texttt{isbn} possède
+14 caractères et que \texttt{titre} et \texttt{editeur} du livre ne
+dépassent pas 90 caractères de la façon suivante :
 
-    Attention, le chapitre \emph{modèle de données} n'est pas lié au
-chapitre \emph{structure de données} :
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{CREATE} \KeywordTok{TABLE}\NormalTok{ livre (titre }\DataTypeTok{VARCHAR}\NormalTok{(}\DecValTok{90}\NormalTok{) }\KeywordTok{NOT} \KeywordTok{NULL}\NormalTok{,}
+\NormalTok{                    editeur }\DataTypeTok{VARCHAR}\NormalTok{(}\DecValTok{90}\NormalTok{) }\KeywordTok{NOT} \KeywordTok{NULL}\NormalTok{,}
+\NormalTok{                    annee }\DataTypeTok{INTEGER} \KeywordTok{NOT} \KeywordTok{NULL}\NormalTok{,}
+\NormalTok{                    isbn }\DataTypeTok{CHAR}\NormalTok{(}\DecValTok{14}\NormalTok{) }\KeywordTok{UNIQUE} \KeywordTok{NOT} \KeywordTok{NULL} \KeywordTok{PRIMARY} \KeywordTok{KEY}\NormalTok{);}
+\end{Highlighting}
+\end{Shaded}
 
-\begin{itemize}
+    \hypertarget{activituxe9-avec-dbeaver}{%
+\subsection{Activité avec DBeaver}\label{activituxe9-avec-dbeaver}}
+
+    Vous allez créer votre première base avec DBeaver CE.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  structure de données : s'intéresse à la façon d'organiser les données
-  en machine (tableaux, piles, files, objets, etc.)
+  Créer un fichier vide nommé \texttt{annuaire.db} (par exemple dans un
+  terminal, dans le répertoire de votre choix écrire :
+  \texttt{touch\ annuaire.db}).
 \item
-  modèle de données : s'intéresse à information contenue dans ces
-  données. L'implémentation machine est complètement occultée par le
-  SGBD.
-\end{itemize}
-
-Ce sont donc deux niveaux d'\textbf{abstractions} différents. Le modèle
-de donnée est d'un niveau plus élevé.
-
-    \hypertarget{moduxe9lisation-relationnelle-des-donnuxe9es}{%
-\subsection{7.2 --- Modélisation relationnelle des
-données}\label{moduxe9lisation-relationnelle-des-donnuxe9es}}
-
-    Le modèle relationnel a été inventé par \textbf{Edgar Cobb}, ingénieur
-travaillant pour IBM, dans les années 1970.
-
-Son travail théorique (mathématique) a prouvé la forte cohérence de son
-modèle ainsi que sa puissance.
-
-L'implémentation de ce modèle quelques années plus tard a donné lieu à
-un outil robuste et efficace qui a dominé le monde professionnel à
-partir des années 1980.
-
-\textbf{Les bases de données sont partout} : la gestion d'une entreprise
-(salariés, payes, gestion, comptabilité, etc.), des produits (stocks,
-entrées, sorties, valeurs, etc.), des clients (paniers, cartes
-fidélités, etc.) ou encore actuellement des catalogues (photos, e-mails,
-musiques, etc.) ou des réseaux sociaux
-
-    \hypertarget{principes-guxe9nuxe9raux}{%
-\subsubsection{Principes généraux}\label{principes-guxe9nuxe9raux}}
-
-    Pour énoncer les principes du modèle relationnel, nous allons en
-détailler et décrire ses \textbf{constituants} qui sont :
-
-\begin{itemize}
-\tightlist
+  Ouvrir DBeaver CE
 \item
-  nom
-\item
-  domaine
-\item
-  attribut
-\item
-  entités
-\item
-  relation
-\item
-  schéma
-\item
-  base de donnée
-\end{itemize}
+  Créer une nouvelle connexion :
 
-    \begin{itemize}
-\tightlist
-\item
-  objet (\textbf{entité}) : n-uplet
-
-  \begin{itemize}
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
   \tightlist
   \item
-    \texttt{("Introduction\ à\ l\textquotesingle{}algorithmique":\ String,\ "Thomas\ Cormen":\ String,\ "Dunod":\ String,\ 01/12/1994\ :\ Time,\ "2-10-001933-3":\ String)}
-  \end{itemize}
-\item
-  collection (\textbf{relation}) : ensemble de nuplets
-
-  \begin{itemize}
-  \tightlist
+    de type SQLite
   \item
-    \texttt{\{\ ("Introduction\ à\ l\textquotesingle{}algorithmique",\ "Thomas\ Cormen",\ "Dunod",\ 01/12/1994,\ "2-10-001933-3"),\ ("Python\ pour\ le\ data\ scientist",\ "Emmanuel\ Jakobowicz",\ "Dunod",\ 03/03/2021,\ "978-2-10-081224-0\ "),\ ("Astérix\ Tome\ 39",\ "Didier\ Conrad",\ "Albert\ René\ (Editions)",\ 21/10/2021,\ "9782864973492"),\ ...\ \}}
-  \end{itemize}
-\item
-  \textbf{schéma} : pour chaque \textbf{attribut} il faut un nom et un
-  \textbf{domaine}
-  \[\text{($titre$: String, $auteur$: String, $editeur$: String, $date$: Time, $isbn$: String)}\]
-\item
-  \textbf{BDD} = ensemble des relations
-\end{itemize}
+    avec \texttt{Browse...}, sélectionner le fichier créé
+    \texttt{annuaire.db}.
+  \item
+    puis \texttt{Terminer}
+  \end{enumerate}
+\end{enumerate}
 
-    \hypertarget{moduxe9liser}{%
-\subsubsection{Modéliser}\label{moduxe9liser}}
+    \includegraphics{./img-dbeaver-connexion.png}
 
-    .
+    Maintenant que la base est créer, vous pouvez effectuer des requêtes.
+Vous allez les écrire dans un fichier où vous pourrez les exécuter
+toutes d'un seul coup (peu recommandé), ou ligne par ligne. Comme un
+notebook, chaque ligne est un block que vous pouvez exécuter 0, 1 ou
+plusieurs fois.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{Éditeur\ SQL\ \textgreater{}\ Nouveau\ script\ SQL}
+\item
+  écrire par exemple \texttt{CREATE\ TABLE\ test\ (id\ INT);}
+\item
+  puis positionner le prompt sur la ligne et exécuter l'instruction SQL
+  (clic sur le triangle de lecture ou \texttt{CTRL\ +\ Entrée})
+\item
+  Sauf erreur, la relation \texttt{test} est créée. Pour en être sûr,
+  réaliser à nouveau l'étape précédente et normalement il y aura une
+  erreur puisque la relation \emph{existe déjà}.
+\end{enumerate}
+
+Pour finir avec cette petite prise en main, vous allez insérer des
+données et afficher le contenu de la relation :
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  Dans une autre ligne du fichier, écrire
+  \texttt{INSERT\ INTO\ test\ VALUES\ (1);} et exécuter plusieurs fois
+  cette ligne (pour insérer plusieurs fois l'entité \((1)\) dans la
+  relation \(test\)).
+\item
+  Puis écrire et exécuter \texttt{SELECT\ *\ FROM\ test;}.
+\end{enumerate}
+
+Si tout s'affiche comme prévu, nous allons voir une dernière
+fonctionnalité: afficher le diagramme de la base puis effacer la
+relation\ldots{}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  Dans le panneau de gauche de \texttt{annuaire.db}, il doit être
+  possible de déplier la base pour voir s'afficher en dessous
+  \texttt{Tables\ ;\ Views\ ;\ Indexes\ ;\ Sequences\ ;\ Table\ Triggers\ ;\ Data\ Types}.
+\item
+  Double-cliquer sur \texttt{Tables}
+\item
+  Les propriétés des différentes tables (table = \emph{relation})
+  s'affichent dans l'onglet \texttt{Propriétés}
+\item
+  Actualiser la base avec \texttt{F5} puis
+\item
+  Cliquer sur l'onglet \texttt{ER\ Diagram} pour voir le diagramme de la
+  relation.
+\item
+  Si tout va bien, vous avez quelque chose qui ressemble à cela.
+\end{enumerate}
+
+    \includegraphics{./img-dbeaver.png}
 
     \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  déterminer entités à modéliser (objets, personnes, actions, etc.)
-\item
-  modéliser les entités par une relation =\textgreater{} schéma
-\item
-  définir les contraintes
+  Pour finir, vous allez supprimer la relation \texttt{test} de la base
+  en exécutant la requête \texttt{DROP\ TABLE\ test;}.
 \end{enumerate}
 
-    \hypertarget{dautres-moduxe8les}{%
-\subsubsection{D'autres modèles}\label{dautres-moduxe8les}}
+    \hypertarget{activituxe9---retour-sur-annuaire.db}{%
+\subsection{\texorpdfstring{Activité - retour sur
+\texttt{annuaire.db}}{Activité - retour sur annuaire.db}}\label{activituxe9---retour-sur-annuaire.db}}
 
-    .
+    Créer dans la base de donnée \texttt{annuaire.db} l'unique relation
+suivante :
 
-    \begin{itemize}
-\tightlist
-\item
-  paradigmes réseaux, objets, etc.
-\end{itemize}
+\[annuaire (\underline{tel}: String ,  nom: String , prenom: String)\]
 
-    \hypertarget{contraintes-dintuxe9grituxe9}{%
-\subsubsection{Contraintes
-d'intégrité}\label{contraintes-dintuxe9grituxe9}}
-
-    .
-
-    \begin{itemize}
-\tightlist
-\item
-  invariants : prop logique préservée
-\item
-  garantit la cohérence des données
-\end{itemize}
-
-    \hypertarget{contrainte-de-domaine}{%
-\paragraph{Contrainte de domaine}\label{contrainte-de-domaine}}
-
-    .
-
-    \begin{itemize}
-\tightlist
-\item
-  choix du domaine importante
-
-  \begin{itemize}
-  \tightlist
-  \item
-    il ne faut pas de perte d'information
-  \item
-    il faut limiter les valeurs illégales
-  \end{itemize}
-\end{itemize}
-
-    \hypertarget{contrainte-dentituxe9}{%
-\paragraph{Contrainte d'entité}\label{contrainte-dentituxe9}}
-
-    .
-
-    \begin{itemize}
-\tightlist
-\item
-  unicité de chaque élément
-\item
-  non ambiguë
-\item
-  clé primaire
-\end{itemize}
-
-    \hypertarget{contrainte-de-ruxe9fuxe9rence}{%
-\paragraph{Contrainte de
-référence}\label{contrainte-de-ruxe9fuxe9rence}}
-
-    .
-
-    \begin{itemize}
-\tightlist
-\item
-  clés étrangères
-\end{itemize}
-
-    Contrainte utilisateur
-
-    .
-
-    \begin{itemize}
-\tightlist
-\item
-  droits d'accès
-\end{itemize}
-
-    \hypertarget{activituxe9s}{%
-\subsection{7.3 Activités}\label{activituxe9s}}
-
-    Personne : \((id: Int, nom: Str, prénom: Str)\)
-
-Annuaire : \((id\_personne: Int, tel: Int)\)
-
-Numéro : \((tel: Int)\)
-
-    On souhaite modéliser un annuaire téléphonique simple dans lequel chaque
-personne (identifiée par son nom et son prénom) est associée à son
-numéro de téléphone.
-
-Proposer une modélisation relationnelle de cet annuaire.
-
-    On considère la solution donnée pour l'activité précédente. Dire si
-chacun des ensembles est une relation valide pour le schéma Annuaire.
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  \texttt{\{\}}
-\item
-  \texttt{\{(\textquotesingle{}Titi\textquotesingle{},\ \textquotesingle{}Toto\textquotesingle{},\ \textquotesingle{}0123456789\textquotesingle{})\}}
-\item
-  \texttt{\{(\textquotesingle{}Titi\textquotesingle{},\ \textquotesingle{}Toto\textquotesingle{},\ \textquotesingle{}0123456789\textquotesingle{}),\ (\textquotesingle{}Doe\textquotesingle{},\ \textquotesingle{}John\textquotesingle{},\ \textquotesingle{}0123456789\textquotesingle{})\}}
-\item
-  \texttt{\{(\textquotesingle{}Titi\textquotesingle{},\ \textquotesingle{}Toto\textquotesingle{},\ \textquotesingle{}0123456789\textquotesingle{}),\ (\textquotesingle{}Titi\textquotesingle{},\ \textquotesingle{}Toto\textquotesingle{},\ \textquotesingle{}987654343210\textquotesingle{})\}}
-\item
-  \texttt{\{(\textquotesingle{}Titi\textquotesingle{},\ \textquotesingle{}Toto\textquotesingle{},\ \textquotesingle{}0123456789\textquotesingle{}),\ (\textquotesingle{}Doe\textquotesingle{},\ \textquotesingle{}John\textquotesingle{})\}}
-\item
-  \texttt{\{(\textquotesingle{}Titi\textquotesingle{},\ \textquotesingle{}Toto\textquotesingle{},42)\}}
-\end{enumerate}
-
-    Donner la modélisation relationnelle d'un bulletin scolaire.
-
-Cette dernière doit permettre de mentionner
+Contraintes d'intégrités :
 
 \begin{itemize}
 \tightlist
 \item
-  des élèves, possédants un numéro d'étudiant alphanumérique unique
+  \(tel\) : clé primaire, non nulle, unique, chaîne de caractère de
+  taille variable (100 caracères max)
 \item
-  un ensemble de matières fixées, mais qui ne sont pas données
+  \(nom\) : non nul, chaîne de caractère de taille variable (100 max)
 \item
-  au plus une note sur 20, par matière et par élève.
+  \(prenom\) : non nul , chaîne de caractère de taille variable (20 max)
 \end{itemize}
 
-On prendra soin de préciser toutes les contraintes utilisateurs qui ne
-peuvent êtres inscrites dans les schémas des relations.
+    \hypertarget{impluxe9mentation-des-contraintes-de-domaines-et-nombres-duxe9cimaux}{%
+\subsection{Implémentation des contraintes de domaines et nombres
+décimaux}\label{impluxe9mentation-des-contraintes-de-domaines-et-nombres-duxe9cimaux}}
 
-    On considère la solution donnée pour l'activité précédente. Dire si
-chacun des ensembles est une relation valide pour le schéma de la base
-de données du bulletin de notes.
+    En SQL, on peut ajouter des \textbf{contraintes de domaines}. Par
+exemple on peut imposer un attribut \texttt{age} d'être toujours positif
+ou nul.
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+Pour cela, on utilise l'instruction \texttt{CHECK}. Ce qui donne :
+
+\begin{itemize}
+\tightlist
 \item
+  \texttt{CHECK\ (age\ \textgreater{}=\ 0)}
+\end{itemize}
+
+On peut utiliser les opérateurs logiques \texttt{NOT}, \texttt{AND} et
+\texttt{OR} ainsi que les parenthèses pour les priorités.
+
+    Pour les nombre flottants, il existe un type qui prend en charge le
+nombre de chiffres après la virgule et s'occupe des arrondis le cas
+échéant.
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{DECIMAL(}\(c\)\texttt{,}\(d\)\texttt{)} : permet d'afficher un
+  nombre de \(c\) chiffres (en tout) dont \(d\) sont après la virgule
+\end{itemize}
+
+    Par exemple pour afficher un nombre compris entre 0 et 999 avec une
+précision de 3 décimales, on écrira
+
+\texttt{nombre\ DECIMAL(6,\ 3)}
+
+car il y a 6 chiffres en tout dont 3 pour la partie décimale.
+
+    \hypertarget{activituxe9---base-de-donnuxe9e-note.db}{%
+\subsection{\texorpdfstring{Activité - base de donnée
+\texttt{note.db}}{Activité - base de donnée note.db}}\label{activituxe9---base-de-donnuxe9e-note.db}}
+
+    \hypertarget{cruxe9ation}{%
+\subsubsection{Création}\label{cruxe9ation}}
+
+Créer la base de donnée \texttt{note.db} et les trois relations
+suivantes :
+
+\begin{itemize}
+\tightlist
+\item
+  \(eleve(nom: String, prenom: String, \underline{num}: String)\)
+\item
+  \(matiere(intitule: String, \underline{mat\_id}: Int)\)
+\item
+  \(note(\underline{num\_eleve}: String, \underline{mat\_id}: Int, note: Float)\)
+\end{itemize}
+
+    \includegraphics{./img-ex_note.png}
+
+    Attention à respecter les contraintes suivantes :
+
+\begin{itemize}
+\tightlist
+\item
+  \(eleve\) :
+
   \begin{itemize}
   \tightlist
   \item
-    \texttt{Eleve\ =\ \{\}}
+    \(nom\) : taille variable (taille 100 max), non nul
   \item
-    \texttt{Matiere\ =\ \{\}}
+    \(prenom\) : taille variable (max 100), non nul
   \item
-    \texttt{Note\ =\ \{\}}
+    \(num\) : taille variable (max 20), clé primaire (unique, non nul)
   \end{itemize}
 \item
+  \(matiere\) :
+
   \begin{itemize}
   \tightlist
   \item
-    \texttt{Eleve\ =\ \{(\textquotesingle{}Titi\textquotesingle{},\ \textquotesingle{}Toto\textquotesingle{},\ \textquotesingle{}AB56789\textquotesingle{}),\ \}}
+    \(intitule\) : taille variable (max 100), non nul
   \item
-    \texttt{Matiere\ =\ \{(\textquotesingle{}NSI\textquotesingle{},\ 0),\ (\textquotesingle{}Sport\textquotesingle{}\ ,\ 1)\}}
-  \item
-    \texttt{Note\ =\ \{(\textquotesingle{}AB56789\textquotesingle{},\ 1,\ 17)\}}
+    \(mat_id\) : entier, clé primaire (unique non nul)
   \end{itemize}
 \item
+  \(note\) :
+
   \begin{itemize}
   \tightlist
   \item
-    \texttt{Eleve\ =\ \{(\textquotesingle{}Titi\textquotesingle{},\ \textquotesingle{}Toto\textquotesingle{},\ \textquotesingle{}AB56789\textquotesingle{}),\ \}}
+    \(num\_eleve\) : taille variable (max 20), reférence à
+    \(eleve(num)\), clé primaire
   \item
-    \texttt{Matiere=\ \{(\textquotesingle{}NSI\textquotesingle{},\ O)\}}
+    \(mat\_id\) : entier, référence à \(matiere(mat\_id)\), clé primaire
   \item
-    \texttt{Note\ =\ \{(\textquotesingle{}AB56789\textquotesingle{},\ 1,\ 17)\}}
+    \(note\) : nombre décimal de 4 chiffres dont 2 après la virgule, non
+    nul, supérieure ou égale à 0, inférieure ou égal à 20
   \end{itemize}
-\item
-  \begin{itemize}
-  \tightlist
-  \item
-    \texttt{Eleve\ =\ \{(\textquotesingle{}Titi\textquotesingle{},\ \textquotesingle{}Toto\textquotesingle{},\ \textquotesingle{}\ AB56789\textquotesingle{}),\ \}}
-  \item
-    \texttt{Matiere\ =\ \{(\textquotesingle{}NSI\textquotesingle{},\ O),\ \}}
-  \item
-    \texttt{Note\ =\ \{(\textquotesingle{}AB56789\textquotesingle{},\ 0,\ 17),\ (\textquotesingle{}AB56789\textquotesingle{}\ ,0,\ 18)\}}
-  \end{itemize}
-\item
-  \begin{itemize}
-  \tightlist
-  \item
-    \texttt{Eleve\ =\ \{(\textquotesingle{}Titi\textquotesingle{},\ \textquotesingle{}Toto\textquotesingle{},\ \textquotesingle{}AB56789\textquotesingle{}),\ \}}
-  \item
-    \texttt{Matiere\ =\ \{(\textquotesingle{}NSI\textquotesingle{},\ 0),\ (\textquotesingle{}Sport\textquotesingle{},\ 1)\}}
-  \item
-    \texttt{Note\ =\ \{(\textquotesingle{}AB56789\textquotesingle{},\ 0,\ 17),\ (\textquotesingle{}AB56789\textquotesingle{},\ 1,\ 17)\}}
-  \end{itemize}
-\end{enumerate}
+\end{itemize}
 
-    Modéliser des informations sur les départements français.
+    Résultat attendu :
 
-Pour chaque département on veut pouvoir stocker son nom, son code, son
-chef-lieu et la liste de tous les départements voisins. Attention, les
-codes de département sont tous des nombres, sauf la Corse du Sud et la
-Haute Corse qui ont les codes 2A et 2B respectivement. Les départements
-d'Outre-Mer ont un code sur trois chiffres (de 971 à 976).
+    \includegraphics{./img-ex_note_db.png}
 
-Proposer une contrainte utilisateur permettant d'éviter la redondance
-d'information dans la liste des voisins.
+    \hypertarget{suppression}{%
+\subsubsection{Suppression}\label{suppression}}
 
-    Proposer une modélisation pour un réseau de bus. Cette dernière doit
-être suffisamment riche pour permettre de générer, pour chaque arrêt de
-bus du réseau, une fiche horaire avec tous les horaires de passage de
-toutes les lignes de bus qui desservent l'arrêt.
-
-Indication: ici, plus qu'une simple traduction du français vers le
-modèle relationnel, on essayera de déterminer dans un premier temps
-quelles informations sont pertinentes et comment les représenter. On
-pourra ensuite procéder à la modélisation sous forme de relations.
-
-    On considère deux relations
-\(R(\underline{a \texttt{ Int}}, b \texttt{ Int}, c \texttt{ Int})\) et
-\(S(\underline{a \texttt{ Int}, e \texttt{ Int}})\) où l'attribut \(a\)
-de \(S\) est une clé étrangère faisant référence à \(a\) de \(R\).
-
-Dire si les affirmations suivantes sont vraies ou fausses, en
-justifiant.
-
-\begin{enumerate}
+    \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Les \(a\) de \(R\) sont tous deux à deux distincts.
+  Dans quel ordre faut-il effacer les tables ? Pourquoi ?
 \item
-  Les \(b\) de \(R\) sont tous deux à deux distincts.
-\item
-  Les \(a\) de \(S\) sont tous deux à deux distincts.
-\item
-  Les \(e\) de \(S\) sont tous deux à deux distincts.
-\item
-  \(S\) peut être vide alors que \(R\) est non vide.
-\item
-  \(R\) peut être vide alors que \(S\) est non vide
+  Tester dans DBeaver.
 \end{enumerate}
+
+    \hypertarget{activituxe9---base-de-donnuxe9e-vente.db}{%
+\subsection{\texorpdfstring{Activité - base de donnée
+\texttt{vente.db}}{Activité - base de donnée vente.db}}\label{activituxe9---base-de-donnuxe9e-vente.db}}
+
+    Créer la base de donnée \texttt{vente.db} respectant les contraintes
+suivantes :
+
+    \includegraphics{./img-ex_vente.png}
+
+    \hypertarget{ruxe9sumuxe9s-et-notes}{%
+\subsection{Résumés et notes}\label{ruxe9sumuxe9s-et-notes}}
+
+    \hypertarget{contraintes}{%
+\subsubsection{Contraintes}\label{contraintes}}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{PRIMARY\ KEY(auteur\_id)} ou
+  \texttt{auteur\_id\ INT\ PRIMARY\ KEY}
+\item
+  \texttt{PRIMARY\ KEY(auteur\_id,\ isbn)}
+\item
+  \texttt{FOREIGN\ KEY(auteur\_id)\ REFERENCES\ auteur(a\_id)} ou
+  \texttt{auteur\_id\ INT\ REFERENCES\ auteur(a\_id)}
+\item
+  \texttt{CHECK\ (0\ \textless{}=\ note\ AND\ note\ \textless{}=\ 20)}
+\item
+  \texttt{CHECK\ (ville\ \textless{}\textgreater{}\ \textquotesingle{}Paris\textquotesingle{})}
+  : pour \(\neq\)
+\end{itemize}
+
+    \hypertarget{types}{%
+\subsubsection{Types}\label{types}}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{TEXT} : texte de longueur variable
+\item
+  \texttt{VARCHAR(}\(n\)\texttt{)} : texte de longueur variable
+  inférieure à \(n\)
+\item
+  \texttt{CHAR(}\(n\)\texttt{)} : texte de longueur \(n\)
+\item
+  \texttt{INT} ou \texttt{INTEGER} : nombres entiers
+\item
+  \texttt{DECIMAL(}\(c\)\texttt{,}\(d\)\texttt{)} : nombre flottant de
+  \(c\) chiffres dont \(d\) pour la partie décimale
+\item
+  \texttt{DATE} : une date au format \texttt{AAAA-MM-JJ}
+\item
+  \texttt{TIME} : une heure au format \texttt{hh:mm:ss}
+\item
+  \texttt{TIMESTAMP} : un instant (date et heure) au format
+  \texttt{AAAA-MM-JJ\ hh:mm:ss}
+\end{itemize}
+
+    \hypertarget{tables}{%
+\subsubsection{Tables}\label{tables}}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{CREATE\ TABLE\ nom\_table\ (...)}
+\item
+  \texttt{DROP\ TABLE\ nom\_table}
+\item
+  \texttt{DROP\ TABLE\ IF\ EXISTS\ nom\_table}
+\item
+  \texttt{INSERT\ INTO\ nom\_table\ VALUES\ (...),\ (...),\ ...,\ ();}
+\item
+  \texttt{INSERT\ INTO\ nom\_table(attr1,\ attr2)\ VALUES\ ...}
+\item
+\end{itemize}
 
 
     % Add a bibliography block to the postdoc
