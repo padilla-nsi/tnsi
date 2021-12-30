@@ -1,8 +1,42 @@
+# BAC
+
+Chap 9. Requêtes SQL et mise à jour +tnsi {due:2022-01-06} 
+    (A) insertion 
+    (A) mise à jour / modification
+    (A) UPDATE
+    (A) UPDATE ... SET ... WHERE
+    (A) SELECT
+    (A) DISTINCT
+    (A) COUNT
+    (A) JOIN
+    (A) JOIN ... ON
+    (A) domaine
+    (A) ORDER ... BY
+
+
+
+
+
+
+Chap 10. Arbres binaires et Arbres binaires de recherche +tnsi {due:2022-01-20}
+
+Chap 11. Diviser pour régner +tnsi {due:2022-02-03}
+
+Chap 14. Circuits intégrés
+Chap 15. Gestion des processus et des ressources
+Chap 16. Protocoles de routage
+
+Chap 12. Autres structures arborescentes
+
+
+
+
+
 # TNSI
 
 Chap 1. Récursivité {due:2021-09-09} #langage {cm:2021-09-13} +tnsi
 
-Chap 2. Modularité {due:2021-09-16} #langage +tnsi    {cm:2021-09-23} {c}
+Chap 2. Modularité {due:2021-09-16} #langage +tnsi    {cm:2021-09-23}  {c}
     (A) activité introduction  {cm:2021-09-16}
     (A) encapsulation {cm:2021-09-16}
     (A) interface {cm:2021-09-16}
@@ -17,7 +51,7 @@ Chap 2. Modularité {due:2021-09-16} #langage +tnsi    {cm:2021-09-23} {c}
     #application tableaux redimensionnables {cm:2021-09-23}
     #application dictionnaires
 
-Chap 3. Programmation objet {due:2021-09-23} #structures_de_données  +tnsi   {c}
+Chap 3. Programmation objet {due:2021-09-23} #structures_de_données  +tnsi    {c}
     (A) classes et attributs : structurer les données {cm:2021-09-23}
     (A) description d'une classe {cm:2021-09-23}
     (A) création d'un objet {cm:2021-09-23}
@@ -43,7 +77,7 @@ Chap 3. Programmation objet {due:2021-09-23} #structures_de_données  +tnsi   {c
 
 DS1 {due:2021-09-27} +tnsi
 
-Chap 4. Mise au point de programmes {due:2021-10-07} #langage +tnsi {c}
+Chap 4. Mise au point de programmes {due:2021-10-07} #langage +tnsi  {c}
     (A) types en python {cm:2021-10-10}
     (A) annoter les variables et les fonctions {cm:2021-10-10}
     (B) types nommés, types paramétrés et généricité {cm:2021-10-10}
@@ -58,7 +92,7 @@ Chap 4. Mise au point de programmes {due:2021-10-07} #langage +tnsi {c}
     #application Chrono
 
 
-Chap 5. Listes chaînées {due:2021-10-14} +tnsi #structures_de_données {c}
+Chap 5. Listes chaînées {due:2021-10-14} +tnsi #structures_de_données  {c}
     (A) structure de liste chaînée {cm:2021-11-09}
     (A) opérations sur les listes {cm:2021-11-09}
     (A) longueur d'une liste {cm:2021-11-09}
@@ -82,5 +116,8 @@ Chap 5. Listes chaînées {due:2021-10-14} +tnsi #structures_de_données {c}
     #application concatener_en_place
     
 
-Chap 6. Piles et files {due:2021-10-21}  +tnsi #structures_de_données 
+Chap 6. Piles et files {due:2021-10-21}  +tnsi #structures_de_données  {cm:2021-12-29}
 
+chap 7. SQL partie 1 {cm:2021-12-29}
+
+chap 8. SQL partie 2 {cm:2021-12-29}
