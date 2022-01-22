@@ -40,3 +40,7 @@
 38 | 13
 39 | 27
 40 | 14
+
+## sujet 3
+
+erreur dans le test de l'énoncé : `42` => `[42]`
