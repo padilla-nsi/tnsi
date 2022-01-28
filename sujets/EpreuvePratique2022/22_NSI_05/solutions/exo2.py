@@ -1,6 +1,8 @@
 class Carte:
     """Initialise Couleur (entre 1 à 4), et Valeur (entre 1 à 13)"""
     def __init__(self, c, v):
+        # ajout des clauses de gardes sur 
+        # les couleurs et les valeurs
         assert 1 <= c <= 4, 'erreur de couleur'
         assert 1 <= v <= 13, 'erreur de valeur'
         self.Couleur = c
@@ -22,7 +24,7 @@ class Carte:
 
     """Renvoie la couleur de la Carte (parmi pique, coeur, carreau, trefle"""
     def getCouleur(self):
-        return [None, 'pique', 'coeur', 'carreau', 'trefle' ][self.Couleur]
+        return ['pique', 'coeur', 'carreau', 'trefle' ][self.Couleur - 1]
 
 class PaquetDeCarte:
     def __init__(self):
@@ -30,14 +32,17 @@ class PaquetDeCarte:
 
     """Remplit le paquet de cartes"""
     def remplir(self):
-        for v in range(1, 14):
-            for c in range(1, 5):
+        for c in range(1, 5):
+            for v in range(1, 14):
                 self.contenu.append(Carte(c, v))
 
     """Renvoie la Carte qui se trouve à la position donnée"""
     def getCarteAt(self, pos):
+        # clause de garde pour ne pas demander une
+        # position plus grande que le tableau de cartes
         n = len(self.contenu)
         assert 0 <= pos < n, 'index out of range'
+        
         return self.contenu[pos]
 
     
@@ -45,3 +50,4 @@ unPaquet = PaquetDeCarte()
 unPaquet.remplir()
 uneCarte = unPaquet.getCarteAt(20)
 print(uneCarte.getNom(), "de", uneCarte.getCouleur())
+assert str(uneCarte.getNom()) + " de " + str(uneCarte.getCouleur()) == "8 de coeur"

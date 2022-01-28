@@ -36,7 +36,5 @@ def tri_bulles(T: list) -> list:
     return T
 
 
-
-
 assert tri_bulles([10, 4, 3, 9, -10, 100]) == [-10, 3, 4, 9, 10, 100]
 testmod()

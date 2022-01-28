@@ -26,13 +26,4 @@ def delta(tab: list) -> list:
     return diff
 
 
-
 testmod()
-
-
-# upylab 
-
-from random import randint
-tab = [randint(0, 1000),randint(0, 1000),randint(0, 1000),randint(0, 1000),randint(0, 1000),randint(0, 1000),randint(0, 1000),randint(0, 1000),randint(0, 1000),randint(0, 1000)][:randint(1,10)]
-
-print(tab)

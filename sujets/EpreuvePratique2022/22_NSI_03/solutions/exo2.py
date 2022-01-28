@@ -52,9 +52,8 @@ def expression_infixe(e):
     return '('+ s +')'
 
 
-if __name__ == '__main__':
-    testmod()
+testmod()
 
-    e = Noeud(Noeud(Noeud(None, 3, None), '*', Noeud(Noeud(None, 8, None), '+', Noeud(None, 7, None))), '-', Noeud(Noeud(None, 2, None), '+', Noeud(None, 1, None)))
-    assert expression_infixe(e) == '((3*(8+7))-(2+1))'
 
+e = Noeud(Noeud(Noeud(None, 3, None), '*', Noeud(Noeud(None, 8, None), '+', Noeud(None, 7, None))), '-', Noeud(Noeud(None, 2, None), '+', Noeud(None, 1, None)))
+assert expression_infixe(e) == '((3*(8+7))-(2+1))'
