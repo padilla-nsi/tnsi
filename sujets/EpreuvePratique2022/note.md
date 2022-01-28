@@ -4,7 +4,7 @@
 2 | 9
 3 | 
 4 | 25
-5 | 15 + /!\ correction
+5 | 15 + /!\ correction (vérifier 6 de coeur ou 8 de coeur ?)
 6 | 12
 7 | 11 + /!\ correction
 8 | 18
