@@ -1,4 +1,16 @@
-def recherche(tab, n):
+from doctest import testmod
+
+
+def recherche(tab: list, n: int) -> int:
+    """[summary]
+
+    Args:
+        tab (list): [description]
+        n (int): [description]
+
+    Returns:
+        int: [description]
+    """
     i = 0
     j = len(tab) - 1
 
@@ -15,3 +27,4 @@ def recherche(tab, n):
 
 assert recherche([2, 3, 4, 5, 6], 5) == 3
 assert recherche([2, 3, 4, 6, 7], 5) == -1
+testmod()
