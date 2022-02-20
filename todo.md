@@ -1,38 +1,9 @@
-# BAC
-
-Chap 9. Requêtes SQL et mise à jour +tnsi {due:2022-01-06} 
-    (A) insertion 
-    (A) mise à jour / modification
-    (A) UPDATE
-    (A) UPDATE ... SET ... WHERE
-    (A) SELECT
-    (A) DISTINCT
-    (A) COUNT
-    (A) JOIN
-    (A) JOIN ... ON
-    (A) domaine
-    (A) ORDER ... BY
-
-
-
-
-
-
-Chap 10. Arbres binaires et Arbres binaires de recherche +tnsi {due:2022-01-20}
-
-Chap 11. Diviser pour régner +tnsi {due:2022-02-03}
-
-Chap 14. Circuits intégrés
-Chap 15. Gestion des processus et des ressources
-Chap 16. Protocoles de routage
-
-Chap 12. Autres structures arborescentes
-
-
-
-
 
 # TNSI
+
+
+## PRÉ Épreuves pratiques
+
 
 Chap 1. Récursivité {due:2021-09-09} #langage {cm:2021-09-13} +tnsi
 
@@ -92,7 +63,7 @@ Chap 4. Mise au point de programmes {due:2021-10-07} #langage +tnsi  {c}
     #application Chrono
 
 
-Chap 5. Listes chaînées {due:2021-10-14} +tnsi #structures_de_données  {c}
+Chap 5. Listes chaînées {due:2021-10-14} +tnsi #structures_de_données  
     (A) structure de liste chaînée {cm:2021-11-09}
     (A) opérations sur les listes {cm:2021-11-09}
     (A) longueur d'une liste {cm:2021-11-09}
@@ -121,3 +92,98 @@ Chap 6. Piles et files {due:2021-10-21}  +tnsi #structures_de_données  {cm:2021
 chap 7. SQL partie 1 {cm:2021-12-29}
 
 chap 8. SQL partie 2 {cm:2021-12-29}
+
+Chap 9. Requêtes SQL et mise à jour +tnsi {due:2022-01-06} 
+    (A) insertion  {cm:2022-02-16}
+    (A) mise à jour / modification {cm:2022-02-16}
+    (A) UPDATE {cm:2022-02-16}
+    (A) UPDATE ... SET ... WHERE {cm:2022-02-16}
+    (A) SELECT {cm:2022-02-16}
+    (A) DISTINCT {cm:2022-02-16}
+    (A) COUNT {cm:2022-02-16}
+    (A) JOIN {cm:2022-02-16}
+    (A) JOIN ... ON {cm:2022-02-16}
+    (A) domaine {cm:2022-02-16}
+    (A) ORDER ... BY {cm:2022-02-16}
+
+Chap 10. Arbres binaires {cm:2022-02-16}
+
+Chap 11. Arbres binaires de recherche +tnsi {due:2022-01-20} {cm:2022-02-16}
+
+
+Chap 12. Diviser pour régner +tnsi {due:2022-02-03}
+    (E) retour sur la dichotomie
+    (E) tri fusion
+    (F) #application dicho papier
+    (F) #application fusion papier
+    (F) #application tour de hanoï
+    (F) #application tour de hanoï (papier)
+    (F) #application tour de hanoî (piles)
+    (F) #application rotation image
+    (F) #application multiplication d'entiers
+
+
+Chap 13. Circuits intégrés
+    microcontrôleurs
+        architecture
+        jeu d'instructions
+        périphériques
+    système sur puce
+        architecture
+        avantages / inconvénients
+        exemple
+
+
+Chap 14. Autres structures arborescentes
+    arborescence
+    exemples de structures arborescentes
+
+
+Chap 15. Gestion des processus et des ressources
+    ordonnanceur
+        rappel sur l'exécution d'un programme
+        interruptions
+        vocabulaire
+        ordonnanceur du système d'exploitation
+        états processus
+    commandes unix de gestion de processus
+    programmation concurrente
+        processus concurrents
+        interblocage
+        application python
+
+
+Chap 16. Protocoles de routage
+    protocole RIP
+        détection des pannes
+        délai convergence
+        boucle de routage
+    protocole OSPF
+        multidiffusion
+        gestion des pannes et modif réseau
+        calcul des plus courts chemins
+    commandes système
+        ip
+        ping
+        traceroute
+
+
+## POST Épreuves pratiques
+
+
+Chap 17. Calculabilité
+
+Chap 18. Graphes
+
+Chap 19. Parcours en profondeur et en largeur
+
+Chap 20. Programmation dynamique
+
+Chap 21. Sécurisation des communications
+
+Chap 22. Recherche textuelle
+
+Chap 23. Programmation fonctionnelle
+
+Chap 24. SGBD
+
