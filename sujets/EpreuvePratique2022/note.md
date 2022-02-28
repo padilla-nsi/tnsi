@@ -44,3 +44,7 @@
 ## sujet 3
 
 erreur dans le test de l'énoncé : `42` => `[42]`
+
+### exo 2
+
+exercice faux !
