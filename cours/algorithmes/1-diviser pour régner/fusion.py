@@ -69,6 +69,12 @@ for taille in tailles:
     t1 = time()
     duree = t1 - t0
     print(taille, "\t", duree)
+    t0 = time()
+    result = sorted(tab)
+    t1 = time()
+    duree2 = t1 - t0
+    print(taille, "\t", duree2, round(duree/duree2, 2))
+    # tab = []
 
 
 # from math import inf
