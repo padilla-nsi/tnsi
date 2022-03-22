@@ -28,7 +28,7 @@ def recherche_dichotomique_rec(tab: list, elem, borne_g, borne_d) -> int:
     if elem == val_median:
         return i_median
 
-    # non trouvé
+    # elem  non trouvé
     # explore la portion inférieure
     if elem < val_median:
         return recherche_dichotomique_rec(tab, elem, borne_g, i_median - 1)
