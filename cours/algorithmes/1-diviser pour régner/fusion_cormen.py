@@ -28,7 +28,7 @@ def tri_fusion(tab, p, r):
 # print(tab)
 
 
-
+from random import 
 # tab = [1,6,2,3,7,5,4,6]
 # result = tri_fusion(tab)
 # print(result)
