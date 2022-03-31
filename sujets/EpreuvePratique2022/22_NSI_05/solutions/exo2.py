@@ -32,9 +32,8 @@ class PaquetDeCarte:
 
     """Remplit le paquet de cartes"""
     def remplir(self):
-        for c in range(1, 5):
-            for v in range(1, 14):
-                self.contenu.append(Carte(c, v))
+        # c'est un tableau défini par compréhension
+        self.contenu = [Carte(couleur, valeur) for couleur in range(1, 5) for valeur in range(1, 14)]
 
     """Renvoie la Carte qui se trouve à la position donnée"""
     def getCarteAt(self, pos):
