@@ -4,7 +4,7 @@
 2 | 9
 3 | 
 4 | 25
-5 | 15 + /!\ correction (vérifier 6 de coeur ou 8 de coeur ?)
+5 | 15
 6 | 12
 7 | 11 + /!\ correction
 8 | 18
@@ -12,7 +12,7 @@
 10 | 23
 11 | 19
 12 | 2
-13 | 6 + /!\ correction
+13 | 6 + /!\ exo2 : c'est plus clair si on remplace 'suivant' par 'precedent'. Ça n'a l'air de rien, mais c'est juste le contraire...
 14 | 
 15 | 21
 16 | 10
