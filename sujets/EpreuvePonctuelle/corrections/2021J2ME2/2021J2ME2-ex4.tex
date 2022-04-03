@@ -546,6 +546,85 @@ entier compris entre 0 (inclus) et 10 (inclus aussi !).
 Donc on peut obtenir : \texttt{0}, \texttt{1}, \texttt{9} et
 \texttt{10}.
 
+    3.a - La fonction \texttt{melange} est récursive. Pour qu'elle se
+termine il faut montrer que le cas de base est atteignable dans tous les
+cas.
+
+Ici le cas de base arrive lorsque l'argument \texttt{ind} vaut
+\texttt{0} ou moins. Or \texttt{ind} est un nombre entier et chaque
+appel récursif se fait avec une valeur de \texttt{ind} diminuée de 1.
+Donc nécessairement, après \texttt{ind\ -\ 1} appels récursif, la
+fonction \texttt{melange} effectue l'appel \texttt{melange(lst,\ 0)}.
+Cet appel sera le dernier car le cas de base sera atteint.
+
+    3.b - Le cas de base est atteint lorsque \texttt{ind} vaut \texttt{0}.
+Pour une liste de longueur \(n\), l'appel initial est
+\texttt{melange(lst,\ n\ -\ 1)}. Comme à chaque appel \texttt{ind}
+diminue de 1, il faut donc \(n-1\) appels pour arriver au cas de base.
+
+    3.c - Initialement, on a \texttt{lst} \(\leftarrow\)
+\texttt{{[}0,\ 1,\ 2,\ 3,\ 4{]}}.
+
+Détaillons la première exécution. L'appel \texttt{melange(lst,\ 4)}
+effectue un premier tirage aléatoire et on obtient
+\texttt{j}\(\leftarrow\)\texttt{2}. Ainsi il y a un échange entre les
+valeurs des indices \texttt{4} et \texttt{2} de \texttt{lst}. Désormais
+on a \texttt{lst} \(\leftarrow\) \texttt{{[}0,\ 1,\ 4,\ 3,\ 2{]}} et
+l'appel récursif est \texttt{melange(lst,\ 2)}.
+
+Cette première exécution correspond à la première ligne du tableau. Les
+quatres appels récursifs qui suivent sont sur les quatre lignes
+suivantes.
+
+Les affichages demandés sont ceux de la première colonne.
+
+\begin{longtable}[]{@{}cccc@{}}
+\toprule
+\texttt{lst} & \texttt{ind} & \texttt{j} & appel récursif\tabularnewline
+\midrule
+\endhead
+\texttt{{[}0,\ 1,\ 2,\ 3,\ 4{]}} & \texttt{4} & \texttt{2} &
+\texttt{melange({[}0,\ 1,\ 4,\ 3,\ 2{]},\ 3)}\tabularnewline
+\texttt{{[}0,\ 1,\ 4,\ 3,\ 2{]}} & \texttt{3} & \texttt{1} &
+\texttt{melange({[}0,\ 3,\ 4,\ 1,\ 2{]},\ 2)}\tabularnewline
+\texttt{{[}0,\ 3,\ 4,\ 1,\ 2{]}} & \texttt{2} & \texttt{2} &
+\texttt{melange({[}0,\ 3,\ 4,\ 1,\ 2{]},\ 1)}\tabularnewline
+\texttt{{[}0,\ 3,\ 4,\ 1,\ 2{]}} & \texttt{1} & \texttt{0} &
+\texttt{melange({[}3,\ 0,\ 4,\ 1,\ 2{]},\ 0)}\tabularnewline
+\texttt{{[}3,\ 0,\ 4,\ 1,\ 2{]}} & & &\tabularnewline
+\bottomrule
+\end{longtable}
+
+    3.d - Voici une version itérative du mélange de Fischer Yates :
+
+        {\scriptsize
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{62}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{melange}\PY{p}{(}\PY{n}{lst}\PY{p}{)}\PY{p}{:}
+    \PY{n+nb}{print}\PY{p}{(}\PY{n}{lst}\PY{p}{)}
+    
+    \PY{c+c1}{\PYZsh{} dernier indice du tableau}
+    \PY{n}{n} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{lst}\PY{p}{)}
+
+    \PY{c+c1}{\PYZsh{} parcours du tableau en commençant par la fin}
+    \PY{c+c1}{\PYZsh{} et en s\PYZsq{}arrêtant à l\PYZsq{}indice 0 exclu}
+    \PY{k}{for} \PY{n}{ind} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{n}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{:}
+        \PY{n}{j} \PY{o}{=} \PY{n}{randint}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{ind}\PY{p}{)}
+        \PY{n}{echange}\PY{p}{(}\PY{n}{lst}\PY{p}{,} \PY{n}{ind}\PY{p}{,} \PY{n}{j}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{n}{lst}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+    }
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[0, 1, 2, 3, 4]
+[0, 1, 4, 3, 2]
+[0, 3, 4, 1, 2]
+[0, 4, 3, 1, 2]
+[0, 4, 3, 1, 2]
+    \end{Verbatim}
+
 
     % Add a bibliography block to the postdoc
     
