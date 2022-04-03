@@ -108,7 +108,7 @@ class Validation(unittest.TestCase):
         a.insere(9)
         a.insere(1)
         a.insere(9)
-        rep_prof = a.parcours()
+        rep_prof = a.parcours([]) # correction du bug def parcours (tab=[])
 
         b = exo.ABR()
         b.insere(7)
@@ -116,7 +116,7 @@ class Validation(unittest.TestCase):
         b.insere(9)
         b.insere(1)
         b.insere(9)
-        rep_exo = b.parcours()
+        rep_exo = b.parcours([]) # correction du bug def parcours (tab=[])
 
         info = "Erreur avec l'exemple de l'enonce"
         info += "\n=> a.parcours() doit renvoyer [1, 3, 7, 9, 9]"
