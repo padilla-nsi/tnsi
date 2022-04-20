@@ -43,7 +43,7 @@ def est_magique(carre):
     if sum([carre.valeurs[k][n-1-k] for k in range(n)]) != s:
         return False
 
-    return True
+    return s
 
 
 class Validation(unittest.TestCase):

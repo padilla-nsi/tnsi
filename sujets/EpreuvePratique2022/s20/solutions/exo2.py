@@ -60,7 +60,8 @@ def est_magique(carre):
         return False
 
     # si aucun renvoie n'a eu lieu, c'est le carré est magique
-    return True
+    # il faut renvoyer la valeur de la somme
+    return s
 
 
 # tests
