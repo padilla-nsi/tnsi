@@ -1,6 +1,6 @@
 """
 Author: Pascal Padilla
-Source: correction de l'exercice 1 du sujet 22 des épreuves pratiques NSI 2022
+Source: correction de l'exercice 2 du sujet 22 des épreuves pratiques NSI 2022
 """
 
 
