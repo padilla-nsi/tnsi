@@ -1,0 +1,5 @@
+digraph "classes" {
+charset="utf-8"
+rankdir=BT
+"0" [label="{L_Systeme|angle\laxiome\lregles\l|construction(n, pas, position_initiale, orientation_initial)\lgeneration(n)\l}", shape="record"];
+}
