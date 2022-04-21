@@ -71,11 +71,3 @@ assert selection_enclos(animaux, 7) == []
 # tests avec doctest
 from doctest import testmod
 testmod()
-
-
-[ {'nom':'a', 'espece':'chien', 'age':5, 'enclos':2}, {'nom':'Titine', 'espece':'chat', 'age':2, 'enclos':5}, {'nom':'Tom', 'espece':'chat', 'age':7, 'enclos':4}, {'nom':'Belle', 'espece':'chien', 'age':6, 'enclos':3}, {'nom':'Mirza', 'espece':'chat', 'age':6, 'enclos':5}]
-
-from random import randint
-dico = [{'nom': chr(i), 'enclos': randint(0,5)} for i in range(97,107)]
-print(dico)
-print(ord('z'))
