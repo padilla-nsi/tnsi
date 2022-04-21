@@ -7,3 +7,4 @@ mv ./solutions/*.py.pdf . &&
 pdftk *.pdf cat output solutions.pdf && 
 /home/bouscadilla/scripts/Multimedia/applatir_pdf.sh solutions.pdf &&
 mv solutions.pdf.pdf solutions.pdf
+rm exo1.py.pdf exo2.py.pdf
