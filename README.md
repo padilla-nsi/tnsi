@@ -17,3 +17,10 @@ Ce dépot contient mes cours de NSI (Numérique et Sciences Informatiques) de te
   * [groupe 2](https://pa.dilla.fr/12)
   * [groupe 3](https://pa.dilla.fr/13)
 * Modularité : les [tables de hachages](https://pa.dilla.fr/14)
+
+### SQL
+
+Outils en ligne
+
+* [Mocodo](http://mocodo.wingi.net/) (découvert cette année avec mes élèves)
+* [DBconcept](https://dbconcept.tuxfamily.org/ 2)
