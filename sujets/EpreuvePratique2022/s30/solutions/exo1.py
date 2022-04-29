@@ -71,12 +71,3 @@ def fusion(tab1: list, tab2: list) -> list:
 # Vérification par doctest
 from doctest import testmod
 testmod()
-
-
-print(sorted([1,3,2]))
-
-from random import choice
-
-txt = ''.join([choice(["I", "V", "X", "L", "C", "D", "M"]) for _ in range(5)])
-
-print(txt)
