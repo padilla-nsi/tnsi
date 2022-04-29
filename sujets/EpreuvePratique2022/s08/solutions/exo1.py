@@ -1,4 +1,9 @@
-from doctest import testmod
+"""
+Author: Pascal Padilla
+Source: correction de l'exercice 1 du sujet 8 des épreuves pratiques NSI 2022
+
+Remarques:
+"""
 
 
 def recherche(elt, tab):
@@ -28,8 +33,18 @@ def recherche(elt, tab):
     return -1
 
 
+# vérification avec des assertions
 assert recherche(1, [2, 3, 4]) == -1
 assert recherche(1, [10, 12, 1, 56]) == 2
 assert recherche(50, [1, 50, 1]) == 1
 assert recherche(15, [8, 9, 10, 15]) == 3
+
+# vérification avec des affichages
+print(recherche(1, [2, 3, 4]))
+print(recherche(1, [10, 12, 1, 56]))
+print(recherche(50, [1, 50, 1]))
+print(recherche(15, [8, 9, 10, 15]))
+
+# vérification avec doctest
+from doctest import testmod
 testmod()
