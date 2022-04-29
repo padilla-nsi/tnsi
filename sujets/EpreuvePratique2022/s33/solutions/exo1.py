@@ -1,3 +1,11 @@
+"""
+Author: Pascal Padilla
+Source: correction de l'exercice 1 du sujet 33 des épreuves pratiques NSI 2022
+
+Remarques:
+
+"""
+
 def convertir(T):
     """
     T est un tableau d'entiers, dont les éléments sont 0 ou 1 et
