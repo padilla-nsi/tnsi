@@ -3,12 +3,12 @@ Author: Pascal Padilla
 Source: correction de l'exercice 1 du sujet 32 des épreuves pratiques NSI 2022
 
 Remarques:
-    * /!\ attention ici c'est la DERNIÈRE occurrence qui est recherchée !
+    * /!\ attention ici c'est la urrence qui est recherchée !
 """
 
 
 def recherche(elt, tab):
-    """ Recherche la valeur de la dernière occurrence
+    """ Recherche la valeur de la urrence
     de elt dans le tableau.
 
     Args:

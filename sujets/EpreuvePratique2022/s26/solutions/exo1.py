@@ -23,7 +23,7 @@ def RechercheMin(tab: list) -> int:
     0
     >>> RechercheMin([2, 4, 1])
     2
-    >>> RechercheMin([5, 3, 2, 2, 4])
+    >>> RechercheMin(, 2, 2, 4])
     2
     """
     # clause de garde (non demandée)
@@ -61,13 +61,13 @@ def RechercheMin(tab: list) -> int:
 # tests avec des affichages
 print(RechercheMin([5]))
 print(RechercheMin([2, 4, 1]))
-print(RechercheMin([5, 3, 2, 2, 4]))
+print(RechercheMin(, 2, 2, 4]))
 
 
 # tests avec des assertions
 assert RechercheMin([5]) == 0
 assert RechercheMin([2, 4, 1]) == 2
-assert RechercheMin([5, 3, 2, 2, 4]) == 2
+assert RechercheMin(, 2, 2, 4]) == 2
 
 
 # tests avec doctest
