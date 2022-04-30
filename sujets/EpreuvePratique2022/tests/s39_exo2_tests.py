@@ -2,6 +2,8 @@ import s39.solutions.exo2 as exo
 import unittest
 
 from random import randint
+
+
 coeur = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], \
          [0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0], \
          [0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0], \
@@ -14,6 +16,11 @@ coeur = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], \
          [0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0], \
          [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], \
          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+
+
+def generer_dessin(ligne, col):
+    dessin = [[randint(0, 1) for _ in range (col)] for _ in range(ligne)]
+    return dessin
 
 
 def zoomListe(liste_depart,k):
@@ -38,29 +45,38 @@ def zoomDessin(grille,k):
 
 
 class Validation(unittest.TestCase):
-    def test_zoomListe(self):
-        for zoom in range(1,4):
-            liste = [randint(0, 1), randint(0, 1), randint(0, 1)]
-            test = exo.zoomListe(liste, zoom)
-            ok   = zoomListe(liste, zoom)
-            self.assertEqual(test, ok,
-                    msg="\nErreur:\nfonction 'zoomListe("+ str(liste) +", "+ str(zoom) +")' incorrecte")
-        
-    def test_zoomDessin(self):
-
+    def test_exemple_coeur(self):
         grille = coeur
         zoom = 3
         test = exo.zoomDessin(grille, zoom)
         ok   =     zoomDessin(grille, zoom)
-        self.assertEqual(test, ok,
-                    msg="\nErreur:\nfonction 'zoomGrille()' incorrecte sur l'exemple (coeur avec zoom=3)")
-        
-        grille = [[randint(0, 1) for _ in range(3)] for _ in range(3)]
-        for zoom in range(1,4):
-            test = exo.zoomDessin(grille, zoom)
-            ok   =     zoomDessin(grille, zoom)
-            self.assertEqual(test, ok,
-                    msg="\nErreur:\nfonction 'zoomGrille("+ str(grille) +", "+ str(zoom) +")' incorrecte")
+
+        txt = "\nErreur test exemple: fonction 'zoomGrille()' incorrecte sur le coeur avec zoom=3"
+        self.assertEqual(test, ok, msg = txt)
+
+
+    def test_random_zoomListe_x20(self):
+        for _ in range(20):
+            zoom = randint(1, 4)
+            liste = [randint(0, 1) for _ in range(randint(1, 20))]
+            test = exo.zoomListe(liste, zoom)
+            ok   = zoomListe(liste, zoom)
+
+            txt = "\nErreur test aleatoire:"
+            txt += "\nfonction 'zoomListe("+ str(liste) +", "+ str(zoom) +")' incorrecte"
+            self.assertEqual(test, ok, msg = txt)
+
+
+    def test_random_zoomDessin_x20(self):
+        for _ in range(20):
+            grille = generer_dessin(10, 10)
+            for zoom in range(1,4):
+                test = exo.zoomDessin(grille, zoom)
+                ok   =     zoomDessin(grille, zoom)
+                txt = "\nErreur test aleatoire:"
+                txt += "\nfonction 'zoomGrille("+ str(grille) +", "+ str(zoom) +")' incorrecte !"
+                self.assertEqual(test, ok, msg = txt)
+
 
 if __name__ == '__main__'      :
     unittest.main()
