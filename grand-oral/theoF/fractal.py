@@ -100,9 +100,14 @@ class L_Systeme():
 
 # Création d'un L-Systeme avec l'axiome 'A', les règles {'A':'B+A+B', 'B': 'A-B-A'} et l'angle 60.
 # Affichage du L-Systeme avec 5 générations.
-sierpinski_arrowhead_flocon_de_koch = L_Systeme('B', {'A':'A-A++A-A', 'B':'A++A++A'} , 60)
-sierpinski_arrowhead_courbe_de_koch = L_Systeme('B', {'A':'A-A++A-A', 'B':'A'} , 60)
-sierpinski_arrowhead_t = L_Systeme('A', {'A':'B+A+B', 'B': 'A-B-A'} , 60)
+# sierpinski_arrowhead_flocon_de_koch = L_Systeme('B', {'A':'A-A++A-A', 'B':'A++A++A'} , 60)
+# print(sierpinski_arrowhead_flocon_de_koch.construction(1,pas=50, position_initiale=(0,0)))
 
-print(sierpinski_arrowhead_flocon_de_koch.construction(1,pas=50, position_initiale=(0,0)))
+# sierpinski_arrowhead_courbe_de_koch = L_Systeme('B', {'A':'A-A++A-A', 'B':'A'} , 60)
+# sierpinski_arrowhead_t = L_Systeme('A', {'A':'B+A+B', 'B': 'A-B-A'} , 60)
+
+# Pas terrible....
+# tige = L_Systeme('A', {'A': 'A[G]HH[D]A', 'G': '-H+AA', 'D': '+HH-A[G]H[D]A'}, 90)
+# print(tige.construction(10, pas=2, position_initiale=(0,-400)))
+
 
