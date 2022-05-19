@@ -24,3 +24,9 @@ Outils en ligne
 
 * [Mocodo](http://mocodo.wingi.net/) (découvert cette année avec mes élèves)
 * [DBconcept](https://dbconcept.tuxfamily.org/ 2)
+
+
+## Critiques Sujets 
+
+* https://sebhoa.gitlab.io/nsi/BNS_2022/
+

@@ -1,6 +1,12 @@
-from doctest import testmod
+"""
+Author: Pascal Padilla
+Source: correction de l'exercice 2 du sujet 1 des épreuves pratiques NSI 2022
 
-pieces = [100, 50, 20, 10, 5, 2, 1]
+Remarques:
+  * maladresse dans le sujet : ne PAS mettre de majuscules aux variables
+"""
+
+Pieces = [100, 50, 20, 10, 5, 2, 1]
 
 def rendu_glouton(arendre, solution=[], i=0):
     """ Calcul du rendu de monnaie avec un algorithme récursif.
@@ -23,7 +29,7 @@ def rendu_glouton(arendre, solution=[], i=0):
         # cas de base de l'algo récursif
         return solution
     
-    p = pieces[i]
+    p = Pieces[i]
     if p <= arendre :
         # il est possible d'utiliser la pièce courante p
         solution.append(p)
@@ -33,7 +39,17 @@ def rendu_glouton(arendre, solution=[], i=0):
         return rendu_glouton(arendre, solution, i + 1)
 
 
+# Tests avec des affichages
+print (rendu_glouton(68, [], 0))    # [50, 10, 5, 2, 1]
+print(rendu_glouton(291,[],0))      # [100, 100, 50, 20, 20, 1]
+
+
+# Tests avec des assertions
 assert rendu_glouton(68, [], 0) == [50, 10, 5, 2, 1]
 assert rendu_glouton(291,[],0) == [100, 100, 50, 20, 20, 1]
 
+
+# Test avec doctest
+from doctest import testmod
 testmod()
+
