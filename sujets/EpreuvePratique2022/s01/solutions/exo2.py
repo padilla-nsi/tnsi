@@ -46,10 +46,9 @@ print(rendu_glouton(291,[],0))      # [100, 100, 50, 20, 20, 1]
 
 # Tests avec des assertions
 assert rendu_glouton(68, [], 0) == [50, 10, 5, 2, 1]
-assert rendu_glouton(291,[],0) == [100, 100, 50, 20, 20, 1]
+assert rendu_glouton(291, [], 0) == [100, 100, 50, 20, 20, 1]
 
 
 # Test avec doctest
 from doctest import testmod
 testmod()
-

@@ -1,4 +1,9 @@
-from doctest import testmod
+"""
+Author: Pascal Padilla
+Source: correction de l'exercice 2 du sujet 2 des épreuves pratiques NSI 2022
+
+Remarques:
+"""
 
 
 def pascal(n):
@@ -34,7 +39,16 @@ def pascal(n):
     return C
 
 
+# Tests avec des affichages
+print(pascal(4))    # [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]
+print(pascal(5))    # [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1], [1, 5, 10, 10, 5, 1]]
+
+
+# Tests avec des assertions
 assert pascal(4) == [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]
-assert pascal(5) == [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1], [1, 5, 10,
-10, 5, 1]]
+assert pascal(5) == [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1], [1, 5, 10, 10, 5, 1]]
+
+
+# Tests avec doctest
+from doctest import testmod
 testmod()

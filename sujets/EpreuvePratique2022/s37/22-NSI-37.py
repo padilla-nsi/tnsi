@@ -1,4 +1,6 @@
-urne = ['A', 'A', 'A','B', 'C', 'B', 'C','B', 'C', 'B']
+urne = ['Oreilles sales', 'Oreilles sales', 'Oreilles sales',
+      'Extra Vomit', 'Lady Baba', 'Extra Vomit', 'Lady Baba',
+      'Extra Vomit', 'Lady Baba', 'Extra Vomit']
 
 def depouille(urne):
     resultat = ...

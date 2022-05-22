@@ -1,4 +1,9 @@
-from doctest import testmod
+"""
+Author: Pascal Padilla
+Source: correction de l'exercice 1 du sujet 2 des épreuves pratiques NSI 2022
+
+Remarques:
+"""
 
 
 def moyenne(tab: list) -> float:
@@ -20,19 +25,30 @@ def moyenne(tab: list) -> float:
     somme = 0
     coef_total = 0
 
-    n_notes = len(tab)
-    for i in range(n_notes):
+    # Invariant: `somme` est le cumul des notes pondérées par les coefficients parcourues
+    # Invariant: `coef_total` est la somme de tous les coefficients parcourus
+    for i in range(len(tab)):
         couple = tab[i]
         note = couple[0]
         coefficient = couple[1]
 
-        somme = somme + note*coefficient
+        somme = somme + note * coefficient
         coef_total = coef_total + coefficient
-    
+
     return somme / coef_total
 
 
+
+# Tests avec des affichages
+print(moyenne([(15,2),(9,1),(12,3)]))   # 12.5 espéré
+print(moyenne([(10, 2)]))               # 10 espéré
+
+
+# Tests avec des assertions
 assert moyenne([(15,2),(9,1),(12,3)]) == 12.5
 assert moyenne([(10, 2)]) == 10
 
+
+# Tests avec doctest
+from doctest import testmod
 testmod()
