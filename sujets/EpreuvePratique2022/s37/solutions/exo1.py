@@ -80,7 +80,7 @@ assert verifie([8, 12, 4])      == False
 assert verifie([-1, 4])         == True
 assert verifie([5])             == True
 
-# Vérification avec des affichages
+# # Vérification avec des affichages
 print(verifie([0, 5, 8, 8, 9]))
 print(verifie([8, 12, 4]))
 print(verifie([-1, 4]))
@@ -89,4 +89,3 @@ print(verifie([5]))
 # Vérification avec doctest
 from doctest import testmod
 testmod()
-

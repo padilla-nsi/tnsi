@@ -21,6 +21,7 @@ class validation(unittest.TestCase):
         self.assertEqual(exo.moyenne('Dupont'), 14.5, msg="\nErreur:\nvaleurs de l'exemple incorrecte avec 'Dupont'")
         self.assertEqual(exo.moyenne('Durand'), 9.2, msg="\nErreur:\nvaleurs de l'exemple incorrecte avec 'Durand'")
 
+
     def test_absent(self):
         self.assertEqual(exo.moyenne('Dupond'), -1, msg="\nErreur:\nun nom inconnu doit renvoyer '-1'")
 
